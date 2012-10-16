@@ -1,0 +1,20 @@
+
+startup_message off
+defscrollback 5120
+
+vbell off
+
+#bindkey "^[Oc" next
+#bindkey "^[Od" prev
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=[%c, %D, %d/%m/%y]"
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=[%c:%s, %D, %d/%m/%y]"
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+#hardstatus alwayslastline "%?%{gk}%-Lw%?%{kg}%n*%f %t%?(%u)%?%?%{gk}%+Lw%?"
+hardstatus alwayslastline "%>%{wk}%?%-Lw%?%{gk}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?%<"
+# Default screens
+screen -t bash      0	
+screen -t bash  	1
+screen -t bash  	2
+
+

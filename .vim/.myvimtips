@@ -1,0 +1,77 @@
+
+**************************************** CTAGS ****************************************************************************************
+
+CTRL-] -> jump to tag under cursor
+CTRL-T -> jump back
+
+OMNICPP
+CTRL-X CTRL-O -> autocomplete (when using omnicpp)
+
+
+**************************************** EDITING ****************************************************************************************
+
+d20G will delete everything from current line to line 20 - this is great for not having to count lines
+
+shift+d will delete from the cursor position to the end of the line
+
+=G      format code
+=       format selected area
+==      Format current line
+gg=G    Format entire file
+
+gUU - make current lmne uppercase
+guu - make current line lowercase
+
+. -> paste in the entire buffer of what you last typed in insert mode
+
+
+************************************* MOVING AROUND **********************************************************************************
+
+e -> go to end of next word
+
+ctrl-g - display no of lines in file
+
+vap -> (visual around paragraph) select paragraph
+
+************************************* WINDOW SPLITS **********************************************************************************
+
+Ctrl-W s    Split window
+Ctrl-W v    Split window vertical
+Ctrl-W c    Close split window
+
+************************************* RANGES **********************************************************************************
+A range can be specified using line numbers or special characters, as in these examples:
+Range           Description                                     Example
+21              line 21                                         :21s/old/new/g
+1               first line                                      :1s/old/new/g
+$               last line                                       :$s/old/new/g
+.               current line                        :.w single.txt
+%               all lines (same as 1,$)             :%s/old/new/g
+21,25           lines 21 to 25 inclusive            :21,25s/old/new/g
+21,$            lines 21 to end                     :21,$s/old/new/g
+.,$             current line to end                 :.,$s/old/new/g
+.+1,$           line after current line to end      :.+1,$s/old/new/g
+.,.+5           six lines (current to current+5 inclusive) :.,.+5s/old/new/g
+.,.5            same (.5 is interpreted as .+5)    :.,.5s/old/new/g
+
+************************************* SEARCH/REPLACE **********************************************************************************
+
+* will highlight the word under the cursor
+
+once:  s/fred/barney
+every instance in a line:  s/fred/barney/g
+every instance in n lines: (ie 104 lines:) +104s/fred/barney/g
+
+every instance in a file: %s/fred/barney/g
+confirm replace: +104s/word/replacement/cg
+
+case insensitive: %s/fred/Barney/gi
+
+NOTE: when replacing text, its often a good idea to use only that string, ie its better to do:
+%s/\<fred\>/Barney/gi
+so that you don't replace "alfred" with "alBarney"
+
+%s/^M$//g - get rid of anooying ^M carriage returns (Use CTRL-V CTRL-M)
+
+g/some string/d - delete any line that contains some string
+
