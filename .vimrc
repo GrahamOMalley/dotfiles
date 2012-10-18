@@ -14,6 +14,7 @@ set ignorecase
 set incsearch
 set linebreak
 set nobackup
+set nofoldenable 
 set noswapfile
 set number
 set popt+=syntax:y          " Syntax when printing
@@ -56,7 +57,8 @@ set tags=tags;/
 let Tlist_WinWidth = 50
 let Tlist_Inc_Winwidth = 300
 let Tlist_Exit_OnlyWindow = 1 
-
+" Supertab should try to use User completion
+let g:SuperTabDefaultCompletionType = "context"
 "*************************************************** GLOBAL KEYMAPS *********************************************
 
 " set difficulty level: Hardcore ;)
@@ -78,7 +80,6 @@ let mapleader = ","
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " TAGLIST
-"nnoremap <F12> <Esc>:Tlist<CR><C-W>h<C-W>s:VTreeExplore<CR>:set nonu<CR><C-W>l
 nnoremap <F12> <Esc>:Tlist<CR>
 
 " CTAGS
@@ -104,7 +105,7 @@ nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
 nnoremap <Leader>vs :source ~/.vimrc<CR>
 
 " list all mapped keys
-nnoremap <Leader>m :map<CR>
+"nnoremap <Leader>m :map<CR>
 " toggle wrap
 nnoremap <leader>w :set wrap!<CR>
 
@@ -157,4 +158,5 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8> :exe "Cprint " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".")<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :exe "Cnext "<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 augroup END
