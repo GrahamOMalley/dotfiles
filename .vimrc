@@ -207,6 +207,7 @@ nnoremap <leader>i mzgg=G`zzz
 " fuGitive keymaps
 nnoremap <leader>g <esc>:Git 
 nnoremap <leader>gc <esc>:Git commit -a
+nnoremap <leader>gp <esc>:Git push -u origin master --force
 
 " ************************************************ VimBits experimental **************************
 
