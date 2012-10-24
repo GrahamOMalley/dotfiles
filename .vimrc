@@ -200,5 +200,7 @@ cnoremap <expr> ht getcmdtype() == ':' && empty(getcmdline()) ? 'tab h '     :'h
 
 " fix indenting, don't move curso
 nnoremap <leader>i mzgg=G`zzz
+
+autocmd FileType gitcommit DiffGitCached | wincmd p
 " ************************************************ VimBits experimental **************************
 
