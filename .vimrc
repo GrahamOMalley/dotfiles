@@ -1,9 +1,32 @@
-"*************************************************** Generic Settings ***************************************************
 
+"*************************************************** VUNDLE Settings ***************************************************
 set nocompatible
-call pathogen#infect()
+" get Vundle: $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle (required)
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'ervandew/supertab'
+
+" vim-scripts repos
+Bundle 'bufexplorer.zip'
+Bundle 'taglist.vim'
+
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+
 filetype plugin indent on
 
+"*************************************************** Generic Settings ***************************************************
 
 set ai
 set expandtab
