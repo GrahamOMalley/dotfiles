@@ -32,10 +32,10 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmenu
 set wildmode=list:longest
 
-
 "syntax highlighting and colourscheme
 syntax on
-colorscheme relaxedgreen
+"colorscheme relaxedgreen
+colorscheme stingray
 
 " STATUS LINE
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\[HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -160,3 +160,45 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :exe "Cnext "<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 augroup END
+
+"*************************************************** FUNCTIONS ***************************************************
+
+" dump the output of some command (:map) into a new tab
+function! TabMessage(cmd)
+    redir => message
+    silent execute a:cmd
+    redir END
+    tabnew
+    silent put=message
+    set nomodified
+endfunction
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+
+" ************************************************ VimBits experimental **************************
+
+"improve up/down movement on wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+"clear search highlight
+noremap <silent><Leader>/ :nohls<CR>
+
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
+" go to home and end using capitalized directions
+noremap H ^
+noremap L $
+
+" make arrow keys useful again
+nnoremap <up>       <esc>:bp<CR>
+nnoremap <down>     <esc>:bn<CR>
+nnoremap <left>     <esc>:tabp<CR>
+nnoremap <right>    <esc>:tabn<CR>
+
+cnoremap <expr> ht getcmdtype() == ':' && empty(getcmdline()) ? 'tab h '     :'ht'
+
+" fix indenting, don't move curso
+nnoremap <leader>i mzgg=G`zzz
+" ************************************************ VimBits experimental **************************
+
