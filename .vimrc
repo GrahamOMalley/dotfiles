@@ -11,11 +11,17 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/syntastic'
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
+Bundle 'guns/xterm-color-table.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'

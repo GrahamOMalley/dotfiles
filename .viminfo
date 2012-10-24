@@ -8,37 +8,75 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/gom
+~MSLe1~/=
 
 # Last Substitute Search Pattern:
-~MSle0&\<_STL\>
+~MSle0&  
 
 # Last Substitute String:
-$std
+$
 
 # Command Line History (newest to oldest):
 :q
 :wq
+:BundleList
+:qa
+:tab h gundo
+:GundoToggle
+:Bundles
+:BundleDocs
+:BundleInstall
 :w
+:'<,'>sort
+:14,23sort
+:!sudo pip install pylint/pyflakes/flake8
+:44,55!column -t
+:48,55s/  //g
+:48,55s/    /\t/g
+:s/    /\t/g
+:s/ /\t/g
+:colorscheme morhedel
+:44,55!column -t -s " "
+:XtermColorTable
+:only
+:h XtermColorTable
+:highlight
+:e ~/.vim/colors/morhedel.vim
+:echo $TERM
+:!ls
+:!g++ -std=c++0x %
+:!clang++ -std=c++0x %
+:!clang++ %
+:colorscheme stingray
+:gom
+:Git push -u origin master --force
+:Git commit -a
 :31,56sort
 :31,56!sort
 :31,56!column -t
 :31,56!column -s
 :tab h vundle
-:Bundles
-:Git push -u origin master --force
-:Git commit -a
 :map
-:BundleInstall
-:BundleList
 :2
 :%s/\<_STL\>/std/g
-:highlight
-:only
 :help highlight-groups
 :synstack
 
 # Search String History (newest to oldest):
+?/,/,/,/
+?/u.....
+?/=/+,/=/-d;q
+?/=/+,/=/-d
+?/=/+,/=/-
+?/\t
+?   
+?/ 
+?     
+?  
+?/Title
+? \V\.\%#
+? ^\s*$
+?/19ggA
 ?/gom
 ?/&tr
 ?/<+.\{-1,}+>
@@ -52,7 +90,6 @@ $std
 ? ^"
 ?/leader
 ?/myvimtips
-? \V\.\%#
 ?/tag
 ? \Vit\%#
 ? \Vfori\%#
@@ -68,34 +105,27 @@ $std
 
 # Registers:
 "0	LINE	0
-	
+	Bundle 'tpope/vim-fugitive'
 ""1	LINE	0
-	" go to home and end using capitalized directions
-	noremap H ^
-	noremap L $
 	
 "2	LINE	0
-	" list all mapped keys
-	"nnoremap <Leader>m :map<CR>
+	
 "3	LINE	0
-	
+	    std::string s;
 "4	LINE	0
-	" TODO: better tab shortcuts
-	nnoremap <F3> <ESC>:tabnext<CR>
-"5	LINE	0
 	
+"5	LINE	0
+	#include <boost/enable_shared_from_this.hpp>
 "6	LINE	0
-	"nnoremap C-up/down to flick between buffers
-	nnoremap <C-down> <ESC>:bn<CR>
-	nnoremap <C-up> <ESC>:bp<CR>
+	#include <boost/aligned_storage.hpp>
 "7	LINE	0
-	"colorscheme relaxedgreen
+	#include <boost/noncopyable.hpp>
 "8	LINE	0
-	" " My Bundles here
+	#include <boost/shared_ptr.hpp>
 "9	LINE	0
-	"
+	#include <boost/function.hpp>
 "-	CHAR	0
-	//.
+	d
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -124,237 +154,337 @@ $std
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  1  0  ~/.vimrc
-'1  228  0  ~/.vimrc
-'2  18  15  ~/.vimrc
-'3  12  0  ~/.vimrc
-'4  38  115  ~/.bash_aliases
-'5  1  164  ~/recenttor.txt
-'6  121  1  ~/.vim/snippets/cpp.snippets
-'7  195  0  ~/.vimrc
-'8  90  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-'9  70  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+'0  23  0  ~/.vimrc
+'1  20  0  ~/.vim/.myvimtips
+'2  1  6  ~/.git/COMMIT_EDITMSG
+'3  45  0  ~/.vim/.myvimtips
+'4  180  0  ~/.vimrc
+'5  27  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
+'6  1  0  ~/.vim/colors/morhedel.vim
+'7  9  1  ~/.vim/bundle/clang_complete/examples/boost.cpp
+'8  1  0  ~/.vim/bundle/clang_complete/clang_complete.vmb
+'9  1  0  ~/.vimrc
 
 # Jumplist (newest first):
+-'  23  0  ~/.vimrc
+-'  617  0  ~/[Vundle] search
+-'  24  0  ~/.vimrc
+-'  176  0  ~/.vim/bundle/gundo.vim/doc/gundo.txt
+-'  16  0  ~/[Vundle] list
+-'  1  0  ~/__Gundo_Preview__
+-'  26  0  ~/.vimrc
+-'  13  0  ~/.vimrc
+-'  15  24  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  53  71  ~/.vimrc
--'  115  0  ~/.vimrc
--'  57  49  ~/.vimrc
--'  228  0  ~/.vimrc
--'  18  15  ~/.vimrc
+-'  20  0  ~/.vim/.myvimtips
+-'  18  0  ~/.vim/.myvimtips
+-'  1  0  ~/.vim/.myvimtips
+-'  1  6  ~/.git/COMMIT_EDITMSG
+-'  45  0  ~/.vim/.myvimtips
+-'  46  0  ~/.vim/.myvimtips
+-'  47  0  ~/.vim/.myvimtips
+-'  48  0  ~/.vim/.myvimtips
+-'  44  9  ~/.vim/.myvimtips
+-'  56  0  ~/.vim/.myvimtips
+-'  57  37  ~/.vim/.myvimtips
+-'  180  0  ~/.vimrc
+-'  18  4  ~/.vim/bundle/clang_complete/examples/__Tag_List__
+-'  3  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
+-'  2  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
+-'  1  0  ~/.vim/colors/morhedel.vim
+-'  27  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
+-'  31  4  ~/.vim/bundle/clang_complete/examples/__Tag_List__
+-'  26  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
+-'  1  0  ~/.vim/bundle/clang_complete/examples/boost.cpp
+-'  3  0  ~/.vim/colors/__Tag_List__
+-'  2  0  ~/.vim/colors/__Tag_List__
+-'  9  1  ~/.vim/bundle/clang_complete/examples/boost.cpp
+-'  1  0  ~/.vim/bundle/clang_complete/clang_complete.vmb
+-'  20  30  ~/.vimrc
+-'  224  0  ~/.vimrc
+-'  160  0  ~/.vimrc
+-'  159  0  ~/.vimrc
+-'  154  0  ~/.vimrc
+-'  151  0  ~/.vimrc
+-'  148  0  ~/.vimrc
+-'  142  0  ~/.vimrc
+-'  161  0  ~/.vimrc
+-'  164  0  ~/.vimrc
+-'  139  0  ~/.vimrc
+-'  135  0  ~/.vimrc
+-'  131  0  ~/.vimrc
+-'  128  0  ~/.vimrc
+-'  123  0  ~/.vimrc
+-'  119  0  ~/.vimrc
+-'  113  0  ~/.vimrc
+-'  110  0  ~/.vimrc
+-'  107  0  ~/.vimrc
+-'  104  0  ~/.vimrc
+-'  98  0  ~/.vimrc
+-'  92  0  ~/.vimrc
+-'  90  0  ~/.vimrc
+-'  87  0  ~/.vimrc
+-'  80  0  ~/.vimrc
+-'  77  0  ~/.vimrc
+-'  75  0  ~/.vimrc
+-'  70  0  ~/.vimrc
+-'  66  0  ~/.vimrc
+-'  62  0  ~/.vimrc
+-'  35  0  ~/.vimrc
+-'  33  0  ~/.vimrc
+-'  31  0  ~/.vimrc
+-'  28  0  ~/.vimrc
+-'  21  0  ~/.vimrc
 -'  12  0  ~/.vimrc
+-'  9  0  ~/.vimrc
+-'  6  0  ~/.vimrc
+-'  58  71  ~/.vimrc
+-'  120  0  ~/.vimrc
+-'  19  15  ~/.vimrc
 -'  38  115  ~/.bash_aliases
 -'  1  0  ~/.bash_aliases
 -'  1  164  ~/recenttor.txt
 -'  121  1  ~/.vim/snippets/cpp.snippets
 -'  3  3  ~/.vim/snippets/cpp.snippets
 -'  1  0  ~/.vim/snippets/cpp.snippets
--'  195  0  ~/.vimrc
 -'  90  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
 -'  5  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
 -'  3  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  2  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  70  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  10  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  8  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  7  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  90  9  ~/code/python/spider_bro/sb_utils.py
--'  1  0  ~/code/python/spider_bro/sb_utils.py
--'  98  8  ~/code/python/spider_bro/spiderBro.py
--'  1  0  ~/code/python/spider_bro/spiderBro.py
--'  4  60  ~/.welcome_message
--'  1  15  ~/.welcome_message
--'  45  43  ~/.pulse/default.pa
--'  1  0  ~/.pulse/default.pa
--'  6  23  /etc/asound.conf
--'  1  0  /etc/asound.conf
--'  8  46  /etc/asound.conf
--'  44  0  /etc/modprobe.d/alsa-base.conf
--'  1  0  /etc/modprobe.d/alsa-base.conf
--'  45  0  /etc/pulse/default.pa
--'  1  0  /etc/pulse/default.pa
--'  26  6  ~/bin/create_asound.sh
--'  1  0  ~/bin/create_asound.sh
--'  1  0  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  67  8  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  166  0  ~/code/c++/gdb_test/main.cc
--'  24  4  ~/code/c++/gdb_test/__Tag_List__
--'  3  0  ~/code/c++/gdb_test/__Tag_List__
--'  2  0  ~/code/c++/gdb_test/__Tag_List__
--'  1  0  ~/code/c++/gdb_test/main.cc
--'  1  0  ~/.vim/colors/relaxedgreen.vim
--'  25  10  ~/.bashrc
--'  1  0  ~/.bashrc
--'  2  1  ~/.bashrc
--'  48  0  ~/.vim/colors/relaxedgreen.vim
--'  67  0  ~/.vim/colors/relaxedgreen.vim
--'  21  0  ~/.vim/colors/__Tag_List__
--'  20  0  ~/.vim/colors/__Tag_List__
--'  36  0  ~/code/c++/gdb_test/main.cc
--'  39  4  ~/code/c++/gdb_test/__Tag_List__
--'  27  0  ~/code/c++/gdb_test/__Tag_List__
--'  26  0  ~/code/c++/gdb_test/__Tag_List__
--'  51  0  ~/code/c++/gdb_test/__Tag_List__
--'  50  0  ~/code/c++/gdb_test/__Tag_List__
--'  62  0  ~/.bashrc
--'  75  0  ~/code/c++/gdb_test/__Tag_List__
--'  74  0  ~/code/c++/gdb_test/__Tag_List__
--'  56  0  ~/code/c++/terraria_world_reader/worldData.cpp
--'  1  0  ~/code/c++/terraria_world_reader/terraria_worldreader.cpp
--'  1  0  ~/code/c++/boost_chat/boost_test.cpp
--'  143  0  ~/.vim/bundle/csApprox/doc/CSApprox.txt
--'  1  0  ~/.vim/bundle/csApprox/doc/CSApprox.txt
--'  68  12  ~/.vimrc
--'  172  0  ~/.vim/bundle/csApprox/doc/CSApprox.txt
--'  1  0  ~/.vim/bundle/csApprox/doc/CSApprox.txt
--'  183  0  ~/.vim/bundle/csApprox/doc/CSApprox.txt
--'  1  0  ~/.vim/bundle/csApprox/doc/CSApprox.txt
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  23  73  ~/.vim/plugin/scriptnames.vim
--'  1  0  ~/.vim/plugin/scriptnames.vim
--'  19  0  ~/.vim/plugin/scriptnames.vim
--'  87  0  ~/.vimrc
--'  3  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  72  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  73  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  12  16  ~/code/c++/boost_chat/boost_test.cpp
--'  11  16  ~/code/c++/boost_chat/boost_test.cpp
--'  170  0  ~/code/c++/gdb_test/main.cc
--'  167  7  ~/code/c++/gdb_test/main.cc
--'  41  0  ~/code/c++/gdb_test/main.cc
--'  87  0  ~/.vim/colors/wombat256mod.vim
--'  26  0  ~/.vim/colors/__Tag_List__
--'  25  0  ~/.vim/colors/__Tag_List__
--'  1  0  ~/.vim/colors/wombat256mod.vim
--'  1  0  ~/code/c++/pthreads_code/par_stack.cpp
--'  3  0  ~/code/c++/pthreads_code/__Tag_List__
--'  2  0  ~/code/c++/pthreads_code/__Tag_List__
--'  78  0  ~/code/python/spider_bro/__Tag_List__
--'  77  0  ~/code/python/spider_bro/__Tag_List__
--'  111  16  ~/code/python/spider_bro/sb_utils.py
 
 # History of marks within files (newest to oldest):
 
 > ~/.vimrc
-	"	1	0
-	^	129	1
-	.	129	0
-	+	74	117
-	+	107	0
-	+	79	0
-	+	71	0
-	+	73	20
-	+	74	33
-	+	73	0
-	+	76	28
-	+	72	0
-	+	74	34
-	+	120	17
-	+	122	0
-	+	121	0
-	+	122	0
-	+	71	54
-	+	27	24
-	+	67	43
-	+	69	0
-	+	66	31
-	+	57	0
-	+	71	58
-	+	113	0
-	+	82	0
-	+	81	29
-	+	82	0
-	+	77	0
-	+	114	0
-	+	114	0
-	+	118	11
-	+	119	0
-	+	156	21
-	+	164	9
-	+	173	0
-	+	170	0
-	+	84	0
-	+	82	43
-	+	179	50
-	+	106	0
-	+	124	0
-	+	57	16
-	+	193	84
-	+	186	0
-	+	182	114
-	+	183	0
-	+	184	54
-	+	194	0
-	+	26	76
-	+	26	76
-	+	26	2
-	+	26	0
-	+	26	0
+	"	23	0
+	.	24	0
+	+	88	0
+	+	83	0
+	+	120	0
+	+	120	0
+	+	124	11
+	+	125	0
+	+	186	21
+	+	194	9
+	+	203	0
+	+	200	0
+	+	90	0
+	+	88	43
+	+	209	50
+	+	112	0
+	+	130	0
+	+	63	16
+	+	223	84
+	+	216	0
+	+	212	114
+	+	213	0
+	+	214	54
+	+	224	0
+	+	32	76
+	+	32	76
+	+	32	2
+	+	32	0
+	+	32	0
 	+	4	48
 	+	4	48
 	+	4	91
 	+	4	92
 	+	4	0
 	+	1	0
-	+	29	0
+	+	35	0
 	+	2	59
+	+	33	0
+	+	31	0
+	+	29	0
+	+	28	0
 	+	27	0
-	+	25	0
-	+	23	0
-	+	22	0
-	+	21	0
 	+	16	0
 	+	15	0
-	+	14	0
+	+	13	0
 	+	11	0
+	+	29	0
+	+	30	0
 	+	23	0
-	+	24	0
-	+	19	0
 	+	13	0
 	+	13	0
 	+	12	0
-	+	17	18
-	+	18	15
-	+	60	0
-	+	57	0
-	+	57	0
-	+	31	0
-	+	31	0
-	+	33	60
-	+	34	80
-	+	43	57
-	+	47	78
-	+	47	78
-	+	47	57
-	+	48	78
-	+	49	64
-	+	53	72
-	+	77	10
-	+	84	47
-	+	119	0
-	+	124	0
-	+	217	33
-	+	214	26
-	+	208	0
-	+	127	0
-	+	128	0
-	+	129	0
-	m	166	0
+	+	18	18
+	+	19	15
+	+	66	0
+	+	63	0
+	+	63	0
+	+	37	0
+	+	37	0
+	+	39	60
+	+	40	80
+	+	49	57
+	+	53	78
+	+	53	78
+	+	53	57
+	+	54	78
+	+	55	64
+	+	59	72
+	+	83	10
+	+	90	47
+	+	125	0
+	+	130	0
+	+	225	33
+	+	225	26
+	+	225	0
+	+	133	0
+	+	134	0
+	+	135	0
+	+	225	0
+	+	225	71
+	+	225	71
+	+	225	71
+	+	225	71
+	+	225	0
+	+	225	0
+	+	137	0
+	+	142	36
+	+	225	0
+	+	225	0
+	+	143	0
+	+	161	0
+	+	225	0
+	+	20	29
+	+	21	33
+	+	23	20
+	+	18	31
+	+	15	0
+	+	13	0
+	+	13	0
+	+	26	0
+	+	26	0
+	+	24	0
+	m	196	0
+
+> ~/[Vundle] Installer
+	"	17	0
+	.	1	0
+	+	30	0
+	+	17	0
+	+	1	0
 
 > ~/[Vundle] search
-	"	2729	0
+	"	617	0
+	.	1	0
+	+	4002	0
+	+	1	0
+
+> ~/.vim/bundle/gundo.vim/doc/gundo.txt
+	"	176	0
+
+> ~/__Gundo_Preview__
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/__Gundo__
+	"	6	1
+	.	1	0
+	+	1	0
+
+> ~/[Vundle] list
+	"	2	0
+	.	1	0
+	+	16	0
+	+	1	0
+
+> ~/.vim/.myvimtips
+	"	20	0
+	.	45	0
+	+	80	37
+	+	56	0
+	+	56	0
+	+	56	63
+	+	56	63
+	+	56	64
+	+	56	63
+	+	56	63
+	+	56	63
+	+	56	63
+	+	56	63
+	+	56	0
+	+	56	0
+	+	56	0
+	+	56	0
+	+	56	0
+	+	56	0
+	+	56	0
+	+	56	6
+	+	56	5
+	+	56	4
+	+	56	4
+	+	56	23
+	+	56	20
+	+	45	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/.vim/colors/morhedel.vim
+	"	55	5
+
+> ~/.vim/bundle/clang_complete/examples/__Tag_List__
+	"	18	4
+	.	25	0
+	+	31	0
+	+	31	0
+	+	30	0
+	+	20	0
+	+	25	0
+
+> ~/.vim/bundle/clang_complete/examples/__XtermColorTable__
+	"	38	0
+	.	46	0
+	+	93	0
+	+	46	0
+
+> ~/.vim/bundle/xterm-color-table.vim/doc/xterm-color-table.txt
+	"	1	49
+
+> ~/.vim/bundle/clang_complete/examples/[Vundle] Installer
+	"	14	0
+	.	1	0
+	+	1	0
+
+> ~/.vim/bundle/clang_complete/examples/boost.cpp
+	"	7	4
+	^	7	22
+	.	7	21
+	+	9	0
+	+	8	4
+	+	2	16
+	+	7	58
+	+	7	0
+	+	5	0
+	+	7	21
+	z	7	7
+
+> ~/.vim/colors/__Tag_List__
+	"	3	0
+	.	7	0
+	+	40	0
+	+	35	0
+	+	30	0
+	+	24	0
+	+	18	0
+	+	12	0
+	+	7	0
+
+> ~/.vim/bundle/clang_complete/clang_complete.vmb
+	"	1	0
+
+> ~/.vim/bundle/vundle/.VimballRecord
+	"	1	0
 	.	1	0
 	+	1	0
 
 > ~/.vim/bundle/vundle/doc/vundle.txt
 	"	1	53
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	39
-	^	1	40
-	.	1	39
-	+	1	39
 
 > ~/.vim/[Vundle] list
 	"	2	0
@@ -449,9 +579,6 @@ $std
 	"	1	0
 
 > fugitive:///home/gom/.git//19342475c98ab0fd3b320302979c2b469c1ee4af/.bash_aliases
-	"	1	0
-
-> ~/.vim/.myvimtips
 	"	1	0
 
 > /usr/share/vim/vim73/doc/tabpage.txt
@@ -950,16 +1077,6 @@ $std
 > ~/.vim/colors/zenburn.vim
 	"	90	0
 
-> ~/.vim/colors/__Tag_List__
-	"	3	0
-	.	6	0
-	+	34	0
-	+	29	0
-	+	24	0
-	+	18	0
-	+	12	0
-	+	6	0
-
 > /usr/share/vim/vim73/doc/options.txt
 	"	1302	6
 
@@ -988,74 +1105,4 @@ $std
 	"	1	0
 
 > ~/bin/fixtilda.sh
-	"	1	0
-
-> ~/bin/fix_update_manager.sh
-	"	1	0
-
-> ~/gomtutor.txt
-	"	804	7
-	^	883	17
-	.	804	0
-	+	675	0
-	+	675	0
-	+	729	0
-	+	729	0
-	+	729	0
-	+	728	0
-	+	755	50
-	+	778	35
-	+	804	8
-	+	883	0
-	+	804	0
-
-> ~/__Tag_List__
-	"	1	0
-	.	1	0
-	+	4	0
-	+	3	0
-	+	2	0
-	+	1	0
-
-> /usr/share/vim/vim73/doc/help.txt
-	"	1	0
-
-> ~/code/c++/gdb_test/GoToFile
-	"	1	0
-	.	14	0
-	+	40	0
-	+	27	0
-	+	14	0
-
-> ~/.vim/bundle/GoToFile
-	"	1	0
-	.	84	0
-	+	1	0
-	+	1	0
-	+	84	0
-
-> ~/.vim/plugin/scriptnames.vim
-	"	1	0
-	^	23	74
-	.	23	73
-	+	23	105
-	+	1	0
-	+	23	73
-
-> ~/.vim/colors/relaxedgreen.vim
-	"	1	0
-
-> ~/code/c++/terraria_world_reader/binUtils.h
-	"	1	0
-
-> ~/code/c++/terraria_world_reader/chest.h
-	"	1	0
-
-> ~/code/c++/terraria_world_reader/tile.h
-	"	1	0
-
-> ~/code/c++/terraria_world_reader/worldData.h
-	"	1	0
-
-> ~/code/c++/terraria_world_reader/binUtils.cpp
 	"	1	0
