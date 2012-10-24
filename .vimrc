@@ -57,6 +57,7 @@ set tags=tags;/
 let Tlist_WinWidth = 50
 let Tlist_Inc_Winwidth = 300
 let Tlist_Exit_OnlyWindow = 1 
+
 " Supertab should try to use User completion
 let g:SuperTabDefaultCompletionType = "context"
 "*************************************************** GLOBAL KEYMAPS *********************************************
@@ -201,6 +202,11 @@ cnoremap <expr> ht getcmdtype() == ':' && empty(getcmdline()) ? 'tab h '     :'h
 " fix indenting, don't move curso
 nnoremap <leader>i mzgg=G`zzz
 
-autocmd FileType gitcommit DiffGitCached | wincmd p
+" git commit messages have spellcheck and start in insert mode
+
+" fuGitive keymaps
+nnoremap <leader>g <esc>:Git 
+nnoremap <leader>gc <esc>:Git commit -a
+
 " ************************************************ VimBits experimental **************************
 
