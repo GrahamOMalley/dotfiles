@@ -28,36 +28,35 @@ filetype plugin indent on
 
 "*************************************************** Generic Settings ***************************************************
 
-set ai
-set expandtab
-set hidden                  " do not unload buffers
-set history=5000         " remember more commands and search history
-set hlsearch
-set ignorecase
-set incsearch
-set linebreak
-set nobackup
-set nofoldenable 
-set noswapfile
-set number
-set popt+=syntax:y          " Syntax when printing
-set shiftwidth=4
-set shortmess=a
-set shortmess=atI
-set showcmd                 " Show us the command we're typing
-set showfulltag             " Show full tags when doing search completion
-set showmatch               " Highlight matching parens
-set smartcase
-set softtabstop=4
-set tabstop=4
-set undolevels=5000      " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
-set wildmenu
-set wildmode=list:longest
+set  ai
+set  expandtab
+set  hidden                                "  do not unload buffers
+set  history=5000                          "  remember more commands and search history
+set  hlsearch
+set  ignorecase
+set  incsearch
+set  linebreak
+set  nobackup
+set  nofoldenable
+set  noswapfile
+set  number
+set  popt+=syntax:y                        "  Syntax when printing
+set  shiftwidth=4
+set  shortmess=a
+set  shortmess=atI
+set  showcmd                               "  Show us the command we're typing in bottom right of screen
+set  showfulltag                           "  Show full tags when doing search completion
+set  showmatch                             "  Highlight matching parens
+set  smartcase
+set  softtabstop=4
+set  tabstop=4
+set  undolevels=5000                       "  use many muchos levels of undo
+set  wildignore=*.swp,*.bak,*.pyc,*.class
+set  wildmenu
+set  wildmode=list:longest
 
 "syntax highlighting and colourscheme
 syntax on
-"colorscheme relaxedgreen
 colorscheme stingray
 
 " STATUS LINE
@@ -75,7 +74,7 @@ endif
 let g:jedi#auto_initialization = 0
 
 " set some TagList properties
-set tags+=/home/gom/.vim/tags/cpp.ctags
+set tags+=~/.vim/tags/cpp.ctags
 set tags=tags;/
 let Tlist_WinWidth = 50
 let Tlist_Inc_Winwidth = 300
@@ -83,6 +82,7 @@ let Tlist_Exit_OnlyWindow = 1
 
 " Supertab should try to use User completion
 let g:SuperTabDefaultCompletionType = "context"
+
 "*************************************************** GLOBAL KEYMAPS *********************************************
 
 " set difficulty level: Hardcore ;)
@@ -116,22 +116,41 @@ nnoremap <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <c-j> /<+.\{-1,}+><cr>c/+>/e<cr>
 inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
 
-"nnoremap C-up/down to flick between buffers
-nnoremap <C-down> <ESC>:bn<CR>
-nnoremap <C-up> <ESC>:bp<CR>
-
-" TODO: better tab shortcuts
-nnoremap <F3> <ESC>:tabnext<CR>
-
 " FREQUENTLY EDITED FILES
 nnoremap <Leader>v :tabnew ~/.vimrc<CR>
 nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
 nnoremap <Leader>vs :source ~/.vimrc<CR>
 
-" list all mapped keys
-"nnoremap <Leader>m :map<CR>
 " toggle wrap
 nnoremap <leader>w :set wrap!<CR>
+
+" go to home and end using capitalized directions
+nnoremap H ^
+nnoremap L $
+
+"improve up/down movement on wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+"clear search highlight
+noremap <silent><Leader>/ :nohls<CR>
+
+" make arrow keys useful again
+nnoremap <up>       <esc>:bp<CR>
+nnoremap <down>     <esc>:bn<CR>
+nnoremap <left>     <esc>:tabp<CR>
+nnoremap <right>    <esc>:tabn<CR>
+
+" :ht opens help in new tab
+cnoremap <expr> ht getcmdtype() == ':' && empty(getcmdline()) ? 'tab h '     :'ht'
+
+" fix indenting, don't move cursor
+nnoremap <leader>i mzgg=G`zzz
+
+" fuGitive keymaps
+nnoremap <leader>g <esc>:Git 
+nnoremap <leader>gc <esc>:Git commit -a
+nnoremap <leader>gp <esc>:Git push -u origin master --force
 
 "*************************************************** AUTOCMDS ***************************************************
 
@@ -197,40 +216,4 @@ function! TabMessage(cmd)
     set nomodified
 endfunction
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
-
-" ************************************************ VimBits experimental **************************
-
-"improve up/down movement on wrapped lines
-nnoremap j gj
-nnoremap k gk
-
-"clear search highlight
-noremap <silent><Leader>/ :nohls<CR>
-
-" automatically reload vimrc when it's saved
-au BufWritePost .vimrc so ~/.vimrc
-
-" go to home and end using capitalized directions
-noremap H ^
-noremap L $
-
-" make arrow keys useful again
-nnoremap <up>       <esc>:bp<CR>
-nnoremap <down>     <esc>:bn<CR>
-nnoremap <left>     <esc>:tabp<CR>
-nnoremap <right>    <esc>:tabn<CR>
-
-cnoremap <expr> ht getcmdtype() == ':' && empty(getcmdline()) ? 'tab h '     :'ht'
-
-" fix indenting, don't move curso
-nnoremap <leader>i mzgg=G`zzz
-
-" git commit messages have spellcheck and start in insert mode
-
-" fuGitive keymaps
-nnoremap <leader>g <esc>:Git 
-nnoremap <leader>gc <esc>:Git commit -a
-nnoremap <leader>gp <esc>:Git push -u origin master --force
-
-" ************************************************ VimBits experimental **************************
 
