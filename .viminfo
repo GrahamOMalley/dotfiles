@@ -8,26 +8,64 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSLe1~/=
+~MSle0/green
 
 # Last Substitute Search Pattern:
-~MSle0&  
+~MSle0~&\<green\>
 
 # Last Substitute String:
-$
+$cyan
 
 # Command Line History (newest to oldest):
 :q
-:wq
-:BundleList
-:qa
-:tab h gundo
-:GundoToggle
-:Bundles
-:BundleDocs
 :BundleInstall
+:!git update-server-info
 :w
 :'<,'>sort
+:wq
+:%s/\<green\>/cyan/g
+:qa!
+:Cfile ../../bin/Linux/00.GOMtest1
+:qa
+:Ckill
+:Cbt
+:wqa
+:echo g:clang_user_options
+:let g:clang_user_options
+:map
+:tabnew .clang_complete
+:%s/ /\r/g
+:%s/\<I\>/\r/g
+:only
+:h clang_complete
+:tab h clang_complete
+:q!
+:tabnew
+:Git 
+:tabnew /home/gom/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
+:tabnew 
+:colorscheme morhedel
+:tabnew .vim/colors/morhedel.vim
+:highlight
+:colorscheme relaxedgreen
+:diff
+:diffget
+:diffthis
+:call <SNR>50_GundoClose()
+:GundoShow
+:GundoToggle
+:Gundo
+:14,74!column -t
+:j
+:'<,'>s/^/hi /g
+:%s/\<xxx\>//g
+:w!
+:tabnew code/c++/util/castCharToLong.cpp
+:tab h jedi
+:BundleList
+:tab h gundo
+:Bundles
+:BundleDocs
 :14,23sort
 :!sudo pip install pylint/pyflakes/flake8
 :44,55!column -t
@@ -35,12 +73,9 @@ $
 :48,55s/    /\t/g
 :s/    /\t/g
 :s/ /\t/g
-:colorscheme morhedel
 :44,55!column -t -s " "
 :XtermColorTable
-:only
 :h XtermColorTable
-:highlight
 :e ~/.vim/colors/morhedel.vim
 :echo $TERM
 :!ls
@@ -56,13 +91,35 @@ $
 :31,56!column -t
 :31,56!column -s
 :tab h vundle
-:map
 :2
 :%s/\<_STL\>/std/g
 :help highlight-groups
 :synstack
 
 # Search String History (newest to oldest):
+? \<green\>
+?/green
+?/term
+?/clang
+?/std
+?  
+? \<I\>
+?/\.clang
+?/.clang
+?/Super
+?/superTab
+?/.
+?/let
+?/quickfix
+?/F12
+?/tileFits
+?/getNeigh
+? \Vlist\%#
+? ^
+? \<xxx\>
+? \V\.\%#
+?/noc
+?/color
 ?/,/,/,/
 ?/u.....
 ?/=/+,/=/-d;q
@@ -72,9 +129,7 @@ $
 ?   
 ?/ 
 ?     
-?  
 ?/Title
-? \V\.\%#
 ? ^\s*$
 ?/19ggA
 ?/gom
@@ -105,27 +160,30 @@ $
 
 # Registers:
 "0	LINE	0
-	Bundle 'tpope/vim-fugitive'
+	    "jedi autocomplete
 ""1	LINE	0
 	
 "2	LINE	0
 	
 "3	LINE	0
-	    std::string s;
+	endfunction
 "4	LINE	0
 	
+	function! gomFunc(blah)
+	kk
+	    redir => message
 "5	LINE	0
-	#include <boost/enable_shared_from_this.hpp>
+	    list->remov
 "6	LINE	0
-	#include <boost/aligned_storage.hpp>
+	    
 "7	LINE	0
-	#include <boost/noncopyable.hpp>
+	    std::
 "8	LINE	0
-	#include <boost/shared_ptr.hpp>
+	             */
 "9	LINE	0
-	#include <boost/function.hpp>
+	            /*
 "-	CHAR	0
-	d
+	T
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -154,130 +212,123 @@ $
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  23  0  ~/.vimrc
-'1  20  0  ~/.vim/.myvimtips
-'2  1  6  ~/.git/COMMIT_EDITMSG
-'3  45  0  ~/.vim/.myvimtips
-'4  180  0  ~/.vimrc
-'5  27  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
-'6  1  0  ~/.vim/colors/morhedel.vim
-'7  9  1  ~/.vim/bundle/clang_complete/examples/boost.cpp
-'8  1  0  ~/.vim/bundle/clang_complete/clang_complete.vmb
-'9  1  0  ~/.vimrc
+'0  14  0  ~/.vimrc
+'1  51  0  ~/.tmux.conf
+'2  229  0  ~/.vimrc
+'3  39  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+'4  137  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+'5  164  0  ~/code/c++/gdb_test/main.cc
+'6  1  0  ~/code/c++/stl_stuff/count_if.cpp
+'7  1  0  ~/code/c++/c++11/async_example.cpp
+'8  14  8  ~/code/c++/c++11/async_example.cpp
+'9  94  12  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
 
 # Jumplist (newest first):
--'  23  0  ~/.vimrc
--'  617  0  ~/[Vundle] search
--'  24  0  ~/.vimrc
--'  176  0  ~/.vim/bundle/gundo.vim/doc/gundo.txt
--'  16  0  ~/[Vundle] list
--'  1  0  ~/__Gundo_Preview__
--'  26  0  ~/.vimrc
--'  13  0  ~/.vimrc
--'  15  24  ~/.vimrc
+-'  14  0  ~/.vimrc
+-'  13  358  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  20  0  ~/.vim/.myvimtips
--'  18  0  ~/.vim/.myvimtips
--'  1  0  ~/.vim/.myvimtips
--'  1  6  ~/.git/COMMIT_EDITMSG
--'  45  0  ~/.vim/.myvimtips
--'  46  0  ~/.vim/.myvimtips
--'  47  0  ~/.vim/.myvimtips
--'  48  0  ~/.vim/.myvimtips
--'  44  9  ~/.vim/.myvimtips
--'  56  0  ~/.vim/.myvimtips
--'  57  37  ~/.vim/.myvimtips
--'  180  0  ~/.vimrc
--'  18  4  ~/.vim/bundle/clang_complete/examples/__Tag_List__
--'  3  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
--'  2  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
--'  1  0  ~/.vim/colors/morhedel.vim
--'  27  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
--'  31  4  ~/.vim/bundle/clang_complete/examples/__Tag_List__
--'  26  0  ~/.vim/bundle/clang_complete/examples/__Tag_List__
--'  1  0  ~/.vim/bundle/clang_complete/examples/boost.cpp
--'  3  0  ~/.vim/colors/__Tag_List__
--'  2  0  ~/.vim/colors/__Tag_List__
--'  9  1  ~/.vim/bundle/clang_complete/examples/boost.cpp
--'  1  0  ~/.vim/bundle/clang_complete/clang_complete.vmb
--'  20  30  ~/.vimrc
--'  224  0  ~/.vimrc
--'  160  0  ~/.vimrc
--'  159  0  ~/.vimrc
--'  154  0  ~/.vimrc
--'  151  0  ~/.vimrc
--'  148  0  ~/.vimrc
--'  142  0  ~/.vimrc
--'  161  0  ~/.vimrc
--'  164  0  ~/.vimrc
--'  139  0  ~/.vimrc
--'  135  0  ~/.vimrc
--'  131  0  ~/.vimrc
--'  128  0  ~/.vimrc
--'  123  0  ~/.vimrc
--'  119  0  ~/.vimrc
--'  113  0  ~/.vimrc
--'  110  0  ~/.vimrc
--'  107  0  ~/.vimrc
--'  104  0  ~/.vimrc
--'  98  0  ~/.vimrc
--'  92  0  ~/.vimrc
+-'  51  0  ~/.tmux.conf
+-'  49  22  ~/.tmux.conf
+-'  1  0  ~/.tmux.conf
+-'  229  0  ~/.vimrc
 -'  90  0  ~/.vimrc
--'  87  0  ~/.vimrc
--'  80  0  ~/.vimrc
--'  77  0  ~/.vimrc
--'  75  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  66  0  ~/.vimrc
--'  62  0  ~/.vimrc
--'  35  0  ~/.vimrc
--'  33  0  ~/.vimrc
--'  31  0  ~/.vimrc
--'  28  0  ~/.vimrc
--'  21  0  ~/.vimrc
+-'  45  93  ~/.vimrc
+-'  39  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  5  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  3  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  2  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  2  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  137  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  21  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  164  0  ~/code/c++/gdb_test/main.cc
+-'  1  0  ~/code/c++/gdb_test/main.cc
+-'  1  0  ~/code/c++/stl_stuff/count_if.cpp
+-'  1  0  ~/code/c++/c++11/async_example.cpp
+-'  14  8  ~/code/c++/c++11/async_example.cpp
+-'  15  1  ~/code/c++/c++11/async_example.cpp
+-'  94  12  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  64  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  63  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  62  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  61  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  60  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  59  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  58  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  57  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  56  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  55  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  54  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  53  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  52  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  51  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  50  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  49  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  48  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  47  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  46  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  45  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  8  16  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  3  11  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  7  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/.clang_complete
+-'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/.clang_complete
+-'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
+-'  48  24  ~/.vim/bundle/vundle/doc/clang_complete.txt
+-'  9  16  ~/.vim/bundle/vundle/doc/clang_complete.txt
+-'  7  31  ~/.vim/bundle/vundle/doc/clang_complete.txt
+-'  1  0  ~/.vim/bundle/vundle/doc/clang_complete.txt
+-'  113  0  ~/.vim/snippets/c.snippets
+-'  89  0  ~/.vim/snippets/c.snippets
+-'  1  0  ~/.vim/snippets/c.snippets
+-'  66  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
+-'  1  0  ~/.vim/bundle/clang_complete/bin/cc_args.py
+-'  87  0  ~/.vim/bundle/clang_complete/bin/cc_args.py
+-'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.h
+-'  93  29  ~/.vimrc
+-'  81  0  ~/.vimrc
+-'  80  38  ~/.vimrc
+-'  64  0  ~/.vimrc
+-'  36  0  ~/.vimrc
+-'  34  0  ~/.vimrc
+-'  32  0  ~/.vimrc
+-'  29  0  ~/.vimrc
 -'  12  0  ~/.vimrc
 -'  9  0  ~/.vimrc
 -'  6  0  ~/.vimrc
--'  58  71  ~/.vimrc
--'  120  0  ~/.vimrc
--'  19  15  ~/.vimrc
--'  38  115  ~/.bash_aliases
--'  1  0  ~/.bash_aliases
--'  1  164  ~/recenttor.txt
--'  121  1  ~/.vim/snippets/cpp.snippets
--'  3  3  ~/.vim/snippets/cpp.snippets
--'  1  0  ~/.vim/snippets/cpp.snippets
--'  90  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  5  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  3  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  94  20  ~/.vim/bundle/vundle/doc/clang_complete.txt
+-'  1  0  ~/.vim/bundle/vundle/doc/clang_complete.txt
+-'  227  8  ~/.vim/bundle/vundle/doc/clang_complete.txt
+-'  68  0  ~/.vimrc
+-'  72  0  ~/.vimrc
+-'  77  0  ~/.vimrc
+-'  79  0  ~/.vimrc
+-'  82  0  ~/.vimrc
+-'  89  0  ~/.vimrc
+-'  92  0  ~/.vimrc
+-'  95  0  ~/.vimrc
+-'  101  0  ~/.vimrc
+-'  107  0  ~/.vimrc
+-'  110  0  ~/.vimrc
+-'  113  0  ~/.vimrc
+-'  116  0  ~/.vimrc
+-'  122  0  ~/.vimrc
+-'  126  0  ~/.vimrc
+-'  131  0  ~/.vimrc
+-'  134  0  ~/.vimrc
+-'  138  0  ~/.vimrc
+-'  94  12  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  64  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
 
 # History of marks within files (newest to oldest):
 
 > ~/.vimrc
-	"	23	0
-	.	24	0
-	+	88	0
-	+	83	0
-	+	120	0
-	+	120	0
-	+	124	11
-	+	125	0
-	+	186	21
-	+	194	9
-	+	203	0
-	+	200	0
-	+	90	0
-	+	88	43
-	+	209	50
-	+	112	0
-	+	130	0
-	+	63	16
-	+	223	84
-	+	216	0
-	+	212	114
-	+	213	0
-	+	214	54
-	+	224	0
+	"	14	0
+	.	14	0
+	+	217	114
+	+	218	0
+	+	219	54
+	+	229	0
 	+	32	76
 	+	32	76
 	+	32	2
@@ -296,83 +347,397 @@ $
 	+	29	0
 	+	28	0
 	+	27	0
-	+	16	0
-	+	15	0
+	+	13	89
+	+	13	59
 	+	13	0
 	+	11	0
 	+	29	0
 	+	30	0
-	+	23	0
+	+	13	298
 	+	13	0
 	+	13	0
 	+	12	0
-	+	18	18
-	+	19	15
-	+	66	0
-	+	63	0
-	+	63	0
+	+	13	170
+	+	13	198
+	+	68	0
+	+	65	0
+	+	65	0
 	+	37	0
 	+	37	0
-	+	39	60
-	+	40	80
-	+	49	57
-	+	53	78
-	+	53	78
-	+	53	57
-	+	54	78
-	+	55	64
-	+	59	72
-	+	83	10
-	+	90	47
-	+	125	0
-	+	130	0
-	+	225	33
-	+	225	26
-	+	225	0
-	+	133	0
-	+	134	0
+	+	40	60
+	+	41	80
+	+	50	57
+	+	55	78
+	+	55	78
+	+	55	57
+	+	56	78
+	+	57	64
+	+	61	72
+	+	85	10
+	+	92	47
+	+	129	0
 	+	135	0
-	+	225	0
-	+	225	71
-	+	225	71
-	+	225	71
-	+	225	71
-	+	225	0
-	+	225	0
-	+	137	0
-	+	142	36
-	+	225	0
-	+	225	0
-	+	143	0
-	+	161	0
-	+	225	0
-	+	20	29
-	+	21	33
-	+	23	20
-	+	18	31
-	+	15	0
+	+	230	33
+	+	230	26
+	+	230	0
+	+	138	0
+	+	139	0
+	+	140	0
+	+	230	0
+	+	230	71
+	+	230	71
+	+	230	71
+	+	230	71
+	+	230	0
+	+	230	0
+	+	142	0
+	+	147	36
+	+	230	0
+	+	230	0
+	+	148	0
+	+	166	0
+	+	230	0
+	+	13	246
+	+	13	280
+	+	13	318
+	+	13	183
+	+	13	59
 	+	13	0
 	+	13	0
 	+	26	0
 	+	26	0
-	+	24	0
-	m	196	0
+	+	13	359
+	+	38	4
+	+	68	19
+	+	95	29
+	+	94	37
+	+	96	0
+	+	51	71
+	+	133	18
+	+	13	326
+	+	45	94
+	+	45	1
+	+	230	10
+	+	230	0
+	+	230	0
+	+	230	0
+	+	13	357
+	+	13	26
+	+	13	0
+	+	14	0
+	m	201	0
 
 > ~/[Vundle] Installer
-	"	17	0
+	"	18	0
 	.	1	0
-	+	30	0
-	+	17	0
+	+	64	0
+	+	51	0
+	+	35	0
+	+	18	0
 	+	1	0
 
-> ~/[Vundle] search
-	"	617	0
-	.	1	0
-	+	4002	0
-	+	1	0
+> /tmp/vNYRUKK/1
+	"	1	0
 
-> ~/.vim/bundle/gundo.vim/doc/gundo.txt
-	"	176	0
+> ~/.tmux.conf
+	"	51	0
+	.	37	0
+	+	37	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+	"	39	0
+	^	39	36
+	.	39	36
+	+	71	0
+	+	39	36
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+	"	20	5
+	.	15	0
+	+	15	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+	"	5	4
+	.	6	0
+	+	254	0
+	+	262	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	253	0
+	+	67	0
+	+	67	0
+	+	179	0
+	+	67	0
+	+	113	0
+	+	66	0
+	+	61	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	58	0
+	+	11	0
+	+	6	0
+
+> ~/code/c++/gdb_test/main.cc
+	"	164	0
+	.	164	0
+	+	168	0
+	+	167	4
+	+	166	18
+	+	166	9
+	+	166	0
+	+	164	0
+
+> ~/code/c++/gdb_test/__Tag_List__
+	"	24	4
+	.	25	0
+	+	204	0
+	+	180	0
+	+	145	0
+	+	121	0
+	+	97	0
+	+	73	0
+	+	49	0
+	+	25	0
+
+> ~/code/c++/stl_stuff/count_if.cpp
+	"	1	0
+
+> ~/code/c++/c++11/async_example.cpp
+	"	1	0
+	^	14	9
+	.	14	0
+	+	1	19
+	+	3	16
+	+	13	5
+	+	10	0
+	+	6	24
+	+	9	0
+	+	9	0
+	+	15	0
+	+	8	42
+	+	15	0
+	+	15	0
+	+	15	15
+	+	15	0
+	+	4	20
+	+	15	7
+	+	15	0
+	+	15	0
+	+	3	0
+	+	15	17
+	+	2	16
+	+	15	0
+	+	16	1
+	+	14	0
+
+> ~/code/c++/c++11/.clang_complete
+	"	2	2
+	^	2	3
+	.	2	2
+	+	1	0
+	+	2	2
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+	"	94	12
+	.	94	0
+	+	73	0
+	+	73	20
+	+	73	0
+	+	73	0
+	+	106	0
+	+	78	8
+	+	79	53
+	+	73	0
+	+	80	0
+	+	78	0
+	+	105	8
+	+	80	8
+	+	104	0
+	+	78	8
+	+	89	0
+	+	78	0
+	+	81	8
+	+	89	29
+	+	98	0
+	+	99	26
+	+	100	26
+	+	102	8
+	+	103	8
+	+	101	39
+	+	103	9
+	+	101	21
+	+	84	0
+	+	89	0
+	+	88	14
+	+	89	0
+	+	78	8
+	+	89	0
+	+	78	5
+	+	78	0
+	+	78	0
+	+	77	23
+	+	97	0
+	+	96	9
+	+	94	15
+	+	95	0
+	+	22	4
+	+	5	15
+	+	6	17
+	+	94	12
+	+	94	0
+	+	22	4
+	+	94	0
+	+	94	30
+	+	94	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.h
+	"	54	12
+	.	54	0
+	+	57	0
+	+	57	0
+	+	53	0
+	+	53	0
+	+	54	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/.clang_complete
+	"	1	0
+	.	7	0
+	+	1	118
+	+	1	0
+	+	4	0
+	+	7	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
+	"	1	0
+
+> ~/.vim/bundle/vundle/doc/clang_complete.txt
+	"	48	24
+
+> ~/code/irrlicht-1.7.3/GoToFile
+	"	1	0
+	.	87	0
+	+	1	0
+	+	87	0
+
+> ~/.vim/snippets/c.snippets
+	"	113	0
+	^	113	1
+	.	113	0
+	+	112	0
+	+	113	0
+
+> ~/.vim/bundle/clang_complete/bin/cc_args.py
+	"	1	0
+
+> ~/code/__Tag_List__
+	"	5	4
+	.	32	0
+	+	32	0
+
+> ~/__Tag_List__
+	"	3	0
+	.	20	0
+	+	26	0
+	+	20	0
+
+> ~/code/c++/roguelike_tutorial/rogmain.cpp
+	"	89	0
+	^	89	0
+	.	89	0
+	+	89	0
+
+> ~/code/c++/roguelike_tutorial/rogmain
+	"	1	0
+
+> ~/code/c++/c++11/GoToFile
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/code/c++/c++11/gom.cpp
+	"	7	0
+	^	7	0
+	.	8	0
+	+	1	0
+	+	8	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/gom.cpp
+	"	7	8
+	^	7	9
+	.	7	8
+	+	1	0
+	+	7	8
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/GoToFile
+	"	1	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	10	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	6	0
+	+	2	0
+
+> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
+	"	63	19
+
+> ~/cygvim.vim
+	"	29	0
+
+> ~/.vim/colors/morhedel.vim
+	"	73	90
+	^	73	91
+	.	73	90
+	+	75	267
+	+	75	269
+	+	75	0
+	+	75	0
+	+	75	0
+	+	75	0
+	+	14	0
+	+	72	14
+	+	70	52
+	+	72	86
+	+	71	48
+	+	70	72
+	+	72	0
+	+	73	90
+
+> ~/.bashrc
+	"	20	0
+	^	99	16
+	.	99	15
+	+	25	27
+	+	1	0
+	+	1	0
+	+	25	0
+	+	76	0
+	+	86	0
+	+	87	0
+	+	99	15
 
 > ~/__Gundo_Preview__
 	"	1	0
@@ -383,6 +748,24 @@ $
 	"	6	1
 	.	1	0
 	+	1	0
+
+> ~/code/c++/util/castCharToLong.cpp
+	"	8	9
+	^	8	10
+	.	8	9
+	+	7	26
+	+	9	0
+	+	9	0
+	+	8	9
+
+> ~/[Vundle] search
+	"	617	0
+	.	1	0
+	+	4002	0
+	+	1	0
+
+> ~/.vim/bundle/gundo.vim/doc/gundo.txt
+	"	176	0
 
 > ~/[Vundle] list
 	"	2	0
@@ -424,9 +807,6 @@ $
 	^	1	7
 	.	1	6
 	+	1	6
-
-> ~/.vim/colors/morhedel.vim
-	"	55	5
 
 > ~/.vim/bundle/clang_complete/examples/__Tag_List__
 	"	18	4
@@ -530,19 +910,6 @@ $
 > /tmp/vf1gxid/0
 	"	1	1
 
-> ~/.bashrc
-	"	1	0
-	^	99	16
-	.	99	15
-	+	25	27
-	+	1	0
-	+	1	0
-	+	25	0
-	+	76	0
-	+	86	0
-	+	87	0
-	+	99	15
-
 > fugitive:///home/gom/.git//127d955b980033355bc54201d638e94a8a053148/.bashrc
 	"	1	0
 
@@ -592,36 +959,6 @@ $
 
 > ~/stdvim
 	"	38	0
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-	"	90	0
-	^	70	3
-	.	71	0
-	+	71	0
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
-	"	5	4
-	.	6	0
-	+	199	0
-	+	207	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	198	0
-	+	12	0
-	+	12	0
-	+	124	0
-	+	12	0
-	+	58	0
-	+	11	0
-	+	6	0
 
 > ~/code/python/spider_bro/sb_utils.py
 	"	90	9
@@ -689,43 +1026,6 @@ $
 > ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
 	"	1	0
 
-> ~/code/c++/gdb_test/main.cc
-	"	166	0
-	.	166	0
-	+	168	0
-	+	167	4
-	+	166	18
-	+	166	9
-	+	166	0
-
-> ~/code/c++/gdb_test/__Tag_List__
-	"	24	4
-	.	25	0
-	+	180	0
-	+	156	0
-	+	121	0
-	+	97	0
-	+	73	0
-	+	49	0
-	+	25	0
-
-> ~/code/c++/c++11/async_example.cpp
-	"	1	0
-	^	15	17
-	.	15	15
-	+	1	19
-	+	2	16
-	+	12	4
-	+	8	0
-	+	4	24
-	+	7	0
-	+	7	0
-	+	13	0
-	+	6	42
-	+	16	0
-	+	15	0
-	+	15	15
-
 > ~/code/c++/c++11/(clewn)_console
 	"	34	5
 	.	19	0
@@ -740,71 +1040,6 @@ $
 > ~/code/c++/c++11/async_example
 	"	1	0
 
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
-	"	1	0
-	^	76	8
-	.	76	8
-	+	70	0
-	+	70	20
-	+	70	0
-	+	70	0
-	+	101	0
-	+	76	8
-	+	80	53
-	+	70	0
-	+	81	0
-	+	76	0
-	+	100	8
-	+	81	8
-	+	99	0
-	+	76	8
-	+	92	0
-	+	76	0
-	+	82	8
-	+	92	29
-	+	93	0
-	+	94	26
-	+	95	26
-	+	97	8
-	+	98	8
-	+	96	39
-	+	98	9
-	+	96	21
-	+	85	0
-	+	90	0
-	+	89	14
-	+	92	0
-	+	76	8
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.h
-	"	1	0
-
-> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
-	"	89	32
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	9	0
-	+	5	0
-	+	1	0
-	+	2	0
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
-	"	1	0
-
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/[BufExplorer]
 	"	1	0
 
@@ -813,9 +1048,6 @@ $
 
 > ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/Tile.cs
 	"	1	0
-
-> ~/code/c++/roguelike_tutorial/rogmain.cpp
-	"	97	0
 
 > ~/code/c++/__Tag_List__
 	"	8	4
@@ -1008,101 +1240,3 @@ $
 	+	2	0
 	o	1	0
 	t	1	0
-
-> ~/code/c++/misc_usefull_tricks/gom_primitive_sizes.cpp
-	"	33	3
-	^	33	4
-	.	33	3
-	+	33	3
-
-> ~/code/python/opttest.py
-	"	12	0
-	.	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-
-> ~/code/c++/gdb_test/simple_assembley/test_syntastic.cpp
-	"	8	23
-	^	8	24
-	.	9	0
-	+	9	11
-	+	1	0
-	+	8	24
-	+	8	24
-	+	9	0
-	+	8	24
-	+	9	0
-
-> ~/.vim/bundle/supertab/doc/supertab.txt
-	"	11	0
-
-> ~/code/python/spider_bro/.git/COMMIT_EDITMSG
-	"	2	37
-	^	2	38
-	.	2	37
-	+	2	37
-
-> ~/.vim/bundle/snipmate.vim/snippets/test.cpp
-	"	21	19
-	^	21	20
-	.	21	19
-	+	26	0
-	+	32	7
-	+	1	0
-	+	4	0
-	+	5	0
-	+	17	0
-	+	5	29
-	+	5	0
-	+	17	0
-	+	5	22
-	+	5	0
-	+	5	0
-	+	6	0
-	+	9	0
-	+	8	15
-	+	14	14
-	+	10	0
-	+	10	29
-	+	10	32
-	+	10	0
-	+	21	0
-	+	20	34
-	+	21	19
-
-> /usr/share/vim/vim73/doc/fold.txt
-	"	389	44
-
-> ~/.vim/colors/zenburn.vim
-	"	90	0
-
-> /usr/share/vim/vim73/doc/options.txt
-	"	1302	6
-
-> ~/bin/addflex.sh
-	"	1	0
-
-> ~/bin/backup.sh
-	"	1	0
-
-> ~/bin/cbrtocbz.sh
-	"	1	0
-
-> ~/bin/clean_xbmc_library.sh
-	"	1	0
-
-> ~/bin/controller_1_start.sh
-	"	1	0
-
-> ~/bin/controller_2_start.sh
-	"	1	0
-
-> ~/bin/epub-read.sh
-	"	1	0
-
-> ~/bin/fixflex.sh
-	"	1	0
-
-> ~/bin/fixtilda.sh
-	"	1	0

@@ -20,8 +20,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-
+Bundle 'tpope/vim-surround' 
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -35,18 +34,20 @@ filetype plugin indent on
 "*************************************************** Generic Settings ***************************************************
 
 set  ai
+set  backspace=indent,eol,start
 set  expandtab
 set  hidden                                "  do not unload buffers
 set  history=5000                          "  remember more commands and search history
 set  hlsearch
 set  ignorecase
 set  incsearch
-set  linebreak
+set  linebreak                                                                                
 set  nobackup
 set  nofoldenable
 set  noswapfile
 set  number
 set  popt+=syntax:y                        "  Syntax when printing
+set  pumheight=15                          "  smaller completion window
 set  shiftwidth=4
 set  shortmess=a
 set  shortmess=atI
@@ -63,7 +64,7 @@ set  wildmode=list:longest
 
 "syntax highlighting and colourscheme
 syntax on
-colorscheme stingray
+colorscheme morhedel
 
 " STATUS LINE
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\[HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
@@ -89,6 +90,8 @@ let Tlist_Exit_OnlyWindow = 1
 " Supertab should try to use User completion
 let g:SuperTabDefaultCompletionType = "context"
 
+" show clang errors in quickfix window
+let g:clang_complete_copen = 1
 "*************************************************** GLOBAL KEYMAPS *********************************************
 
 " set difficulty level: Hardcore ;)
@@ -126,6 +129,7 @@ inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
 nnoremap <Leader>v :tabnew ~/.vimrc<CR>
 nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
 nnoremap <Leader>vs :source ~/.vimrc<CR>
+nnoremap <Leader>vc :tabnew .clang_complete<CR>
 
 " toggle wrap
 nnoremap <leader>w :set wrap!<CR>
@@ -157,7 +161,7 @@ nnoremap <leader>i mzgg=G`zzz
 nnoremap <leader>g <esc>:Git 
 nnoremap <leader>gc <esc>:Git commit -a
 nnoremap <leader>gp <esc>:Git push -u origin master --force
-
+nnoremap <leader>gs :Gstatus<CR><C-W>25+
 "*************************************************** AUTOCMDS ***************************************************
 
 "********************************************** GLOBAL
@@ -222,4 +226,3 @@ function! TabMessage(cmd)
     set nomodified
 endfunction
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
-
