@@ -122,8 +122,8 @@ nnoremap <Leader><F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 nnoremap <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "nnoremap ctrl-j to the jump key binding
-nnoremap <c-j> /<+.\{-1,}+><cr>c/+>/e<cr>
-inoremap <c-j> <ESC>/<+.\{-1,}+><cr>c/+>/e<cr>
+nnoremap <c-j> /<cr>c/+>/e<cr>
+inoremap <c-j> <ESC>/<cr>c/+>/e<cr>
 
 " FREQUENTLY EDITED FILES
 nnoremap <Leader>v :tabnew ~/.vimrc<CR>
@@ -146,8 +146,6 @@ nnoremap k gk
 noremap <silent><Leader>/ :nohls<CR>
 
 " make arrow keys useful again
-"nnoremap <up>       <esc>:bp<CR>
-"nnoremap <down>     <esc>:bn<CR>
 nnoremap <left>     <esc>:tabp<CR>
 nnoremap <right>    <esc>:tabn<CR>
 
@@ -166,7 +164,9 @@ nnoremap <leader>gd <esc>:Gdiff<CR>
 
 "*************************************************** FUNCTIONS ***************************************************
 
-" can have an eclipse or vs like concept of views
+" TODO: integrate Valgrind somehow, keymap, buffer plugin?
+
+" TODO: can have an eclipse or vs like concept of views
 "
 "F2 ->  toggle debugger_view_on
 "       if(off)
@@ -182,11 +182,40 @@ nnoremap <leader>gd <esc>:Gdiff<CR>
 "
 "
 
+function! GomDebugToggle()
+        "Toggle the flag (or set it if it doesn't yet exist)...
+        let w:gom_debug_view_on = exists('w:gom_debug_view_on') ? !w:gom_debug_view_on : 0
+
+        if w:gom_debug_view_on
+            echo "w:gom_debug_view_on"
+            call GomDebugStop()
+        else
+            call GomDebugStart()
+        endif
+endfunction
+command! GDToggle call GomDebugToggle()
+
+" shut down debugger
+function! GomDebugStop()
+    :echo "STOPPING DEBUGGER"
+    :wincmd k
+    :wincmd h
+    :only
+    " remove console and dbgvar buffers from previous session
+    if bufexists("(clewn)_console")
+        bwipeout (clewn)_console
+    endif
+    if bufexists("(clewn)_dbgvar")
+        bwipeout (clewn)_dbgvar
+    endif
+    :nbclose
+endfunction
 
 " function to start debugger, rearrange window layout with watch window and
 " gdb console
-function! StartPCDebugger()
+function! GomDebugStart()
 " close Tlist if open
+    
     :execute "TlistClose"
 " start the debugger, 
     silent! :execute "Pyclewn"
@@ -201,13 +230,11 @@ function! StartPCDebugger()
     :botright 20split (clewn)_console
     :set syntax=cpp
     :wincmd k
-    :rightbelow vnew (clewn)_dbgvar
+    :rightbelow 190vnew (clewn)_dbgvar
     :set syntax=cpp
     :wincmd h
 " return to main window
 endfunction
-
-" function to shut down debugger
 
 " dump the output of some command (:map) into a new tab
 function! TabMessage(cmd)
@@ -256,25 +283,22 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
     " PyClewn
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_args="--gdb=async"
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F2> :exe "Pyclewn"<CR> 
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F2> :exe "GDToggle"<CR> 
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F3> :exe "Cfoldvar " . line(".")<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4> :exe "!make"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F5> :exe "Crun"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6> :exe "Ccontinue"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7> :exe "Cdbg " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8> :exe "Cprint " . expand("<cword>") <CR>
     " TODO function that TOGGLES bp, and saves .proj file every time one is
     " created or deleted
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".")<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :Cnext <CR>
-    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :Cnext <Bar> Cinfo locals <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11> :Cstep <CR>
-    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11> :Cstep <Bar> Cinfo locals <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp> :exe "Cup"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown> :exe "Cdown"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>l :exe "Cinfo locals"<CR>
-    " leader d t Cbt
-    " leader d f Cframe
-    " leader d d Cdissassemble
-    " leader d w :Cdbg_var (no cr)
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl :exe "Cinfo locals"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds :exe "Cbt"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df :exe "Cframe"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dd :exe "Cdisassemble"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dw :exe "Cdbg " . expand("<cword>") <CR>
 augroup END

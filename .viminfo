@@ -8,31 +8,86 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/g:
+~MSle0~/VARIABLES_B
 
 # Last Substitute Search Pattern:
-~MSle0&\<green\>
+~MSle0&\<GOMtest1\>
 
 # Last Substitute String:
-$cyan
+$Gom2
 
 # Command Line History (newest to oldest):
+:q
+:qa
+:Cdbgvar
+:Chelp
+:e /usr/local/lib/python2.7/dist-packages/clewn/__init__.py
+:tabnew
+:e /etc/vim/autoload/pyclewn.vim
+:set syntax=cpp
+:/car
 :wqa
+:w
+:tab h internal-variables
+:;;;;;;;;;;;;;;;
+:set synax=cpp
+:Cfile /home/gom/code/irrlicht-1.7.3/bin/Linux/00.Gom2
+:wq
+:%s/\<GOMtest1\>/Gom2/g
+:%s/\<Gomtest1\>/Gom2/g
+:winsize 100
+:Ctrace
+:map
+:Cdbg list
+:k
+:;
+:Cproject .proj
+:<F2>
+:exe "Cbreak "<F2>
+:GundoToggle
+:Gundo
+:exe "Cbreak "
+:wa
+:tabnew .proj
+:Ccwindow
+:messages
+:call GomDebugStop()
+:call GomDebugStart()
+:;;;;;;;;;;;;;;;;;;;k
+:tab h command
+:nb
+:tab h bwipeout
+:vsplit $MYVIMRC
+:qa!
+:call GomDebugToggle()
+:s/check_words/gom_debug_view_on/g
+:s/w:/g:/g
+:;;k
+:tab h vim-script-intro
+:registers
+:@"
+:!xbmc_recently_watched -e
+:!
+:tabnew /etc/
+:c
+:w fuck
+:q!
+:wq!
+:r!grep -h "Added torrent" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"
+:!cat ~/.bash_aliases
+:!sbrecent
+:r!sbrecent
+:TabMessage(!sbrecent)
+:Cbt
+:call StartPCDebugger()
 :Git push
 :Git commit -a
-:w
 :232,287d
 :232,Gd
 :232Gd
-:call StartPCDebugger()
 :C
-:set syntax=cpp
 :Cinfo frame
 :Cframe
-:map
-:q
-:wq
-:qa
 :set columns=800
 :set columns=80
 :set columns=22
@@ -58,15 +113,12 @@ $cyan
 :Pyclewn
 :Pyclewn -g=async
 :Chelp checkpoint
-:Cproject .proj
-:Ccwindow
 :Cnexti
 :Cnext
 :Cstepi
 :tab h Cdown
 :Cup
 :Cdown
-:Cbt
 :Cfile main
 :!ls
 :Cnexti device
@@ -78,7 +130,6 @@ $cyan
 :rightbelow vsplit
 :Cclear
 :vsplit (clewn)_dbgvar
-:Cdbgvar
 :bottomright split (clewn)_console
 :bottom split (clewn)_console
 :split (clewn)_console
@@ -102,7 +153,6 @@ $cyan
 :tab h split
 :help split
 :vsplitright (clewn)_dbgvar
-:wa
 :Cd
 :split
 :tab h vsplit
@@ -110,7 +160,6 @@ $cyan
 :wwa
 :nbclose
 :wincmd k
-:;
 :buffer (clewn)_dbgvar
 :buffer (clewn)_console
 :vsplit
@@ -125,7 +174,6 @@ $cyan
 :Pyclewn -w bottom
 :tab h pyclewn
 :Chelp dumprepr
-:Chelp
 :Cshow
 :Cmonitor
 :Cmem
@@ -151,7 +199,6 @@ $cyan
 :Cquit
 :tabn
 :tabnew /home/gom/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
-:tabnew
 :tab
 :TlistSync
 :TListSync
@@ -160,7 +207,6 @@ $cyan
 :TlistToggle
 :Tlist
 :call <SNR>50_GundoClose()
-:GundoToggle
 :changes
 :Gstatus
 :set fillchars=vert:│
@@ -168,7 +214,6 @@ $cyan
 :!git update-server-info
 :'<,'>sort
 :%s/\<green\>/cyan/g
-:qa!
 :Ckill
 :echo g:clang_user_options
 :let g:clang_user_options
@@ -177,7 +222,6 @@ $cyan
 :%s/\<I\>/\r/g
 :h clang_complete
 :tab h clang_complete
-:q!
 :Git 
 :tabnew 
 :colorscheme morhedel
@@ -188,7 +232,6 @@ $cyan
 :diffget
 :diffthis
 :GundoShow
-:Gundo
 :14,74!column -t
 :j
 :'<,'>s/^/hi /g
@@ -229,6 +272,29 @@ $cyan
 :synstack
 
 # Search String History (newest to oldest):
+?/VARIABLES_B
+?/netbeans
+?/dbgvar
+?/dbg
+? \<tile_engine\>
+? car
+? \<GOMtest1\>
+?/GOM
+?/Gom
+? \<Gomtest1\>
+?/F2
+?/F9
+?/TODO
+?/Toggle
+?/command
+?/buf
+? check_words
+? w:
+? \Vif\%#
+?/GomDebug
+?/gom
+?/<+.\{-1,}+>
+?/+>/e
 ?/g:
 ?/pyclewn_args
 ?/global
@@ -286,9 +352,7 @@ $cyan
 ?/Title
 ? ^\s*$
 ?/19ggA
-?/gom
 ?/&tr
-?/<+.\{-1,}+>
 ? \<_STL\>
 ?/10
 ?/1,3
@@ -309,43 +373,90 @@ $cyan
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@;qa
+@<F2><F2><F2><F2><F2><F2><F2><F2><F2><F2>;qa
+@;
 @end
 
 # Input Line History (newest to oldest):
 
 # Registers:
 "0	LINE	0
-	    :set syntax=cpp
+	    :wincmd k
 ""1	LINE	0
 	
 "2	LINE	0
-	"func to load in the patterns for the filetype in the buffer
-	function! LoadPatterns(extension)
-	    silent! :execute 'source ~/.vim/templates/'.a:extension.'.patterns.tpl'
-	endfunction
+	    :execute "Cproject .proj"
 "3	LINE	0
-	
+	a caption, and get a pointer to the video driver.
 "4	LINE	0
-	
+	At first, we let the user select the driver type, then start up the engine, set
 "5	LINE	0
-	
+	#ifdef _MSC_VER
 "6	LINE	0
-	
+	#include "driverChoice.h"
 "7	LINE	0
-	:autocmd BufRead * silent! call LoadPatterns('%:e')
-"8	LINE	0
-	:autocmd BufRead * silent! call LoadPatterns('%:e')
-"9	LINE	0
-	"func to load in the patterns for the filetype in the buffer
-	function! LoadPatterns(extension)
-	    silent! :execute 'source ~/.vim/templates/'.a:extension.'.patterns.tpl'
-	endfunction
 	
-	:autocmd BufRead * silent! call LoadPatterns('%:e')
-"q@	CHAR	0
+		// ask user for driver
+		video::E_DRIVER_TYPE driverType=video::EDT_OPENGL;//driverChoiceConsole();
+		if (driverType==video::EDT_COUNT)
+			return 1;
+	
+		// create device
+	
+		IrrlichtDevice *device = createDevice(driverType,
+			core::dimension2d<u32>(512, 384));
+	
+		if (device == 0)
+			return 1; // could not create selected driver.
+	
+		device->setWindowCaption(L"Irrlicht Engine - 2D Graphics Demo");
+	
+		video::IVideoDriver* driver = device->getVideoDriver();
+	
+		/*
+		All 2d graphics in this example are put together into one texture,
+		2ddemo.png. Because we want to draw colorkey based sprites, we need to
+		load this texture and tell the engine, which part of it should be
+		transparent based on a colorkey.
+	
+		In this example, we don't tell it the color directly, we just say "Hey
+		Irrlicht Engine, you'll find the color I want at position (0,0) on the
+		texture.". Instead, it would be also possible to call
+		driver->makeColorKeyTexture(images, video::SColor(0,0,0,0)), to make
+		e.g. all black pixels transparent. Please note that
+		makeColorKeyTexture just creates an alpha channel based on the color.
+		*/
+		video::ITexture* images = driver->getTexture("../../media/2ddemo.png");
+		driver->makeColorKeyTexture(images, core::position2d<s32>(0,0));
+	
+		/*
+		To be able to draw some text with two different fonts, we first load
+		them. Ok, we load just one. As the first font we just use the default
+		font which is built into the engine. Also, we define two rectangles
+		which specify the position of the images of the red imps (little flying
+		creatures) in the texture.
+		*/
+		gui::IGUIFont* font = device->getGUIEnvironment()->getBuiltInFont();
+		gui::IGUIFont* font2 =
+		locals	device->getGUIEnvironment()->getFont("../../media/fonthaettenschweiler.bmp");
+	
+		core::rect<s32> imp1(349,15,385,78);
+		core::rect<s32> imp2(387,15,423,78);
+	
+		/*
+		Prepare a nicely filtering 2d render mode for special cases.
+"8	LINE	0
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dww :Cdbg 
+"9	LINE	0
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7> :exe "Cdbg " . expand("<cword>") <CR>
+"a	LINE	0
+	/bin/bash: sbrecent: command not found
+	ME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"
+"q	CHAR	0
 	yyp
 "-	CHAR	0
-	locals
+	    
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -374,110 +485,436 @@ $cyan
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  241  0  ~/.vimrc
-'1  279  35  ~/.vimrc
-'2  323  5  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
-'3  93  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-'4  73  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-'5  32  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-'6  26  45  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_dbgvar
-'7  270  109  ~/.vimrc
-'8  1  0  ~/code/irrlicht-1.7.3/include/SIrrCreationParameters.h
-'9  142  0  ~/code/c++/gdb_test/main.cc
+'0  393  0  /usr/local/lib/python2.7/dist-packages/clewn/netbeans.py
+'1  580  0  /usr/local/lib/python2.7/dist-packages/clewn/vim.py
+'2  601  14  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+'3  94  5  ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_console
+'4  235  24  ~/.vimrc
+'5  29  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+'6  31  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+'7  6  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/Makefile
+'8  144  0  ~/code/c++/gdb_test/main.cc
+'9  305  4  ~/.vimrc
 
 # Jumplist (newest first):
--'  241  0  ~/.vimrc
--'  279  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  39  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  2  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  73  2  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  35  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  323  5  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  93  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  1233  0  ~/code/irrlicht-1.7.3/source/Irrlicht/CIrrDeviceLinux.cpp
--'  2183  0  ~/code/irrlicht-1.7.3/source/Irrlicht/CNullDriver.cpp
--'  324  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  712  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  32  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  768  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  26  45  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_dbgvar
--'  268  109  ~/.vimrc
--'  404  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  403  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  1  0  ~/code/irrlicht-1.7.3/include/SIrrCreationParameters.h
--'  504  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  493  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  408  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  73  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  38  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.h
--'  1162  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  142  0  ~/code/c++/gdb_test/main.cc
--'  2  0  ~/code/c++/gdb_test/(clewn)_console
--'  1  0  ~/code/c++/gdb_test/main.cc
--'  267  96  ~/.vimrc
--'  17  0  ~/code/c++/gdb_test/main.cc
--'  107  0  ~/code/c++/gdb_test/(clewn)_console
--'  51  0  ~/code/c++/gdb_test/__Tag_List__
--'  50  0  ~/code/c++/gdb_test/__Tag_List__
--'  67  0  ~/code/c++/gdb_test/main.cc
--'  34  0  ~/code/c++/gdb_test/main.cc
--'  1  0  ~/code/c++/gdb_test/(clewn)_dbgvar
--'  1368  0  ~/code/c++/gdb_test/(clewn)_console
--'  195  0  ~/code/c++/gdb_test/__Tag_List__
--'  194  0  ~/code/c++/gdb_test/__Tag_List__
--'  804  5  /etc/vim/doc/pyclewn.txt
--'  188  14  /etc/vim/doc/pyclewn.txt
--'  157  25  /etc/vim/doc/pyclewn.txt
--'  1  0  /etc/vim/doc/pyclewn.txt
--'  141  0  /etc/vim/autoload/pyclewn.vim
--'  19  4  /etc/vim/autoload/__Tag_List__
--'  3  0  /etc/vim/autoload/__Tag_List__
--'  2  0  /etc/vim/autoload/__Tag_List__
--'  1  0  /etc/vim/autoload/pyclewn.vim
--'  604  0  /usr/local/lib/python2.7/dist-packages/clewn/vim.py
--'  29  4  /usr/__Tag_List__
--'  3  0  /usr/__Tag_List__
--'  2  0  /usr/__Tag_List__
+-'  393  0  /usr/local/lib/python2.7/dist-packages/clewn/netbeans.py
+-'  32  4  /usr/local/lib/python2.7/dist-packages/clewn/__Tag_List__
+-'  3  0  /usr/local/lib/python2.7/dist-packages/clewn/__Tag_List__
+-'  2  0  /usr/local/lib/python2.7/dist-packages/clewn/__Tag_List__
+-'  1  0  /usr/local/lib/python2.7/dist-packages/clewn/netbeans.py
+-'  580  0  /usr/local/lib/python2.7/dist-packages/clewn/vim.py
+-'  125  4  /usr/local/lib/python2.7/dist-packages/clewn/__Tag_List__
+-'  97  0  /usr/local/lib/python2.7/dist-packages/clewn/__Tag_List__
+-'  96  0  /usr/local/lib/python2.7/dist-packages/clewn/__Tag_List__
 -'  1  0  /usr/local/lib/python2.7/dist-packages/clewn/vim.py
--'  141  0  ~/code/c++/gdb_test/main.cc
--'  270  86  ~/.vimrc
--'  33  0  ~/code/c++/gdb_test/main.cc
--'  83  20  ~/code/c++/gdb_test/main.cc
--'  1772  5  ~/code/c++/gdb_test/(clewn)_console
--'  339  0  ~/code/c++/gdb_test/__Tag_List__
--'  338  0  ~/code/c++/gdb_test/__Tag_List__
--'  29  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  91  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_dbgvar
--'  1419  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1485  5  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1486  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1500  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1514  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  75  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  1528  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  46  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  1789  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1814  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1813  39  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1804  40  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1803  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  135  36  /usr/share/vim/vim73/doc/windows.txt
--'  1828  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1827  39  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1818  40  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1817  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1831  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1855  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1854  39  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  1845  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  601  14  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  433  19  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  388  16  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  387  27  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  367  25  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  343  43  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  308  15  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  260  69  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  246  16  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  223  21  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  221  13  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  219  16  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  53  25  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  1007  21  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  1000  42  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  849  48  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  847  51  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  846  57  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  844  18  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  627  16  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  624  12  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  623  20  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  618  12  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  617  25  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  615  11  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  614  34  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  600  23  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  592  15  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  347  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  345  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  342  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  351  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  357  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  400  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  402  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  408  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  428  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  431  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  435  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  445  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  449  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  453  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  455  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  461  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  467  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  471  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  473  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  479  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  339  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  332  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  327  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  324  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  311  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  301  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  297  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  294  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  288  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  282  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  280  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  255  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  244  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  242  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  227  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  217  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  215  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  208  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  206  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  193  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  186  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  184  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  142  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  140  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  132  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  122  0  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  601  14  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  433  19  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  388  16  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  387  27  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  367  25  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  343  43  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  308  15  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  260  69  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  246  16  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  223  21  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  221  13  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  219  16  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  53  25  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  1007  21  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+-'  1000  42  /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
 
 # History of marks within files (newest to oldest):
 
+> /usr/local/lib/python2.7/dist-packages/clewn/netbeans.py
+	"	393	0
+
+> /usr/local/lib/python2.7/dist-packages/clewn/__Tag_List__
+	"	32	4
+	.	95	0
+	+	127	0
+	+	127	0
+	+	127	0
+	+	429	0
+	+	126	0
+	+	95	0
+
+> /usr/local/lib/python2.7/dist-packages/clewn/vim.py
+	"	580	0
+
+> /usr/local/lib/python2.7/dist-packages/clewn/debugger.py
+	"	601	14
+
+> /usr/local/lib/python2.7/dist-packages/clewn/gdbmi.py
+	"	191	25
+
+> /usr/local/lib/python2.7/dist-packages/clewn/simple.py
+	"	321	69
+
+> /usr/local/lib/python2.7/dist-packages/clewn/'__doc__'
+	"	7	0
+	.	1	0
+	+	1	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+	"	26	25
+	^	28	13
+	.	28	12
+	+	32	0
+	+	31	1
+	+	13	0
+	+	17	0
+	+	22	0
+	+	28	12
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
+	"	27	0
+	.	30	0
+	+	55	0
+	+	50	0
+	+	45	0
+	+	40	0
+	+	35	0
+	+	30	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/[BufExplorer]
+	"	1	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_console
+	"	94	5
+	.	53	0
+	+	53	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_dbgvar
+	"	16	0
+	.	17	0
+	+	117	0
+	+	17	0
+
+> /etc/vim/autoload/pyclewn.vim
+	"	112	26
+	^	1	4
+	.	1	3
+	+	1	3
+
+> /usr/local/lib/python2.7/dist-packages/clewn/__init__.py
+	"	1	0
+
+> ~/.vimrc
+	"	235	24
+	^	205	13
+	.	235	17
+	+	312	11
+	+	312	30
+	+	312	11
+	+	312	14
+	+	312	11
+	+	312	15
+	+	312	15
+	+	312	31
+	+	312	37
+	+	312	38
+	+	312	4
+	+	312	0
+	+	312	0
+	+	164	0
+	+	262	0
+	+	251	0
+	+	263	0
+	+	258	0
+	+	258	0
+	+	263	0
+	+	262	0
+	+	263	0
+	+	258	0
+	+	295	23
+	+	241	7
+	+	169	7
+	+	216	36
+	+	167	57
+	+	298	0
+	+	299	0
+	+	309	0
+	+	126	21
+	+	216	0
+	+	198	11
+	+	189	12
+	+	219	22
+	+	185	10
+	+	219	10
+	+	198	0
+	+	189	63
+	+	190	7
+	+	198	0
+	+	189	0
+	+	190	0
+	+	198	0
+	+	197	12
+	+	190	89
+	+	196	31
+	+	196	0
+	+	194	30
+	+	241	29
+	+	241	0
+	+	201	0
+	+	203	0
+	+	207	0
+	+	214	11
+	+	206	4
+	+	199	10
+	+	288	77
+	+	193	37
+	+	198	0
+	+	149	0
+	+	201	2
+	+	188	8
+	+	186	37
+	+	187	44
+	+	216	0
+	+	206	12
+	+	296	81
+	+	296	139
+	+	296	81
+	+	297	0
+	+	296	75
+	+	296	75
+	+	297	0
+	+	296	64
+	+	293	0
+	+	296	132
+	+	302	58
+	+	303	0
+	+	304	0
+	+	305	0
+	+	302	68
+	+	303	68
+	+	304	68
+	+	303	81
+	+	304	79
+	+	305	80
+	+	293	0
+	+	305	68
+	+	304	68
+	+	303	68
+	+	302	68
+	+	301	67
+	+	305	0
+	+	235	17
+	+	206	0
+	+	204	0
+	+	205	12
+	+	235	17
+	g	311	7
+	m	296	20
+
+> /usr/share/vim/vim73/doc/eval.txt
+	"	3745	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/.proj
+	"	3	0
+	.	1	0
+	+	1	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/Makefile
+	"	6	0
+	.	6	0
+	+	6	0
+
+> ~/code/c++/gdb_test/main.cc
+	"	144	0
+	.	141	0
+	+	168	0
+	+	167	4
+	+	166	18
+	+	166	9
+	+	166	0
+	+	164	0
+	+	141	0
+	+	159	0
+	+	156	0
+	+	141	0
+
+> ~/code/c++/gdb_test/__Tag_List__
+	"	3	0
+	.	25	0
+	+	996	0
+	+	972	0
+	+	937	0
+	+	913	0
+	+	889	0
+	+	865	0
+	+	841	0
+	+	817	0
+	+	793	0
+	+	769	0
+	+	745	0
+	+	721	0
+	+	697	0
+	+	673	0
+	+	649	0
+	+	625	0
+	+	601	0
+	+	577	0
+	+	553	0
+	+	529	0
+	+	505	0
+	+	481	0
+	+	457	0
+	+	433	0
+	+	409	0
+	+	385	0
+	+	361	0
+	+	337	0
+	+	313	0
+	+	289	0
+	+	265	0
+	+	241	0
+	+	217	0
+	+	193	0
+	+	169	0
+	+	145	0
+	+	121	0
+	+	97	0
+	+	73	0
+	+	49	0
+	+	25	0
+
+> ~/code/c++/gdb_test/(clewn)_console
+	"	33	5
+	^	1122	5
+	.	32	0
+	+	32	0
+
+> ~/code/c++/gdb_test/(clewn)_dbgvar
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/code/c++/gdb_test/__Gundo_Preview__
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/code/c++/gdb_test/__Gundo__
+	"	12	1
+	.	1	0
+	+	1	0
+
+> ~/code/c++/gdb_test/[BufExplorer]
+	"	1	0
+
+> ~/code/c++/gdb_test/.proj
+	"	1	0
+
+> /usr/share/vim/vim73/doc/windows.txt
+	"	1074	0
+
+> /usr/share/vim/vim73/doc/map.txt
+	"	1264	0
+
+> /etc/vim/(clewn)_console
+	"	16	5
+	.	14	0
+	+	14	0
+
+> /etc/vim/(clewn)_dbgvar
+	"	1	0
+
+> /etc/vim/__Tag_List__
+	"	20	4
+	.	22	0
+	+	22	0
+
+> /usr/share/vim/vim73/doc/usr_41.txt
+	"	34	23
+
+> /etc/vim/[BufExplorer]
+	"	1	0
+
+> ~/code/c++/gdb_test/fuck
+	"	86	0
+	^	1	0
+	.	2	0
+	+	87	0
+	+	87	0
+	+	87	0
+	+	2	0
+
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-	"	39	0
+	"	1	0
 	^	39	36
 	.	73	1
 	+	71	0
@@ -494,62 +931,62 @@ $cyan
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
 	"	3	0
 	.	6	0
-	+	1356	0
-	+	1319	0
-	+	1319	0
-	+	1353	0
-	+	1318	0
-	+	1264	0
-	+	1210	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	1163	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	1130	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	1082	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	1051	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	1021	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	971	0
-	+	989	0
-	+	872	0
-	+	872	0
-	+	938	0
-	+	872	0
-	+	872	0
-	+	872	0
-	+	906	0
+	+	1368	0
+	+	1333	0
+	+	1279	0
+	+	1225	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	1178	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	1145	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	1097	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	1066	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	1036	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	986	0
+	+	1004	0
+	+	887	0
+	+	887	0
+	+	953	0
+	+	887	0
+	+	887	0
+	+	887	0
+	+	921	0
+	+	886	0
+	+	881	0
+	+	876	0
 	+	871	0
 	+	866	0
 	+	861	0
 	+	856	0
-	+	851	0
-	+	846	0
-	+	841	0
-	+	816	0
-	+	791	0
+	+	831	0
+	+	806	0
+	+	781	0
+	+	776	0
+	+	771	0
 	+	766	0
 	+	761	0
 	+	756	0
@@ -576,24 +1013,35 @@ $cyan
 	+	651	0
 	+	646	0
 	+	641	0
-	+	636	0
-	+	631	0
-	+	626	0
-	+	613	0
-	+	578	0
-	+	507	0
-	+	407	0
-	+	402	0
-	+	397	0
+	+	628	0
+	+	593	0
+	+	522	0
+	+	422	0
+	+	417	0
+	+	412	0
+	+	399	0
+	+	394	0
+	+	389	0
 	+	384	0
-	+	379	0
-	+	374	0
-	+	369	0
-	+	234	0
-	+	62	0
-	+	57	0
+	+	249	0
+	+	77	0
+	+	72	0
+	+	26	0
+	+	21	0
+	+	16	0
 	+	11	0
 	+	6	0
+
+> fugitive:///home/gom/.git//0/.vimrc
+	"	1	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	15
+	^	1	16
+	.	1	9
+	+	1	71
+	+	2	0
+	+	1	9
 
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
 	"	34	5
@@ -605,119 +1053,6 @@ $cyan
 	"	1	0
 	.	10	0
 	+	10	0
-
-> ~/.vimrc
-	"	241	0
-	.	229	0
-	+	279	0
-	+	279	21
-	+	279	27
-	+	279	33
-	+	279	23
-	+	279	4
-	+	279	23
-	+	279	14
-	+	279	0
-	+	279	18
-	+	279	29
-	+	279	0
-	+	279	19
-	+	279	12
-	+	265	0
-	+	264	73
-	+	279	15
-	+	279	13
-	+	279	4
-	+	279	4
-	+	279	14
-	+	279	0
-	+	279	23
-	+	279	35
-	+	279	13
-	+	279	34
-	+	279	14
-	+	271	76
-	+	272	80
-	+	267	62
-	+	267	75
-	+	273	86
-	+	278	74
-	+	267	0
-	+	267	5
-	+	267	0
-	+	267	174
-	+	279	0
-	+	279	0
-	+	279	0
-	+	279	12
-	+	267	96
-	+	267	0
-	+	270	0
-	+	267	62
-	+	270	62
-	+	267	78
-	+	270	109
-	+	267	78
-	+	270	78
-	+	267	4
-	+	270	4
-	+	268	0
-	+	267	72
-	+	267	72
-	+	268	4
-	+	269	72
-	+	279	12
-	+	279	23
-	+	279	11
-	+	279	31
-	+	279	75
-	+	279	12
-	+	278	0
-	+	258	0
-	+	256	0
-	+	274	19
-	+	275	0
-	+	276	0
-	+	275	22
-	+	276	29
-	+	277	33
-	+	279	0
-	+	279	0
-	+	279	1
-	+	279	7
-	+	279	11
-	+	279	11
-	+	279	30
-	+	279	11
-	+	279	14
-	+	279	11
-	+	279	15
-	+	279	15
-	+	279	31
-	+	279	37
-	+	279	38
-	+	279	4
-	+	279	0
-	+	279	0
-	+	166	0
-	+	233	0
-	+	222	0
-	+	234	0
-	+	229	0
-	+	229	0
-	+	234	0
-	+	233	0
-	+	234	0
-	+	229	0
-	m	266	20
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	66
-	^	1	67
-	.	1	66
-	+	1	71
-	+	2	0
-	+	1	66
 
 > ~/code/irrlicht-1.7.3/include/rect.h
 	"	35	0
@@ -806,72 +1141,13 @@ $cyan
 > ~/code/irrlicht-1.7.3/include/SIrrCreationParameters.h
 	"	1	0
 
-> ~/code/c++/gdb_test/main.cc
-	"	142	0
-	^	141	5
-	.	141	0
-	+	168	0
-	+	167	4
-	+	166	18
-	+	166	9
-	+	166	0
-	+	164	0
-	+	141	0
-
-> ~/code/c++/gdb_test/__Tag_List__
-	"	3	0
-	.	25	0
-	+	564	0
-	+	540	0
-	+	505	0
-	+	481	0
-	+	457	0
-	+	433	0
-	+	409	0
-	+	385	0
-	+	361	0
-	+	337	0
-	+	313	0
-	+	289	0
-	+	265	0
-	+	241	0
-	+	217	0
-	+	193	0
-	+	169	0
-	+	145	0
-	+	121	0
-	+	97	0
-	+	73	0
-	+	49	0
-	+	25	0
-
-> ~/code/c++/gdb_test/(clewn)_console
-	"	106	5
-	^	960	5
-	.	104	0
-	+	104	0
-
-> ~/code/c++/gdb_test/(clewn)_dbgvar
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/code/c++/gdb_test/[BufExplorer]
-	"	1	0
-
 > /etc/vim/doc/pyclewn.txt
 	"	804	5
-
-> /etc/vim/autoload/pyclewn.vim
-	"	141	0
 
 > /etc/vim/autoload/__Tag_List__
 	"	19	4
 	.	22	0
 	+	22	0
-
-> /usr/local/lib/python2.7/dist-packages/clewn/vim.py
-	"	604	0
 
 > /usr/__Tag_List__
 	"	29	4
@@ -880,9 +1156,6 @@ $cyan
 
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/[BufExplorer]
 	"	1	0
-
-> /usr/share/vim/vim73/doc/windows.txt
-	"	135	36
 
 > ~/.conkyrc
 	"	54	16
@@ -1009,9 +1282,6 @@ $cyan
 
 > ~/.git/index
 	"	1	0
-
-> fugitive:///home/gom/.git//0/.vimrc
-	"	190	105
 
 > ~/.vim/bundle/__Gundo_Preview__
 	"	1	0
@@ -1276,116 +1546,3 @@ $cyan
 	.	1	0
 	+	11	0
 	+	1	0
-
-> ~/.vim/[Vundle] Installer
-	"	12	0
-	.	1	0
-	+	1	0
-
-> ~/.vim/__Tag_List__
-	"	3	0
-	.	20	0
-	+	25	0
-	+	20	0
-
-> ~/recenttor.txt
-	"	1	164
-
-> ~/.vim/snippets/cpp.snippets
-	"	121	1
-	.	3	0
-	+	3	0
-
-> /usr/share/vim/vim73/doc/syntax.txt
-	"	4387	5
-
-> /tmp/vrTYYrL/4
-	"	1	0
-
-> /tmp/vf1gxid/0
-	"	1	1
-
-> fugitive:///home/gom/.git//127d955b980033355bc54201d638e94a8a053148/.bashrc
-	"	1	0
-
-> ~/.git/refs/heads/master
-	"	1	0
-
-> fugitive:///home/gom/.git//19342475c98ab0fd3b320302979c2b469c1ee4af
-	"	1	0
-	.	5	0
-	+	5	0
-
-> fugitive:///home/gom/.git//19342475c98ab0fd3b320302979c2b469c1ee4af/
-	"	1	0
-
-> ~/.vim/bundle/vim-fugitive/doc/fugitive.txt
-	"	278	0
-
-> fugitive:///home/gom/.git//0/.bashrc
-	"	70	4
-
-> ~/GoToFile
-	"	1	0
-	.	60	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	60	0
-
-> ~/[BufExplorer]
-	"	1	0
-
-> fugitive:///home/gom/.git//19342475c98ab0fd3b320302979c2b469c1ee4af/.bash_aliases
-	"	1	0
-
-> /usr/share/vim/vim73/doc/tabpage.txt
-	"	167	7
-
-> ~/.vim/bundle/syntastic/doc/syntastic.txt
-	"	62	0
-
-> ~/stdvim
-	"	38	0
-
-> ~/code/python/spider_bro/sb_utils.py
-	"	90	9
-	^	583	24
-	.	583	0
-	+	583	0
-
-> ~/code/python/spider_bro/__Tag_List__
-	"	27	4
-	.	73	0
-	+	292	0
-	+	220	0
-	+	148	0
-	+	76	0
-	+	73	0
-
-> ~/code/python/spider_bro/spiderBro.py
-	"	98	8
-
-> ~/.welcome_message
-	"	4	60
-	^	4	61
-	.	4	60
-	+	4	60
-
-> ~/.pulse/default.pa
-	"	45	43
-	^	45	44
-	.	45	43
-	+	85	0
-	+	86	0
-	+	45	43
-
-> /etc/asound.conf
-	"	6	23
-	^	6	24
-	.	6	23
-	+	8	45
-	+	2	0
-	+	5	21
-	+	6	23
