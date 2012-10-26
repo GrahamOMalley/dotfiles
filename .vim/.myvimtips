@@ -1,6 +1,7 @@
 
 **************************************** CTAGS ****************************************************************************************
-
+gi -> go back to the cursor position last used in insert mode. handy after hitting esc and hopping around yanking lines etc
+[I  -> after hitting * etc on a word to highlight, opens a split with all matches
 CTRL-] -> jump to tag under cursor
 CTRL-T -> jump back
 

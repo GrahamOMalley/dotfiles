@@ -146,8 +146,8 @@ nnoremap k gk
 noremap <silent><Leader>/ :nohls<CR>
 
 " make arrow keys useful again
-nnoremap <up>       <esc>:bp<CR>
-nnoremap <down>     <esc>:bn<CR>
+"nnoremap <up>       <esc>:bp<CR>
+"nnoremap <down>     <esc>:bn<CR>
 nnoremap <left>     <esc>:tabp<CR>
 nnoremap <right>    <esc>:tabn<CR>
 
@@ -160,12 +160,65 @@ nnoremap <leader>i mzgg=G`zzz
 " fuGitive keymaps
 nnoremap <leader>g <esc>:Git 
 nnoremap <leader>gc <esc>:Git commit -a
-nnoremap <leader>gp <esc>:Git push -u origin master --force
+nnoremap <leader>gp <esc>:Git push
 nnoremap <leader>gs :Gstatus<CR><C-W>25+
-"*************************************************** AUTOCMDS ***************************************************
+nnoremap <leader>gd <esc>:Gdiff<CR>
 
-"********************************************** GLOBAL
-autocmd BufNewFile,BufRead *conkyrc set filetype=conkyrc
+"*************************************************** FUNCTIONS ***************************************************
+
+" can have an eclipse or vs like concept of views
+"
+"F2 ->  toggle debugger_view_on
+"       if(off)
+"           check for .proj
+"               if exist call SetupDebugger
+"               else call StartCPPDebugger
+"
+"       else
+"           call nbclose
+"           kill (clewn)_console buffer
+"           kill (clewn)_dbgvar buffer
+"           :only main buffer (how?)
+"
+"
+
+
+" function to start debugger, rearrange window layout with watch window and
+" gdb console
+function! StartPCDebugger()
+" close Tlist if open
+    :execute "TlistClose"
+" start the debugger, 
+    silent! :execute "Pyclewn"
+    " load the .proj file,
+    :execute "Csource .proj"
+    " load the _dbgr buffer
+    silent! :execute "Cdbgvar"
+    :execute "only"
+
+    " layout 1
+    " console
+    :botright 20split (clewn)_console
+    :set syntax=cpp
+    :wincmd k
+    :rightbelow vnew (clewn)_dbgvar
+    :set syntax=cpp
+    :wincmd h
+" return to main window
+endfunction
+
+" function to shut down debugger
+
+" dump the output of some command (:map) into a new tab
+function! TabMessage(cmd)
+    redir => message
+    silent execute a:cmd
+    redir END
+    tabnew
+    silent put=message
+    set nomodified
+endfunction
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 "function to look for a template file of the appropriate type
 function! LoadTemplate(extension)
@@ -173,15 +226,13 @@ function! LoadTemplate(extension)
     silent! execute 'source ~/.vim/templates/'.a:extension.'.patterns.tpl'
 endfunction
 
+"*************************************************** AUTOCMDS ***************************************************
+
+"********************************************** GLOBAL
+autocmd BufNewFile,BufRead *conkyrc set filetype=conkyrc
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
-
-
-"func to load in the patterns for the filetype in the buffer
-function! LoadPatterns(extension)
-    silent! :execute 'source ~/.vim/templates/'.a:extension.'.patterns.tpl'
-endfunction
-
-:autocmd BufRead * silent! call LoadPatterns('%:e')
+" Start Taglist window on file open if any of these types
+autocmd BufNewFile,BufRead *.c,*.cc,*.cpp,*.h,*.py,*.cs execute ":Tlist"
 
 "********************************************** PYTHON
 augroup filetype_python
@@ -202,27 +253,26 @@ augroup END
 "********************************************** CPP
 augroup filetype_cpp
     autocmd!
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4> :exe "!make"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
     " PyClewn
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_args="--gdb=async"
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F2> :exe "Pyclewn"<CR> 
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F3> :exe "Cfoldvar " . line(".")<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4> :exe "!make"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F5> :exe "Crun"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6> :exe "Ccontinue"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7> :exe "Cfile "
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7> :exe "Cdbg " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8> :exe "Cprint " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".")<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :exe "Cnext "<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :Cnext <CR>
+    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :Cnext <Bar> Cinfo locals <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11> :Cstep <CR>
+    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11> :Cstep <Bar> Cinfo locals <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp> :exe "Cup"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown> :exe "Cdown"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>l :exe "Cinfo locals"<CR>
+    " leader d t Cbt
+    " leader d f Cframe
+    " leader d d Cdissassemble
+    " leader d w :Cdbg_var (no cr)
 augroup END
-
-"*************************************************** FUNCTIONS ***************************************************
-
-" dump the output of some command (:map) into a new tab
-function! TabMessage(cmd)
-    redir => message
-    silent execute a:cmd
-    redir END
-    tabnew
-    silent put=message
-    set nomodified
-endfunction
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)

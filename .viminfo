@@ -8,41 +8,174 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0/green
+~MSle0~/g:
 
 # Last Substitute Search Pattern:
-~MSle0~&\<green\>
+~MSle0&\<green\>
 
 # Last Substitute String:
 $cyan
 
 # Command Line History (newest to oldest):
+:wqa
+:w
+:C
+:set syntax=cpp
+:Cinfo frame
+:Cframe
+:map
+:call StartPCDebugger()
 :q
+:wq
+:qa
+:set columns=800
+:set columns=80
+:set columns=22
+:tab h winsize
+:winsize
+:Cinfo frame locals
+:set syntax
+:Cinfo locals
+:Cecho "\n"
+:Cecho " "
+:Ccommands 1
+:Ccommands
+:Cdumprepr
+:Cdisplay
+:Cawatch
+:Cadvance
+:Cactions
+:Ccd
+:Cinfo scope
+:Chelp info
+:Cstep 
+:echo g:pyclewn_args
+:Pyclewn
+:Pyclewn -g=async
+:Chelp checkpoint
+:Cproject .proj
+:Ccwindow
+:Cnexti
+:Cnext
+:Cstepi
+:tab h Cdown
+:Cup
+:Cdown
+:Cbt
+:Cfile main
+:!ls
+:Cnexti device
+:Cnexti locals
+:Cfoldvar
+:rightbelow vnew
+:botright vsplit (clewn)_dbgvar
+:botright split (clewn)_console
+:rightbelow vsplit
+:Cclear
+:vsplit (clewn)_dbgvar
+:Cdbgvar
+:bottomright split (clewn)_console
+:bottom split (clewn)_console
+:split (clewn)_console
+:Csource .proj
+:150vsplit
+:100vsplit
+:300vsplit
+:30vsplit
+:left vsplit
+:botleft vsplit
+:botright vsplit
+:only
+:Cinfo
+:Cdbgvar device
+:;;;;;;;;;;;;;;
+:split (clewn)_dbgvar
+:botright vsplit (clewn)_console
+:;q
+:topleft vsplit (clewn)_console
+:topleft vsplit
+:tab h split
+:help split
+:vsplitright (clewn)_dbgvar
+:wa
+:Cd
+:split
+:tab h vsplit
+:h close
+:wwa
+:nbclose
+:wincmd k
+:;
+:buffer (clewn)_dbgvar
+:buffer (clewn)_console
+:vsplit
+:h buffer
+:TlistClose
+:kkkkkkkkkkkkkkk
+:kk
+:TabMessage map
+:Pyclewn pdb --version
+:Pyclewn --version
+:Pyclewn -g -w bottom
+:Pyclewn -w bottom
+:tab h pyclewn
+:Chelp dumprepr
+:Chelp
+:Cshow
+:Cmonitor
+:Cmem
+:Cdbgvar carcassone_board
+:syntax 
+:syntax on
+:reg q
+:be,
+:Nsb
+:Cfoldvar 4
+:Cfoldvar 3
+:Cfoldvar 2
+:Cfoldvar 1
+:Clist
+:Cawatch driver
+:Cawatch device
+:Cfile ../../bin/Linux/00.GOMtest1
+:Csource
+:Cproject
+:project
+:nclose
+:Cmapkeys
+:Cquit
+:tabn
+:tabnew /home/gom/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
+:tabnew
+:tab
+:TlistSync
+:TListSync
+:Gdiff
+:shell
+:TlistToggle
+:Tlist
+:call <SNR>50_GundoClose()
+:GundoToggle
+:changes
+:Git push
+:Git commit -a
+:Gstatus
+:set fillchars=vert:│
 :BundleInstall
 :!git update-server-info
-:w
 :'<,'>sort
-:wq
 :%s/\<green\>/cyan/g
 :qa!
-:Cfile ../../bin/Linux/00.GOMtest1
-:qa
 :Ckill
-:Cbt
-:wqa
 :echo g:clang_user_options
 :let g:clang_user_options
-:map
 :tabnew .clang_complete
 :%s/ /\r/g
 :%s/\<I\>/\r/g
-:only
 :h clang_complete
 :tab h clang_complete
 :q!
-:tabnew
 :Git 
-:tabnew /home/gom/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
 :tabnew 
 :colorscheme morhedel
 :tabnew .vim/colors/morhedel.vim
@@ -51,9 +184,7 @@ $cyan
 :diff
 :diffget
 :diffthis
-:call <SNR>50_GundoClose()
 :GundoShow
-:GundoToggle
 :Gundo
 :14,74!column -t
 :j
@@ -78,14 +209,12 @@ $cyan
 :h XtermColorTable
 :e ~/.vim/colors/morhedel.vim
 :echo $TERM
-:!ls
 :!g++ -std=c++0x %
 :!clang++ -std=c++0x %
 :!clang++ %
 :colorscheme stingray
 :gom
 :Git push -u origin master --force
-:Git commit -a
 :31,56sort
 :31,56!sort
 :31,56!column -t
@@ -97,6 +226,28 @@ $cyan
 :synstack
 
 # Search String History (newest to oldest):
+?/g:
+?/pyclewn_args
+?/global
+?/StartClewn
+?/must be
+??70
+?/vspli
+?/sleep
+?/lua
+?/bottom
+?/Pyclewn
+?/pyclewn
+?/ja2
+?/Cfile
+? \<jump\>
+?/->
+?/fugitive
+?/exec
+?/Tlist
+?/up
+? \<BufNewFile\>
+? \<BufRead\>
 ? \<green\>
 ?/green
 ?/term
@@ -155,35 +306,40 @@ $cyan
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@end
 
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	    "jedi autocomplete
-""1	LINE	0
-	
+""0	LINE	0
+	    :set syntax=cpp
+"1	LINE	0
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 "2	LINE	0
-	
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_args="--gdb=async"
 "3	LINE	0
-	endfunction
+	    " execute Cbreak main
 "4	LINE	0
-	
-	function! gomFunc(blah)
-	kk
-	    redir => message
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :Cstep <Bar> Cinfo frame <Bar> Cinfo locals <Bar> Cecho "************************************"<CR>
 "5	LINE	0
-	    list->remov
+	    ":botright 150vsplit (clewn)_console
+	    ":split (clewn)_dbgvar
+	    ":wincmd h
+	    "layout 2
 "6	LINE	0
-	    
+	" return to main window
 "7	LINE	0
-	    std::
+	" rotate and resize window
+	" split
 "8	LINE	0
-	             */
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :exe "Cstep "<CR>
 "9	LINE	0
-	            /*
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :exe "Cstep "<CR>
+"q@	CHAR	0
+	yyp
 "-	CHAR	0
-	T
+	locals
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -212,343 +368,367 @@ $cyan
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  14  0  ~/.vimrc
-'1  51  0  ~/.tmux.conf
-'2  229  0  ~/.vimrc
-'3  39  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-'4  137  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-'5  164  0  ~/code/c++/gdb_test/main.cc
-'6  1  0  ~/code/c++/stl_stuff/count_if.cpp
-'7  1  0  ~/code/c++/c++11/async_example.cpp
-'8  14  8  ~/code/c++/c++11/async_example.cpp
-'9  94  12  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+'0  247  35  ~/.vimrc
+'1  290  5  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+'2  93  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+'3  73  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+'4  32  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+'5  26  45  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_dbgvar
+'6  223  109  ~/.vimrc
+'7  1  0  ~/code/irrlicht-1.7.3/include/SIrrCreationParameters.h
+'8  142  0  ~/code/c++/gdb_test/main.cc
+'9  220  96  ~/.vimrc
 
 # Jumplist (newest first):
--'  14  0  ~/.vimrc
--'  13  358  ~/.vimrc
+-'  247  35  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  51  0  ~/.tmux.conf
--'  49  22  ~/.tmux.conf
--'  1  0  ~/.tmux.conf
--'  229  0  ~/.vimrc
--'  90  0  ~/.vimrc
--'  45  93  ~/.vimrc
--'  39  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  5  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  3  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  2  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  73  2  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
 -'  2  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  137  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
--'  21  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
--'  164  0  ~/code/c++/gdb_test/main.cc
+-'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  290  5  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  93  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  1233  0  ~/code/irrlicht-1.7.3/source/Irrlicht/CIrrDeviceLinux.cpp
+-'  2183  0  ~/code/irrlicht-1.7.3/source/Irrlicht/CNullDriver.cpp
+-'  291  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  679  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  32  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  735  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  26  45  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_dbgvar
+-'  221  109  ~/.vimrc
+-'  399  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  398  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  1  0  ~/code/irrlicht-1.7.3/include/SIrrCreationParameters.h
+-'  499  4  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  488  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  403  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
+-'  73  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  38  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.h
+-'  1129  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  142  0  ~/code/c++/gdb_test/main.cc
+-'  2  0  ~/code/c++/gdb_test/(clewn)_console
 -'  1  0  ~/code/c++/gdb_test/main.cc
--'  1  0  ~/code/c++/stl_stuff/count_if.cpp
--'  1  0  ~/code/c++/c++11/async_example.cpp
--'  14  8  ~/code/c++/c++11/async_example.cpp
--'  15  1  ~/code/c++/c++11/async_example.cpp
--'  94  12  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  64  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  63  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  62  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  61  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  60  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  59  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  58  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  57  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  56  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  55  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  54  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  53  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  52  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  51  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  50  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  49  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  48  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  47  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  46  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  45  23  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  8  16  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  3  11  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  7  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/.clang_complete
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/.clang_complete
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
--'  48  24  ~/.vim/bundle/vundle/doc/clang_complete.txt
--'  9  16  ~/.vim/bundle/vundle/doc/clang_complete.txt
--'  7  31  ~/.vim/bundle/vundle/doc/clang_complete.txt
--'  1  0  ~/.vim/bundle/vundle/doc/clang_complete.txt
--'  113  0  ~/.vim/snippets/c.snippets
--'  89  0  ~/.vim/snippets/c.snippets
--'  1  0  ~/.vim/snippets/c.snippets
--'  66  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
--'  1  0  ~/.vim/bundle/clang_complete/bin/cc_args.py
--'  87  0  ~/.vim/bundle/clang_complete/bin/cc_args.py
--'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.h
--'  93  29  ~/.vimrc
--'  81  0  ~/.vimrc
--'  80  38  ~/.vimrc
--'  64  0  ~/.vimrc
--'  36  0  ~/.vimrc
--'  34  0  ~/.vimrc
--'  32  0  ~/.vimrc
--'  29  0  ~/.vimrc
--'  12  0  ~/.vimrc
--'  9  0  ~/.vimrc
--'  6  0  ~/.vimrc
--'  94  20  ~/.vim/bundle/vundle/doc/clang_complete.txt
--'  1  0  ~/.vim/bundle/vundle/doc/clang_complete.txt
--'  227  8  ~/.vim/bundle/vundle/doc/clang_complete.txt
--'  68  0  ~/.vimrc
--'  72  0  ~/.vimrc
--'  77  0  ~/.vimrc
--'  79  0  ~/.vimrc
--'  82  0  ~/.vimrc
--'  89  0  ~/.vimrc
--'  92  0  ~/.vimrc
--'  95  0  ~/.vimrc
--'  101  0  ~/.vimrc
--'  107  0  ~/.vimrc
--'  110  0  ~/.vimrc
--'  113  0  ~/.vimrc
--'  116  0  ~/.vimrc
--'  122  0  ~/.vimrc
--'  126  0  ~/.vimrc
--'  131  0  ~/.vimrc
--'  134  0  ~/.vimrc
--'  138  0  ~/.vimrc
--'  94  12  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
--'  64  24  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
+-'  220  96  ~/.vimrc
+-'  285  0  ~/.vimrc
+-'  17  0  ~/code/c++/gdb_test/main.cc
+-'  107  0  ~/code/c++/gdb_test/(clewn)_console
+-'  51  0  ~/code/c++/gdb_test/__Tag_List__
+-'  50  0  ~/code/c++/gdb_test/__Tag_List__
+-'  269  12  ~/.vimrc
+-'  67  0  ~/code/c++/gdb_test/main.cc
+-'  34  0  ~/code/c++/gdb_test/main.cc
+-'  1  0  ~/code/c++/gdb_test/(clewn)_dbgvar
+-'  1368  0  ~/code/c++/gdb_test/(clewn)_console
+-'  195  0  ~/code/c++/gdb_test/__Tag_List__
+-'  194  0  ~/code/c++/gdb_test/__Tag_List__
+-'  804  5  /etc/vim/doc/pyclewn.txt
+-'  188  14  /etc/vim/doc/pyclewn.txt
+-'  157  25  /etc/vim/doc/pyclewn.txt
+-'  1  0  /etc/vim/doc/pyclewn.txt
+-'  141  0  /etc/vim/autoload/pyclewn.vim
+-'  19  4  /etc/vim/autoload/__Tag_List__
+-'  3  0  /etc/vim/autoload/__Tag_List__
+-'  2  0  /etc/vim/autoload/__Tag_List__
+-'  1  0  /etc/vim/autoload/pyclewn.vim
+-'  604  0  /usr/local/lib/python2.7/dist-packages/clewn/vim.py
+-'  29  4  /usr/__Tag_List__
+-'  3  0  /usr/__Tag_List__
+-'  2  0  /usr/__Tag_List__
+-'  1  0  /usr/local/lib/python2.7/dist-packages/clewn/vim.py
+-'  141  0  ~/code/c++/gdb_test/main.cc
+-'  223  86  ~/.vimrc
+-'  33  0  ~/code/c++/gdb_test/main.cc
+-'  83  20  ~/code/c++/gdb_test/main.cc
+-'  1772  5  ~/code/c++/gdb_test/(clewn)_console
+-'  339  0  ~/code/c++/gdb_test/__Tag_List__
+-'  338  0  ~/code/c++/gdb_test/__Tag_List__
+-'  29  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  91  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  1  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_dbgvar
+-'  264  14  ~/.vimrc
+-'  282  0  ~/.vimrc
+-'  1386  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1452  5  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  259  15  ~/.vimrc
+-'  1453  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1467  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1481  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  75  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  1495  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  274  0  ~/.vimrc
+-'  46  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+-'  1756  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  261  12  ~/.vimrc
+-'  1781  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1780  39  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1771  40  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1770  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  135  36  /usr/share/vim/vim73/doc/windows.txt
+-'  1795  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1794  39  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1785  40  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1784  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  258  4  ~/.vimrc
+-'  1798  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  257  29  ~/.vimrc
+-'  1822  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1821  39  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  1812  0  ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+-'  256  18  ~/.vimrc
+-'  297  2  /usr/share/vim/vim73/doc/windows.txt
+-'  1  0  /usr/share/vim/vim73/doc/windows.txt
+-'  262  22  ~/.vimrc
 
 # History of marks within files (newest to oldest):
 
-> ~/.vimrc
-	"	14	0
-	.	14	0
-	+	217	114
-	+	218	0
-	+	219	54
-	+	229	0
-	+	32	76
-	+	32	76
-	+	32	2
-	+	32	0
-	+	32	0
-	+	4	48
-	+	4	48
-	+	4	91
-	+	4	92
-	+	4	0
-	+	1	0
-	+	35	0
-	+	2	59
-	+	33	0
-	+	31	0
-	+	29	0
-	+	28	0
-	+	27	0
-	+	13	89
-	+	13	59
-	+	13	0
-	+	11	0
-	+	29	0
-	+	30	0
-	+	13	298
-	+	13	0
-	+	13	0
-	+	12	0
-	+	13	170
-	+	13	198
-	+	68	0
-	+	65	0
-	+	65	0
-	+	37	0
-	+	37	0
-	+	40	60
-	+	41	80
-	+	50	57
-	+	55	78
-	+	55	78
-	+	55	57
-	+	56	78
-	+	57	64
-	+	61	72
-	+	85	10
-	+	92	47
-	+	129	0
-	+	135	0
-	+	230	33
-	+	230	26
-	+	230	0
-	+	138	0
-	+	139	0
-	+	140	0
-	+	230	0
-	+	230	71
-	+	230	71
-	+	230	71
-	+	230	71
-	+	230	0
-	+	230	0
-	+	142	0
-	+	147	36
-	+	230	0
-	+	230	0
-	+	148	0
-	+	166	0
-	+	230	0
-	+	13	246
-	+	13	280
-	+	13	318
-	+	13	183
-	+	13	59
-	+	13	0
-	+	13	0
-	+	26	0
-	+	26	0
-	+	13	359
-	+	38	4
-	+	68	19
-	+	95	29
-	+	94	37
-	+	96	0
-	+	51	71
-	+	133	18
-	+	13	326
-	+	45	94
-	+	45	1
-	+	230	10
-	+	230	0
-	+	230	0
-	+	230	0
-	+	13	357
-	+	13	26
-	+	13	0
-	+	14	0
-	m	201	0
-
-> ~/[Vundle] Installer
-	"	18	0
-	.	1	0
-	+	64	0
-	+	51	0
-	+	35	0
-	+	18	0
-	+	1	0
-
-> /tmp/vNYRUKK/1
-	"	1	0
-
-> ~/.tmux.conf
-	"	51	0
-	.	37	0
-	+	37	0
-
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
-	"	39	0
+	"	73	0
 	^	39	36
-	.	39	36
+	.	73	1
 	+	71	0
 	+	39	36
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
-	"	20	5
-	.	15	0
-	+	15	0
+	+	83	0
+	+	83	0
+	+	83	0
+	+	83	0
+	+	83	0
+	+	29	0
+	+	73	1
+	a	73	0
 
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/__Tag_List__
-	"	5	4
+	"	3	0
 	.	6	0
-	+	254	0
-	+	262	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	253	0
-	+	67	0
-	+	67	0
-	+	179	0
-	+	67	0
-	+	113	0
-	+	66	0
-	+	61	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	58	0
-	+	11	0
+	+	1356	0
+	+	1351	0
+	+	1314	0
+	+	1314	0
+	+	1348	0
+	+	1313	0
+	+	1259	0
+	+	1205	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	1158	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	1125	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	1077	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	1046	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	1016	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	966	0
+	+	984	0
+	+	867	0
+	+	867	0
+	+	933	0
+	+	867	0
+	+	867	0
+	+	867	0
+	+	901	0
+	+	866	0
+	+	861	0
+	+	856	0
+	+	851	0
+	+	846	0
+	+	841	0
+	+	836	0
+	+	811	0
+	+	786	0
+	+	761	0
+	+	756	0
+	+	751	0
+	+	746	0
+	+	741	0
+	+	736	0
+	+	731	0
+	+	726	0
+	+	721	0
+	+	716	0
+	+	711	0
+	+	706	0
+	+	701	0
+	+	696	0
+	+	691	0
+	+	686	0
+	+	681	0
+	+	676	0
+	+	671	0
+	+	666	0
+	+	661	0
+	+	656	0
+	+	651	0
+	+	646	0
+	+	641	0
+	+	636	0
+	+	631	0
+	+	626	0
+	+	621	0
+	+	608	0
+	+	573	0
+	+	502	0
+	+	402	0
+	+	397	0
+	+	392	0
+	+	379	0
+	+	374	0
+	+	369	0
+	+	364	0
+	+	229	0
+	+	57	0
+	+	52	0
 	+	6	0
 
-> ~/code/c++/gdb_test/main.cc
-	"	164	0
-	.	164	0
-	+	168	0
-	+	167	4
-	+	166	18
-	+	166	9
-	+	166	0
-	+	164	0
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_console
+	"	70	5
+	^	1419	6
+	.	61	0
+	+	61	0
 
-> ~/code/c++/gdb_test/__Tag_List__
-	"	24	4
-	.	25	0
-	+	204	0
-	+	180	0
-	+	145	0
-	+	121	0
-	+	97	0
-	+	73	0
-	+	49	0
-	+	25	0
-
-> ~/code/c++/stl_stuff/count_if.cpp
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/(clewn)_dbgvar
 	"	1	0
-
-> ~/code/c++/c++11/async_example.cpp
-	"	1	0
-	^	14	9
-	.	14	0
-	+	1	19
-	+	3	16
-	+	13	5
+	.	10	0
 	+	10	0
-	+	6	24
-	+	9	0
-	+	9	0
-	+	15	0
-	+	8	42
-	+	15	0
-	+	15	0
-	+	15	15
-	+	15	0
-	+	4	20
-	+	15	7
-	+	15	0
-	+	15	0
-	+	3	0
-	+	15	17
-	+	2	16
-	+	15	0
-	+	16	1
-	+	14	0
 
-> ~/code/c++/c++11/.clang_complete
-	"	2	2
-	^	2	3
-	.	2	2
-	+	1	0
-	+	2	2
+> ~/.vimrc
+	"	247	35
+	^	247	36
+	.	247	35
+	+	261	3
+	+	261	3
+	+	261	19
+	+	258	11
+	+	260	11
+	+	261	29
+	+	273	23
+	+	261	28
+	+	261	21
+	+	261	0
+	+	261	0
+	+	262	21
+	+	261	27
+	+	262	33
+	+	273	23
+	+	260	4
+	+	273	23
+	+	261	14
+	+	262	0
+	+	261	18
+	+	262	29
+	+	261	0
+	+	263	19
+	+	267	12
+	+	218	0
+	+	217	73
+	+	267	15
+	+	265	13
+	+	267	4
+	+	267	4
+	+	267	14
+	+	267	0
+	+	273	23
+	+	267	35
+	+	269	13
+	+	270	34
+	+	267	14
+	+	224	76
+	+	225	80
+	+	220	62
+	+	220	75
+	+	226	86
+	+	231	74
+	+	220	0
+	+	220	5
+	+	220	0
+	+	220	174
+	+	277	0
+	+	273	0
+	+	267	0
+	+	272	12
+	+	220	96
+	+	220	0
+	+	223	0
+	+	220	62
+	+	223	62
+	+	220	78
+	+	223	109
+	+	220	78
+	+	223	78
+	+	220	4
+	+	223	4
+	+	221	0
+	+	220	72
+	+	220	72
+	+	221	4
+	+	222	72
+	+	266	12
+	+	273	23
+	+	274	11
+	+	276	31
+	+	252	75
+	+	253	12
+	+	231	0
+	+	211	0
+	+	209	0
+	+	227	19
+	+	228	0
+	+	229	0
+	+	228	22
+	+	229	29
+	+	230	33
+	+	250	0
+	+	249	0
+	+	237	1
+	+	239	7
+	+	240	11
+	+	241	11
+	+	237	30
+	+	243	11
+	+	238	14
+	+	239	11
+	+	240	15
+	+	241	15
+	+	245	31
+	+	246	37
+	+	245	38
+	+	268	4
+	+	271	0
+	+	247	35
+	m	219	20
+
+> ~/code/irrlicht-1.7.3/include/rect.h
+	"	35	0
+
+> ~/code/irrlicht-1.7.3/source/Irrlicht/CNullDriver.cpp
+	"	2183	0
+
+> ~/code/irrlicht-1.7.3/source/Irrlicht/CIrrDeviceLinux.cpp
+	"	1233	0
 
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.cpp
-	"	94	12
-	.	94	0
+	"	73	0
+	^	94	12
+	.	94	12
 	+	73	0
 	+	73	20
 	+	73	0
@@ -597,16 +777,309 @@ $cyan
 	+	22	4
 	+	94	0
 	+	94	30
-	+	94	0
+	+	94	12
+
+> /usr/share/vim/vim73/doc/gui.txt
+	"	140	17
+
+> /usr/include/c++/4.6/array
+	"	60	0
 
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/tileEngine.h
-	"	54	12
+	"	38	0
 	.	54	0
 	+	57	0
 	+	57	0
 	+	53	0
 	+	53	0
 	+	54	0
+
+> ~/code/irrlicht-1.7.3/include/dimension2d.h
+	"	27	0
+
+> ~/code/irrlicht-1.7.3/source/Irrlicht/Irrlicht.cpp
+	"	53	0
+
+> ~/code/irrlicht-1.7.3/include/SIrrCreationParameters.h
+	"	1	0
+
+> ~/code/c++/gdb_test/main.cc
+	"	142	0
+	^	141	5
+	.	141	0
+	+	168	0
+	+	167	4
+	+	166	18
+	+	166	9
+	+	166	0
+	+	164	0
+	+	141	0
+
+> ~/code/c++/gdb_test/__Tag_List__
+	"	3	0
+	.	25	0
+	+	564	0
+	+	540	0
+	+	505	0
+	+	481	0
+	+	457	0
+	+	433	0
+	+	409	0
+	+	385	0
+	+	361	0
+	+	337	0
+	+	313	0
+	+	289	0
+	+	265	0
+	+	241	0
+	+	217	0
+	+	193	0
+	+	169	0
+	+	145	0
+	+	121	0
+	+	97	0
+	+	73	0
+	+	49	0
+	+	25	0
+
+> ~/code/c++/gdb_test/(clewn)_console
+	"	106	5
+	^	960	5
+	.	104	0
+	+	104	0
+
+> ~/code/c++/gdb_test/(clewn)_dbgvar
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/code/c++/gdb_test/[BufExplorer]
+	"	1	0
+
+> /etc/vim/doc/pyclewn.txt
+	"	804	5
+
+> /etc/vim/autoload/pyclewn.vim
+	"	141	0
+
+> /etc/vim/autoload/__Tag_List__
+	"	19	4
+	.	22	0
+	+	22	0
+
+> /usr/local/lib/python2.7/dist-packages/clewn/vim.py
+	"	604	0
+
+> /usr/__Tag_List__
+	"	29	4
+	.	32	0
+	+	32	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/[BufExplorer]
+	"	1	0
+
+> /usr/share/vim/vim73/doc/windows.txt
+	"	135	36
+
+> ~/.conkyrc
+	"	54	16
+	^	54	17
+	.	54	16
+	+	54	16
+
+> ~/.bash_aliases
+	"	46	20
+	^	46	21
+	.	46	21
+	+	2	0
+	+	47	104
+	+	20	0
+	+	37	0
+	+	18	0
+	+	9	0
+	+	6	2
+	+	12	0
+	+	14	0
+	+	15	0
+	+	15	0
+	+	18	0
+	+	14	0
+	+	15	0
+	+	20	0
+	+	20	152
+	+	20	0
+	+	15	0
+	+	15	0
+	+	10	0
+	+	40	0
+	+	11	0
+	+	20	0
+	+	47	0
+	+	21	0
+	+	46	21
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/GoToFile
+	"	1	0
+	.	32	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	34	0
+	+	32	0
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
+	"	1	0
+
+> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
+	"	86	7
+
+> ~/.vim/.myvimtips
+	"	6	10
+	^	4	81
+	.	4	80
+	+	81	37
+	+	57	0
+	+	57	0
+	+	57	63
+	+	57	63
+	+	57	64
+	+	57	63
+	+	57	63
+	+	57	63
+	+	57	63
+	+	57	63
+	+	57	0
+	+	57	0
+	+	57	0
+	+	57	0
+	+	57	0
+	+	57	0
+	+	57	0
+	+	57	6
+	+	57	5
+	+	57	4
+	+	57	4
+	+	57	23
+	+	57	20
+	+	46	0
+	+	3	123
+	+	4	80
+
+> ~/.git/index
+	"	1	0
+
+> fugitive:///home/gom/.git//0/.vimrc
+	"	190	105
+
+> ~/.vim/bundle/__Gundo_Preview__
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/.vim/bundle/__Gundo__
+	"	6	1
+	.	1	0
+	+	1	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	39
+	^	1	40
+	.	1	39
+	+	1	39
+
+> ~/[Vundle] Installer
+	"	18	0
+	.	1	0
+	+	64	0
+	+	51	0
+	+	35	0
+	+	18	0
+	+	1	0
+
+> /tmp/vNYRUKK/1
+	"	1	0
+
+> ~/.tmux.conf
+	"	51	0
+	.	37	0
+	+	37	0
+
+> ~/code/c++/stl_stuff/count_if.cpp
+	"	1	0
+
+> ~/code/c++/c++11/async_example.cpp
+	"	1	0
+	^	14	9
+	.	14	0
+	+	1	19
+	+	3	16
+	+	13	5
+	+	10	0
+	+	6	24
+	+	9	0
+	+	9	0
+	+	15	0
+	+	8	42
+	+	15	0
+	+	15	0
+	+	15	15
+	+	15	0
+	+	4	20
+	+	15	7
+	+	15	0
+	+	15	0
+	+	3	0
+	+	15	17
+	+	2	16
+	+	15	0
+	+	16	1
+	+	14	0
+
+> ~/code/c++/c++11/.clang_complete
+	"	2	2
+	^	2	3
+	.	2	2
+	+	1	0
+	+	2	2
 
 > ~/code/irrlicht-1.7.3/examples/00.Gomtest1/.clang_complete
 	"	1	0
@@ -615,9 +1088,6 @@ $cyan
 	+	1	0
 	+	4	0
 	+	7	0
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/Makefile
-	"	1	0
 
 > ~/.vim/bundle/vundle/doc/clang_complete.txt
 	"	48	24
@@ -676,33 +1146,6 @@ $cyan
 	.	7	8
 	+	1	0
 	+	7	8
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	10	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	6	0
-	+	2	0
-
-> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
-	"	63	19
 
 > ~/cygvim.vim
 	"	29	0
@@ -772,41 +1215,6 @@ $cyan
 	.	1	0
 	+	16	0
 	+	1	0
-
-> ~/.vim/.myvimtips
-	"	20	0
-	.	45	0
-	+	80	37
-	+	56	0
-	+	56	0
-	+	56	63
-	+	56	63
-	+	56	64
-	+	56	63
-	+	56	63
-	+	56	63
-	+	56	63
-	+	56	63
-	+	56	0
-	+	56	0
-	+	56	0
-	+	56	0
-	+	56	0
-	+	56	0
-	+	56	0
-	+	56	6
-	+	56	5
-	+	56	4
-	+	56	4
-	+	56	23
-	+	56	20
-	+	45	0
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	6
-	^	1	7
-	.	1	6
-	+	1	6
 
 > ~/.vim/bundle/clang_complete/examples/__Tag_List__
 	"	18	4
@@ -883,13 +1291,6 @@ $cyan
 	+	25	0
 	+	20	0
 
-> ~/.bash_aliases
-	"	38	115
-	^	38	116
-	.	38	104
-	+	2	0
-	+	38	104
-
 > ~/recenttor.txt
 	"	1	164
 
@@ -901,9 +1302,6 @@ $cyan
 > /usr/share/vim/vim73/doc/syntax.txt
 	"	4387	5
 
-> ~/.git/index
-	"	204	20
-
 > /tmp/vrTYYrL/4
 	"	1	0
 
@@ -912,9 +1310,6 @@ $cyan
 
 > fugitive:///home/gom/.git//127d955b980033355bc54201d638e94a8a053148/.bashrc
 	"	1	0
-
-> fugitive:///home/gom/.git//0/.vimrc
-	"	162	0
 
 > ~/.git/refs/heads/master
 	"	1	0
@@ -953,9 +1348,6 @@ $cyan
 
 > ~/.vim/bundle/syntastic/doc/syntastic.txt
 	"	62	0
-
-> /etc/vim/doc/pyclewn.txt
-	"	126	0
 
 > ~/stdvim
 	"	38	0
@@ -1000,243 +1392,3 @@ $cyan
 	+	2	0
 	+	5	21
 	+	6	23
-
-> /etc/modprobe.d/alsa-base.conf
-	"	44	0
-	^	44	1
-	.	44	0
-	+	45	0
-	+	44	41
-	+	45	0
-	+	44	0
-
-> /etc/pulse/default.pa
-	"	45	0
-	^	45	1
-	.	45	0
-	+	45	0
-
-> ~/bin/create_asound.sh
-	"	26	6
-	^	26	7
-	.	26	0
-	+	1	0
-	+	26	0
-
-> ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
-	"	1	0
-
-> ~/code/c++/c++11/(clewn)_console
-	"	34	5
-	.	19	0
-	+	19	0
-
-> ~/code/c++/c++11/__Tag_List__
-	"	3	0
-	.	7	0
-	+	13	0
-	+	7	0
-
-> ~/code/c++/c++11/async_example
-	"	1	0
-
-> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/[BufExplorer]
-	"	1	0
-
-> ~/code/csharp/carcc
-	"	1	0
-
-> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/Tile.cs
-	"	1	0
-
-> ~/code/c++/__Tag_List__
-	"	8	4
-	.	9	0
-	+	9	0
-
-> ~/.vim/bundle/snipmate.vim/doc/snipMate.txt
-	"	322	0
-
-> ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-	"	1	0
-	^	1	0
-	.	1	0
-	+	81	39
-	+	100	50
-	+	14	50
-	+	74	37
-	+	117	8
-	+	13	0
-	+	21	0
-	+	22	0
-	+	22	0
-	+	78	0
-	+	98	4
-	+	96	4
-	+	93	0
-	+	96	1
-	+	91	7
-	+	89	2
-	+	14	3
-	+	15	3
-	+	20	3
-	+	74	3
-	+	75	3
-	+	77	3
-	+	81	3
-	+	82	3
-	+	89	3
-	+	93	3
-	+	96	3
-	+	100	3
-	+	101	3
-	+	103	3
-	+	107	3
-	+	110	3
-	+	114	3
-	+	117	3
-	+	93	73
-	+	107	16
-	+	114	60
-	+	113	16
-	+	112	0
-	+	118	0
-	+	124	0
-	+	118	0
-	+	112	6
-	+	121	39
-	+	114	59
-	+	113	12
-	+	22	1
-	+	22	3
-	+	120	10
-	+	113	10
-	+	106	10
-	+	71	0
-	+	70	40
-	+	14	0
-	+	25	0
-	+	28	3
-	+	31	3
-	+	34	3
-	+	37	3
-	+	40	3
-	+	45	0
-	+	44	0
-	+	23	0
-	+	26	0
-	+	29	0
-	+	32	0
-	+	37	0
-	+	35	0
-	+	38	0
-	+	41	0
-	+	72	0
-	+	45	0
-	+	47	0
-	+	46	0
-	+	14	0
-	+	43	1
-	+	46	4
-	+	22	0
-	+	60	24
-	+	69	0
-	+	22	0
-	+	24	11
-	+	27	10
-	+	30	10
-	+	63	10
-	+	66	10
-	+	69	12
-	+	1	0
-	+	10	0
-	+	9	23
-	+	5	3
-	+	9	22
-	+	2	0
-	+	6	0
-	+	11	0
-	+	1	0
-	a	1	0
-	b	1	0
-	c	1	0
-	d	1	0
-	e	1	0
-	f	1	0
-	g	1	0
-	h	1	0
-	i	1	0
-	j	1	0
-	k	1	0
-	l	1	0
-	m	1	0
-	n	1	0
-	o	1	0
-	p	1	0
-	q	1	0
-	r	1	0
-	s	1	0
-	t	1	0
-	u	1	0
-	v	1	0
-	w	1	0
-	x	1	0
-	y	1	0
-	z	1	0
-
-> ~/.vim/temp.cpp
-	"	7	3
-	^	7	4
-	.	7	4
-	+	1	0
-	+	7	0
-	+	8	0
-	+	7	8
-	+	7	0
-	+	7	4
-
-> ~/.vim/bundle/temp.cpp
-	"	7	0
-	^	7	0
-	.	7	0
-	+	1	0
-	+	6	1
-	+	6	5
-	+	6	0
-	+	6	37
-	+	6	1
-	+	7	0
-
-> ~/temp.cpp
-	"	7	3
-	^	7	4
-	.	7	4
-	+	11	0
-	+	17	0
-	+	17	0
-	+	1	0
-	+	7	4
-
-> /usr/share/vim/vim73/doc/change.txt
-	"	255	7
-
-> /usr/share/vim/vim73/doc/insert.txt
-	"	1920	28
-
-> ~/.vim/doc/showmarks.txt
-	"	264	0
-	.	265	0
-	+	265	0
-
-> ~/.vim/plugin/showmarks.vim
-	"	507	0
-	.	508	0
-	+	508	0
-
-> ~/.vim/bundle/showmarks/showmarks.vim
-	"	1	0
-	.	2	0
-	+	735	0
-	+	2	0
-	o	1	0
-	t	1	0
