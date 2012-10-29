@@ -21,6 +21,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround' 
+Bundle 'jabapyth/vim-debug'
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -166,32 +167,27 @@ nnoremap <leader>gd <esc>:Gdiff<CR>
 
 " TODO: integrate Valgrind somehow, keymap, buffer plugin?
 
-" TODO: can have an eclipse or vs like concept of views
-"
-"F2 ->  toggle debugger_view_on
-"       if(off)
-"           check for .proj
-"               if exist call SetupDebugger
-"               else call StartCPPDebugger
-"
-"       else
-"           call nbclose
-"           kill (clewn)_console buffer
-"           kill (clewn)_dbgvar buffer
-"           :only main buffer (how?)
-"
-"
+function! PyDebugToggle()
+    "Toggle the flag (or set it if it doesn't yet exist)...
+    let w:python_debug_view_on = exists('w:python_debug_view_on') ? !w:python_debug_view_on : 0
+
+    if w:python_debug_view_on
+        :execute "Dbg quit"
+    else
+        silent! :execute "Dbg ."
+    endif
+endfunction
 
 function! GomDebugToggle()
-        "Toggle the flag (or set it if it doesn't yet exist)...
-        let w:gom_debug_view_on = exists('w:gom_debug_view_on') ? !w:gom_debug_view_on : 0
+    "Toggle the flag (or set it if it doesn't yet exist)...
+    let w:gom_debug_view_on = exists('w:gom_debug_view_on') ? !w:gom_debug_view_on : 0
 
-        if w:gom_debug_view_on
-            echo "w:gom_debug_view_on"
-            call GomDebugStop()
-        else
-            call GomDebugStart()
-        endif
+    if w:gom_debug_view_on
+        echo "w:gom_debug_view_on"
+        call GomDebugStop()
+    else
+        call GomDebugStart()
+    endif
 endfunction
 command! GDToggle call GomDebugToggle()
 
@@ -214,10 +210,10 @@ endfunction
 " function to start debugger, rearrange window layout with watch window and
 " gdb console
 function! GomDebugStart()
-" close Tlist if open
-    
+    " close Tlist if open
+
     :execute "TlistClose"
-" start the debugger, 
+    " start the debugger, 
     silent! :execute "Pyclewn"
     " load the .proj file,
     :execute "Csource .proj"
@@ -233,7 +229,7 @@ function! GomDebugStart()
     :rightbelow 190vnew (clewn)_dbgvar
     :set syntax=cpp
     :wincmd h
-" return to main window
+    " return to main window
 endfunction
 
 " dump the output of some command (:map) into a new tab
@@ -274,7 +270,18 @@ augroup filetype_python
     autocmd BufRead *.py let g:jedi#use_tabs_not_buffers = 1
     autocmd BufRead *.py let g:jedi#rename_command = "<leader>R"
     autocmd BufRead *.py let g:jedi#related_names_command = "<leader>n"
-    "TODO PyClewn Debugging
+    "Debugging
+    autocmd BufRead,BufNewFile *.py nnoremap <F10>      :Dbg over<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <F11>      :Dbg into<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <F2>       :Dbg .<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <F5>       :Dbg run<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <F9>       :Dbg break<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <leader>dd :Dbg down<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <leader>dh :Dbg here<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <leader>dt :Dbg out<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <leader>du :Dbg up<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <leader>dw :Dbg watch<CR>
+
 augroup END
 
 "********************************************** CPP
@@ -288,9 +295,10 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4> :exe "!make"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F5> :exe "Crun"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6> :exe "Ccontinue"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8> :exe "Cprint " . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7> :exe "Cprint " . expand("<cword>") <CR>
     " TODO function that TOGGLES bp, and saves .proj file every time one is
     " created or deleted
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8> :exe "Cclear " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :Cnext <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11> :Cstep <CR>

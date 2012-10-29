@@ -44,3 +44,4 @@ alias change_to_good_graphics_mode='docky &; compiz --replace &'
 alias wreck_your_buzz='sudo ettercap -i eth1 -T -q -F ~/tools/dos.ef -M ARP /192.168.1.5/ //'
 
 alias f='find . -name'
+alias tmux='tmux -2'
