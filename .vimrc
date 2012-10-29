@@ -22,6 +22,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround' 
 Bundle 'jabapyth/vim-debug'
+Bundle 'godlygeek/tabular'
+Bundle 'GrahamOMalley/gom-pyclewn-view'
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -153,6 +155,9 @@ nnoremap <right>    <esc>:tabn<CR>
 " :ht opens help in new tab
 cnoremap <expr> ht getcmdtype() == ':' && empty(getcmdline()) ? 'tab h '     :'ht'
 
+" :tn opens new tab
+cnoremap <expr> tn getcmdtype() == ':' && empty(getcmdline()) ? 'tabnew '     :'tn'
+
 " fix indenting, don't move cursor
 nnoremap <leader>i mzgg=G`zzz
 
@@ -164,85 +169,6 @@ nnoremap <leader>gs :Gstatus<CR><C-W>25+
 nnoremap <leader>gd <esc>:Gdiff<CR>
 
 "*************************************************** FUNCTIONS ***************************************************
-
-" TODO: integrate Valgrind somehow, keymap, buffer plugin?
-
-function! PyDebugToggle()
-    "Toggle the flag (or set it if it doesn't yet exist)...
-    let w:python_debug_view_on = exists('w:python_debug_view_on') ? !w:python_debug_view_on : 0
-
-    if w:python_debug_view_on
-        :execute "Dbg quit"
-    else
-        silent! :execute "Dbg ."
-    endif
-endfunction
-
-function! GomDebugToggle()
-    "Toggle the flag (or set it if it doesn't yet exist)...
-    let w:gom_debug_view_on = exists('w:gom_debug_view_on') ? !w:gom_debug_view_on : 0
-
-    if w:gom_debug_view_on
-        echo "w:gom_debug_view_on"
-        call GomDebugStop()
-    else
-        call GomDebugStart()
-    endif
-endfunction
-command! GDToggle call GomDebugToggle()
-
-" shut down debugger
-function! GomDebugStop()
-    :echo "STOPPING DEBUGGER"
-    :wincmd k
-    :wincmd h
-    :only
-    " remove console and dbgvar buffers from previous session
-    if bufexists("(clewn)_console")
-        bwipeout (clewn)_console
-    endif
-    if bufexists("(clewn)_dbgvar")
-        bwipeout (clewn)_dbgvar
-    endif
-    :nbclose
-endfunction
-
-" function to start debugger, rearrange window layout with watch window and
-" gdb console
-function! GomDebugStart()
-    " close Tlist if open
-
-    :execute "TlistClose"
-    " start the debugger, 
-    silent! :execute "Pyclewn"
-    " load the .proj file,
-    :execute "Csource .proj"
-    " load the _dbgr buffer
-    silent! :execute "Cdbgvar"
-    :execute "only"
-
-    " layout 1
-    " console
-    :botright 20split (clewn)_console
-    :set syntax=cpp
-    :wincmd k
-    :rightbelow 190vnew (clewn)_dbgvar
-    :set syntax=cpp
-    :wincmd h
-    " return to main window
-endfunction
-
-" dump the output of some command (:map) into a new tab
-function! TabMessage(cmd)
-    redir => message
-    silent execute a:cmd
-    redir END
-    tabnew
-    silent put=message
-    set nomodified
-endfunction
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
-
 "function to look for a template file of the appropriate type
 function! LoadTemplate(extension)
     silent! :execute '0r ~/.vim/templates/'. a:extension. '.tpl'
@@ -271,7 +197,7 @@ augroup filetype_python
     autocmd BufRead *.py let g:jedi#rename_command = "<leader>R"
     autocmd BufRead *.py let g:jedi#related_names_command = "<leader>n"
     "Debugging
-    autocmd BufRead,BufNewFile *.py nnoremap <F10>      :Dbg over<CR>
+    autocmd BufRead,BufNewFile *.py nnoremap <F10>      :Dbg over <Bar> :Dbg watch<CR>
     autocmd BufRead,BufNewFile *.py nnoremap <F11>      :Dbg into<CR>
     autocmd BufRead,BufNewFile *.py nnoremap <F2>       :Dbg .<CR>
     autocmd BufRead,BufNewFile *.py nnoremap <F5>       :Dbg run<CR>
@@ -290,23 +216,20 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
     " PyClewn
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_args="--gdb=async"
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F2> :exe "GDToggle"<CR> 
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F3> :exe "Cfoldvar " . line(".")<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4> :exe "!make"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F5> :exe "Crun"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6> :exe "Ccontinue"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7> :exe "Cprint " . expand("<cword>") <CR>
-    " TODO function that TOGGLES bp, and saves .proj file every time one is
-    " created or deleted
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8> :exe "Cclear " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9> :exe "Cbreak " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10> :Cnext <CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11> :Cstep <CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp> :exe "Cup"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown> :exe "Cdown"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl :exe "Cinfo locals"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds :exe "Cbt"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df :exe "Cframe"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dd :exe "Cdisassemble"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dw :exe "Cdbg " . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F2>              :exe "PyclewnDebugToggle"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4>              :exe "!make"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F5>              :exe "Crun"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6>              :exe "Ccontinue"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7>              :exe "Cprint " . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9>              :exe "PyclewnBreakPointToggle" <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10>             :Cnext <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11>             :Cstep <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp>          :exe "Cup"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown>        :exe "Cdown"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl        :exe "Cinfo locals"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds        :exe "Cbt"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df        :exe "Cframe"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dd        :exe "Cdisassemble"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dw        :exe "Cdbg " . expand("<cword>") <CR>
 augroup END
