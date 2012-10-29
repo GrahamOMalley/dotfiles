@@ -223,10 +223,12 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6>              :exe "Ccontinue"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7>              :exe "Cprint " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9>              :exe "PyclewnBreakPointToggle" <CR>
+    " set this to PyclewnStep and PyclewnNext
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10>             :Cnext <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11>             :Cstep <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp>          :exe "Cup"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown>        :exe "Cdown"<CR>
+    " could set this to toggle info locals on each step
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl        :exe "Cinfo locals"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds        :exe "Cbt"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df        :exe "Cframe"<CR>

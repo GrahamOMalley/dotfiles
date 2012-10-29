@@ -8,22 +8,29 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/function
+~MSle0~/GDT
 
 # Last Substitute Search Pattern:
-~MSle0&\<PyclewnDebuggerToggle\>
+~MSle0&GomDebug
 
 # Last Substitute String:
-$PyclewnBreakPointToggle
+$
 
 # Command Line History (newest to oldest):
+:wq
 :q
-:qa
-:BundleInstall
-:w
 :Git push
 :Git commit -a
-:wq
+:w
+:qa
+:Scriptnames
+:Pyclewn
+:call PyclewnBreakPointToggle()
+:;
+:%s/GomDebug/PyclewnDebug/g
+:%s/\<GomDebug\>/PyclewnDebug/g
+:%s/GomPyclewnView#//g
+:BundleInstall
 :171,281d
 :170,281d
 :tabnew ~/gom-pyclewn-view.vim
@@ -151,7 +158,6 @@ $PyclewnBreakPointToggle
 :Ctrace
 :Cdbg list
 :k
-:;
 :Cproject .proj
 :<F2>
 :exe "Cbreak "<F2>
@@ -216,7 +222,6 @@ $PyclewnBreakPointToggle
 :Chelp info
 :Cstep 
 :echo g:pyclewn_args
-:Pyclewn
 :Pyclewn -g=async
 :Chelp checkpoint
 :Cnexti
@@ -361,11 +366,17 @@ $PyclewnBreakPointToggle
 :!pyclewn -c terraria_worldreader.cpp
 :Cfile twb
 :qk
-:%s/GomPyclewnView#//g
 
 # Search String History (newest to oldest):
-?/function
-?/command
+? \Vheader\%#
+? \%(^parent\)\@<! 
+? ^\s*\d\+:\s*
+? ^\s*$
+?/GDT
+? GomDebug
+?/<
+? \<GomDebug\>
+? GomPyclewnView#
 ?/function!
 ?/FUNCTION
 ? \<PyclewnDebuggerToggle\>
@@ -426,6 +437,7 @@ $PyclewnBreakPointToggle
 ?/F9
 ?/TODO
 ?/Toggle
+?/command
 ?/buf
 ? check_words
 ? w:
@@ -485,14 +497,12 @@ $PyclewnBreakPointToggle
 ?/ 
 ?     
 ?/Title
-? ^\s*$
 ?/19ggA
 ?/&tr
 ? \<_STL\>
 ?/10
 ?/1,3
 ?/TERM
-? ^\s*\d\+:\s*
 ? share
 ? ^"
 ?/leader
@@ -503,7 +513,9 @@ $PyclewnBreakPointToggle
 ?/snip
 ? ^
 ?/GDTog
-? GomPyclewnView#
+?/function
+?/loaded_taglist
+?/PyclewnBreakPointToggle
 
 # Expression History (newest to oldest):
 
@@ -519,9 +531,17 @@ $PyclewnBreakPointToggle
 # Registers:
 "0	CHAR	0
 	GomPyclewnView#
-""1	LINE	0
-	
+"1	LINE	0
+	"command! PyclewnBreakPointToggle call PyclewnBreakPointToggle()
 "2	LINE	0
+	
+"3	LINE	0
+	
+"4	LINE	0
+	command! -nargs=0 -bar TlistToggle call s:
+"5	LINE	0
+	
+"6	LINE	0
 	" dump the output of some command (:map) into a new tab
 	function! TabMessage(cmd)
 	    redir => message
@@ -533,7 +553,7 @@ $PyclewnBreakPointToggle
 	endfunction
 	command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 	
-"3	LINE	0
+"7	LINE	0
 	
 	" TODO: integrate Valgrind somehow, keymap, buffer plugin?
 	
@@ -584,7 +604,7 @@ $PyclewnBreakPointToggle
 	    let g:gom_debug_view_on = exists('g:gom_debug_view_on') ? !g:gom_debug_view_on : 0
 	
 	    if g:gom_debug_view_on
-"4	LINE	0
+"8	LINE	0
 	"*************************************************** FUNCTIONS ***************************************************
 	
 	" TODO: integrate Valgrind somehow, keymap, buffer plugin?
@@ -635,16 +655,8 @@ $PyclewnBreakPointToggle
 	    "Toggle the flag (or set it if it doesn't yet exist)...
 	    let g:gom_debug_view_on = exists('g:gom_debug_view_on') ? !g:gom_debug_view_on : 0
 	
-"5	LINE	0
-	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8>              :exe "Cclear " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
-"6	LINE	0
-	    ":exe \"Cbreak \" . expand("%:p") . \":" . line(".") <Bar> Cproject .proj <CR>
-"7	LINE	0
-	             ":exe "Cbreak " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
-"8	LINE	0
-	              dd  " 
 "9	LINE	0
-	    "Toggle the flag (or set it if it doesn't yet exist)...
+	    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F8>              :exe "Cclear " . expand("%:p") . ":" . line(".") <Bar> Cproject .proj <CR>
 "a	LINE	0
 	/bin/bash: sbrecent: command not found
 	ME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"
@@ -653,8 +665,8 @@ $PyclewnBreakPointToggle
 <jjjjjj;mapjjjjjjjjjjjjjjjjjjk€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;jjjjj€k9€k5€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;,bejjkkjj,beq
 "q@	CHAR	0
 	;s/,/autocmd BufRead,BufNewFile *.py <leader€kb€kb€kb€kb€kb€kb€kbnnoremap <leader>wwwwwwwwwwwi€kb€kb€kb
-"-	CHAR	0
-	h
+""-	CHAR	0
+	Me
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -683,86 +695,40 @@ $PyclewnBreakPointToggle
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  793  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
-'1  1  0  ~/code/c++/gdb_test/main.cc
-'2  20  0  ~/code/vim/gom-pyclewn-view/[Vundle] Installer
-'3  1  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
-'4  1  0  ~/.vim/bundle/gom-pyclewn-view/.git/index
-'5  1  0  ~/.vim/bundle/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
-'6  172  0  ~/.vimrc
-'7  71  0  ~/code/c++/gdb_test/main.cc
-'8  67  0  ~/code/c++/gdb_test/main.cc
-'9  154  0  ~/.vimrc
+'0  1  11  ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
+'1  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
+'2  5  46  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+'3  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067/
+'4  118  0  ~/code/c++/gdb_test/main.cc
+'5  51  0  ~/code/c++/gdb_test/__Tag_List__
+'6  51  0  ~/code/c++/gdb_test/__Tag_List__
+'7  101  0  ~/code/c++/gdb_test/main.cc
+'8  98  1  ~/code/c++/gdb_test/main.cc
+'9  1  3  ~/code/vim/gom-pyclewn-view/.git/COMMIT_EDITMSG
 
 # Jumplist (newest first):
--'  793  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  788  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  784  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  729  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  720  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  693  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  685  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  681  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  677  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  660  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  656  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  642  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  638  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  635  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  631  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  613  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  603  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  557  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  552  3  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  523  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  517  38  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  487  60  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  484  69  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  478  37  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  471  56  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  467  61  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  463  54  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  460  37  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  457  37  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  454  36  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  451  50  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  447  57  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  441  61  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  438  68  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  432  44  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  426  38  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  423  40  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  420  52  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  413  60  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  410  57  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  402  70  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  387  66  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  383  43  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  376  38  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  373  41  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  370  42  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  343  17  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  280  54  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  278  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  277  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  276  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  274  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  272  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  271  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  270  50  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  269  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  268  4  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  267  22  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  247  29  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  69  11  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  68  52  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  54  45  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  53  40  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  45  5  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  29  42  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  1  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
--'  309  0  ~/.vim/bundle/taglist.vim/plugin/taglist.vim
+-'  1  11  ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
+-'  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
+-'  1  0  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  5  46  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  50  0  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067/
+-'  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067
+-'  5  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067
+-'  1  0  ~/.vim/bundle/gom-pyclewn-view/.git/refs/heads/master
+-'  118  0  ~/code/c++/gdb_test/main.cc
+-'  22  4  ~/code/c++/gdb_test/__Tag_List__
+-'  3  0  ~/code/c++/gdb_test/__Tag_List__
+-'  2  0  ~/code/c++/gdb_test/__Tag_List__
 -'  1  0  ~/code/c++/gdb_test/main.cc
+-'  51  0  ~/code/c++/gdb_test/__Tag_List__
+-'  50  0  ~/code/c++/gdb_test/__Tag_List__
+-'  98  0  ~/code/c++/gdb_test/main.cc
+-'  101  0  ~/code/c++/gdb_test/main.cc
+-'  1  3  ~/code/vim/gom-pyclewn-view/.git/COMMIT_EDITMSG
+-'  58  20  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  1  0  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  48  14  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
 -'  20  0  ~/code/vim/gom-pyclewn-view/[Vundle] Installer
 -'  26  37  ~/.vimrc
 -'  1  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
@@ -793,72 +759,77 @@ $PyclewnBreakPointToggle
 -'  171  0  ~/.vimrc
 -'  1  0  ~/.vimrc
 -'  33  0  ~/code/c++/gdb_test/main.cc
+-'  71  0  ~/code/c++/gdb_test/main.cc
+-'  67  0  ~/code/c++/gdb_test/main.cc
+-'  235  10  ~/.vimrc
+-'  212  0  ~/.vimrc
+-'  210  0  ~/.vimrc
+-'  185  0  ~/.vimrc
+-'  179  0  ~/.vimrc
+-'  177  0  ~/.vimrc
+-'  20  0  ~/code/vim/gom-pyclewn-view/[Vundle] Installer
+-'  1  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  1  0  ~/.vim/bundle/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  100  10  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  50  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  46  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  33  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  21  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  15  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  8  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  4  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  1  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  20  0  ~/code/vim/gom-pyclewn-view/[Vundle] Installer
+-'  1  0  ~/.vim/bundle/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  58  20  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  1  0  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  48  14  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  20  0  ~/code/vim/gom-pyclewn-view/[Vundle] Installer
+-'  1  0  ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  1  0  ~/.vim/bundle/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+-'  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067/
+-'  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067
+-'  5  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067
+-'  1  0  ~/.vim/bundle/gom-pyclewn-view/.git/refs/heads/master
+-'  118  0  ~/code/c++/gdb_test/main.cc
+-'  22  4  ~/code/c++/gdb_test/__Tag_List__
+-'  3  0  ~/code/c++/gdb_test/__Tag_List__
+-'  2  0  ~/code/c++/gdb_test/__Tag_List__
+-'  1  0  ~/code/c++/gdb_test/main.cc
+-'  51  0  ~/code/c++/gdb_test/__Tag_List__
+-'  50  0  ~/code/c++/gdb_test/__Tag_List__
+-'  98  0  ~/code/c++/gdb_test/main.cc
+-'  101  0  ~/code/c++/gdb_test/main.cc
+-'  1  3  ~/code/vim/gom-pyclewn-view/.git/COMMIT_EDITMSG
+-'  58  20  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  1  0  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
 
 # History of marks within files (newest to oldest):
 
-> ~/.vim/bundle/taglist.vim/plugin/taglist.vim
-	"	793	3
+> ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
+	"	1	11
+	^	1	12
+	.	1	11
+	+	1	11
 
-> ~/code/c++/gdb_test/main.cc
-	"	2	0
-	.	98	0
-	+	143	0
-	+	98	0
+> ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+	"	1	0
+	^	5	47
+	.	5	47
+	+	50	0
+	+	1	0
+	+	2	25
+	+	4	78
+	+	5	47
 
-> ~/code/c++/gdb_test/__Tag_List__
-	"	3	0
-	.	25	0
-	+	826	0
-	+	802	0
-	+	778	0
-	+	754	0
-	+	730	0
-	+	706	0
-	+	682	0
-	+	658	0
-	+	634	0
-	+	610	0
-	+	586	0
-	+	562	0
-	+	516	0
-	+	470	0
-	+	424	0
-	+	378	0
-	+	332	0
-	+	286	0
-	+	240	0
-	+	216	0
-	+	192	0
-	+	168	0
-	+	144	0
-	+	120	0
-	+	73	0
-	+	49	0
-	+	25	0
-
-> ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-	"	58	31
-	^	45	1
-	.	58	0
-	+	2	0
-	+	46	79
-	+	45	0
-	+	48	32
-	+	5	0
-	+	58	0
-
-> ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
-	"	100	10
-	^	45	53
-	.	45	52
-	+	57	37
-	+	45	52
+> fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
+	"	1	0
 
 > ~/.vimrc
-	"	219	83
-	^	26	38
-	.	26	37
-	+	172	40
+	"	235	0
+	^	219	101
+	.	219	100
 	+	172	19
 	+	172	19
 	+	172	36
@@ -958,7 +929,136 @@ $PyclewnBreakPointToggle
 	+	171	0
 	+	172	0
 	+	26	37
+	+	219	100
 	g	235	7
+
+> ~/.git/index
+	"	1	0
+
+> ~/.vim/bundle/gom-pyclewn-view/.git/index
+	"	1	0
+
+> ~/.vim/bundle/gom-pyclewn-view/.git/refs/heads/master
+	"	1	0
+
+> fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067
+	"	1	0
+	.	5	0
+	+	5	0
+
+> fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067/
+	"	1	0
+
+> ~/code/c++/gdb_test/main.cc
+	"	118	0
+	.	98	0
+	+	143	0
+	+	98	0
+
+> ~/code/c++/gdb_test/__Tag_List__
+	"	22	4
+	.	25	0
+	+	1090	0
+	+	1066	0
+	+	1042	0
+	+	1018	0
+	+	994	0
+	+	970	0
+	+	946	0
+	+	922	0
+	+	898	0
+	+	874	0
+	+	850	0
+	+	826	0
+	+	780	0
+	+	734	0
+	+	688	0
+	+	642	0
+	+	596	0
+	+	550	0
+	+	504	0
+	+	480	0
+	+	456	0
+	+	432	0
+	+	408	0
+	+	384	0
+	+	337	0
+	+	313	0
+	+	289	0
+	+	265	0
+	+	241	0
+	+	217	0
+	+	193	0
+	+	169	0
+	+	145	0
+	+	121	0
+	+	97	0
+	+	73	0
+	+	49	0
+	+	25	0
+
+> ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+	"	1	0
+	^	20	12
+	.	46	38
+	+	2	0
+	+	46	79
+	+	45	0
+	+	48	32
+	+	5	0
+	+	58	0
+	+	48	29
+	+	53	0
+	+	58	20
+	+	20	10
+	+	46	38
+
+> ~/.vim/bundle/taglist.vim/plugin/taglist.vim
+	"	1	0
+
+> ~/.vim/bundle/[Vundle] Installer
+	"	20	0
+	.	1	0
+	+	1	0
+
+> ~/code/vim/gom-pyclewn-view/.git/COMMIT_EDITMSG
+	"	1	10
+	^	1	11
+	.	1	10
+	+	1	10
+
+> ~/code/c++/gdb_test/(clewn)_console
+	"	15	5
+	.	13	0
+	+	13	0
+
+> ~/code/c++/gdb_test/(clewn)_dbgvar
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/code/vim/gom-pyclewn-view/[Vundle] Installer
+	"	20	0
+	.	1	0
+	+	20	0
+	+	1	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	4
+	^	1	5
+	.	1	4
+	+	2	3
+	+	3	0
+	+	1	67
+	+	2	11
+	+	1	4
+
+> ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
+	"	100	10
+	^	45	53
+	.	45	52
+	+	57	37
+	+	45	52
 
 > ~/code/vim/gom-pyclewn-view/__Tag_List__
 	"	9	4
@@ -966,21 +1066,7 @@ $PyclewnBreakPointToggle
 	+	27	0
 	+	10	0
 
-> ~/code/vim/gom-pyclewn-view/[Vundle] Installer
-	"	20	0
-	.	1	0
-	+	1	0
-
-> ~/code/vim/gom-pyclewn-view/.git/COMMIT_EDITMSG
-	"	1	42
-	^	1	43
-	.	1	42
-	+	1	42
-
 > ~/.vim/bundle/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
-	"	1	0
-
-> ~/.vim/bundle/gom-pyclewn-view/.git/index
 	"	1	0
 
 > ~/gom-pyclewn-view
@@ -997,16 +1083,6 @@ $PyclewnBreakPointToggle
 	+	60	10
 	+	78	10
 	+	101	0
-
-> ~/code/c++/gdb_test/(clewn)_console
-	"	19	5
-	.	18	0
-	+	18	0
-
-> ~/code/c++/gdb_test/(clewn)_dbgvar
-	"	1	0
-	.	1	0
-	+	1	0
 
 > ~/code/c++/misc_usefull_tricks/gom_primitive_sizes.cpp
 	"	32	0
@@ -2153,9 +2229,6 @@ $PyclewnBreakPointToggle
 > ~/.vim/doc/omnicppcomplete.txt
 	"	909	3
 
-> ~/.git/index
-	"	12	32
-
 > ~/.viminfo
 	"	742	0
 
@@ -2189,15 +2262,6 @@ $PyclewnBreakPointToggle
 > /tmp/v9e4Hhr/39.fugitiveblame
 	"	1	0
 
-> ~/.git/COMMIT_EDITMSG
-	"	2	11
-	^	2	12
-	.	2	11
-	+	2	3
-	+	3	0
-	+	1	67
-	+	2	11
-
 > ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
 	"	41	0
 	^	44	13
@@ -2206,86 +2270,3 @@ $PyclewnBreakPointToggle
 	+	39	0
 	+	44	13
 	+	45	0
-
-> ~/.bash_aliases
-	"	3	0
-	^	47	19
-	.	47	18
-	+	2	0
-	+	48	104
-	+	20	0
-	+	37	0
-	+	18	0
-	+	9	0
-	+	6	2
-	+	12	0
-	+	14	0
-	+	15	0
-	+	15	0
-	+	18	0
-	+	14	0
-	+	15	0
-	+	20	0
-	+	20	152
-	+	20	0
-	+	15	0
-	+	15	0
-	+	10	0
-	+	40	0
-	+	11	0
-	+	20	0
-	+	48	0
-	+	21	0
-	+	46	22
-	+	47	18
-
-> ~/code/python/XBMC-Utility-scripts/[BufExplorer]
-	"	1	0
-
-> ~/code/python/XBMC-Utility-scripts/'__doc__'
-	"	19	0
-	.	1	0
-	+	1	0
-
-> ~/code/python/__Tag_List__
-	"	3	0
-	.	4	0
-	+	4	0
-
-> ~/code/python/STDOUT_STDERR
-	"	1	0
-	.	2	0
-	+	2	0
-
-> ~/code/python/SCOPE
-	"	3	0
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/code/python/LOG
-	"	198	0
-	.	196	0
-	+	2	0
-	+	3	0
-	+	29	0
-	+	42	0
-	+	46	0
-	+	59	0
-	+	63	0
-	+	67	0
-	+	80	0
-	+	86	0
-	+	109	0
-	+	115	0
-	+	138	0
-	+	144	0
-	+	167	0
-	+	173	0
-	+	196	0
