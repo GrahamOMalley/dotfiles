@@ -17,8 +17,8 @@
 $Step
 
 # Command Line History (newest to oldest):
-:q
 :wq
+:q
 :w
 :;
 :s/Next/Step/g
@@ -603,18 +603,20 @@ $Step
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  33  0  ~/code/c++/gdb_test/main.cc
-'1  1  2  ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
-'2  105  10  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
-'3  200  57  ~/.vimrc
-'4  231  54  fugitive:///home/gom/.git//0/.vimrc
-'5  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
-'6  5  46  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-'7  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067/
-'8  118  0  ~/code/c++/gdb_test/main.cc
-'9  99  0  ~/code/c++/gdb_test/__Tag_List__
+'0  2  15  ~/.git/COMMIT_EDITMSG
+'1  33  0  ~/code/c++/gdb_test/main.cc
+'2  1  2  ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
+'3  105  10  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
+'4  200  57  ~/.vimrc
+'5  231  54  fugitive:///home/gom/.git//0/.vimrc
+'6  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
+'7  5  46  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+'8  1  0  fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067/
+'9  118  0  ~/code/c++/gdb_test/main.cc
 
 # Jumplist (newest first):
+-'  2  15  ~/.git/COMMIT_EDITMSG
+-'  1  0  ~/.git/COMMIT_EDITMSG
 -'  33  0  ~/code/c++/gdb_test/main.cc
 -'  14  4  ~/code/c++/gdb_test/__Tag_List__
 -'  3  0  ~/code/c++/gdb_test/__Tag_List__
@@ -710,8 +712,22 @@ $Step
 -'  58  20  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
 -'  1  0  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
 -'  48  14  ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  33  0  ~/code/c++/gdb_test/main.cc
+-'  14  4  ~/code/c++/gdb_test/__Tag_List__
 
 # History of marks within files (newest to oldest):
+
+> ~/.git/COMMIT_EDITMSG
+	"	2	15
+	^	2	16
+	.	2	15
+	+	4	3
+	+	5	0
+	+	2	10
+	+	4	11
+	+	2	11
+	+	3	13
+	+	2	15
 
 > ~/code/c++/gdb_test/main.cc
 	"	33	0
@@ -944,17 +960,6 @@ $Step
 
 > fugitive:///home/gom/.git//0/.vimrc
 	"	231	54
-
-> ~/.git/COMMIT_EDITMSG
-	"	2	13
-	^	2	14
-	.	2	13
-	+	3	3
-	+	4	0
-	+	1	67
-	+	3	11
-	+	1	68
-	+	2	13
 
 > ~/.git/index
 	"	1	0
