@@ -5,9 +5,6 @@ gi -> go back to the cursor position last used in insert mode. handy after hitti
 CTRL-] -> jump to tag under cursor
 CTRL-T -> jump back
 
-OMNICPP
-CTRL-X CTRL-O -> autocomplete (when using omnicpp)
-
 
 **************************************** EDITING ****************************************************************************************
 

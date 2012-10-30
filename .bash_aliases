@@ -6,6 +6,7 @@ if [ "$TERM" != "dumb" ]; then
 fi
 
 alias ll='ls -lhF'
+alias lll='ls --color=always -lasth | less -R'
 alias tree='tree --charset=ASCII'
 alias vim='vim -p'
 alias ccat='pygmentize'

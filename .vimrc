@@ -21,7 +21,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround' 
-Bundle 'jabapyth/vim-debug'
 Bundle 'godlygeek/tabular'
 Bundle 'GrahamOMalley/gom-pyclewn-view'
 
@@ -79,6 +78,9 @@ if (&term == 'xterm' || &term =~? '^screen')
 endif
 
 "********************************************** PLUGIN VARS
+" force command-t to open new files in a new tab
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<CR>'
 
 " don't turn on jedi (python) autocomplete by default (gets set in Python autocmd)
 let g:jedi#auto_initialization = 0
@@ -180,8 +182,11 @@ endfunction
 "********************************************** GLOBAL
 autocmd BufNewFile,BufRead *conkyrc set filetype=conkyrc
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
-" Start Taglist window on file open if any of these types
-autocmd BufNewFile,BufRead *.c,*.cc,*.cpp,*.h,*.py,*.cs execute ":Tlist"
+
+" TODO: make 'Start Taglist window on file open if any of these types'
+" debugger aware, its irritating to have to hit F12 tp close tags on a new
+" file in debug mode
+autocmd BufNewFile,BufRead *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTlist"
 
 "********************************************** PYTHON
 augroup filetype_python
@@ -224,12 +229,11 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6>              :exe "Ccontinue"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7>              :exe "Cprint " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
-    " set this to PyclewnStep and PyclewnNext
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10>             :exe "PyclewnNext"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11>             :exe "PyclewnStep"<CR>
+    " TODO set this to something more sensible, I use pgeup and pgdwn all the time
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp>          :exe "Cup"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown>        :exe "Cdown"<CR>
-    " could set this to toggle info locals on each step
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds        :exe "Cbt"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df        :exe "Cframe"<CR>
