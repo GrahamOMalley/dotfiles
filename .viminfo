@@ -8,27 +8,127 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/tab
+~MSle0~/leader
 
 # Last Substitute Search Pattern:
-~MSle0&Step
+~MSle0&\<MapCell\>
 
 # Last Substitute String:
-$ToggleTlist
+$
 
 # Command Line History (newest to oldest):
-:wq
-:qa
-:q
-:messages
-:message
 :wqa
+:q
 :w
+:130,135Tabularize / 
+:Tabularize /:
+:131,135!sort
+:tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+:tab
+:call <SNR>65_GundoClose()
+:GundoShow
+:wa
+:qa
+:C<F2>
+:Ckill
+:tabnew tileEngine.h
+:Cfinish
+:SyntasticCheck
+:Cdbg *nit
+:Cdbg nit
+:Cprint filledTiles.size()
+:Cx
+:Cfile /home/gom/code/irrlicht-1.7.3/bin/Linux/00.Gom2
+:Cprint v
+:set syntax=cpp
+:Ccall plist carcassone_board.filledTiles
+:Cprint carcassone_board.filledTiles.size()
+:Cset print array on;qa
+:Cdbgvar carcassone_board.rows[0]
+:Cinfo locals
+:Cdbgvar carcassone_board.rows
+:Cset print array on
+:wq
+:tab h autocmd-events
+:echo g:gom_debug_view_on
+:echo g:gom_debug_on
+:tab h tabnew
+:tab h  tab
+:help tab
+:vsplit tileEngine.h
+:q1a
+:help Tlist
+:TlistOpen
+:TlistClose
+:echo w:gom
+:let w:gom="I'm the left window"
+:let w:gom="I'm the right window"
+:vsplit
+:let w:gom="gomisfuckingawesome"
+:tab h buffers
+:Gdiff
+:cd ~/.vim/bundle/
+:tab h Tlist
+:cd .vim/
+:cd ~
+:Gblame
+:Cprint carcassone_board
+:'<,'>!sort
+:Scriptnames
+:Cprint *nit
+:Cprint this->rows[i][j].data
+:wkk
+:%s/\<MapCell\>/tileMapCell/g
+:s/tileCoords/std::pair<int, int>/e | s/FilledTiles/filledTiles/e
+:s/Count/size()/g
+:s/).tileID/].tileID/g
+:s/rows\.at(/rows[/g
+:s/)\.at(/][/g
+:s/).data/].data/g
+:s/)\.at(/[]/g
+:s/)\.at\(/\[\]/g
+:s/\)\.at\(/\[\]/g
+:s/\(\.at\(/\[\]/g
+:s/\[/\(/g
+:s/\]/\)/g
+:%s/\<MapWidth\>/MAP_WIDTH/g
+:%s/\<MapHeight\>/MAP_HEIGHT/g
+:;;;;ll
+:%s/rows\.at\.at/rows\.at/g
+:%s/this\.rows/this->rows/g
+:%s/Columns/at/g
+:%s/f.y/f.second/g
+:%s/f.x/f.first/g
+:%s/f.x/p.first/g
+:%s/rows/rows.at/g
+:%s/tileid/tileID/g
+:%s/\<tileCoords\>/std::pair<int, int>/g
+:139,205y
+:%s/new tileCoords/std::make_pair/g
+:s/tileid/tileID/g
+:s/rows/rows.at/g
+:s/columns/at/g
+:s/tileis/tileID/g
+:s/[/(/g
+:map
+:%s/\<Rows\>/rows/g
+:%s/\<Add\>/push_back/g
+:%s/f.y/p.second/g
+:105,133y
+:Cprint carcassone_board.filledTiles
+:Cprint this->rows[i]
+:Cprint this->rows[i][j]
+:set columns=80
+:tab h dbgvar
+:PowerlineClearCache
+:14,26!sort
+:BundleInstall
+:Git push
+:Git commit -a
+:Gbrowse
 :tab h command-t
 :CommandT
-:map
 :tabnew 
-:Cset print array on
 :tab h Gdiff
 :s/Step/ToggleTlist/g
 :Tlist
@@ -56,7 +156,6 @@ $ToggleTlist
 :Cprintf "%s", carcassone_board
 :Cprintf("%s") carcassone_board
 :Cprintf carcassone_board
-:Cprint carcassone_board
 :Cbacktrace full
 :Ccommands backtrace -full
 :Ccommands
@@ -65,17 +164,12 @@ $ToggleTlist
 :Cprint carcassone_board.rows[0][0]
 :Cprint carcassone_board.rows[0]
 :Cprint carcassone_board.rows
-:set syntax=cpp
 :syntax 
 :100@q
-:Git push
-:Git commit -a
-:BundleInstall
 :;
 :s/Next/Step/g
 :%s/_next//g
 :s/gom_debug_view_on/pyclewn_next_locals_on/g
-:Scriptnames
 :Pyclewn
 :call PyclewnBreakPointToggle()
 :%s/GomDebug/PyclewnDebug/g
@@ -93,7 +187,6 @@ $ToggleTlist
 :%s/\<PyclewnDebuggerToggle\>/PyclewnBreakPointToggle/g
 :call BreakpointToggle()
 :tabnew .proj
-:Gdiff
 :line
 :help mark
 :tab h readfile
@@ -114,15 +207,12 @@ $ToggleTlist
 :tab h Dbg
 :Dbg quit
 :294,310Tabularize /:exe
-:Tabularize /:
 :294,310Tabularize /:
 :Tabularize :
 :'<,'>Tab/:
 :tabnew ~/bin/git_create_new_repo.sh
-:Gbrowse
 :Ggrep added
 :Glog -10
-:Gblame
 :cnext
 :Glog
 :tab h Gstatus
@@ -152,7 +242,6 @@ $ToggleTlist
 :TabMessage(:map)
 :TabMessage(map)
 :Pyclewn pdb
-:Cinfo locals
 :Cprint wd.title
 :Cprint wd
 :set synax=cpp
@@ -185,7 +274,6 @@ $ToggleTlist
 :Cbreak 45
 :Pyclewn pdb %
 :tab h pyclewn
-:Ckill
 :Cclear
 :Cdbgvar
 :Chelp
@@ -195,7 +283,6 @@ $ToggleTlist
 :/car
 :tab h internal-variables
 :;;;;;;;;;;;;;;;
-:Cfile /home/gom/code/irrlicht-1.7.3/bin/Linux/00.Gom2
 :%s/\<GOMtest1\>/Gom2/g
 :%s/\<Gomtest1\>/Gom2/g
 :winsize 100
@@ -207,8 +294,8 @@ $ToggleTlist
 :GundoToggle
 :Gundo
 :exe "Cbreak "
-:wa
 :Ccwindow
+:messages
 :call GomDebugStop()
 :call GomDebugStart()
 :;;;;;;;;;;;;;;;;;;;k
@@ -244,7 +331,6 @@ $ToggleTlist
 :Cinfo frame
 :Cframe
 :set columns=800
-:set columns=80
 :set columns=22
 :tab h winsize
 :winsize
@@ -308,9 +394,7 @@ $ToggleTlist
 :wincmd k
 :buffer (clewn)_dbgvar
 :buffer (clewn)_console
-:vsplit
 :h buffer
-:TlistClose
 :kkkkkkkkkkkkkkk
 :kk
 :TabMessage map
@@ -343,7 +427,6 @@ $ToggleTlist
 :Cquit
 :tabn
 :tabnew /home/gom/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
-:tab
 :TlistSync
 :TListSync
 :shell
@@ -366,7 +449,6 @@ $ToggleTlist
 :diff
 :diffget
 :diffthis
-:GundoShow
 :14,74!column -t
 :j
 :'<,'>s/^/hi /g
@@ -406,17 +488,81 @@ $ToggleTlist
 :Cfile twb
 :qk
 :Cprint list
+:message
+:'<,'>q
+:set paste?
+:set paste!
+:137,144s/Next/Continue/g
+:Cshell clear
+:Cset print pretty off
+:set print pretty off
+:Cdbg p
+:Cprint *this
+:Cprint this
+:Cdbg m
+:Cdbg i
+:Cdbg carcassone_board.rows
+:exe "Cdbg "
+:exe "Cdbg "i
+:Cdbgvar i
+:Cset print array off
+:Cset print pretty on
 
 # Search String History (newest to oldest):
-?/tab
+?/leader
+? \<tileHeight\>
+?/imp
+?/locals
+? \Vvec\%#
+?/TODO
+?/Tab
+? ^\s*\d\+:\s*
+? ^\s*$
+? \<MapCell\>
+? FilledTiles
+? Count
+? \Vif\%#
+? ).tileID
+? rows\.at(
+? )\.at(
+? ).data
+? )\.at\(
+? \)\.at\(
+? \(\.at\(
+? \[
+? \]
+? \<MapWidth\>
+? \<MapHeight\>
+? rows\.at\.at
+? this\.rows
+? Columns
+? f.y
+? f.x
+? rows
+? tileid
+? \<tileCoords\>
+?/m\.
+?/m.
+? new tileCoords
+?/make
+? columns
+? tileis
+? [/(/g
+? \<Rows\>
+? \<Add\>
+?/Add
+?/filled
+?/in
+? \Vlist\%#
 ?/PLUGIN
+?/FUNCTION
+?/w:
+?/tab
 ?/command-t-options
 ?/Options
 ? Step
 ?/s/Step/ToggleTlist/g
-? \Vif\%#
 ? \Vf\%#
-?/leader
 ?/using
 ?/dbg
 ?/Dbg
@@ -435,15 +581,12 @@ $ToggleTlist
 ?/gom_debug_view_on
 ? \Vheader\%#
 ? \%(^parent\)\@<! 
-? ^\s*\d\+:\s*
-? ^\s*$
 ?/GDT
 ? GomDebug
 ?/<
 ? \<GomDebug\>
 ? GomPyclewnView#
 ?/function!
-?/FUNCTION
 ? \<PyclewnDebuggerToggle\>
 ? breakpoint_on = 1
 ?/Cbreak
@@ -456,7 +599,6 @@ $ToggleTlist
 ?/Cpro
 ?/GomDe
 ?/set
-?/w:
 ?/PyDebug
 ? gom
 ??kkkkk
@@ -497,7 +639,6 @@ $ToggleTlist
 ?/Gom
 ? \<Gomtest1\>
 ?/F9
-?/TODO
 ?/Toggle
 ?/command
 ?/buf
@@ -544,7 +685,6 @@ $ToggleTlist
 ?/F12
 ?/tileFits
 ?/getNeigh
-? \Vlist\%#
 ? \<xxx\>
 ? \V\.\%#
 ?/noc
@@ -576,6 +716,11 @@ $ToggleTlist
 ?/loaded_taglist
 ?/PyclewnBreakPointToggle
 ? ^
+?/pge
+?/pgea
+?/list
+?/array
+?/dd
 
 # Expression History (newest to oldest):
 
@@ -589,39 +734,51 @@ $ToggleTlist
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	command! PyclewnStep call PyclewnStep()
-""1	LINE	0
-	let g:CommandTAcceptSelectionTabMap = '<CR>'
+""0	LINE	0
+	nnoremap <Leader>vp :tabnew .proj<CR>
+"1	LINE	0
+	    ":botright 20split (clewn)_console
 "2	LINE	0
-	OMNICPP
-	CTRL-X CTRL-O -> autocomplete (when using omnicpp)
-	
+	    ":wincmd k
+	    ":set syntax=cpp
 "3	LINE	0
-	
+	            //driver->draw2DImage(images, core::rect<s32>(10,10,108,48),
+	                   //tile_engine::tileTexture::getSourceRectangle(images, 3));
 "4	LINE	0
-	
+				/*
+				Finally draw a half-transparent rect under the mouse cursor.
+				*/
 "5	LINE	0
-	    " this function is designed to be used as part of an autocmd to auto turn
-	    " on 
+	            //driver->draw2DImage(images, core::rect<s32>(10,10,108,48),
+	                   //tile_engine::tileTexture::getSourceRectangle(images, 3));
 "6	LINE	0
-	    
+				*/
 "7	LINE	0
-	
+				the image we use the prepared filter mode.
 "8	LINE	0
+						//video::SColor(255,time % 255,time % 255,255));
 	
+				/*
+				Next, we draw the Irrlicht Engine logo (without
+				using a color or an alpha channel). Since we slightly scale
 "9	LINE	0
 	
+				// draw some other text
+				//if (font2)
+					//font2->draw(L"Also mixing with 3d graphics is possible.",
+						//core::rect<s32>(130,20,300,60),
 "a	LINE	0
 	/bin/bash: sbrecent: command not found
 	ME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"
 "j	CHAR	0
 	314
 <jjjjjj;mapjjjjjjjjjjjjjjjjjjk€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;jjjjj€k9€k5€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;,bejjkkjj,beq
+"q@	CHAR	0
+	€k3j€k3jjj€k3jj€k3j€k3jj€k3jj
 "w	CHAR	0
 	wwwwwwwwwwwwx;wkjji	if(g:py0wwxi Aie€kb€kbex€kb€kb:exe "Cinfo locals!"€kb€kb"j€kb€kbendif;wkjjddkkkkkA;E€kb€kb;€kb:exe "Cnext";wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyGkkkkkpjjjjjjjkkkkjdddddddddd;w,gd
 "-	CHAR	0
-	condition
+	clang_complete
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -650,433 +807,602 @@ $ToggleTlist
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  2  35  ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
-'1  34  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
-'2  99  4  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
-'3  165  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
-'4  263  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
-'5  4  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/[BufExplorer]
-'6  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
-'7  1  0  .vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-'8  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
-'9  82  0  ~/.vimrc
+'0  96  4  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+'1  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.h
+'2  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_dbgvar
+'3  205  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+'4  697  0  ~/.gdbinit
+'5  232  86  ~/.vimrc
+'6  226  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+'8  15  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+'9  227  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
 
 # Jumplist (newest first):
--'  2  35  ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
--'  1  0  ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
--'  34  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+-'  96  4  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
 -'  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
--'  64  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  2  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
--'  66  4  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
+-'  2  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  7  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  10  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  14  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  18  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  24  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  29  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  37  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  64  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  69  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  76  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  83  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  90  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  99  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  107  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  123  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  138  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  153  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  168  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  171  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  177  8  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  178  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  191  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  224  12  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  226  4  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  227  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  36  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  26  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  22  69  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
 -'  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.h
--'  164  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  99  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  197  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  4  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/[BufExplorer]
--'  73  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
--'  26  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
--'  1  0  .vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
--'  82  0  ~/.vimrc
--'  79  0  ~/.vimrc
--'  74  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  86  0  ~/.vimrc
--'  93  0  ~/.vimrc
--'  96  0  ~/.vimrc
--'  100  0  ~/.vimrc
--'  106  0  ~/.vimrc
--'  112  0  ~/.vimrc
--'  115  0  ~/.vimrc
--'  118  0  ~/.vimrc
--'  121  0  ~/.vimrc
--'  127  0  ~/.vimrc
--'  66  0  ~/.vimrc
--'  131  0  ~/.vimrc
--'  137  0  ~/.vimrc
--'  140  0  ~/.vimrc
--'  144  0  ~/.vimrc
--'  37  0  ~/.vimrc
--'  35  0  ~/.vimrc
--'  33  0  ~/.vimrc
--'  30  0  ~/.vimrc
--'  26  0  ~/.vimrc
--'  12  0  ~/.vimrc
--'  9  0  ~/.vimrc
--'  6  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  317  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  235  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  1  0  ~/.vim/.myvimtips
--'  326  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  325  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  560  31  ~/.vim/bundle/command-t/doc/command-t.txt
--'  131  16  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
--'  1  0  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
--'  82  0  ~/.vimrc
--'  79  0  ~/.vimrc
--'  74  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  86  0  ~/.vimrc
--'  93  0  ~/.vimrc
--'  96  0  ~/.vimrc
--'  100  0  ~/.vimrc
--'  106  0  ~/.vimrc
--'  112  0  ~/.vimrc
--'  115  0  ~/.vimrc
--'  118  0  ~/.vimrc
--'  121  0  ~/.vimrc
--'  127  0  ~/.vimrc
--'  66  0  ~/.vimrc
--'  131  0  ~/.vimrc
--'  137  0  ~/.vimrc
--'  140  0  ~/.vimrc
--'  144  0  ~/.vimrc
--'  37  0  ~/.vimrc
--'  35  0  ~/.vimrc
--'  33  0  ~/.vimrc
--'  30  0  ~/.vimrc
--'  26  0  ~/.vimrc
--'  12  0  ~/.vimrc
--'  9  0  ~/.vimrc
--'  6  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  1  0  ~/.vim/.myvimtips
--'  292  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  291  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  560  31  ~/.vim/bundle/command-t/doc/command-t.txt
--'  82  0  ~/.vimrc
--'  79  0  ~/.vimrc
--'  74  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  86  0  ~/.vimrc
--'  93  0  ~/.vimrc
--'  96  0  ~/.vimrc
--'  100  0  ~/.vimrc
--'  106  0  ~/.vimrc
--'  112  0  ~/.vimrc
--'  115  0  ~/.vimrc
--'  98  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
--'  34  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
--'  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
--'  64  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
+-'  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_dbgvar
+-'  2  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_console
+-'  31  0  ~/code/irrlicht-1.7.3/include/rect.h
+-'  58  14  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+-'  39  36  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+-'  31  1  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+-'  1  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+-'  205  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
+-'  16  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
 
 # History of marks within files (newest to oldest):
 
-> ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
-	"	2	35
-	^	2	36
-	.	2	35
-	+	1	71
-	+	2	35
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+	"	60	11
+	^	60	12
+	.	60	0
+	+	15	3
+	+	14	0
+	+	15	25
+	+	13	5
+	+	15	0
+	+	15	0
+	+	17	0
+	+	20	0
+	+	19	0
+	+	19	30
+	+	4	0
+	+	19	26
+	+	19	20
+	+	19	19
+	+	19	17
+	+	19	17
+	+	19	17
+	+	19	17
+	+	19	17
+	+	19	17
+	+	19	17
+	+	19	17
+	+	19	21
+	+	19	20
+	+	19	0
+	+	17	0
+	+	13	0
+	+	36	1
+	+	1	0
+	+	1	0
+	+	11	0
+	+	16	0
+	+	21	0
+	+	29	0
+	+	31	0
+	+	31	0
+	+	31	68
+	+	38	0
+	+	39	0
+	+	58	60
+	+	58	93
+	+	58	0
+	+	58	0
+	+	58	95
+	+	58	0
+	+	58	0
+	+	58	15
+	+	58	62
+	+	58	0
+	+	58	0
+	+	38	1
+	+	39	1
+	+	58	0
+	+	23	0
+	+	22	32
+	+	55	0
+	+	55	0
+	+	54	15
+	+	58	0
+	+	58	0
+	+	58	0
+	+	58	0
+	+	58	67
+	+	58	78
+	+	58	56
+	+	58	65
+	+	58	0
+	+	58	0
+	+	58	0
+	+	58	30
+	+	58	34
+	+	58	34
+	+	63	0
+	+	58	108
+	+	58	104
+	+	58	99
+	+	58	30
+	+	58	30
+	+	58	96
+	+	31	0
+	+	34	0
+	+	47	0
+	+	54	0
+	+	55	0
+	+	58	0
+	+	66	3
+	+	58	30
+	+	58	42
+	+	62	0
+	+	58	30
+	+	66	0
+	+	58	42
+	+	64	0
+	+	59	0
+	+	60	0
 
 > ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.cpp
 	"	1	0
-	^	40	0
-	.	40	0
+	^	22	70
+	.	177	0
+	+	80	17
+	+	87	17
+	+	94	17
+	+	74	0
+	+	80	0
+	+	87	0
+	+	94	0
+	+	101	60
+	+	170	0
+	+	170	15
+	+	101	41
+	+	103	0
+	+	170	0
 	+	40	0
+	+	74	0
+	+	113	0
+	+	110	0
+	+	113	0
+	+	74	0
+	+	113	0
+	+	118	75
+	+	133	50
+	+	125	0
+	+	155	0
+	+	128	58
+	+	143	0
+	+	148	75
+	+	158	0
+	+	163	75
+	+	183	18
+	+	113	0
+	+	118	0
+	+	128	0
+	+	133	0
+	+	143	0
+	+	148	0
+	+	158	0
+	+	163	0
+	+	74	60
+	+	74	62
+	+	74	0
+	+	74	64
+	+	74	0
+	+	76	0
+	+	74	0
+	+	100	59
+	+	16	0
+	+	63	0
+	+	66	0
+	+	188	0
+	+	226	0
+	+	188	0
+	+	189	0
+	+	226	11
+	+	189	9
+	+	226	8
+	+	189	94
+	+	189	37
+	+	226	0
+	+	226	0
+	+	190	55
+	+	192	49
+	+	197	0
+	+	193	36
+	+	197	0
+	+	195	34
+	+	196	36
+	+	226	0
+	+	225	0
+	+	189	0
+	+	193	0
+	+	191	0
+	+	200	0
+	+	201	0
+	+	202	34
+	+	201	13
+	+	203	57
+	+	204	0
+	+	224	0
+	+	204	0
+	+	225	0
+	+	207	0
+	+	208	61
+	+	212	39
+	+	214	40
+	+	221	26
+	+	215	49
+	+	214	61
+	+	186	56
+	+	217	30
+	+	22	0
+	+	21	34
+	+	22	78
+	+	21	52
+	+	22	69
+	+	26	0
+	+	36	0
+	+	226	0
+	+	224	0
+	+	177	0
 
 > ~/code/irrlicht-1.7.3/examples/01.GomTest2/tileEngine.h
 	"	1	0
-	^	49	35
-	.	49	0
-	+	52	33
-	+	58	0
-	+	53	0
+	^	5	20
+	.	5	19
+	+	53	33
+	+	59	0
 	+	54	0
-	+	53	41
-	+	55	34
-	+	47	33
+	+	55	0
+	+	54	41
+	+	56	34
+	+	48	33
+	+	52	0
+	+	50	0
+	+	49	41
 	+	51	0
-	+	49	0
-	+	48	41
+	+	50	34
+	+	51	0
 	+	50	0
-	+	49	34
-	+	50	0
-	+	49	0
+	+	12	14
+	+	64	0
+	+	63	0
+	+	64	0
+	+	46	34
+	+	62	60
+	+	63	44
+	+	63	20
+	+	67	61
+	+	59	62
+	+	60	29
+	+	69	44
+	+	4	18
+	+	5	19
 
 > ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Tag_List__
-	"	35	4
-	.	36	0
-	+	1095	0
-	+	1090	0
-	+	1077	0
-	+	1064	0
-	+	1059	0
-	+	1054	0
-	+	1049	0
-	+	1036	0
-	+	892	0
-	+	892	0
-	+	1025	0
-	+	892	0
-	+	892	0
-	+	992	0
-	+	892	0
-	+	892	0
-	+	959	0
-	+	892	0
-	+	892	0
-	+	926	0
-	+	891	0
-	+	656	0
-	+	656	0
-	+	888	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	845	0
-	+	819	0
-	+	656	0
-	+	789	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	656	0
-	+	765	0
-	+	737	0
-	+	765	0
-	+	764	0
-	+	656	0
-	+	686	0
-	+	655	0
-	+	646	0
-	+	611	0
-	+	576	0
-	+	492	0
-	+	542	0
-	+	491	0
-	+	462	0
-	+	478	0
-	+	482	0
-	+	453	0
-	+	364	0
+	"	45	4
+	.	70	0
+	+	557	0
+	+	557	0
+	+	638	0
+	+	557	0
+	+	557	0
+	+	557	0
+	+	557	0
+	+	557	0
+	+	595	0
+	+	614	0
+	+	556	0
+	+	515	0
+	+	541	0
+	+	552	0
+	+	515	0
+	+	515	0
+	+	515	0
+	+	538	0
+	+	514	0
+	+	456	0
+	+	456	0
+	+	456	0
+	+	456	0
+	+	456	0
+	+	502	0
+	+	512	0
+	+	455	0
+	+	450	0
 	+	445	0
-	+	364	0
-	+	364	0
-	+	364	0
-	+	364	0
-	+	414	0
-	+	363	0
-	+	165	0
-	+	165	0
-	+	356	0
-	+	165	0
-	+	165	0
-	+	165	0
-	+	165	0
-	+	165	0
-	+	326	0
-	+	165	0
-	+	292	0
-	+	165	0
-	+	262	0
-	+	165	0
-	+	165	0
-	+	233	0
-	+	165	0
-	+	199	0
-	+	164	0
-	+	133	0
-	+	2	0
-	+	2	0
-	+	100	0
-	+	2	0
-	+	2	0
-	+	67	0
+	+	440	0
+	+	435	0
+	+	430	0
+	+	426	0
+	+	425	0
+	+	421	0
+	+	420	0
+	+	415	0
+	+	410	0
+	+	405	0
+	+	401	0
+	+	400	0
+	+	395	0
+	+	390	0
+	+	375	0
+	+	353	0
+	+	348	0
+	+	343	0
+	+	338	0
+	+	303	0
+	+	268	0
+	+	263	0
+	+	259	0
+	+	258	0
+	+	254	0
 	+	2	0
 	+	2	0
 	+	2	0
 	+	2	0
-	+	36	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	253	0
+	+	91	0
+	+	2	0
+	+	2	0
+	+	88	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	70	0
 
-> ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
-	"	34	0
-
-> ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_console
-	"	16	5
-	.	13	0
-	+	13	0
-
-> ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_dbgvar
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/[BufExplorer]
 	"	1	0
-	.	22	0
-	+	22	0
 
 > ~/code/irrlicht-1.7.3/examples/01.GomTest2/GoToFile
 	"	1	0
-	.	3	0
-	+	67	0
-	+	36	0
-	+	35	0
-	+	34	0
+	.	33	0
+	+	179	0
+	+	148	0
+	+	147	0
+	+	146	0
 	+	1	0
 	+	1	0
 	+	1	0
+	+	145	0
+	+	1	0
+	+	144	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	120	0
+	+	1	0
+	+	1	0
+	+	117	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	116	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	113	0
+	+	111	0
+	+	1	0
+	+	81	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	79	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	55	0
 	+	33	0
-	+	1	0
-	+	32	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	8	0
-	+	1	0
-	+	1	0
-	+	5	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/code/irrlicht-1.7.3/examples/01.GomTest2/[BufExplorer]
-	"	4	0
-
-> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
-	"	1	0
-
-> .vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-	"	1	0
 
 > ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-	"	131	16
-	^	131	17
-	.	131	16
-	+	37	0
-	+	1	0
-	+	2	25
-	+	4	78
-	+	5	47
-	+	135	0
-	+	135	0
-	+	107	17
-	+	135	0
-	+	113	10
-	+	107	23
+	"	96	4
+	.	93	0
+	+	126	10
+	+	120	23
+	+	126	0
+	+	117	0
+	+	112	26
+	+	117	0
 	+	113	0
-	+	104	0
-	+	99	26
-	+	104	0
-	+	100	0
-	+	95	11
-	+	104	4
-	+	100	0
-	+	100	100
-	+	99	8
-	+	104	10
-	+	113	3
-	+	109	0
-	+	110	4
-	+	109	72
-	+	110	32
+	+	108	11
+	+	117	4
+	+	113	0
+	+	113	100
 	+	112	8
+	+	117	10
+	+	126	3
+	+	122	0
+	+	123	4
+	+	122	72
+	+	123	32
+	+	125	8
+	+	126	0
+	+	121	15
+	+	127	0
+	+	157	0
 	+	113	0
-	+	108	15
+	+	112	17
+	+	127	19
+	+	118	27
+	+	128	0
+	+	129	0
+	+	136	0
+	+	130	14
 	+	114	0
-	+	135	0
-	+	100	0
-	+	99	17
-	+	114	19
-	+	105	27
-	+	115	0
-	+	116	0
-	+	123	0
-	+	117	14
-	+	101	0
 	+	3	26
 	+	41	0
 	+	39	74
 	+	40	8
 	+	39	52
 	+	40	10
-	+	89	77
-	+	90	31
-	+	98	73
-	+	125	1
+	+	103	77
+	+	104	31
+	+	111	73
+	+	147	1
 	+	10	0
 	+	15	0
 	+	26	0
-	+	133	0
-	+	127	29
-	+	133	4
-	+	128	0
-	+	133	0
-	+	133	0
-	+	128	0
-	+	130	0
-	+	129	8
-	+	130	27
-	+	133	0
-	+	134	0
-	+	131	16
+	+	155	0
+	+	149	29
+	+	155	4
+	+	150	0
+	+	155	0
+	+	155	0
+	+	150	0
+	+	152	0
+	+	151	8
+	+	152	27
+	+	155	0
+	+	156	0
+	+	153	16
+	+	78	11
+	+	150	62
+	+	78	4
+	+	151	27
+	+	152	55
+	+	46	26
+	+	47	51
+	+	50	41
+	+	46	7
+	+	46	0
+	+	45	38
+	+	152	0
+	+	104	0
+	+	101	4
+	+	101	4
+	+	102	4
+	+	104	4
+	+	105	4
+	+	106	4
+	+	93	0
+	+	87	13
+	+	99	13
+	+	88	0
+	+	89	0
+	+	93	0
+	+	90	4
+	+	91	4
+	+	93	0
+	+	92	4
+	+	91	0
+	+	90	17
+	+	93	0
+	+	101	0
+	+	95	13
+	+	138	0
+	+	139	11
+	+	99	4
+	+	99	4
+	+	99	0
+	+	93	0
+	+	90	0
+	+	93	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Gundo_Preview__
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Gundo__
+	"	22	1
+	.	1	0
+	+	1	0
+
+> fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
+	"	90	0
 
 > ~/.vimrc
-	"	82	0
-	^	83	44
-	.	82	0
-	+	1	670
-	+	1	697
-	+	1	724
-	+	1	725
-	+	1	744
-	+	1	769
-	+	1	790
-	+	1	791
-	+	1	809
-	+	1	854
-	+	1	855
-	+	1	880
-	+	1	881
-	+	1	1002
-	+	1	1003
-	+	1	1010
-	+	1	1042
-	+	1	1057
-	+	1	1125
-	+	1	1213
-	+	1	1227
-	+	1	1243
-	+	1	1258
-	+	1	1353
-	+	1	1366
-	+	1	1384
-	+	1	1400
-	+	1	1412
-	+	1	1479
-	+	1	1551
-	+	1	1569
-	+	1	1586
-	+	1	1605
-	+	1	1710
-	+	1	1800
-	+	1	1872
-	+	1	1887
-	+	1	1906
+	"	130	0
+	^	135	86
+	.	130	0
 	+	1	1921
 	+	1	1998
 	+	1	2040
@@ -1096,50 +1422,373 @@ $ToggleTlist
 	+	1	2390
 	+	1	2396
 	+	1	2397
-	+	173	0
-	+	173	0
-	+	173	41
-	+	173	41
-	+	173	19
-	+	173	55
-	+	173	55
-	+	173	28
-	+	173	0
-	+	230	0
-	+	230	104
-	+	173	42
-	+	173	0
 	+	172	0
-	+	173	0
-	+	25	37
-	+	224	100
+	+	172	0
+	+	172	41
+	+	172	41
+	+	172	19
+	+	172	55
+	+	172	55
+	+	172	28
+	+	172	0
+	+	228	0
+	+	228	104
+	+	172	42
+	+	172	0
+	+	171	0
+	+	172	0
+	+	24	37
+	+	222	100
 	+	1	0
-	+	231	0
-	+	231	44
-	+	235	147
+	+	229	0
+	+	229	44
+	+	233	147
 	+	1	0
-	+	236	101
-	+	231	84
-	+	230	107
-	+	231	93
-	+	223	0
-	+	223	74
-	+	232	93
+	+	234	101
+	+	229	84
+	+	228	107
+	+	229	93
+	+	221	0
+	+	221	74
+	+	230	93
+	+	232	0
+	+	23	0
+	+	229	0
+	+	231	77
+	+	231	77
+	+	231	77
 	+	234	0
+	+	182	53
+	+	185	71
+	+	186	19
+	+	186	82
+	+	80	92
+	+	80	92
+	+	80	48
+	+	80	92
+	+	25	8
+	+	25	9
+	+	25	9
+	+	14	0
+	+	72	0
+	+	80	81
+	+	80	57
+	+	80	48
+	+	19	0
+	+	72	0
+	+	80	48
+	+	80	48
+	+	80	78
+	+	80	0
+	+	129	0
+	+	185	2
+	+	186	0
+	+	185	78
+	+	185	78
+	+	185	68
+	+	185	68
+	+	231	56
+	+	239	31
+	+	184	20
+	+	186	16
+	+	232	5
+	+	233	4
+	+	233	84
+	+	232	84
+	+	233	83
+	+	232	83
+	+	237	83
+	+	226	97
+	+	134	32
+	+	135	85
+	+	131	0
+	+	130	0
+	g	240	7
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/.proj
+	"	1	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/.clang_complete
+	"	1	0
+
+> ~/code/irrlicht-1.7.3/include/rect.h
+	"	31	0
+
+> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/Game1.cs
+	"	221	0
+
+> ~/code/irrlicht-1.7.3/include/IVideoDriver.h
+	"	755	0
+
+> ~/code/irrlicht-1.7.3/include/irrTypes.h
+	"	64	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_console
+	"	18	5
+	.	15	0
+	+	15	0
+
+> ~/code/irrlicht-1.7.3/examples/01.GomTest2/(clewn)_dbgvar
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/.gdbinit
+	"	697	0
+	^	697	1
+	.	697	0
+	+	1	18
+	+	1	18
+	+	10	0
+	+	11	40
+	+	703	0
+	+	11	1
+	+	703	0
+	+	702	0
+	+	701	0
+	+	700	0
+	+	699	0
+	+	698	0
+	+	697	0
+	+	2	0
+	+	3	0
+	+	9	3
+	+	4	4
+	+	6	30
+	+	697	0
+
+> /usr/include/c++/4.6/bits/stl_list.h
+	"	145	0
+
+> ~/.gdb_printers/python/libstdcxx/v6/printers.py
+	"	861	10
+
+> ~/.gdb_printers/python/libstdcxx/v6/__Tag_List__
+	"	149	4
+	.	150	0
+	+	150	0
+
+> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/MapCell.cs
+	"	78	0
+
+> fugitive:///home/gom/.git//0/.vimrc
+	"	242	10
+
+> ~/code/python/spider_bro/spiderBro.py
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	5	0
 	+	24	0
-	+	231	0
-	+	233	77
-	+	233	77
-	+	233	77
-	+	236	0
-	+	183	53
-	+	185	70
-	+	187	19
-	+	188	82
-	+	82	44
-	+	83	44
-	+	82	0
-	g	241	7
+	+	31	0
+	+	30	0
+	+	1	0
+	+	4	0
+	+	2	0
+	+	1	0
+
+> ~/code/python/spider_bro/__Tag_List__
+	"	3	0
+	.	4	0
+	+	916	0
+	+	913	0
+	+	910	0
+	+	907	0
+	+	871	0
+	+	754	0
+	+	751	0
+	+	748	0
+	+	745	0
+	+	603	0
+	+	600	0
+	+	597	0
+	+	594	0
+	+	591	0
+	+	588	0
+	+	585	0
+	+	582	0
+	+	579	0
+	+	576	0
+	+	573	0
+	+	570	0
+	+	567	0
+	+	493	0
+	+	397	0
+	+	394	0
+	+	322	0
+	+	319	0
+	+	316	0
+	+	313	0
+	+	310	0
+	+	276	0
+	+	308	0
+	+	275	0
+	+	272	0
+	+	235	0
+	+	202	0
+	+	169	0
+	+	136	0
+	+	103	0
+	+	70	0
+	+	37	0
+	+	4	0
+
+> fugitive:///home/gom/code/python/spider_bro/.git//0/spiderBro.py
+	"	1	0
+
+> /usr/share/vim/vim73/doc/autocmd.txt
+	"	171	14
+
+> fugitive:///home/gom/.git//0/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
+	"	1	0
+	.	1	0
+	+	1	0
+
+> /usr/share/vim/vim73/doc/intro.txt
+	"	407	24
+
+> /usr/share/vim/vim73/doc/tabpage.txt
+	"	61	40
+
+> ~/code/irrlicht-1.7.3/examples/00.Gomtest1/main.cpp
+	"	3	0
+
+> ~/code/irrlicht-1.7.3/examples/__Tag_List__
+	"	3	0
+	.	6	0
+	+	6	0
+
+> ~/.vim/bundle/GoToFile
+	"	2	0
+	.	53	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	53	0
+
+> ~/.vim/bundle/[BufExplorer]
+	"	1	0
+
+> /usr/share/vim/vim73/doc/windows.txt
+	"	7	54
+
+> ~/.vim/bundle/taglist.vim/doc/taglist.txt
+	"	1055	6
+
+> ~/code/python/spider_bro/GoToFile
+	"	2	0
+	.	87	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	238	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	170	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	87	0
+
+> /tmp/vM4W7so/0.fugitiveblame
+	"	2	0
+
+> fugitive:///home/gom/code/python/spider_bro/.git//7c313c010650a4059f905ea344642f7ba87a57d0/auto_torrent.py
+	"	1	0
+
+> /tmp/vM4W7so/7.fugitiveblame
+	"	2	0
+
+> /tmp/vM4W7so/13.fugitiveblame
+	"	1	0
+
+> /tmp/vM4W7so/19.fugitiveblame
+	"	1	0
+
+> ~/code/python/spider_bro/spiderbro.
+	"	1	0
+
+> ~/code/python/spider_bro/sb_utils.py
+	"	1	0
+
+> ~/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
+	"	80	23
+
+> /etc/vim/doc/pyclewn.txt
+	"	1220	52
+
+> ~/.vim/bundle/[Vundle] clean
+	"	2	0
+	.	1	0
+	+	1	0
+
+> ~/.vim/bundle/__Tag_List__
+	"	6	4
+	.	21	0
+	+	22	0
+	+	21	0
+
+> ~/.vim/bundle/gom-pyclewn-view/.git/index
+	"	5	0
+
+> ~/[Vundle] Installer
+	"	20	0
+	.	1	0
+	+	39	0
+	+	20	0
+	+	1	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	38
+	^	1	39
+	.	1	25
+	+	4	3
+	+	5	0
+	+	2	10
+	+	4	11
+	+	2	11
+	+	3	13
+	+	2	15
+	+	1	25
+
+> ~/.vim/bundle/gom-pyclewn-view/.git/COMMIT_EDITMSG
+	"	2	35
+	^	2	36
+	.	2	35
+	+	1	71
+	+	2	35
+
+> .vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+	"	1	0
 
 > ~/.vim/bundle/command-t/doc/command-t.txt
 	"	559	64
@@ -1149,14 +1798,8 @@ $ToggleTlist
 	.	8	0
 	+	8	0
 
-> fugitive:///home/gom/.git//0/.vimrc
-	"	185	0
-
 > ~/.vim/bundle/vim-fugitive/doc/fugitive.txt
 	"	145	48
-
-> fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
-	"	131	0
 
 > ~/code/irrlicht-1.7.3/examples/01.GomTest2/[Vundle] clean
 	"	2	0
@@ -1277,9 +1920,6 @@ $ToggleTlist
 	.	9	45
 	+	9	45
 
-> /etc/vim/doc/pyclewn.txt
-	"	1135	9
-
 > /usr/include/c++/4.6/array
 	"	60	0
 
@@ -1287,19 +1927,6 @@ $ToggleTlist
 	"	20	0
 	.	1	0
 	+	1	0
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	3
-	^	1	4
-	.	1	3
-	+	4	3
-	+	5	0
-	+	2	10
-	+	4	11
-	+	2	11
-	+	3	13
-	+	2	15
-	+	1	3
 
 > ~/.vim/bundle/gom-pyclewn-view/README.txt
 	"	39	55
@@ -1316,9 +1943,6 @@ $ToggleTlist
 	+	22	0
 	+	45	0
 	+	39	55
-
-> ~/.vim/bundle/gom-pyclewn-view/.git/index
-	"	5	0
 
 > ~/.git/index
 	"	1	0
@@ -1441,53 +2065,11 @@ $ToggleTlist
 > ~/code/c++/misc_usefull_tricks/.proj
 	"	1	0
 
-> /usr/share/vim/vim73/doc/windows.txt
-	"	135	36
-
 > /usr/share/vim/vim73/doc/eval.txt
 	"	4658	10
 
 > /usr/share/vim/vim73/doc/motion.txt
 	"	739	10
-
-> ~/code/python/spider_bro/spiderBro.py
-	"	17	0
-	.	27	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-	+	21	0
-	+	28	0
-	+	27	0
-
-> ~/code/python/spider_bro/__Tag_List__
-	"	3	0
-	.	97	0
-	+	520	0
-	+	517	0
-	+	514	0
-	+	511	0
-	+	475	0
-	+	358	0
-	+	355	0
-	+	352	0
-	+	349	0
-	+	207	0
-	+	204	0
-	+	201	0
-	+	198	0
-	+	195	0
-	+	192	0
-	+	189	0
-	+	186	0
-	+	183	0
-	+	180	0
-	+	177	0
-	+	174	0
-	+	171	0
-	+	97	0
 
 > ~/code/python/spider_bro/STDOUT_STDERR
 	"	1	0
@@ -1708,773 +2290,3 @@ $ToggleTlist
 	+	63	0
 	+	65	0
 	+	66	0
-
-> ~/code/python/spider_bro/STACK
-	"	5	0
-	.	2	0
-	+	1	0
-	+	30	0
-	+	1	0
-	+	1	0
-	+	26	0
-	+	1	0
-	+	1	0
-	+	22	0
-	+	1	0
-	+	1	0
-	+	18	0
-	+	1	0
-	+	1	0
-	+	14	0
-	+	1	0
-	+	1	0
-	+	10	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	6	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/python/spider_bro/WATCH
-	"	1	0
-	^	3	8
-	.	2	0
-	+	10	0
-	+	9	0
-	+	8	0
-	+	7	0
-	+	6	0
-	+	5	0
-	+	4	0
-	+	3	7
-	+	2	0
-
-> ~/code/python/spider_bro/RESULTS
-	"	1	0
-	.	2	0
-	+	9	0
-	+	8	0
-	+	7	0
-	+	6	0
-	+	5	0
-	+	4	0
-	+	3	0
-	+	2	0
-
-> ~/code/python/spider_bro/sb_utils.py
-	"	821	0
-
-> ~/code/python/XBMC-Utility-scripts/xbmc_recently_added.py
-	"	37	4
-
-> ~/code/python/XBMC-Utility-scripts/__Tag_List__
-	"	3	0
-	.	4	0
-	+	156	0
-	+	150	0
-	+	145	0
-	+	144	0
-	+	138	0
-	+	117	0
-	+	111	0
-	+	105	0
-	+	99	0
-	+	93	0
-	+	87	0
-	+	59	0
-	+	31	0
-	+	25	0
-	+	19	0
-	+	13	0
-	+	7	0
-	+	4	0
-
-> ~/code/python/XBMC-Utility-scripts/STDOUT_STDERR
-	"	8	0
-	.	8	0
-	+	121	0
-	+	122	0
-	+	123	0
-	+	74	0
-	+	75	0
-	+	76	0
-	+	77	0
-	+	78	0
-	+	79	0
-	+	80	0
-	+	81	0
-	+	82	0
-	+	83	0
-	+	84	0
-	+	85	0
-	+	86	0
-	+	87	0
-	+	88	0
-	+	89	0
-	+	90	0
-	+	91	0
-	+	92	0
-	+	93	0
-	+	94	0
-	+	95	0
-	+	96	0
-	+	97	0
-	+	98	0
-	+	49	0
-	+	50	0
-	+	51	0
-	+	52	0
-	+	53	0
-	+	54	0
-	+	55	0
-	+	56	0
-	+	57	0
-	+	58	0
-	+	59	0
-	+	60	0
-	+	61	0
-	+	62	0
-	+	63	0
-	+	64	0
-	+	65	0
-	+	66	0
-	+	67	0
-	+	68	0
-	+	69	0
-	+	70	0
-	+	71	0
-	+	72	0
-	+	73	0
-	+	48	0
-	+	47	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	25	0
-	+	26	0
-	+	27	0
-	+	28	0
-	+	29	0
-	+	30	0
-	+	31	0
-	+	32	0
-	+	33	0
-	+	34	0
-	+	35	0
-	+	36	0
-	+	37	0
-	+	38	0
-	+	39	0
-	+	40	0
-	+	41	0
-	+	42	0
-	+	43	0
-	+	44	0
-	+	45	0
-	+	46	0
-	+	21	0
-	+	20	0
-	+	18	0
-	+	19	0
-	+	17	0
-	+	16	0
-	+	9	0
-	+	10	0
-	+	11	0
-	+	12	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	2	0
-	+	3	0
-	+	4	0
-	+	5	0
-	+	6	0
-	+	7	0
-	+	8	0
-
-> ~/code/python/XBMC-Utility-scripts/SCOPE
-	"	9	0
-	.	9	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	31	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	24	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	17	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	9	0
-
-> ~/code/python/XBMC-Utility-scripts/LOG
-	"	1494	0
-	.	1492	0
-	+	1715	0
-	+	1768	0
-	+	1774	0
-	+	1838	0
-	+	1842	0
-	+	1846	0
-	+	1918	0
-	+	1924	0
-	+	2006	0
-	+	2012	0
-	+	2094	0
-	+	2100	0
-	+	2182	0
-	+	2188	0
-	+	2270	0
-	+	2274	0
-	+	2276	0
-	+	2279	0
-	+	2361	0
-	+	2365	0
-	+	2366	0
-	+	2369	0
-	+	2451	0
-	+	2455	0
-	+	2456	0
-	+	2459	0
-	+	2541	0
-	+	2545	0
-	+	2546	0
-	+	2549	0
-	+	2631	0
-	+	2635	0
-	+	2636	0
-	+	2639	0
-	+	2721	0
-	+	2725	0
-	+	2726	0
-	+	2729	0
-	+	2811	0
-	+	2817	0
-	+	2899	0
-	+	2	0
-	+	3	0
-	+	29	0
-	+	42	0
-	+	46	0
-	+	59	0
-	+	63	0
-	+	67	0
-	+	80	0
-	+	86	0
-	+	99	0
-	+	105	0
-	+	128	0
-	+	134	0
-	+	167	0
-	+	173	0
-	+	216	0
-	+	222	0
-	+	275	0
-	+	281	0
-	+	345	0
-	+	351	0
-	+	423	0
-	+	429	0
-	+	511	0
-	+	517	0
-	+	599	0
-	+	605	0
-	+	687	0
-	+	693	0
-	+	775	0
-	+	779	0
-	+	781	0
-	+	784	0
-	+	866	0
-	+	870	0
-	+	871	0
-	+	874	0
-	+	956	0
-	+	960	0
-	+	961	0
-	+	964	0
-	+	1046	0
-	+	1050	0
-	+	1051	0
-	+	1054	0
-	+	1136	0
-	+	1140	0
-	+	1141	0
-	+	1144	0
-	+	1226	0
-	+	1230	0
-	+	1231	0
-	+	1234	0
-	+	1316	0
-	+	1322	0
-	+	1404	0
-	+	1410	0
-	+	1492	0
-
-> ~/code/python/XBMC-Utility-scripts/STACK
-	"	2	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	15	0
-	+	1	0
-	+	14	0
-	+	1	0
-	+	13	0
-	+	1	0
-	+	1	0
-	+	9	0
-	+	1	0
-	+	8	0
-	+	1	0
-	+	7	0
-	+	1	0
-	+	1	0
-	+	6	0
-	+	1	0
-	+	1	0
-	+	5	0
-	+	1	0
-	+	1	0
-	+	4	0
-	+	1	0
-	+	1	0
-	+	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/python/XBMC-Utility-scripts/WATCH
-	"	2	19
-	^	2	20
-	.	2	19
-	+	1	0
-	+	1	0
-	+	1	4
-	+	1	0
-	+	13	0
-	+	1	4
-	+	12	15
-	+	11	0
-	+	10	0
-	+	9	0
-	+	8	0
-	+	7	0
-	+	6	0
-	+	5	5
-	+	4	0
-	+	3	0
-	+	3	0
-	+	1	2
-	+	2	19
-
-> ~/code/python/XBMC-Utility-scripts/RESULTS
-	"	1	0
-	.	2	0
-	+	15	0
-	+	14	0
-	+	13	0
-	+	1	0
-	+	12	0
-	+	11	0
-	+	10	0
-	+	9	0
-	+	8	0
-	+	7	0
-	+	6	0
-	+	5	0
-	+	4	0
-	+	3	0
-	+	2	0
-
-> ~/code/python/opttest.py
-	"	9	0
-
-> ~/__Tag_List__
-	"	3	0
-	.	4	0
-	+	10	0
-	+	7	0
-	+	4	0
-
-> ~/STDOUT_STDERR
-	"	13	0
-	.	13	0
-	+	14	0
-	+	16	0
-	+	17	0
-	+	18	0
-	+	19	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	25	0
-	+	2	0
-	+	4	0
-	+	5	0
-	+	6	0
-	+	7	0
-	+	8	0
-	+	9	0
-	+	10	0
-	+	11	0
-	+	12	0
-	+	13	0
-
-> ~/SCOPE
-	"	3	0
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	5	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/LOG
-	"	229	0
-	.	224	0
-	+	230	0
-	+	231	0
-	+	257	0
-	+	270	0
-	+	274	0
-	+	287	0
-	+	291	0
-	+	295	0
-	+	308	0
-	+	314	0
-	+	337	0
-	+	343	0
-	+	366	0
-	+	372	0
-	+	395	0
-	+	401	0
-	+	424	0
-	+	428	0
-	+	429	0
-	+	431	0
-	+	432	0
-	+	434	0
-	+	435	0
-	+	437	0
-	+	438	0
-	+	440	0
-	+	442	0
-	+	443	0
-	+	445	0
-	+	452	0
-	+	459	0
-	+	466	0
-	+	473	0
-	+	480	0
-	+	487	0
-	+	494	0
-	+	501	0
-	+	508	0
-	+	515	0
-	+	522	0
-	+	529	0
-	+	536	0
-	+	543	0
-	+	550	0
-	+	557	0
-	+	2	0
-	+	3	0
-	+	29	0
-	+	42	0
-	+	46	0
-	+	59	0
-	+	63	0
-	+	67	0
-	+	80	0
-	+	86	0
-	+	109	0
-	+	115	0
-	+	138	0
-	+	144	0
-	+	167	0
-	+	173	0
-	+	196	0
-	+	200	0
-	+	201	0
-	+	203	0
-	+	204	0
-	+	206	0
-	+	207	0
-	+	209	0
-	+	210	0
-	+	212	0
-	+	214	0
-	+	215	0
-	+	217	0
-	+	224	0
-
-> ~/STACK
-	"	2	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/WATCH
-	"	1	0
-	^	3	4
-	.	2	0
-	+	4	0
-	+	3	3
-	+	2	0
-
-> ~/RESULTS
-	"	1	0
-	.	2	0
-	+	3	0
-	+	2	0
-
-> ~/[Vundle] Installer
-	"	19	0
-	.	1	0
-	+	1	0
-
-> ~/bin/fixflex.sh
-	"	1	0
-
-> ~/bin/.git/index
-	"	10	0
-
-> ~/backupvimrc
-	"	78	0
-
-> ~/bin/create_git_repo
-	"	8	7
-	^	8	8
-	.	8	7
-	+	8	7
-
-> ~/bin/create_
-	"	1	0
-
-> ~/bin/.git/COMMIT_EDITMSG
-	"	2	0
-	^	2	0
-	.	1	9
-	+	1	9
-
-> ~/bin/git_create_repo.sh
-	"	1	0
-	^	7	79
-	.	6	0
-	+	1	0
-	+	9	22
-	+	3	18
-	+	4	13
-	+	7	15
-	+	8	43
-	+	7	69
-	+	5	7
-	+	6	10
-	+	6	17
-	+	7	75
-	+	6	0
-
-> ~/bin/addflex.sh
-	"	1	0
-
-> ~/bin/backup.sh
-	"	1	0
-
-> ~/bin/cbrtocbz.sh
-	"	1	0
-
-> ~/bin/clean_xbmc_library.sh
-	"	1	0
-
-> ~/bin/controller_1_start.sh
-	"	1	0
-
-> ~/bin/controller_2_start.sh
-	"	1	0

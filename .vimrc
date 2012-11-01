@@ -11,18 +11,18 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'GrahamOMalley/gom-pyclewn-view'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'msanders/snipmate.vim'
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround' 
-Bundle 'godlygeek/tabular'
-Bundle 'GrahamOMalley/gom-pyclewn-view'
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -78,6 +78,7 @@ if (&term == 'xterm' || &term =~? '^screen')
 endif
 
 "********************************************** PLUGIN VARS
+
 " force command-t to open new files in a new tab
 let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
@@ -97,6 +98,7 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " show clang errors in quickfix window
 let g:clang_complete_copen = 1
+
 "*************************************************** GLOBAL KEYMAPS *********************************************
 
 " set difficulty level: Hardcore ;)
@@ -123,18 +125,14 @@ nnoremap <F12> <Esc>:Tlist<CR>
 " CTAGS
 "call exuberant ctags externally to build tag list for all files in current dir
 nnoremap <Leader><F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-"nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-nnoremap <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
-"nnoremap ctrl-j to the jump key binding
-nnoremap <c-j> /<cr>c/+>/e<cr>
-inoremap <c-j> <ESC>/<cr>c/+>/e<cr>
 
 " FREQUENTLY EDITED FILES
 nnoremap <Leader>v :tabnew ~/.vimrc<CR>
-nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
-nnoremap <Leader>vs :source ~/.vimrc<CR>
 nnoremap <Leader>vc :tabnew .clang_complete<CR>
+nnoremap <Leader>vg :tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim<CR>
+nnoremap <Leader>vp :tabnew .proj<CR>
+nnoremap <Leader>vs :source ~/.vimrc<CR>
+nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
 
 " toggle wrap
 nnoremap <leader>w :set wrap!<CR>
@@ -183,10 +181,8 @@ endfunction
 autocmd BufNewFile,BufRead *conkyrc set filetype=conkyrc
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 
-" TODO: make 'Start Taglist window on file open if any of these types'
-" debugger aware, its irritating to have to hit F12 tp close tags on a new
-" file in debug mode
-autocmd BufNewFile,BufRead *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTlist"
+" Start Taglist window on file open if any of these types (ignore if debugger view mode on)
+autocmd VimEnter,TabEnter *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTlist"
 
 "********************************************** PYTHON
 augroup filetype_python
@@ -226,17 +222,19 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4>              :exe "!make"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F5>              :exe "Crun"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6>              :exe "Ccontinue"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6>              :exe "PyclewnContinue"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7>              :exe "Cprint " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10>             :exe "PyclewnNext"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11>             :exe "PyclewnStep"<CR>
-    " TODO set this to something more sensible, I use pgeup and pgdwn all the time
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp>          :exe "Cup"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown>        :exe "Cdown"<CR>
+    " TODO set this to something more sensible, I use pgup and pgdwn all the time
+    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp>          :exe \"Cup"<CR>
+    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown>        :exe \"Cdown"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds        :exe "Cbt"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df        :exe "Cframe"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dd        :exe "Cdisassemble"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dd        :Cdbg 
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dw        :exe "Cdbg " . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dp        :exe "Cprint " . expand("<cword>") <CR>
+    " TODO Cdbg visual selection
 augroup END
