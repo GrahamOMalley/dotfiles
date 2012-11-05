@@ -198,17 +198,16 @@ augroup filetype_python
     autocmd BufRead *.py let g:jedi#rename_command = "<leader>R"
     autocmd BufRead *.py let g:jedi#related_names_command = "<leader>n"
     "Debugging
-    autocmd BufRead,BufNewFile *.py nnoremap <F10>      :Dbg over <Bar> :Dbg watch<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <F11>      :Dbg into<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <F2>       :Dbg .<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <F5>       :Dbg run<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <F9>       :Dbg break<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <leader>dd :Dbg down<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <leader>dh :Dbg here<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <leader>dt :Dbg out<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <leader>du :Dbg up<CR>
-    autocmd BufRead,BufNewFile *.py nnoremap <leader>dw :Dbg watch<CR>
-
+"    autocmd BufRead,BufNewFile *.py nnoremap <F10>      :Dbg over <Bar> :Dbg watch<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <F11>      :Dbg into<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <F2>       :Dbg .<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <F5>       :Dbg run<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <F9>       :Dbg break<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dd :Dbg down<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dh :Dbg here<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dt :Dbg out<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <leader>du :Dbg up<CR>
+"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dw :Dbg watch<CR>
 augroup END
 
 "********************************************** CPP
@@ -234,6 +233,7 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds        :exe "Cbt"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df        :exe "Cframe"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dd        :Cdbg 
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc vnoremap <leader>dv        y:Cdbg <C-R>"
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dw        :exe "Cdbg " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dp        :exe "Cprint " . expand("<cword>") <CR>
     " TODO Cdbg visual selection

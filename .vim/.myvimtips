@@ -76,3 +76,7 @@ g/some string/d - delete any line that contains some string
 * Search Replace across multiple files
 
 :argdo :%s/_params/params/ge | update
+
+
+:g/SOME_RE/p will print all matches in a cmdline window - TRIVIA this is the origin of the grep utility (g/re/p)
+:g/SOME_RE will do the same as /p is the default
