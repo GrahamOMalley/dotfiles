@@ -1,8 +1,8 @@
 # Change the next 7 lines appropriately.
 set imap_user       = "gomgomgom@gmail.com"
-set imap_pass       = "noneOyobizniss"
+set imap_pass       = "hodxsduzfxoyltqa"
 set smtp_url        = "smtp://gomgomgom@smtp.gmail.com/:465/"
-set smtp_pass       = "noneOyobizniss"
+set smtp_pass       = "hodxsduzfxoyltqa"
 set from        = "gomgomgom@gmail.com"
 set realname        = "Graham O' Malley"
 set editor      = 'vim -c "set spell spelllang=en_us"'

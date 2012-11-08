@@ -63,6 +63,7 @@ set  undolevels=5000                       "  use many muchos levels of undo
 set  wildignore=*.swp,*.bak,*.pyc,*.class
 set  wildmenu
 set  wildmode=list:longest
+"set shellcmdflag=-ic                       " give me my bash alias's! (currently this messes up several things like GDiff and seems to ctrl-z vim
 
 "syntax highlighting and colourscheme
 syntax on
@@ -98,6 +99,15 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " show clang errors in quickfix window
 let g:clang_complete_copen = 1
+
+" Let Syntastic open an error window automatically | let syn check as soon as
+" buffer is open
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+" TODO: there must be some nice way to generate an options file based on the .clang_complete file
+"let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+
 
 "*************************************************** GLOBAL KEYMAPS *********************************************
 
@@ -136,6 +146,8 @@ nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
 
 " toggle wrap
 nnoremap <leader>w :set wrap!<CR>
+" toggle numbers
+nnoremap <leader>n :set number!<CR>
 
 " go to home and end using capitalized directions
 nnoremap H ^

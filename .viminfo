@@ -8,31 +8,63 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0/ange
+~MSle0~/match
 
 # Last Substitute Search Pattern:
-~MSle0~&ange
+~MSle0&\<hodxsduzfxoyltqa\>
 
 # Last Substitute String:
-$"
+$
 
 # Command Line History (newest to oldest):
-:wq
 :q
+:wq
+:set number!
+:!cat /etc/fstab
 :w
-:g/ange
+:r!duf
+:cd /media/
+:cd /media/tv2/
+:cd /media/twoTB1/videos/
+:cd /media/oneTB/videos/
+:cd /media/twoTB1/
+:cd /media/oneTB/
+:!dfh
+:!df -h
+:!g++ -g -Wall -std=c++0x -o regex1 %
+:wqa
 :qa
+:set paste!
+:Cdbg vf
+:!g++ -g -Wall -std=c++0x -o ptr_u %
+:Cproject .proj
+:Cfile ex_move
+:!g++ -g -Wall -std=c++0x -o ex_move %
+:tabnew ~/.vim/bundle/syntastic/syntax_checkers/cpp.vim
+:messages
+:map
+:SyntasticCheck
+:echo g:syntastic_mode_map
+:Errors
+:SyntasticErrors
+:tab h syntastic
+:Cdbg p1
+:!
+:tabnew .proj
+:Cfile ptr_u
+:!g++ -Wall -std=c++0x -o ptr_u %
+:!g++ -Wall -std=c++0x -o ptr_u
+:Git push
+:Git commit -a
+:%s/\<hodxsduzfxoyltqa\>/noneOyobizniss/g
+:g/ange
 :as
 :;
-:set paste!
-:wqa
 :201,210s/^/"/g
 :'<,'>s^/"//g
 :registers
 :Git i
 :Gbrowse
-:Git push
-:Git commit -a
 :130,135Tabularize / 
 :Tabularize /:
 :131,135!sort
@@ -45,7 +77,6 @@ $"
 :Ckill
 :tabnew tileEngine.h
 :Cfinish
-:SyntasticCheck
 :Cdbg *nit
 :Cdbg nit
 :Cprint filledTiles.size()
@@ -121,7 +152,6 @@ $"
 :s/columns/at/g
 :s/tileis/tileID/g
 :s/[/(/g
-:map
 :%s/\<Rows\>/rows/g
 :%s/\<Add\>/push_back/g
 :%s/f.y/p.second/g
@@ -193,7 +223,6 @@ $"
 :Cnext | Cinfo locals
 :%s/\<PyclewnDebuggerToggle\>/PyclewnBreakPointToggle/g
 :call BreakpointToggle()
-:tabnew .proj
 :line
 :help mark
 :tab h readfile
@@ -295,14 +324,12 @@ $"
 :winsize 100
 :Ctrace
 :Cdbg list
-:Cproject .proj
 :<F2>
 :exe "Cbreak "<F2>
 :GundoToggle
 :Gundo
 :exe "Cbreak "
 :Ccwindow
-:messages
 :call GomDebugStop()
 :call GomDebugStart()
 :;;;;;;;;;;;;;;;;;;;k
@@ -318,7 +345,6 @@ $"
 :tab h vim-script-intro
 :@"
 :!xbmc_recently_watched -e
-:!
 :tabnew /etc/
 :c
 :w fuck
@@ -512,8 +538,26 @@ $"
 :Cdbgvar i
 :Cset print array off
 :Cset print pretty on
+:4,7Tabularize / /l1
+:s/\t/ /g
+:s/  / /g
+:set list
+:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+:tab h Tabularize
+:4,7Tabularize
+:4,7Tabularize / 
+:r!cat /etc/fstab
 
 # Search String History (newest to oldest):
+?/match
+?//Example 1
+? \<p1\>
+? \Vvec\%#
+?/synt
+?/PLUG
+?/Options
+?/gdb
+? \<hodxsduzfxoyltqa\>
 ? ange
 ?/ms
 ? ^
@@ -523,7 +567,6 @@ $"
 ? \<tileHeight\>
 ?/imp
 ?/locals
-? \Vvec\%#
 ?/TODO
 ?/Tab
 ? ^\s*\d\+:\s*
@@ -569,7 +612,6 @@ $"
 ?/w:
 ?/tab
 ?/command-t-options
-?/Options
 ? Step
 ?/s/Step/ToggleTlist/g
 ? \Vf\%#
@@ -729,6 +771,7 @@ $"
 ?/list
 ?/array
 ?/dd
+? \t
 
 # Expression History (newest to oldest):
 
@@ -743,39 +786,27 @@ $"
 
 # Registers:
 "0	LINE	0
-	:g/SOME_RE/p will print all matches in a cmdline window - TRIVIA this is the origin of the grep utility (g/re/p)
+	#include <memory>
 ""1	LINE	0
-	
+	    ;wq
 "2	LINE	0
-	#include <iostream>
-	
-	using namespace std;
-	
-	int main()
-	{
-	
-	
-		return 0;
-	}
-	
-"3	CHAR	0
-	    tile_engine::tileMap carcassone_board;
-	
-	
+	854.1G	ONETB
+"3	LINE	0
+	TWOTB1
 "4	LINE	0
-	
+	TWOTB1 1.6T	
 "5	LINE	0
-	            /* code */
+	854.1G	oneTB
 "6	LINE	0
-	" TODO: breaks diffs!
+	4.0K	iso
 "7	LINE	0
-	    ":botright 20split (clewn)_console
+	du: cannot read directory `oneTB/lost+found': Permission denied
+	du: cannot read directory `tv2/lost+found': Permission denied
+	du: cannot read directory `twoTB1/lost+found': Permission denied
 "8	LINE	0
-	    ":wincmd k
-	    ":set syntax=cpp
+	
 "9	LINE	0
-	            //driver->draw2DImage(images, core::rect<s32>(10,10,108,48),
-	                   //tile_engine::tileTexture::getSourceRectangle(images, 3));
+	
 "a	LINE	0
 	/bin/bash: sbrecent: command not found
 	ME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"
@@ -787,7 +818,7 @@ $"
 "w	CHAR	0
 	wwwwwwwwwwwwx;wkjji	if(g:py0wwxi Aie€kb€kbex€kb€kb:exe "Cinfo locals!"€kb€kb"j€kb€kbendif;wkjjddkkkkkA;E€kb€kb;€kb:exe "Cnext";wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyGkkkkkpjjjjjjjkkkkjdddddddddd;w,gd
 "-	CHAR	0
-	/p will print all matches in a cmdline window - TRIVIA this is the origin of the grep utility (g/re/p)
+	G	ONETB
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -816,117 +847,450 @@ $"
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  80  0  ~/.vim/.myvimtips
-'1  65  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/main.cpp
-'2  90  18  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-'3  1  0  ~/.vimrc
-'4  1  0  ~/.tmux.conf
-'5  1  0  ~/code/c++/boost_c11/mp3/mp3_pp.cpp
-'6  140  0  ~/code/c++/boost_c11/mp3_pp.cpp
-'7  2  54  ~/code/irrlicht-1.7.3/examples/carcassoneGen/.git/COMMIT_EDITMSG
-'8  65  0  ~/code/irrlicht-1.7.3/examples/01.GomTest2/main.cpp
-'9  236  89  ~/.vimrc
+'0  132  0  ~/.vimrc
+'1  109  0  ~/.vimrc
+'2  50  67  ~/hard_drives.txt
+'3  53  4  ~/hard_drives.txt
+'4  1  0  ~/hard_drives.txt
+'5  10  114  /media/oneTB/downloads/IDEAL_SETUP_XBMC.txt
+'6  898  0  /usr/include/c++/4.7/bits/regex.h
+'7  1  0  /usr/include/c++/4.7/regex
+'8  1  0  ~/code/c++/boost_c11/regex1/regex1.cpp
+'9  108  0  ~/.vimrc
 
 # Jumplist (newest first):
--'  80  0  ~/.vim/.myvimtips
--'  65  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/main.cpp
--'  2  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/(clewn)_console
--'  1  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/main.cpp
--'  90  18  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
--'  1  0  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
--'  1  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/.proj
--'  483  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/(clewn)_console
--'  1  0  ~/.vimrc
--'  6  0  ~/.vimrc
--'  9  0  ~/.vimrc
--'  12  0  ~/.vimrc
--'  26  0  ~/.vimrc
--'  30  0  ~/.vimrc
--'  33  0  ~/.vimrc
--'  35  0  ~/.vimrc
--'  37  0  ~/.vimrc
--'  66  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  74  0  ~/.vimrc
--'  79  0  ~/.vimrc
--'  81  0  ~/.vimrc
--'  85  0  ~/.vimrc
--'  88  0  ~/.vimrc
--'  95  0  ~/.vimrc
--'  98  0  ~/.vimrc
--'  101  0  ~/.vimrc
--'  103  0  ~/.vimrc
+-'  132  0  ~/.vimrc
+-'  1  0  ~/.vim/bundle/syntastic/syntax_checkers/cpp.vim
 -'  109  0  ~/.vimrc
--'  115  0  ~/.vimrc
--'  118  0  ~/.vimrc
--'  121  0  ~/.vimrc
--'  124  0  ~/.vimrc
--'  128  0  ~/.vimrc
--'  136  0  ~/.vimrc
--'  139  0  ~/.vimrc
--'  143  0  ~/.vimrc
--'  147  0  ~/.vimrc
--'  150  0  ~/.vimrc
--'  154  0  ~/.vimrc
--'  157  0  ~/.vimrc
--'  160  0  ~/.vimrc
--'  163  0  ~/.vimrc
--'  170  0  ~/.vimrc
--'  177  0  ~/.vimrc
--'  179  0  ~/.vimrc
--'  183  0  ~/.vimrc
--'  186  0  ~/.vimrc
--'  212  0  ~/.vimrc
--'  240  10  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  6  0  ~/.vimrc
--'  9  0  ~/.vimrc
--'  12  0  ~/.vimrc
--'  26  0  ~/.vimrc
--'  30  0  ~/.vimrc
--'  33  0  ~/.vimrc
--'  35  0  ~/.vimrc
--'  37  0  ~/.vimrc
--'  66  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  74  0  ~/.vimrc
--'  79  0  ~/.vimrc
--'  81  0  ~/.vimrc
--'  85  0  ~/.vimrc
--'  88  0  ~/.vimrc
--'  95  0  ~/.vimrc
--'  98  0  ~/.vimrc
+-'  50  67  ~/hard_drives.txt
+-'  1  0  ~/hard_drives.txt
+-'  53  4  ~/hard_drives.txt
+-'  45  0  ~/hard_drives.txt
+-'  2  11  ~/hard_drives.txt
+-'  37  1  ~/hard_drives.txt
+-'  54  0  ~/hard_drives.txt
+-'  28  8  ~/hard_drives.txt
+-'  18  12  ~/hard_drives.txt
+-'  19  12  ~/hard_drives.txt
+-'  10  114  /media/oneTB/downloads/IDEAL_SETUP_XBMC.txt
+-'  1  0  /media/oneTB/downloads/IDEAL_SETUP_XBMC.txt
+-'  898  0  /usr/include/c++/4.7/bits/regex.h
+-'  5  4  ~/code/c++/boost_c11/regex1/__Tag_List__
+-'  3  0  ~/code/c++/boost_c11/regex1/__Tag_List__
+-'  2  0  ~/code/c++/boost_c11/regex1/__Tag_List__
+-'  1  0  /usr/include/c++/4.7/bits/regex.h
+-'  1  0  /usr/include/c++/4.7/regex
+-'  1  0  ~/code/c++/boost_c11/regex1/regex1.cpp
+-'  8  0  ~/code/c++/boost_c11/regex1/__Tag_List__
+-'  7  0  ~/code/c++/boost_c11/regex1/__Tag_List__
+-'  13  0  ~/code/c++/boost_c11/regex1/__Tag_List__
+-'  12  0  ~/code/c++/boost_c11/regex1/__Tag_List__
+-'  107  0  ~/.vimrc
+-'  26  0  ~/code/c++/boost_c11/regex1/regex1.cpp
+-'  40  0  ~/code/c++/boost_c11/unique_ptr/up.cpp
+-'  12  4  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  14  4  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  2  0  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  34  17  ~/code/c++/boost_c11/unique_ptr/up.cpp
+-'  1  0  ~/code/c++/boost_c11/unique_ptr/up.cpp
+-'  3  15  ~/code/c++/boost_c11/unique_ptr/up.cpp
+-'  33  7  ~/code/c++/boost_c11/unique_ptr/up.cpp
+-'  13  0  ~/code/c++/boost_c11/move/move.cpp
+-'  5  4  ~/code/c++/boost_c11/move/__Tag_List__
+-'  7  4  ~/code/c++/boost_c11/move/__Tag_List__
+-'  2  0  ~/code/c++/boost_c11/move/__Tag_List__
+-'  1  0  ~/code/c++/boost_c11/move/move.cpp
+-'  24  0  ~/code/c++/boost_c11/move/move.cpp
+-'  12  0  ~/code/c++/boost_c11/move/__Tag_List__
+-'  38  0  ~/code/c++/boost_c11/unique_ptr/up.cpp
+-'  48  4  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  39  0  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  38  0  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  106  75  ~/.vimrc
+-'  111  96  ~/.vimrc
 -'  101  0  ~/.vimrc
--'  103  0  ~/.vimrc
--'  109  0  ~/.vimrc
--'  115  0  ~/.vimrc
+-'  98  0  ~/.vimrc
+-'  110  0  ~/.vimrc
+-'  112  0  ~/.vimrc
 -'  118  0  ~/.vimrc
--'  121  0  ~/.vimrc
 -'  124  0  ~/.vimrc
--'  128  0  ~/.vimrc
--'  136  0  ~/.vimrc
--'  139  0  ~/.vimrc
+-'  127  0  ~/.vimrc
+-'  130  0  ~/.vimrc
+-'  133  0  ~/.vimrc
+-'  137  0  ~/.vimrc
 -'  143  0  ~/.vimrc
+-'  13  0  ~/code/c++/boost_c11/unique_ptr/up.cpp
+-'  107  0  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  50  0  ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+-'  68  0  ~/.vimrc
+-'  67  1  ~/.vimrc
+-'  51  46  ~/.vimrc
+-'  22  19  ~/.vimrc
+-'  105  6  ~/.vimrc
+-'  104  6  ~/.vimrc
+-'  102  6  ~/.vimrc
+-'  117  0  ~/.vimrc
+-'  123  0  ~/.vimrc
+-'  126  0  ~/.vimrc
+-'  129  0  ~/.vimrc
+-'  136  0  ~/.vimrc
+-'  144  0  ~/.vimrc
 -'  147  0  ~/.vimrc
--'  150  0  ~/.vimrc
--'  154  0  ~/.vimrc
--'  157  0  ~/.vimrc
--'  160  0  ~/.vimrc
--'  163  0  ~/.vimrc
--'  170  0  ~/.vimrc
--'  177  0  ~/.vimrc
--'  179  0  ~/.vimrc
--'  183  0  ~/.vimrc
--'  186  0  ~/.vimrc
--'  212  0  ~/.vimrc
--'  240  10  ~/.vimrc
--'  90  18  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
--'  1  0  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
--'  1  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/.proj
--'  65  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/main.cpp
--'  2  0  ~/code/irrlicht-1.7.3/examples/carcassoneGen/(clewn)_console
+-'  151  0  ~/.vimrc
+-'  155  0  ~/.vimrc
+-'  158  0  ~/.vimrc
+-'  162  0  ~/.vimrc
+-'  165  0  ~/.vimrc
+-'  168  0  ~/.vimrc
+-'  171  0  ~/.vimrc
+-'  178  0  ~/.vimrc
+-'  95  0  ~/.vimrc
+-'  88  0  ~/.vimrc
+-'  85  0  ~/.vimrc
+-'  81  0  ~/.vimrc
+-'  79  0  ~/.vimrc
+-'  74  0  ~/.vimrc
+-'  70  0  ~/.vimrc
+-'  66  0  ~/.vimrc
+-'  23  0  /tmp/crontab.49Rsn1/crontab
+-'  26  60  /tmp/crontab.49Rsn1/crontab
+-'  1  0  /tmp/crontab.49Rsn1/crontab
 
 # History of marks within files (newest to oldest):
+
+> ~/.vimrc
+	"	66	70
+	^	66	71
+	.	66	70
+	+	236	0
+	+	236	104
+	+	182	42
+	+	182	0
+	+	181	0
+	+	182	0
+	+	24	37
+	+	230	100
+	+	1	0
+	+	237	0
+	+	237	44
+	+	241	147
+	+	1	0
+	+	242	101
+	+	237	84
+	+	236	107
+	+	237	93
+	+	229	0
+	+	229	74
+	+	238	93
+	+	240	0
+	+	23	0
+	+	237	0
+	+	239	77
+	+	239	77
+	+	239	77
+	+	242	0
+	+	192	53
+	+	194	71
+	+	195	19
+	+	195	82
+	+	81	92
+	+	81	92
+	+	81	48
+	+	81	92
+	+	25	8
+	+	25	9
+	+	25	9
+	+	14	0
+	+	73	0
+	+	81	81
+	+	81	57
+	+	81	48
+	+	19	0
+	+	73	0
+	+	81	48
+	+	81	48
+	+	81	78
+	+	81	0
+	+	139	0
+	+	194	2
+	+	195	0
+	+	194	78
+	+	194	78
+	+	194	68
+	+	194	68
+	+	239	56
+	+	248	31
+	+	194	20
+	+	195	16
+	+	240	5
+	+	241	4
+	+	241	84
+	+	240	84
+	+	241	83
+	+	240	83
+	+	245	83
+	+	234	97
+	+	144	32
+	+	145	85
+	+	141	0
+	+	140	0
+	+	194	0
+	+	246	84
+	+	211	0
+	+	221	0
+	+	246	50
+	+	247	114
+	+	246	90
+	+	105	31
+	+	112	0
+	+	106	31
+	+	104	15
+	+	110	0
+	+	110	52
+	+	110	39
+	+	110	0
+	+	110	0
+	+	108	0
+	+	110	0
+	+	108	40
+	+	112	0
+	+	109	51
+	+	107	76
+	+	107	76
+	+	107	76
+	+	108	0
+	+	66	70
+	+	66	70
+	+	66	70
+	g	249	7
+
+> ~/.vim/bundle/syntastic/syntax_checkers/cpp.vim
+	"	1	0
+
+> ~/hard_drives.txt
+	"	50	67
+	^	50	68
+	.	50	67
+	+	5	0
+	+	5	0
+	+	2	4
+	+	17	13
+	+	21	6
+	+	23	0
+	+	17	13
+	+	18	0
+	+	19	0
+	+	18	0
+	+	19	0
+	+	18	0
+	+	19	0
+	+	27	11
+	+	28	0
+	+	28	0
+	+	28	0
+	+	36	0
+	+	54	0
+	+	37	0
+	+	54	0
+	+	4	12
+	+	4	0
+	+	37	0
+	+	54	0
+	+	37	3
+	+	54	0
+	+	21	0
+	+	4	0
+	+	2	5
+	+	2	12
+	+	45	50
+	+	45	0
+	+	54	0
+	+	50	67
+
+> /tmp/crontab.49Rsn1/crontab
+	"	23	0
+	^	24	97
+	.	23	0
+	+	23	45
+	+	26	0
+	+	23	58
+	+	24	88
+	+	23	0
+
+> /media/oneTB/downloads/IDEAL_SETUP_XBMC.txt
+	"	10	114
+	^	10	115
+	.	10	114
+	+	10	114
+
+> /usr/include/c++/4.7/bits/regex.h
+	"	898	0
+
+> ~/code/c++/boost_c11/regex1/__Tag_List__
+	"	5	4
+	.	6	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	21	0
+	+	44	0
+	+	16	0
+	+	11	0
+	+	6	0
+
+> /usr/include/c++/4.7/regex
+	"	1	0
+
+> ~/code/c++/boost_c11/regex1/regex1.cpp
+	"	1	0
+	^	1	2
+	.	1	1
+	+	1	17
+	+	26	1
+	+	1	1
+
+> ~/code/c++/boost_c11/regex1/.clang_complete
+	"	1	0
+
+> ~/code/c++/boost_c11/unique_ptr/up.cpp
+	"	40	0
+	^	36	20
+	.	36	19
+	+	1	0
+	+	20	0
+	+	12	0
+	+	5	10
+	+	10	0
+	+	7	38
+	+	10	1
+	+	9	0
+	+	15	0
+	+	14	32
+	+	38	0
+	+	19	36
+	+	2	16
+	+	32	65
+	+	20	0
+	+	38	0
+	+	33	0
+	+	37	0
+	+	33	24
+	+	37	0
+	+	3	15
+	+	34	20
+	+	19	25
+	+	34	33
+	+	36	19
+	z	1	0
+
+> ~/code/c++/boost_c11/unique_ptr/__Tag_List__
+	"	12	4
+	.	13	0
+	+	195	0
+	+	217	0
+	+	206	0
+	+	194	0
+	+	50	0
+	+	184	0
+	+	183	0
+	+	50	0
+	+	173	0
+	+	172	0
+	+	50	0
+	+	139	0
+	+	161	0
+	+	50	0
+	+	117	0
+	+	128	0
+	+	50	0
+	+	95	0
+	+	106	0
+	+	50	0
+	+	61	0
+	+	84	0
+	+	49	0
+	+	38	0
+	+	37	0
+	+	25	0
+	+	14	0
+	+	13	0
+
+> ~/code/c++/boost_c11/move/move.cpp
+	"	13	0
+	^	23	1
+	.	23	0
+	+	1	0
+	+	1	0
+	+	1	19
+	+	1	17
+	+	24	1
+	+	9	0
+	+	1	1
+	+	23	0
+	z	24	0
+
+> ~/code/c++/boost_c11/move/__Tag_List__
+	"	5	4
+	.	6	0
+	+	7	0
+	+	11	0
+	+	7	0
+	+	6	0
+
+> ~/code/c++/boost_c11/unique_ptr/.clang_complete
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/.vim/bundle/syntastic/doc/syntastic.txt
+	"	396	0
+
+> ~/code/c++/boost_c11/unique_ptr/(clewn)_console
+	"	26	5
+	.	24	0
+	+	24	0
+
+> ~/code/c++/boost_c11/unique_ptr/(clewn)_dbgvar
+	"	1	0
+
+> ~/code/c++/boost_c11/unique_ptr/.proj
+	"	1	0
+
+> ~/code/web_crap/010_SimpleGame_SVGVersion.htm
+	"	4	0
+
+> /tmp/mutt-media-1000-9276-16726834331925275992
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1	0
+
+> ~/.muttrc
+	"	1	0
+	.	3	0
+	+	3	0
+
+> /tmp/muttTJW8op
+	"	1	0
+
+> ~/.git/index
+	"	49	4
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	26
+	^	1	27
+	.	1	26
+	+	5	3
+	+	6	0
+	+	3	10
+	+	5	11
+	+	3	11
+	+	4	13
+	+	3	15
+	+	1	68
+	+	2	7
+	+	1	26
 
 > ~/.vim/.myvimtips
 	"	80	0
@@ -1063,112 +1427,6 @@ $"
 	+	90	0
 	+	93	0
 	+	90	0
-
-> ~/.vimrc
-	"	1	0
-	^	236	90
-	.	236	90
-	+	1	2129
-	+	1	2150
-	+	1	2151
-	+	1	2164
-	+	1	2282
-	+	1	2299
-	+	1	2300
-	+	1	2332
-	+	1	2377
-	+	1	2390
-	+	1	2396
-	+	1	2397
-	+	172	0
-	+	172	0
-	+	172	41
-	+	172	41
-	+	172	19
-	+	172	55
-	+	172	55
-	+	172	28
-	+	172	0
-	+	226	0
-	+	226	104
-	+	172	42
-	+	172	0
-	+	171	0
-	+	172	0
-	+	24	37
-	+	220	100
-	+	1	0
-	+	227	0
-	+	227	44
-	+	231	147
-	+	1	0
-	+	232	101
-	+	227	84
-	+	226	107
-	+	227	93
-	+	219	0
-	+	219	74
-	+	228	93
-	+	230	0
-	+	23	0
-	+	227	0
-	+	229	77
-	+	229	77
-	+	229	77
-	+	232	0
-	+	182	53
-	+	184	71
-	+	185	19
-	+	185	82
-	+	80	92
-	+	80	92
-	+	80	48
-	+	80	92
-	+	25	8
-	+	25	9
-	+	25	9
-	+	14	0
-	+	72	0
-	+	80	81
-	+	80	57
-	+	80	48
-	+	19	0
-	+	72	0
-	+	80	48
-	+	80	48
-	+	80	78
-	+	80	0
-	+	129	0
-	+	184	2
-	+	185	0
-	+	184	78
-	+	184	78
-	+	184	68
-	+	184	68
-	+	229	56
-	+	238	31
-	+	184	20
-	+	185	16
-	+	230	5
-	+	231	4
-	+	231	84
-	+	230	84
-	+	231	83
-	+	230	83
-	+	235	83
-	+	224	97
-	+	134	32
-	+	135	85
-	+	131	0
-	+	130	0
-	+	184	0
-	+	236	84
-	+	201	0
-	+	211	0
-	+	236	50
-	+	237	114
-	+	236	90
-	g	239	7
 
 > ~/.tmux.conf
 	"	1	0
@@ -1656,20 +1914,6 @@ $"
 	+	4	35
 	+	3	43
 
-> ~/.git/COMMIT_EDITMSG
-	"	2	7
-	^	2	8
-	.	2	7
-	+	5	3
-	+	6	0
-	+	3	10
-	+	5	11
-	+	3	11
-	+	4	13
-	+	3	15
-	+	1	68
-	+	2	7
-
 > ~/code/irrlicht-1.7.3/examples/01.GomTest2/__Gundo_Preview__
 	"	1	0
 	.	1	0
@@ -1978,178 +2222,3 @@ $"
 
 > ~/.vim/plugin/debugger.vim
 	"	1	0
-
-> ~/.vim/bundle/snipmate.vim/doc/snipMate.txt
-	"	236	2
-
-> ~/.vim/snippets/cpp.snippets
-	"	100	45
-
-> ~/.vim/snippets/vim.snippets
-	"	14	11
-	^	14	12
-	.	14	11
-	+	12	9
-	+	14	11
-
-> ~/tileEngine*
-	"	1	0
-
-> ~/code/c++/gdb_test/main.cc
-	"	149	0
-	.	98	0
-	+	143	0
-	+	98	0
-
-> ~/code/c++/gdb_test/__Tag_List__
-	"	23	4
-	.	25	0
-	+	1282	0
-	+	1258	0
-	+	1234	0
-	+	1210	0
-	+	1186	0
-	+	1162	0
-	+	1138	0
-	+	1114	0
-	+	1090	0
-	+	1066	0
-	+	1042	0
-	+	1018	0
-	+	972	0
-	+	926	0
-	+	880	0
-	+	834	0
-	+	788	0
-	+	742	0
-	+	696	0
-	+	672	0
-	+	648	0
-	+	624	0
-	+	600	0
-	+	576	0
-	+	529	0
-	+	505	0
-	+	481	0
-	+	457	0
-	+	433	0
-	+	409	0
-	+	385	0
-	+	361	0
-	+	337	0
-	+	313	0
-	+	289	0
-	+	265	0
-	+	241	0
-	+	217	0
-	+	193	0
-	+	169	0
-	+	145	0
-	+	121	0
-	+	97	0
-	+	73	0
-	+	49	0
-	+	25	0
-
-> ~/code/c++/gdb_test/(clewn)_console
-	"	76	5
-	.	75	0
-	+	75	0
-
-> ~/code/c++/gdb_test/(clewn)_dbgvar
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/.bash_aliases
-	"	9	6
-	^	9	46
-	.	9	45
-	+	9	45
-
-> /usr/include/c++/4.6/array
-	"	60	0
-
-> ~/.vim/bundle/gom-pyclewn-view/[Vundle] Installer
-	"	20	0
-	.	1	0
-	+	1	0
-
-> ~/.vim/bundle/gom-pyclewn-view/README.txt
-	"	39	55
-	^	39	56
-	.	39	55
-	+	3	0
-	+	4	18
-	+	9	17
-	+	8	0
-	+	5	44
-	+	6	23
-	+	10	21
-	+	20	51
-	+	22	0
-	+	45	0
-	+	39	55
-
-> ~/.git/index
-	"	1	0
-
-> ~/.vim/bundle/gom-pyclewn-view/.git/refs/heads/master
-	"	1	0
-
-> fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067
-	"	1	0
-	.	5	0
-	+	5	0
-
-> fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//8a62116e61d1ce9a17a62b652269e8dbf3f92067/
-	"	1	0
-
-> ~/code/vim/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-	"	1	0
-	^	20	12
-	.	46	38
-	+	2	0
-	+	46	79
-	+	45	0
-	+	48	32
-	+	5	0
-	+	58	0
-	+	48	29
-	+	53	0
-	+	58	20
-	+	20	10
-	+	46	38
-
-> ~/.vim/bundle/taglist.vim/plugin/taglist.vim
-	"	1	0
-
-> ~/.vim/bundle/[Vundle] Installer
-	"	20	0
-	.	1	0
-	+	1	0
-
-> ~/code/vim/gom-pyclewn-view/.git/COMMIT_EDITMSG
-	"	1	10
-	^	1	11
-	.	1	10
-	+	1	10
-
-> ~/code/vim/gom-pyclewn-view/[Vundle] Installer
-	"	20	0
-	.	1	0
-	+	20	0
-	+	1	0
-
-> ~/code/vim/gom-pyclewn-view/autoload/gom-pyclewn-view.vim
-	"	100	10
-	^	45	53
-	.	45	52
-	+	57	37
-	+	45	52
-
-> ~/code/vim/gom-pyclewn-view/__Tag_List__
-	"	9	4
-	.	10	0
-	+	27	0
-	+	10	0
