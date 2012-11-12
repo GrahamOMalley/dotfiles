@@ -174,9 +174,9 @@ cnoremap <expr> tn getcmdtype() == ':' && empty(getcmdline()) ? 'tabnew '     :'
 nnoremap <leader>i mzgg=G`zzz
 
 " fuGitive keymaps
-nnoremap <leader>g <esc>:Git 
-nnoremap <leader>gc <esc>:Git commit -a
-nnoremap <leader>gp <esc>:Git push
+nnoremap <leader>g <esc>:Git <CR>
+nnoremap <leader>gc <esc>:Git commit -a<CR>
+nnoremap <leader>gp <esc>:Git push<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>25+
 nnoremap <leader>gd <esc>:Gdiff<CR>
 

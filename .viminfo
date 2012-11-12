@@ -8,20 +8,24 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/match
+~MSle0/leader
 
 # Last Substitute Search Pattern:
-~MSle0&\<hodxsduzfxoyltqa\>
+~MSle0~&;
 
 # Last Substitute String:
-$
+$;\r
 
 # Command Line History (newest to oldest):
-:q
 :wq
+:q
+:w
+:!chmod +x %
+:s/;/;\r/g
+:s/;/\r/g
+:g/leader
 :set number!
 :!cat /etc/fstab
-:w
 :r!duf
 :cd /media/
 :cd /media/tv2/
@@ -547,8 +551,11 @@ $
 :4,7Tabularize
 :4,7Tabularize / 
 :r!cat /etc/fstab
+:Git push -f origin HEAD^:master
 
 # Search String History (newest to oldest):
+? ;
+? leader
 ?/match
 ?//Example 1
 ? \<p1\>
@@ -785,9 +792,9 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	#include <memory>
-""1	LINE	0
+""0	LINE	0
+	if [ -z $1 ];then echo Give target directory; exit 0;fi
+"1	LINE	0
 	    ;wq
 "2	LINE	0
 	854.1G	ONETB
@@ -847,18 +854,46 @@ $
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  132  0  ~/.vimrc
-'1  109  0  ~/.vimrc
-'2  50  67  ~/hard_drives.txt
-'3  53  4  ~/hard_drives.txt
-'4  1  0  ~/hard_drives.txt
-'5  10  114  /media/oneTB/downloads/IDEAL_SETUP_XBMC.txt
-'6  898  0  /usr/include/c++/4.7/bits/regex.h
-'7  1  0  /usr/include/c++/4.7/regex
-'8  1  0  ~/code/c++/boost_c11/regex1/regex1.cpp
-'9  108  0  ~/.vimrc
+'0  1  4  ~/bin/.git/COMMIT_EDITMSG
+'1  15  0  ~/bin/.git/COMMIT_EDITMSG
+'2  6  0  ~/bin/filedir_renamer
+'3  11  37  ~/.bash_aliases
+'4  1  0  ~/.bashrc
+'5  150  0  ~/.vimrc
+'6  132  0  ~/.vimrc
+'7  109  0  ~/.vimrc
+'8  50  67  ~/hard_drives.txt
+'9  53  4  ~/hard_drives.txt
 
 # Jumplist (newest first):
+-'  1  4  ~/bin/.git/COMMIT_EDITMSG
+-'  15  0  ~/bin/.git/COMMIT_EDITMSG
+-'  6  0  ~/bin/filedir_renamer
+-'  10  1  ~/bin/tvshow_dirfix.sh
+-'  1  0  ~/bin/tvshow_dirfix.sh
+-'  15  0  ~/bin/tvshow_dirfix.sh
+-'  7  0  ~/bin/tvshow_dirfix.sh
+-'  11  37  ~/.bash_aliases
+-'  1  0  ~/.bash_aliases
+-'  1  0  ~/.bashrc
+-'  150  0  ~/.vimrc
+-'  151  0  ~/.vimrc
+-'  155  0  ~/.vimrc
+-'  159  0  ~/.vimrc
+-'  162  0  ~/.vimrc
+-'  166  0  ~/.vimrc
+-'  169  0  ~/.vimrc
+-'  172  0  ~/.vimrc
+-'  175  0  ~/.vimrc
+-'  182  0  ~/.vimrc
+-'  189  0  ~/.vimrc
+-'  191  0  ~/.vimrc
+-'  195  0  ~/.vimrc
+-'  198  0  ~/.vimrc
+-'  224  0  ~/.vimrc
+-'  252  10  ~/.vimrc
+-'  250  4  ~/.vimrc
+-'  184  0  ~/.vimrc
 -'  132  0  ~/.vimrc
 -'  1  0  ~/.vim/bundle/syntastic/syntax_checkers/cpp.vim
 -'  109  0  ~/.vimrc
@@ -928,72 +963,86 @@ $
 -'  51  46  ~/.vimrc
 -'  22  19  ~/.vimrc
 -'  105  6  ~/.vimrc
--'  104  6  ~/.vimrc
--'  102  6  ~/.vimrc
--'  117  0  ~/.vimrc
--'  123  0  ~/.vimrc
--'  126  0  ~/.vimrc
--'  129  0  ~/.vimrc
--'  136  0  ~/.vimrc
--'  144  0  ~/.vimrc
--'  147  0  ~/.vimrc
--'  151  0  ~/.vimrc
--'  155  0  ~/.vimrc
--'  158  0  ~/.vimrc
--'  162  0  ~/.vimrc
--'  165  0  ~/.vimrc
--'  168  0  ~/.vimrc
--'  171  0  ~/.vimrc
--'  178  0  ~/.vimrc
--'  95  0  ~/.vimrc
--'  88  0  ~/.vimrc
--'  85  0  ~/.vimrc
--'  81  0  ~/.vimrc
--'  79  0  ~/.vimrc
--'  74  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  66  0  ~/.vimrc
--'  23  0  /tmp/crontab.49Rsn1/crontab
--'  26  60  /tmp/crontab.49Rsn1/crontab
--'  1  0  /tmp/crontab.49Rsn1/crontab
 
 # History of marks within files (newest to oldest):
 
+> ~/bin/.git/COMMIT_EDITMSG
+	"	1	4
+	^	1	5
+	.	1	4
+	+	1	4
+
+> ~/bin/tvshow_dirfix.sh
+	"	5	44
+	^	5	45
+	.	5	44
+	+	1	0
+	+	7	85
+	+	7	0
+	+	9	0
+	+	3	48
+	+	9	15
+	+	11	0
+	+	7	9
+	+	10	2
+	+	5	44
+
+> ~/bin/GoToFile
+	"	16	0
+	.	38	0
+	+	38	0
+
+> ~/bin/filedir_renamer
+	"	6	0
+
+> ~/.bash_aliases
+	"	11	37
+	^	11	38
+	.	11	37
+	+	14	57
+	+	11	37
+
+> ~/.bashrc
+	"	1	0
+	^	97	1
+	.	97	0
+	+	97	0
+
 > ~/.vimrc
-	"	66	70
-	^	66	71
-	.	66	70
-	+	236	0
-	+	236	104
-	+	182	42
-	+	182	0
-	+	181	0
-	+	182	0
+	"	150	0
+	^	150	30
+	.	150	29
+	+	238	0
+	+	238	104
+	+	184	42
+	+	184	0
+	+	183	0
+	+	184	0
 	+	24	37
-	+	230	100
+	+	232	100
 	+	1	0
-	+	237	0
-	+	237	44
-	+	241	147
+	+	239	0
+	+	239	44
+	+	243	147
 	+	1	0
-	+	242	101
-	+	237	84
-	+	236	107
-	+	237	93
-	+	229	0
-	+	229	74
-	+	238	93
-	+	240	0
-	+	23	0
-	+	237	0
-	+	239	77
-	+	239	77
-	+	239	77
+	+	244	101
+	+	239	84
+	+	238	107
+	+	239	93
+	+	231	0
+	+	231	74
+	+	240	93
 	+	242	0
-	+	192	53
-	+	194	71
-	+	195	19
-	+	195	82
+	+	23	0
+	+	239	0
+	+	241	77
+	+	241	77
+	+	241	77
+	+	244	0
+	+	194	53
+	+	196	71
+	+	197	19
+	+	197	82
 	+	81	92
 	+	81	92
 	+	81	48
@@ -1013,35 +1062,35 @@ $
 	+	81	78
 	+	81	0
 	+	139	0
-	+	194	2
-	+	195	0
-	+	194	78
-	+	194	78
-	+	194	68
-	+	194	68
-	+	239	56
-	+	248	31
-	+	194	20
-	+	195	16
-	+	240	5
-	+	241	4
-	+	241	84
-	+	240	84
-	+	241	83
-	+	240	83
-	+	245	83
-	+	234	97
+	+	196	2
+	+	197	0
+	+	196	78
+	+	196	78
+	+	196	68
+	+	196	68
+	+	241	56
+	+	250	31
+	+	196	20
+	+	197	16
+	+	242	5
+	+	243	4
+	+	243	84
+	+	242	84
+	+	243	83
+	+	242	83
+	+	247	83
+	+	236	97
 	+	144	32
 	+	145	85
 	+	141	0
 	+	140	0
-	+	194	0
-	+	246	84
-	+	211	0
-	+	221	0
-	+	246	50
-	+	247	114
-	+	246	90
+	+	196	0
+	+	248	84
+	+	213	0
+	+	223	0
+	+	248	50
+	+	249	114
+	+	248	90
 	+	105	31
 	+	112	0
 	+	106	31
@@ -1060,10 +1109,48 @@ $
 	+	107	76
 	+	107	76
 	+	108	0
-	+	66	70
-	+	66	70
-	+	66	70
-	g	249	7
+	+	66	68
+	+	149	15
+	+	150	29
+	g	251	7
+
+> fugitive:///home/gom/.git//0/.vimrc
+	"	139	0
+
+> /media/oneTB/videos/back/linx.txt
+	"	1	63
+	^	1	64
+	.	1	62
+	+	1	62
+
+> ~/.gitignore
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/.muttrc
+	"	1	0
+	.	3	0
+	+	3	0
+
+> ~/[BufExplorer]
+	"	1	0
+
+> ~/.git/COMMIT_EDITMSG
+	"	2	0
+	^	2	0
+	.	1	56
+	+	6	3
+	+	7	0
+	+	4	10
+	+	6	11
+	+	4	11
+	+	5	13
+	+	4	15
+	+	1	68
+	+	3	7
+	+	1	56
 
 > ~/.vim/bundle/syntastic/syntax_checkers/cpp.vim
 	"	1	0
@@ -1266,31 +1353,11 @@ $
 	.	1	0
 	+	1	0
 
-> ~/.muttrc
-	"	1	0
-	.	3	0
-	+	3	0
-
 > /tmp/muttTJW8op
 	"	1	0
 
 > ~/.git/index
 	"	49	4
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	26
-	^	1	27
-	.	1	26
-	+	5	3
-	+	6	0
-	+	3	10
-	+	5	11
-	+	3	11
-	+	4	13
-	+	3	15
-	+	1	68
-	+	2	7
-	+	1	26
 
 > ~/.vim/.myvimtips
 	"	80	0
@@ -1894,15 +1961,6 @@ $
 	+	224	0
 	+	177	0
 
-> ~/.bashrc
-	"	97	0
-	^	97	1
-	.	97	0
-	+	97	0
-
-> fugitive:///home/gom/.git//0/.vimrc
-	"	242	10
-
 > fugitive:///home/gom/.vim/bundle/gom-pyclewn-view/.git//0/plugin/gom-pyclewn-view.vim
 	"	1	0
 
@@ -2184,41 +2242,4 @@ $
 	+	1	0
 
 > .vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-	"	1	0
-
-> ~/.vim/bundle/command-t/doc/command-t.txt
-	"	559	64
-
-> ~/.vim/bundle/vim-fugitive/doc/fugitive.txt
-	"	145	48
-
-> ~/code/irrlicht-1.7.3/examples/01.GomTest2/[Vundle] clean
-	"	2	0
-	.	1	0
-	+	1	0
-
-> ~/code/irrlicht-1.7.3/examples/01.GomTest2/[Vundle] list
-	"	2	0
-	.	1	0
-	+	1	0
-
-> ~/.vim/bundle/vim-debug/vim_debug/commands.py
-	"	1	0
-	^	33	12
-	.	33	11
-	+	34	12
-	+	35	12
-	+	33	11
-
-> ~/.vim/bundle/vim-debug/vim_debug/__Tag_List__
-	"	3	0
-	.	12	0
-	+	13	0
-	+	73	0
-	+	12	0
-
-> ~/.vim/bundle/vim-debug/vim_debug/debugger.py
-	"	2	53
-
-> ~/.vim/plugin/debugger.vim
 	"	1	0

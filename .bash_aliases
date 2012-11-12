@@ -8,8 +8,10 @@ fi
 alias ll='ls -lhF'
 alias lll='ls --color=always -lasth | less -R'
 alias tree='tree --charset=ASCII'
+alias tl='tree --charset=ASCII | less'
 alias vim='vim -p'
 alias ccat='pygmentize'
+alias rm_empties='find . -type d -empty -exec rmdir {} \;'
 
 alias fixscreen='TERM=xterm'
 alias conkystart='conky -d && conky -c ~/.net_conkyrc -d'
