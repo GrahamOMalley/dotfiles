@@ -180,6 +180,9 @@ nnoremap <leader>gp <esc>:Git push<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>25+
 nnoremap <leader>gd <esc>:Gdiff<CR>
 
+" toggle crosshair
+nnoremap <leader>cr <esc>:set cursorline! <Bar> set cursorcolumn!<CR>
+
 "*************************************************** FUNCTIONS ***************************************************
 "function to look for a template file of the appropriate type
 function! LoadTemplate(extension)
@@ -199,35 +202,42 @@ autocmd VimEnter,TabEnter *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTli
 "********************************************** PYTHON
 augroup filetype_python
     autocmd!
-    autocmd BufRead *.py nnoremap <F5> :pyfile %<CR>
     autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
     "jedi autocomplete
     autocmd BufRead *.py let g:jedi#auto_initialization = 1
-    autocmd BufRead *.py let g:jedi#goto_command = "<leader>g"
-    autocmd BufRead *.py let g:jedi#get_definition_command = "<leader>d"
+    autocmd BufRead *.py let g:jedi#popup_on_dot = 0
+    autocmd BufRead *.py let g:jedi#goto_command = "<leader>jg"
+    autocmd BufRead *.py let g:jedi#get_definition_command = "<leader>jd"
     autocmd BufRead *.py let g:jedi#pydoc = "K"
     autocmd BufRead *.py let g:jedi#use_tabs_not_buffers = 1
     autocmd BufRead *.py let g:jedi#rename_command = "<leader>R"
     autocmd BufRead *.py let g:jedi#related_names_command = "<leader>n"
     "Debugging
-"    autocmd BufRead,BufNewFile *.py nnoremap <F10>      :Dbg over <Bar> :Dbg watch<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <F11>      :Dbg into<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <F2>       :Dbg .<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <F5>       :Dbg run<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <F9>       :Dbg break<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dd :Dbg down<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dh :Dbg here<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dt :Dbg out<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <leader>du :Dbg up<CR>
-"    autocmd BufRead,BufNewFile *.py nnoremap <leader>dw :Dbg watch<CR>
+    autocmd BufRead,BufNewFile *py let g:pyclewn_debug_view_type="python"
+    autocmd BufRead,BufNewFile *py let g:pyclewn_locals_on=1
+    autocmd BufRead,BufNewFile *py nnoremap <F2>              :exe "PyclewnDebugToggle"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F4>              :exe "!make"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F5>              :exe "Crun"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F6>              :exe "PyclewnContinue"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F10>             :exe "PyclewnNext"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F11>             :exe "PyclewnStep"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>ds        :exe "C bt"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>df        :exe "Cframe"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>dv        :exe "C pp" . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>dp        :exe "C p " . expand("<cword>") <CR>
 augroup END
 
 "********************************************** CPP
 augroup filetype_cpp
     autocmd!
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>f         :exe "%!astyle --mode=c --style=ansi"<CR>
     " PyClewn
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_args="--gdb=async"
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_debug_view_type="cpp"
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_locals_on=1
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F2>              :exe "PyclewnDebugToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
@@ -238,9 +248,6 @@ augroup filetype_cpp
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10>             :exe "PyclewnNext"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11>             :exe "PyclewnStep"<CR>
-    " TODO set this to something more sensible, I use pgup and pgdwn all the time
-    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageUp>          :exe \"Cup"<CR>
-    "autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <PageDown>        :exe \"Cdown"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds        :exe "Cbt"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df        :exe "Cframe"<CR>
