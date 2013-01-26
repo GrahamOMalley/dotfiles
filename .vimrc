@@ -23,6 +23,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround' 
+Bundle 'majutsushi/tagbar'
+Bundle 'benmills/vimux'
 
 " vim-scripts repos
 Bundle 'bufexplorer.zip'
@@ -90,9 +92,8 @@ let g:jedi#auto_initialization = 0
 " set some TagList properties
 set tags+=~/.vim/tags/cpp.ctags
 set tags=tags;/
-let Tlist_WinWidth = 50
-let Tlist_Inc_Winwidth = 300
-let Tlist_Exit_OnlyWindow = 1 
+let g:tagbar_left = 1
+let g:tagbar_width = 50
 
 " Supertab should try to use User completion
 let g:SuperTabDefaultCompletionType = "context"
@@ -130,7 +131,7 @@ let mapleader = ","
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " TAGLIST
-nnoremap <F12> <Esc>:Tlist<CR>
+nnoremap <F12> <Esc>:TagbarToggle<CR>
 
 " CTAGS
 "call exuberant ctags externally to build tag list for all files in current dir
@@ -197,7 +198,10 @@ autocmd BufNewFile,BufRead *conkyrc set filetype=conkyrc
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 
 " Start Taglist window on file open if any of these types (ignore if debugger view mode on)
-autocmd VimEnter,TabEnter *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTlist"
+autocmd VimEnter,TabEnter *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTagbar"
+
+" for editing proto files
+autocmd BufRead,BufNewFile *.proto setfiletype proto
 
 "********************************************** PYTHON
 augroup filetype_python
