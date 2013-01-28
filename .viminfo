@@ -1309,22 +1309,22 @@ $\rparent
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  1  0  fugitive:///home/gom/.git//8117102c21daa38ba3eeffa11450e090711c2dc8
-'1  1  0  ~/code/python/spider_bro/file_renamer.py
-'2  20  0  ~/code/python/spider_bro/file_renamer.py
-'3  38  0  ~/code/python/spider_bro/file_renamer.py
-'4  10  0  ~/code/python/spider_bro/file_renamer.py
-'5  101  64  ~/.bashrc
-'6  23  0  ~/.bash_aliases
-'7  112  0  ~/.bashrc
-'8  384  4  ~/.xbmc/addons/skin.confluence/720p/IncludesHomeRecentlyAdded.xml
-'9  133  0  ~/code/python/spider_bro/file_renamer.py
+'0  1  0  ~/.bash_aliases
+'1  1  0  fugitive:///home/gom/.git//8117102c21daa38ba3eeffa11450e090711c2dc8
+'2  1  0  ~/code/python/spider_bro/file_renamer.py
+'3  20  0  ~/code/python/spider_bro/file_renamer.py
+'4  38  0  ~/code/python/spider_bro/file_renamer.py
+'5  10  0  ~/code/python/spider_bro/file_renamer.py
+'6  101  64  ~/.bashrc
+'7  23  0  ~/.bash_aliases
+'8  112  0  ~/.bashrc
+'9  384  4  ~/.xbmc/addons/skin.confluence/720p/IncludesHomeRecentlyAdded.xml
 
 # Jumplist (newest first):
+-'  1  0  ~/.bash_aliases
 -'  1  0  fugitive:///home/gom/.git//8117102c21daa38ba3eeffa11450e090711c2dc8
 -'  5  0  fugitive:///home/gom/.git//8117102c21daa38ba3eeffa11450e090711c2dc8
 -'  1  0  ~/.git/refs/heads/master
--'  1  0  ~/.bash_aliases
 -'  1  0  ~/code/python/spider_bro/file_renamer.py
 -'  1  0  ~/code/python/spider_bro/__Tagbar__
 -'  38  0  ~/code/python/spider_bro/__Tagbar__
@@ -1416,6 +1416,8 @@ $\rparent
 -'  115  24  ~/code/python/spider_bro/sb_utils.py
 -'  110  24  ~/code/python/spider_bro/sb_utils.py
 -'  105  24  ~/code/python/spider_bro/sb_utils.py
+-'  1  49  ~/.git/COMMIT_EDITMSG
+-'  1  0  fugitive:///home/gom/.git//8117102c21daa38ba3eeffa11450e090711c2dc8
 
 # History of marks within files (newest to oldest):
 
@@ -1446,6 +1448,12 @@ $\rparent
 	+	28	0
 	+	28	0
 	+	29	12
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	49
+	^	1	50
+	.	1	49
+	+	1	49
 
 > ~/.git/index
 	"	1	0
@@ -2078,12 +2086,6 @@ $\rparent
 	^	1	42
 	.	1	41
 	+	1	41
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	12
-	^	1	13
-	.	1	12
-	+	1	12
 
 > ~/code/python/spider_bro/spiderBro.py
 	"	77	0
