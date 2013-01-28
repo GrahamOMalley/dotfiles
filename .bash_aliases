@@ -25,9 +25,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias dfh='df -h --total | grep -v none'
 alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
-alias sbrecent='grep -h "Added torrent" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"'
-alias sbtoday='grep -h "Added torrent" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g" | grep `date +%Y-%m-%d`'
-alias sbcopied='grep -h "Copying" $HOME/log/spiderbro/file*.log'
+alias sbrecent='grep -h "\-\-\->" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g" | grep -h -e "\-\-\->" -e "Copying File" -e "Added Torrent" -e " to "'
+alias sbtoday='grep -h "\-\-\->" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g" | grep `date +%Y-%m-%d` | grep -h -e "\-\-\->" -e "Copying File" -e "Added Torrent" -e " to "'
 
 # git
 alias gp='git push'
