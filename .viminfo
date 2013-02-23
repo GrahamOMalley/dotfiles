@@ -8,28 +8,55 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/component
+~MSle0/FIX
 
 # Last Substitute Search Pattern:
-~MSle0&^
+~MSle0~&R
 
 # Last Substitute String:
-$"
+$\/
 
 # Command Line History (newest to oldest):
+:qa
 :wq
 :w
 :q
+:;;;;;;;;;;;
+:%s/R/\//g
+:%s/I/\//g
+:%s/S/\//g
+:%s/H/\//g
+:%s/RRRRRRR/\//g
+:%s/RRRRRRR///g
+:g/delimiter
+:pyfile %
+:%s/\<second\>/torrent/g
+:%s/\<first\>/torrent/g
+:set syntax=sh
+:tabnew ~/.bash_aliases
+:tabnew ~/code/python/spider_bro/file_renamer.py
+:tabnew ~/code/python/spider_bro/sb_utils.py
+:tabnew ~/bin/torrent_test2.py
+:tabnew ~/bin/torrent_test.py
+:wqa
+:;
+:python %
+:q!
+:map
+:CommandT
+:commandT
+:tab h command-t
+:tab 
+:tab h G
+:BundleClean
+:set wrap!
 :'<,'>s/^/"/g
 :echo g:jedi#goto_command
 :echo g:jedi
 :!python %
 :tabnew debugtest.py
-:map
 :tabnew ../django_templates/polls/results.html
 :'<,'>sort u
-:q!
-:wqa
 :tabnew ../django_templates/polls/detail.html
 :tabnew polls/urls.py
 :tabnew polls/detail.html
@@ -50,11 +77,9 @@ $"
 :qa!
 :g/jedi
 :TabMessage map
-:qa
 :BundleInstall
 :Bu
 :set omnifunc?
-:BundleClean
 :python from django import db
 :tab h 
 :tab h jedi
@@ -114,9 +139,7 @@ $"
 :!python % -s "Doctor Who (2005)" -p
 :!python % -s "Doctor Who (2005)"
 :%s/\<PRINT_FILE_PATH\>/args.path/g
-:tabnew ~/code/python/spider_bro/sb_utils.py
 :;;l
-:tabnew ~/.bash_aliases
 :%s/Copying/---> Copying/g
 :%s/\<Copying\>/Copying File :/g
 :%s/\t//g
@@ -186,7 +209,6 @@ $"
 :%s/opts[\'force_show\']//g
 :%s/opts['force_show']//g
 :!sbtoday
-:pyfile %
 :pyfile spiderBro.py
 :2,8sort
 :k
@@ -235,11 +257,9 @@ $"
 :%s/\<bash_historyback\>//g
 :tabnew /home/gom/log/spiderbro/spiderBro_2013-01-21_14\:49\:40.log
 :'
-:tabnew ~/code/python/spider_bro/file_renamer.py
 :17,110s/\<target\>/args.target/g
 :17,300s/\<target\>/args.target/g
 :%s/\<target\>/args.target/g
-:;
 :;llll
 :oldfiles
 :w ~/backuptvdb.py
@@ -259,7 +279,6 @@ $"
 :setpaste!
 :set
 :vsplit gomXBMCTools.py
-:set syntax=sh
 :windo diffoff
 :tab h fugitive
 :g/TODO
@@ -480,8 +499,6 @@ $"
 :tab h dbgvar
 :PowerlineClearCache
 :14,26!sort
-:tab h command-t
-:CommandT
 :tab h Gdiff
 :s/Step/ToggleTlist/g
 :Tlist
@@ -548,7 +565,6 @@ $"
 :set fillchars=vert:â”‚
 :call exists(w:gom_debug_on)
 :exists(w:gom_debug_on)
-:set wrap!
 :execute "Dbg quit"
 :tab h Dbg
 :Dbg quit
@@ -888,6 +904,26 @@ $"
 :tab h vim-debug
 
 # Search String History (newest to oldest):
+? R
+? I
+? S
+? H
+? RRRRRRR
+?/FIX
+? delimiter
+?/delimiter
+?/FAILED
+? \<second\>
+? \<first\>
+?/successm
+?/id
+?/is_interactive
+?/remov
+?/add_tor
+?/twisted
+?/command
+?/on_get_t
+?/remove
 ?/component
 ? ^
 ?/wkkkjkkkkkkkkkkkj
@@ -1019,8 +1055,6 @@ $"
 ?/linkr
 ?/alidating
 ?/base_
-?/delimiter
-?/FAILED
 ? ^ll
 ? ^lsl
 ? ^ls
@@ -1256,7 +1290,6 @@ $"
 ? \<Gomtest1\>
 ?/F9
 ?/Toggle
-?/command
 ?/buf
 ? check_words
 ? w:
@@ -1334,7 +1367,6 @@ $"
 ?/dd
 ?/blah
 ? \<fullpath\>
-?/id
 ?/echo
 ?/sqlite
 ?/commands
@@ -1361,6 +1393,8 @@ $"
 ?/jab
 ?/init_sb_db
 ? init_sb_db
+?/resize
+?/re
 
 # Expression History (newest to oldest):
 
@@ -1377,65 +1411,36 @@ $"
 
 # Registers:
 "0	LINE	0
-	"set ,r to do a global search/replace on word under cursor
-"1	LINE	0
-	" buffer is open
+	            print "\t\tCopying ", f['path'], " to ", ftarget
+""1	LINE	0
+	                   logger.info("")
 "2	LINE	0
-	#! /usr/bin/env python
-	
-	if __name__ == "__main__":
-		
-	
+	            print "\t\tCopying ", f['path'], " to ", ftarget
 "3	LINE	0
-	        return HttpResponseRedirecâ‰¡jedi=3, t(reverse('polls.views.results', args=(p.id,)))â‰¡ (viewname, *urlconf=None*, args=None, kwargs=None, prefix=None, current_app=None) â‰¡jediâ‰¡' '
+	        if args.verbose:
 "4	LINE	0
-	def index(request):
-	    latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
-	    return render_to_response('polls/index.html', {'latest_poll_list': latest_poll_list})
-	
-	def detail(request, poll_id):
-	    p = get_object_or_404(Poll, pk=poll_id)
-	    return render_to_response('polls/detail.html', {'poll': p}, context_instance=RequestContext(request))
-	
-	def results(request, poll_id):
-	    p = get_object_or_404(Poll, pk=poll_id)
-	    return render_to_response('polls/results.html', {'poll': p})
+	        - Test Mysql with studio/media xbmcs
 "5	LINE	0
-	from django.conf.urls import patterns, include, url
-	
-	urlpatterns = patterns('polls.views',
-	                       url(r'^$', 'index'),
-	                       url(r'^(?P<poll_id>\d+)/$', 'detail'),
-	                       url(r'^(?P<poll_id>\d+)/results/$', 'results'),
-	                       url(r'^(?P<poll_id>\d+)/vote/$', 'vote'),
-	                      )
+	        - Install new Hdd
 "6	LINE	0
-	<HTML>
-	  <HEAD>
-	    <TITLE><+TITLE+></TITLE>
-	    <META name="generator" content="<+GENERATOR+>" />
-	    <META name="author" content="<+AUTHOR+>"/>
-	  </HEAD>
-	  <BODY>
-	    <P><+CONTENT+></P>
-	  </BODY>
-	</HTML>
-	
-	
+	        
 "7	LINE	0
-	from django.http import HttpResponseRedirect, HttpResponse
+	        
 "8	LINE	0
-	def results(request, poll_id):
-	    return HttpResponse("You're looking at the results of poll %s." % poll_id)
+	  
 "9	LINE	0
-	from polls.models import Poll
+	This set of files was assembled by the good people at http://irishtorrents.com/
+	If you'd like more Irish content like this then why not pay us a visit on our 
+	IRC channel? We can be found on irc.p2p-network.net where the channel is called 
+	#irishtorrents. Feel free to join us for a chat and you can even ask us 
+	for an invite. If we like you enough you might just get to join the website.
 "j	CHAR	0
 	314
 <jjjjjj;mapjjjjjjjjjjjjjjjjjjk€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;jjjjj€k9€k5€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;,bejjkkjj,beq
 "w	CHAR	0
 	wwwwwwwwwwwwx;wkjji	if(g:py0wwxi Aie€kb€kbex€kb€kb:exe "Cinfo locals!"€kb€kb"j€kb€kbendif;wkjjddkkkkkA;E€kb€kb;€kb:exe "Cnext";wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyGkkkkkpjjjjjjjkkkkjdddddddddd;w,gd
-""-	CHAR	0
-	dwreplace 
+"-	CHAR	0
+	True
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -1464,116 +1469,1099 @@ $"
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  301  10  ~/.vimrc
-'1  143  0  ~/code/python/deluge_ui_web/web/json_api.py
-'2  91  0  ~/code/python/deluge_ui_web/web/web.py
-'3  658  0  ~/code/python/deluge_ui_web/web/gettext.js
-'4  3  44  ~/scratch
-'5  273  0  ~/.vimrc
-'6  4  0  ~/code/python/pickin_on_django/polls/views.py
-'7  18  0  ~/code/python/pickin_on_django/polls/admin.py
-'8  1  0  ~/code/python/pickin_on_django/polls/views.py
-'9  21  0  ~/code/python/pickin_on_django/polls/admin.py
+'0  1  0  ~/code/python/spider_bro/spiderBro.py
+'1  121  0  ~/bin/backup_tv.py
+'2  120  0  ~/bin/backup_tv.py
+'3  135  0  ~/code/python/spider_bro/file_renamer.py
+'4  16  0  ~/bin/backup_tv.py
+'5  117  0  ~/bin/backup_tv.py
+'6  9  10  ~/.todo
+'7  376  1  /etc/samba/smb.conf
+'8  83  0  ~/nas/tv/young_justice/tvshow.nfo
+'9  172  0  ~/bin/backup_tv.py
 
 # Jumplist (newest first):
--'  301  10  ~/.vimrc
--'  1  0  ~/.vimrc
--'  143  0  ~/code/python/deluge_ui_web/web/json_api.py
--'  27  5  ~/code/python/deluge_ui_web/web/__Tagbar__
--'  113  0  ~/code/python/deluge_ui_web/web/__Tagbar__
--'  1  0  ~/code/python/deluge_ui_web/web/json_api.py
--'  91  0  ~/code/python/deluge_ui_web/web/web.py
--'  114  0  ~/code/python/deluge_ui_web/web/__Tagbar__
--'  125  0  ~/code/python/deluge_ui_web/web/__Tagbar__
--'  1  0  ~/code/python/deluge_ui_web/web/web.py
--'  658  0  ~/code/python/deluge_ui_web/web/gettext.js
--'  1  0  ~/code/python/deluge_ui_web/web/gettext.js
--'  3  44  ~/scratch
--'  1  0  ~/scratch
--'  273  0  ~/.vimrc
--'  258  0  ~/.vimrc
--'  299  0  ~/.vimrc
--'  281  0  ~/.vimrc
--'  28  25  ~/.vimrc
--'  1  0  ~/code/python/pickin_on_django/polls/models.py
--'  24  18  ~/code/python/pickin_on_django/polls/views.py
--'  25  18  ~/code/python/pickin_on_django/polls/views.py
--'  4  0  ~/code/python/pickin_on_django/polls/views.py
--'  1  0  ~/code/python/pickin_on_django/polls/views.py
--'  12  1  ~/code/python/pickin_on_django/__Tagbar__
--'  1  0  ~/code/python/pickin_on_django/polls/admin.py
--'  18  0  ~/code/python/pickin_on_django/polls/admin.py
--'  21  0  ~/code/python/pickin_on_django/polls/admin.py
--'  11  0  ~/code/python/pickin_on_django/manage.py
--'  1  0  ~/code/python/pickin_on_django/manage.py
--'  10  0  ~/code/python/pickin_on_django/manage.py
--'  3  0  ~/code/python/pickin_on_django/[Vundle] clean
--'  14  0  ~/.vimrc
--'  32  0  ~/.vimrc
--'  35  0  ~/.vimrc
--'  37  0  ~/.vimrc
--'  12  0  ~/.vimrc
--'  9  0  ~/.vimrc
--'  6  0  ~/.vimrc
--'  302  0  ~/.vimrc
--'  235  0  ~/.vimrc
--'  238  0  ~/.vimrc
--'  275  0  ~/.vimrc
--'  12  0  ~/code/python/pickin_on_django/manage.py
--'  5  0  fugitive:///home/gom/.git//0/code/python/pickin_on_django/manage.py
--'  255  69  ~/.vimrc
--'  256  70  ~/.vimrc
--'  103  0  ~/.vimrc
--'  100  0  ~/.vimrc
--'  94  0  ~/.vimrc
--'  91  0  ~/.vimrc
--'  87  0  ~/.vimrc
--'  84  0  ~/.vimrc
--'  82  0  ~/.vimrc
--'  77  0  ~/.vimrc
--'  73  0  ~/.vimrc
--'  69  0  ~/.vimrc
--'  39  0  ~/.vimrc
--'  22  6  ~/code/python/pickin_on_django/polls/admin.py
--'  1  0  ~/code/python/pickin_on_django/pickin_on_django/settings.py
--'  1999  6  ~/source.html
--'  1  0  ~/source.html
--'  11  0  ~/code/python/pickin_on_django/manage.py
--'  1  0  ~/code/python/pickin_on_django/manage.py
--'  10  0  ~/code/python/pickin_on_django/manage.py
--'  3  0  ~/code/python/pickin_on_django/[Vundle] clean
--'  12  0  ~/code/python/pickin_on_django/manage.py
--'  5  0  fugitive:///home/gom/.git//0/code/python/pickin_on_django/manage.py
--'  1  0  ~/code/python/pickin_on_django/polls/admin.py
--'  18  0  ~/code/python/pickin_on_django/polls/admin.py
--'  21  0  ~/code/python/pickin_on_django/polls/admin.py
--'  11  0  ~/code/python/pickin_on_django/manage.py
--'  1  0  ~/code/python/pickin_on_django/manage.py
--'  10  0  ~/code/python/pickin_on_django/manage.py
--'  3  0  ~/code/python/pickin_on_django/[Vundle] clean
--'  12  0  ~/code/python/pickin_on_django/manage.py
--'  5  0  fugitive:///home/gom/.git//0/code/python/pickin_on_django/manage.py
--'  1  0  ~/code/python/pickin_on_django/polls/models.py
--'  24  18  ~/code/python/pickin_on_django/polls/views.py
--'  25  18  ~/code/python/pickin_on_django/polls/views.py
--'  4  0  ~/code/python/pickin_on_django/polls/views.py
--'  1  0  ~/code/python/pickin_on_django/polls/views.py
--'  12  1  ~/code/python/pickin_on_django/__Tagbar__
--'  1  0  ~/code/python/pickin_on_django/polls/admin.py
--'  18  0  ~/code/python/pickin_on_django/polls/admin.py
--'  21  0  ~/code/python/pickin_on_django/polls/admin.py
--'  11  0  ~/code/python/pickin_on_django/manage.py
--'  1  0  ~/code/python/pickin_on_django/manage.py
--'  10  0  ~/code/python/pickin_on_django/manage.py
--'  3  0  ~/code/python/pickin_on_django/[Vundle] clean
+-'  1  0  ~/code/python/spider_bro/spiderBro.py
+-'  121  0  ~/bin/backup_tv.py
+-'  7  1  ~/bin/__Tagbar__
+-'  24  0  ~/bin/__Tagbar__
+-'  1  0  ~/bin/backup_tv.py
+-'  120  0  ~/bin/backup_tv.py
+-'  27  1  ~/bin/__Tagbar__
+-'  44  0  ~/bin/__Tagbar__
+-'  135  0  ~/code/python/spider_bro/file_renamer.py
+-'  51  4  ~/code/python/spider_bro/__Tagbar__
+-'  69  0  ~/code/python/spider_bro/__Tagbar__
+-'  1  0  ~/code/python/spider_bro/file_renamer.py
+-'  16  0  ~/bin/backup_tv.py
+-'  59  4  ~/bin/__Tagbar__
+-'  63  0  ~/bin/__Tagbar__
+-'  117  0  ~/bin/backup_tv.py
+-'  67  1  ~/bin/__Tagbar__
+-'  84  0  ~/bin/__Tagbar__
+-'  9  10  ~/.todo
+-'  1  4  ~/.todo
+-'  376  1  /etc/samba/smb.conf
+-'  1  0  /etc/samba/smb.conf
+-'  83  0  ~/nas/tv/young_justice/tvshow.nfo
+-'  1  0  ~/nas/tv/young_justice/tvshow.nfo
+-'  172  0  ~/bin/backup_tv.py
+-'  111  0  ~/bin/backup_tv.py
+-'  107  0  ~/bin/backup_tv.py
+-'  103  0  ~/bin/backup_tv.py
+-'  92  0  ~/bin/backup_tv.py
+-'  87  0  ~/bin/backup_tv.py
+-'  74  0  ~/bin/backup_tv.py
+-'  60  0  ~/bin/backup_tv.py
+-'  52  0  ~/bin/backup_tv.py
+-'  37  0  ~/bin/backup_tv.py
+-'  29  0  ~/bin/backup_tv.py
+-'  25  0  ~/bin/backup_tv.py
+-'  23  0  ~/bin/backup_tv.py
+-'  11  0  ~/bin/backup_tv.py
+-'  8  0  ~/bin/backup_tv.py
+-'  1  52  /media/oneTB/downloads/temp.txt
+-'  41  41  /media/oneTB/downloads/temp.txt
+-'  29  18  /media/oneTB/downloads/temp.txt
+-'  23  0  /media/oneTB/downloads/temp.txt
+-'  51  7  /media/oneTB/downloads/temp.txt
+-'  26  10  /media/oneTB/downloads/temp.txt
+-'  151  0  ~/code/python/spider_bro/sb_utils.py
+-'  86  3  ~/code/python/spider_bro/__Tagbar__
+-'  155  0  ~/code/python/spider_bro/__Tagbar__
+-'  1  0  ~/code/python/spider_bro/sb_utils.py
+-'  124  0  ~/code/python/spider_bro/sb_utils.py
+-'  170  3  ~/code/python/spider_bro/__Tagbar__
+-'  239  0  ~/code/python/spider_bro/__Tagbar__
+-'  148  99  ~/code/python/spider_bro/sb_utils.py
+-'  131  39  ~/code/python/spider_bro/sb_utils.py
+-'  127  39  ~/code/python/spider_bro/sb_utils.py
+-'  339  37  ~/code/python/spider_bro/sb_utils.py
+-'  239  37  ~/code/python/spider_bro/sb_utils.py
+-'  136  43  ~/code/python/spider_bro/sb_utils.py
+-'  90  12  ~/code/python/spider_bro/sb_utils.py
+-'  1  0  /tmp/crontab.bPCnDg/crontab
+-'  1  0  /tmp/crontab.MDph5j/crontab
+-'  12343  0  /var/log/auth.log
+-'  1  0  /var/log/auth.log
+-'  29  36  ~/code/python/spider_bro/gomXBMCTools.py
+-'  26  0  ~/code/python/spider_bro/gomXBMCTools.py
+-'  27  0  ~/code/python/spider_bro/gomXBMCTools.py
+-'  1  0  ~/code/python/spider_bro/gomXBMCTools.py
+-'  8  0  ~/log/spiderbro/test.py
+-'  7  4  ~/log/spiderbro/__Tagbar__
+-'  8  0  ~/log/spiderbro/__Tagbar__
+-'  1  0  ~/log/spiderbro/test.py
+-'  1  0  ~/bin/show_torrents
+-'  1  0  ~/bin/torrent_test2.py
+-'  107  4  ~/bin/__Tagbar__
+-'  126  0  ~/bin/__Tagbar__
+-'  33  39  ~/bin/torrent_test2.py
+-'  32  4  ~/bin/torrent_test2.py
+-'  39  12  ~/bin/torrent_test2.py
+-'  1  0  ~/bin/torrent_test.py
+-'  141  12  ~/code/python/spider_bro/file_renamer.py
+-'  339  0  ~/code/python/spider_bro/__Tagbar__
+-'  357  0  ~/code/python/spider_bro/__Tagbar__
+-'  113  0  ~/log/spiderbro/spiderBro_2013-02-18.log
+-'  1  0  ~/log/spiderbro/spiderBro_2013-02-18.log
+-'  12  45  ~/code/python/spider_bro/file_renamer.py
+-'  111  44  ~/code/python/spider_bro/file_renamer.py
+-'  109  34  ~/code/python/spider_bro/file_renamer.py
+-'  108  40  ~/code/python/spider_bro/file_renamer.py
+-'  81  37  ~/code/python/spider_bro/file_renamer.py
+-'  70  8  ~/code/python/spider_bro/file_renamer.py
+-'  40  8  ~/code/python/spider_bro/file_renamer.py
+-'  121  0  ~/bin/backup_tv.py
+-'  7  1  ~/bin/__Tagbar__
+-'  24  0  ~/bin/__Tagbar__
+-'  1  0  ~/bin/backup_tv.py
+-'  120  0  ~/bin/backup_tv.py
+-'  27  1  ~/bin/__Tagbar__
+-'  44  0  ~/bin/__Tagbar__
 
 # History of marks within files (newest to oldest):
 
+> ~/code/python/spider_bro/spiderBro.py
+	"	1	0
+	^	1	1
+	.	33	0
+	+	14	21
+	+	9	14
+	+	22	0
+	+	23	0
+	+	23	16
+	+	23	99
+	+	23	98
+	+	23	104
+	+	22	0
+	+	12	0
+	+	10	0
+	+	12	0
+	+	13	0
+	+	19	0
+	+	23	0
+	+	22	21
+	+	9	0
+	+	23	9
+	+	23	0
+	+	23	0
+	+	30	0
+	+	22	4
+	+	34	50
+	+	34	41
+	+	34	0
+	+	34	52
+	+	34	3
+	+	42	12
+	+	57	17
+	+	58	21
+	+	57	0
+	+	23	0
+	+	55	9
+	+	44	11
+	+	21	0
+	+	22	0
+	+	24	0
+	+	25	0
+	+	27	0
+	+	28	0
+	+	34	0
+	+	34	0
+	+	35	0
+	+	34	0
+	+	12	0
+	+	2	0
+	+	21	2
+	+	1	0
+	+	34	0
+	+	31	0
+	+	33	0
+
+> ~/code/python/spider_bro/__Tagbar__
+	"	1	0
+	.	19	0
+	+	1010	0
+	+	922	0
+	+	834	0
+	+	746	0
+	+	658	0
+	+	635	0
+	+	635	0
+	+	635	0
+	+	635	0
+	+	635	0
+	+	635	0
+	+	635	0
+	+	635	0
+	+	635	0
+	+	629	0
+	+	629	0
+	+	629	0
+	+	629	0
+	+	620	0
+	+	620	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	609	0
+	+	577	0
+	+	543	0
+	+	543	0
+	+	543	0
+	+	512	0
+	+	512	0
+	+	512	0
+	+	512	0
+	+	512	0
+	+	505	0
+	+	505	0
+	+	505	0
+	+	505	0
+	+	490	0
+	+	490	0
+	+	490	0
+	+	480	0
+	+	394	0
+	+	394	0
+	+	394	0
+	+	357	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	339	0
+	+	324	0
+	+	324	0
+	+	324	0
+	+	239	0
+	+	239	0
+	+	239	0
+	+	239	0
+	+	155	0
+	+	155	0
+	+	155	0
+	+	155	0
+	+	155	0
+	+	69	0
+	+	69	0
+	+	69	0
+	+	19	0
+
+> ~/code/python/spider_bro/.git/COMMIT_EDITMSG
+	"	1	31
+	^	1	32
+	.	1	31
+	+	5	70
+	+	4	45
+	+	1	71
+	+	2	14
+	+	1	31
+
+> ~/bin/backup_tv.py
+	"	121	0
+	^	121	26
+	.	121	25
+	+	116	0
+	+	123	0
+	+	117	55
+	+	16	64
+	+	121	74
+	+	122	16
+	+	123	0
+	+	124	0
+	+	120	38
+	+	121	25
+
+> ~/bin/__Tagbar__
+	"	7	1
+	.	24	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	156	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	105	0
+	+	84	0
+	+	84	0
+	+	63	0
+	+	63	0
+	+	44	0
+	+	44	0
+	+	44	0
+	+	44	0
+	+	24	0
+	+	24	0
+	+	24	0
+
+> ~/code/python/spider_bro/file_renamer.py
+	"	135	0
+	.	135	0
+	+	35	0
+	+	15	0
+	+	38	9
+	+	35	41
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	5
+	+	35	6
+	+	18	0
+	+	15	7
+	+	13	0
+	+	15	0
+	+	13	45
+	+	3	0
+	+	35	62
+	+	3	0
+	+	35	0
+	+	35	5
+	+	35	0
+	+	13	45
+	+	38	0
+	+	75	51
+	+	79	32
+	+	112	68
+	+	121	85
+	+	125	84
+	+	135	43
+	+	132	28
+	+	133	0
+	+	134	0
+	+	135	0
+	+	136	0
+	+	128	19
+	+	138	28
+	+	141	8
+	+	139	16
+	+	141	0
+	+	139	9
+	+	141	8
+	+	87	44
+	+	80	41
+	+	82	28
+	+	83	12
+	+	82	59
+	+	69	0
+	+	75	46
+	+	108	49
+	+	112	43
+	+	113	0
+	+	78	0
+	+	113	0
+	+	82	42
+	+	82	0
+	+	81	51
+	+	84	85
+	+	84	11
+	+	85	0
+	+	88	0
+	+	86	0
+	+	139	8
+	+	141	8
+	+	140	61
+	+	13	32
+	+	19	8
+	+	18	0
+	+	18	0
+	+	19	47
+	+	35	76
+	+	35	0
+	+	134	0
+	+	134	0
+	+	135	49
+	+	135	0
+	+	135	0
+	+	11	28
+	+	35	39
+	+	35	0
+	+	11	0
+	+	35	0
+	+	21	0
+	+	141	12
+	+	14	22
+	+	16	0
+	+	15	14
+	+	36	0
+	+	35	43
+	+	141	31
+	+	142	0
+	+	143	0
+	+	169	26
+	+	135	81
+	+	135	15
+	+	135	19
+	+	134	0
+	+	135	0
+	m	191	0
+
+> ~/.todo
+	"	9	10
+	^	9	11
+	.	9	10
+	+	1	13
+	+	1	3
+	+	1	5
+	+	1	5
+	+	1	12
+	+	6	19
+	+	1	0
+	+	1	0
+	+	7	28
+	+	1	6
+	+	6	8
+	+	1	7
+	+	6	7
+	+	7	7
+	+	1	4
+	+	1	41
+	+	1	44
+	+	6	0
+	+	8	36
+	+	10	43
+	+	1	12
+	+	1	0
+	+	7	24
+	+	1	5
+	+	2	9
+	+	3	0
+	+	4	0
+	+	5	0
+	+	2	40
+	+	3	32
+	+	2	28
+	+	3	33
+	+	4	26
+	+	7	0
+	+	10	0
+	+	9	10
+
+> /etc/samba/smb.conf
+	"	376	1
+
+> ~/nas/tv/young_justice/tvshow.nfo
+	"	83	0
+
+> /media/oneTB/downloads/temp.txt
+	"	1	52
+	^	41	42
+	.	41	41
+	+	52	0
+	+	23	0
+	+	51	0
+	+	23	0
+	+	35	35
+	+	37	38
+	+	35	26
+	+	37	39
+	+	39	35
+	+	41	43
+	+	39	39
+	+	41	41
+
+> /media/oneTB/downloads/ireland_ascii.txt
+	"	1	52
+
+> ~/code/python/spider_bro/sb_utils.py
+	"	151	0
+	^	148	52
+	.	151	112
+	+	647	0
+	+	695	12
+	+	345	0
+	+	387	0
+	+	369	82
+	+	386	13
+	+	348	29
+	+	614	48
+	+	631	52
+	+	631	0
+	+	631	0
+	+	631	0
+	+	631	42
+	+	631	31
+	+	630	68
+	+	631	0
+	+	630	16
+	+	631	0
+	+	630	57
+	+	630	28
+	+	630	0
+	+	630	43
+	+	630	60
+	+	631	0
+	+	630	0
+	+	629	120
+	+	402	0
+	+	684	0
+	+	695	0
+	+	389	0
+	+	389	0
+	+	402	0
+	+	389	2
+	+	399	76
+	+	399	116
+	+	402	0
+	+	399	0
+	+	399	71
+	+	400	10
+	+	402	4
+	+	423	0
+	+	566	0
+	+	577	0
+	+	580	0
+	+	638	0
+	+	652	0
+	+	661	0
+	+	688	0
+	+	69	0
+	+	342	0
+	+	343	7
+	+	389	0
+	+	402	0
+	+	695	0
+	+	2	0
+	+	402	0
+	+	402	0
+	+	390	0
+	+	391	5
+	+	394	9
+	+	396	10
+	+	399	9
+	+	401	9
+	+	402	0
+	+	386	0
+	+	643	25
+	+	643	26
+	+	643	4
+	+	644	4
+	+	645	4
+	+	646	8
+	+	647	4
+	+	642	16
+	+	643	14
+	+	646	33
+	+	545	0
+	+	530	3
+	+	542	83
+	+	530	0
+	+	668	19
+	+	668	0
+	+	546	0
+	+	545	12
+	+	471	50
+	+	492	109
+	+	471	0
+	+	467	4
+	+	468	4
+	+	518	0
+	+	1	0
+	+	148	105
+	+	148	99
+	+	124	51
+	+	22	0
+	+	11	18
+	+	124	92
+	+	148	73
+	+	148	0
+	+	148	52
+	+	151	112
+
+> ~/code/python/spider_bro/GoToFile
+	"	1	0
+	.	13	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	39	0
+	+	1	0
+	+	1	0
+	+	35	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	34	0
+	+	23	0
+	+	1	0
+	+	1	0
+	+	14	0
+	+	13	0
+
+> /tmp/crontab.bPCnDg/crontab
+	"	1	0
+
+> /tmp/crontab.MDph5j/crontab
+	"	1	0
+
+> /var/log/auth.log
+	"	12343	0
+
+> ~/code/python/spider_bro/gomXBMCTools.py
+	"	29	36
+	^	29	37
+	.	29	37
+	+	26	38
+	+	26	0
+	+	28	0
+	+	28	0
+	+	30	14
+	+	28	7
+	+	29	37
+
+> ~/code/python/spider_bro/test.py
+	"	6	7
+
+> ~/log/spiderbro/test.py
+	"	8	0
+	^	7	43
+	.	7	0
+	+	1	0
+	+	5	293
+	+	6	0
+	+	2	8
+	+	6	41
+	+	8	14
+	+	7	29
+	+	8	15
+	+	6	11
+	+	7	0
+
+> ~/log/spiderbro/__Tagbar__
+	"	7	4
+	.	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+
+> ~/.bash_aliases
+	"	1	0
+	^	28	170
+	.	28	170
+	+	17	57
+	+	11	37
+	+	25	133
+	+	10	0
+	+	11	42
+	+	10	0
+	+	10	43
+	+	11	18
+	+	10	13
+	+	44	22
+	+	15	29
+	+	44	0
+	+	16	32
+	+	25	63
+	+	25	16
+	+	25	116
+	+	25	38
+	+	26	0
+	+	26	134
+	+	25	0
+	+	25	0
+	+	25	0
+	+	26	12
+	+	23	39
+	+	12	22
+	+	23	35
+	+	23	0
+	+	18	7
+	+	44	55
+	+	44	96
+	+	44	0
+	+	10	0
+	+	44	0
+	+	19	0
+	+	8	0
+	+	23	0
+	+	44	0
+	+	27	0
+	+	8	0
+	+	44	0
+	+	22	15
+	+	23	19
+	+	28	33
+	+	28	149
+	+	28	22
+	+	28	99
+	+	28	97
+	+	28	98
+	+	29	0
+	+	28	170
+
+> ~/bin/show_torrents
+	"	1	0
+
+> ~/bin/torrent_test2.py
+	"	1	0
+	^	34	29
+	.	34	28
+	+	1	26
+	+	1	0
+	+	1	100
+	+	1	0
+	+	1	4
+	+	1	4
+	+	1	0
+	+	1	0
+	+	1	26
+	+	39	0
+	+	25	31
+	+	35	107
+	+	27	0
+	+	32	0
+	+	2	0
+	+	35	0
+	+	35	0
+	+	6	0
+	+	8	0
+	+	9	0
+	+	29	0
+	+	12	0
+	+	13	16
+	+	27	55
+	+	31	25
+	+	35	0
+	+	35	0
+	+	35	0
+	+	35	0
+	+	37	0
+	+	14	0
+	+	17	0
+	+	16	61
+	+	24	0
+	+	25	0
+	+	3	0
+	+	2	0
+	+	1	0
+	+	3	0
+	+	37	0
+	+	38	0
+	+	38	0
+	+	39	0
+	+	38	0
+	+	21	0
+	+	24	0
+	+	36	0
+	+	38	0
+	+	34	28
+
+> ~/bin/GoToFile
+	"	1	0
+	.	6	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	26	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	8	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	6	0
+
+> ~/bin/torrent_test.py
+	"	31	4
+	^	94	13
+	.	41	0
+	+	1	26
+	+	1	26
+	+	97	13
+	+	1	0
+	+	1	0
+	+	1	31
+	+	1	107
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	30
+	+	1	90
+	+	1	4
+	+	1	8
+	+	1	17
+	+	1	463
+	+	1	17
+	+	94	0
+	+	26	0
+	+	27	0
+	+	26	0
+	+	41	0
+
+> ~/.tmux.conf
+	"	43	0
+	^	46	28
+	.	43	0
+	+	46	0
+	+	45	0
+	+	44	0
+	+	43	0
+
+> ~/log/spiderbro/spiderBro_2013-02-18.log
+	"	113	0
+
 > ~/.vimrc
-	"	301	10
-	^	200	34
-	.	200	33
-	+	128	0
+	"	28	0
+	^	21	1
+	.	21	0
 	+	129	0
 	+	129	0
 	+	129	0
@@ -1673,7 +2661,32 @@ $"
 	+	135	75
 	+	135	82
 	+	200	33
+	+	21	0
 	g	298	7
+
+> ~/.vim/bundle/command-t/doc/command-t.txt
+	"	85	0
+
+> ~/code/python/spider_bro/[Vundle] clean
+	"	3	0
+	.	1	0
+	+	3	0
+	+	1	0
+
+> ~/bin/launch_minecraft_with_controller.sh
+	"	17	3
+	^	17	4
+	.	17	4
+	+	4	23
+	+	17	0
+	+	16	0
+	+	17	4
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	29
+	^	1	30
+	.	1	29
+	+	1	29
 
 > ~/code/python/deluge_ui_web/web/json_api.py
 	"	143	0
@@ -2017,375 +3030,6 @@ $"
 	+	22	0
 	+	1	0
 
-> ~/code/python/spider_bro/sb_utils.py
-	"	391	11
-	^	1	3
-	.	1	0
-	+	410	34
-	+	609	54
-	+	690	6
-	+	528	10
-	+	537	73
-	+	657	0
-	+	638	0
-	+	639	0
-	+	640	0
-	+	641	0
-	+	642	0
-	+	690	12
-	+	340	0
-	+	382	0
-	+	364	82
-	+	381	13
-	+	343	29
-	+	609	48
-	+	626	52
-	+	626	0
-	+	626	0
-	+	626	0
-	+	626	42
-	+	626	31
-	+	625	68
-	+	626	0
-	+	625	16
-	+	626	0
-	+	625	57
-	+	625	28
-	+	625	0
-	+	625	43
-	+	625	60
-	+	626	0
-	+	625	0
-	+	624	120
-	+	397	0
-	+	679	0
-	+	690	0
-	+	384	0
-	+	384	0
-	+	397	0
-	+	384	2
-	+	394	76
-	+	394	116
-	+	397	0
-	+	394	0
-	+	394	71
-	+	395	10
-	+	397	4
-	+	418	0
-	+	561	0
-	+	572	0
-	+	575	0
-	+	633	0
-	+	647	0
-	+	656	0
-	+	683	0
-	+	66	0
-	+	337	0
-	+	338	7
-	+	384	0
-	+	397	0
-	+	690	0
-	+	2	0
-	+	397	0
-	+	397	0
-	+	385	0
-	+	386	5
-	+	389	9
-	+	391	10
-	+	394	9
-	+	396	9
-	+	397	0
-	+	381	0
-	+	638	25
-	+	638	26
-	+	638	4
-	+	639	4
-	+	640	4
-	+	641	8
-	+	642	4
-	+	637	16
-	+	638	14
-	+	641	33
-	+	540	0
-	+	525	3
-	+	537	83
-	+	525	0
-	+	663	19
-	+	663	0
-	+	541	0
-	+	540	12
-	+	466	50
-	+	487	109
-	+	466	0
-	+	462	4
-	+	463	4
-	+	513	0
-	+	1	0
-
-> ~/code/python/spider_bro/__Tagbar__
-	"	16	5
-	.	34	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	866	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	799	0
-	+	764	0
-	+	764	0
-	+	729	0
-	+	729	0
-	+	716	0
-	+	680	0
-	+	644	0
-	+	609	0
-	+	609	0
-	+	523	0
-	+	523	0
-	+	523	0
-	+	435	0
-	+	347	0
-	+	259	0
-	+	171	0
-	+	83	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	54	0
-	+	54	0
-	+	54	0
-	+	54	0
-	+	45	0
-	+	45	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-
-> ~/code/python/spider_bro/GoToFile
-	"	1	0
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	22	0
-	+	16	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	14	0
-	+	1	0
-	+	1	0
-	+	10	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/code/python/spider_bro/spiderBro.py
-	"	60	0
-	^	1	1
-	.	33	0
-	+	14	21
-	+	9	14
-	+	22	0
-	+	23	0
-	+	23	16
-	+	23	99
-	+	23	98
-	+	23	104
-	+	22	0
-	+	12	0
-	+	10	0
-	+	12	0
-	+	13	0
-	+	19	0
-	+	23	0
-	+	22	21
-	+	9	0
-	+	23	9
-	+	23	0
-	+	23	0
-	+	30	0
-	+	22	4
-	+	34	50
-	+	34	41
-	+	34	0
-	+	34	52
-	+	34	3
-	+	42	12
-	+	57	17
-	+	58	21
-	+	57	0
-	+	23	0
-	+	55	9
-	+	44	11
-	+	21	0
-	+	22	0
-	+	24	0
-	+	25	0
-	+	27	0
-	+	28	0
-	+	34	0
-	+	34	0
-	+	35	0
-	+	34	0
-	+	12	0
-	+	2	0
-	+	21	2
-	+	1	0
-	+	34	0
-	+	31	0
-	+	33	0
-
 > ~/code/python/spider_bro/db_manager.py
 	"	29	8
 
@@ -2533,61 +3177,6 @@ $"
 	.	1	0
 	+	1	0
 
-> ~/.bash_aliases
-	"	28	169
-	^	28	170
-	.	28	170
-	+	17	57
-	+	11	37
-	+	25	133
-	+	10	0
-	+	11	42
-	+	10	0
-	+	10	43
-	+	11	18
-	+	10	13
-	+	44	22
-	+	15	29
-	+	44	0
-	+	16	32
-	+	25	63
-	+	25	16
-	+	25	116
-	+	25	38
-	+	26	0
-	+	26	134
-	+	25	0
-	+	25	0
-	+	25	0
-	+	26	12
-	+	23	39
-	+	12	22
-	+	23	35
-	+	23	0
-	+	18	7
-	+	44	55
-	+	44	96
-	+	44	0
-	+	10	0
-	+	44	0
-	+	19	0
-	+	8	0
-	+	23	0
-	+	44	0
-	+	27	0
-	+	8	0
-	+	44	0
-	+	22	15
-	+	23	19
-	+	28	33
-	+	28	149
-	+	28	22
-	+	28	99
-	+	28	97
-	+	28	98
-	+	29	0
-	+	28	170
-
 > ~/bin/xbmc_recently_added
 	"	2	0
 
@@ -2689,44 +3278,6 @@ $"
 
 > ~/.xbmc/Keymap.xml
 	"	5	6
-
-> ~/.todo
-	"	4	26
-	^	4	27
-	.	4	26
-	+	1	13
-	+	1	3
-	+	1	5
-	+	1	5
-	+	1	12
-	+	6	19
-	+	1	0
-	+	1	0
-	+	8	28
-	+	1	6
-	+	6	8
-	+	1	7
-	+	6	7
-	+	8	7
-	+	1	4
-	+	1	41
-	+	1	44
-	+	6	0
-	+	9	36
-	+	10	43
-	+	1	12
-	+	1	0
-	+	7	24
-	+	1	5
-	+	2	9
-	+	3	0
-	+	4	0
-	+	5	0
-	+	2	40
-	+	3	32
-	+	2	28
-	+	3	33
-	+	4	26
 
 > ~/code/python/XBMC-Utility-scripts/xbmc_recently_added.py
 	"	1	0
@@ -3080,686 +3631,4 @@ $"
 	+	8	0
 
 > ~/code/python/XBMC-Utility-scripts/gomXBMCTools.py
-	"	1	0
-
-> ~/bin/xbmc_list_episodes
-	"	22	19
-	^	23	26
-	.	22	19
-	+	6	0
-	+	6	0
-	+	6	0
-	+	7	0
-	+	17	108
-	+	7	36
-	+	17	107
-	+	4	18
-	+	20	8
-	+	21	0
-	+	20	71
-	+	19	0
-	+	19	0
-	+	20	106
-	+	19	0
-	+	19	0
-	+	19	0
-	+	12	16
-	+	24	0
-	+	20	32
-	+	20	131
-	+	26	29
-	+	12	0
-	+	22	13
-	+	17	123
-	+	17	0
-	+	17	122
-	+	17	0
-	+	18	23
-	+	17	121
-	+	22	8
-	+	20	7
-	+	21	0
-	+	20	107
-	+	22	40
-	+	23	25
-	+	22	19
-
-> ~/bin/gomXBMCTools.py
-	"	1	0
-	^	43	10
-	.	39	10
-	+	1	0
-	+	61	18
-	+	62	22
-	+	25	0
-	+	24	21
-	+	10	0
-	+	5	0
-	+	5	37
-	+	6	87
-	+	8	7
-	+	6	8
-	+	8	65
-	+	2	15
-	+	62	0
-	+	26	46
-	+	26	0
-	+	60	0
-	+	60	0
-	+	26	47
-	+	59	13
-	+	26	10
-	+	55	39
-	+	59	15
-	+	63	0
-	+	62	60
-	+	29	21
-	+	53	0
-	+	29	28
-	+	53	7
-	+	29	30
-	+	29	21
-	+	29	31
-	+	53	0
-	+	29	21
-	+	53	0
-	+	29	61
-	+	55	29
-	+	57	19
-	+	59	0
-	+	55	0
-	+	58	38
-	+	29	68
-	+	58	53
-	+	57	44
-	+	30	0
-	+	29	70
-	+	30	0
-	+	34	0
-	+	36	0
-	+	15	102
-	+	47	72
-	+	15	0
-	+	20	0
-	+	17	39
-	+	18	40
-	+	33	67
-	+	2	0
-	+	3	0
-	+	21	4
-	+	22	4
-	+	23	4
-	+	19	41
-	+	14	39
-	+	57	11
-	+	52	0
-	+	35	11
-	+	2	0
-	+	35	0
-	+	62	0
-	+	61	15
-	+	39	25
-	+	44	0
-	+	40	0
-	+	41	0
-	+	41	64
-	+	42	0
-	+	39	24
-	+	43	8
-	+	39	26
-	+	43	5
-	+	44	12
-	+	43	49
-	+	41	29
-	+	43	9
-	+	44	0
-	+	39	10
-
-> ~/bin/__Tagbar__
-	"	12	0
-	.	13	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	96	0
-	+	83	0
-	+	83	0
-	+	83	0
-	+	83	0
-	+	83	0
-	+	83	0
-	+	83	0
-	+	83	0
-	+	83	0
-	+	62	0
-	+	51	0
-	+	30	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	13	0
-
-> ~/bin/GoToFile
-	"	1	0
-	.	6	0
-	+	80	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	24	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	6	0
-
-> ~/bin/spiderBro.py
-	"	11	7
-
-> ~/bin/backup_tv.py
-	"	86	8
-	^	69	52
-	.	69	0
-	+	59	0
-	+	60	30
-	+	73	0
-	+	139	0
-	+	64	4
-	+	60	0
-	+	60	0
-	+	60	0
-	+	72	18
-	+	61	0
-	+	62	87
-	+	27	0
-	+	26	55
-	+	66	0
-	+	66	0
-	+	66	0
-	+	66	0
-	+	68	19
-	+	66	0
-	+	68	40
-	+	66	0
-	+	71	12
-	+	68	0
-	+	68	0
-	+	69	22
-	+	68	0
-	+	69	45
-	+	70	26
-	+	70	25
-	+	126	0
-	+	126	0
-	+	66	0
-	+	68	0
-	+	70	26
-	+	127	46
-	+	131	13
-	+	129	33
-	+	132	20
-	+	132	80
-	+	132	0
-	+	132	43
-	+	132	0
-	+	132	0
-	+	132	0
-	+	132	0
-	+	27	55
-	+	132	0
-	+	132	15
-	+	132	0
-	+	132	0
-	+	132	66
-	+	132	82
-	+	132	0
-	+	132	16
-	+	132	0
-	+	134	21
-	+	132	77
-	+	132	0
-	+	132	67
-	+	132	0
-	+	132	0
-	+	132	32
-	+	134	25
-	+	135	0
-	+	134	19
-	+	132	0
-	+	138	0
-	+	132	100
-	+	132	0
-	+	133	22
-	+	126	36
-	+	81	0
-	+	14	124
-	+	121	20
-	+	122	29
-	+	123	12
-	+	124	11
-	+	120	16
-	+	14	0
-	+	16	0
-	+	17	90
-	+	58	53
-	+	119	23
-	+	120	11
-	+	58	0
-	+	153	4
-	+	154	4
-	+	11	0
-	+	9	29
-	+	11	0
-	+	11	0
-	+	10	0
-	+	11	0
-	+	168	0
-	+	167	23
-	+	11	0
-	+	11	0
-	+	159	41
-	+	69	46
-	+	69	0
-
-> ~/code/python/CruiseControl/cruise_control_scraper.py
-	"	955	0
-
-> ~/code/python/CruiseControl/__Tagbar__
-	"	146	4
-	.	151	0
-	+	151	0
-
-> fugitive:///home/gom/.git//0/.bash_aliases
-	"	26	38
-
-> ~/.bashrc
-	"	1	0
-	^	101	65
-	.	101	64
-	+	100	14
-	+	101	64
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	16
-	^	1	17
-	.	1	16
-	+	1	16
-
-> ~/.git/refs/heads/master
-	"	1	0
-
-> fugitive:///home/gom/.git//8117102c21daa38ba3eeffa11450e090711c2dc8
-	"	1	0
-	.	5	0
-	+	5	0
-
-> ~/code/python/spider_bro/file_renamer.py
-	"	1	0
-	.	20	0
-	+	129	28
-	+	129	28
-	+	140	0
-	+	36	9
-	+	67	26
-	+	73	15
-	+	36	0
-	+	37	0
-	+	37	0
-	+	37	38
-	+	37	0
-	+	53	0
-	+	34	0
-	+	37	0
-	+	34	0
-	+	34	0
-	+	15	0
-	+	36	9
-	+	34	41
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	5
-	+	34	6
-	+	17	0
-	+	15	7
-	+	13	0
-	+	15	0
-	+	13	45
-	+	3	0
-	+	34	62
-	+	3	0
-	+	34	0
-	+	34	5
-	+	34	0
-	+	13	45
-	+	36	0
-	+	73	51
-	+	77	32
-	+	110	68
-	+	119	85
-	+	123	84
-	+	133	43
-	+	130	28
-	+	131	0
-	+	132	0
-	+	133	0
-	+	134	0
-	+	126	19
-	+	136	28
-	+	139	8
-	+	137	16
-	+	139	0
-	+	137	9
-	+	139	8
-	+	85	44
-	+	78	41
-	+	80	28
-	+	81	12
-	+	80	59
-	+	67	0
-	+	73	46
-	+	106	49
-	+	110	43
-	+	111	0
-	+	76	0
-	+	111	0
-	+	80	42
-	+	80	0
-	+	79	51
-	+	82	85
-	+	82	11
-	+	83	0
-	+	86	0
-	+	84	0
-	+	137	8
-	+	139	8
-	+	138	61
-	+	13	32
-	+	18	8
-	+	17	0
-	+	17	0
-	+	18	47
-	+	34	76
-	+	34	0
-	+	132	0
-	+	132	0
-	+	133	49
-	+	133	0
-	+	133	0
-	+	11	28
-	+	34	39
-	+	34	0
-	+	11	0
-	+	34	0
-	+	20	0
-	m	150	0
-
-> ~/code/python/spider_bro/.git/COMMIT_EDITMSG
-	"	1	14
-	^	1	15
-	.	1	14
-	+	4	70
-	+	3	45
-	+	1	14
-
-> fugitive:///home/gom/code/python/spider_bro/.git//0/file_renamer.py
-	"	14	0
-
-> ~/code/python/spider_bro/gomXBMCTools.py
-	"	1	0
-	^	37	13
-	.	33	0
-	+	39	0
-	+	38	0
-	+	29	0
-	+	31	0
-	+	30	34
-	+	4	8
-	+	31	0
-	+	32	10
-	+	31	0
-	+	31	0
-	+	32	24
-	+	28	36
-	+	31	0
-	+	31	0
-	+	37	0
-	+	37	0
-	+	33	0
-	+	37	13
-	+	33	9
-	+	37	0
-	+	33	0
-	+	33	19
-	+	32	37
-	+	31	0
-	+	36	0
-	+	33	8
-	+	33	0
-	+	35	28
-	+	37	12
-	+	33	0
-
-> ~/.xbmc/addons/skin.confluence/720p/IncludesHomeRecentlyAdded.xml
-	"	384	4
-
-> ~/log/spiderbro/spiderBro_2013-01-27.log
-	"	9802	0
-	.	9766	0
-	+	1	0
-	+	412	0
-	+	1	0
-	+	9766	0
-
-> ~/log/spiderbro/GoToFile
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/log/spiderbro/temp.log
-	"	1	0
-	^	75	0
-	.	68	0
-	+	1	0
-	+	68	0
-	+	1	0
-	+	67	44
-	+	68	45
-	+	67	50
-	+	68	50
-	+	1	0
-	+	68	0
-	+	68	0
-	+	68	0
-	+	68	0
-
-> ~/log/spiderbro/filerenamer_2013-01-27.log
-	"	66	0
-	.	30	0
-	+	30	0
-
-> ~/code/python/XBMC-Utility-scripts/.git/index
-	"	1	0
-
-> ~/code/python/spider_bro/[Vundle] list
-	"	2	0
-	.	1	0
-	+	1	0
-
-> ~/.vim/bundle/gundo.vim/doc/gundo.txt
 	"	1	0
