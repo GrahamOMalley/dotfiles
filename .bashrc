@@ -56,8 +56,7 @@ fi
 export HISTSIZE=50000
 
 #add ~/bin to my $PATH
-#export PATH=$PATH:~/bin:~/eclipse/android-sdk-linux_x86-1.5_r3/tools
-export PATH=$PATH:~/bin:~/code/android-sdk-linux/tools
+export PATH=$PATH:~/bin
 
 cat ~/.welcome_message
 
@@ -100,13 +99,9 @@ export LS_COLORS
 export LESS=-R
 export GREP_COLORS="mc=01;36:ms=01;36:mt=01;36:fn=01;37:se=01;36"
 # set some variables for specific paths on goms main linux box
-export vid='/media/oneTB/videos/'
-export mov='/media/oneTB/videos/movies/'
-export tv='/media/twoTB1/videos/tv/'
-export tv2='/media/tv2/'
-export anime='/media/twoTB1/videos/anime/'
-export music='/media/oneTB/music/'
-export XBMC_ANDROID_NDK='/home/gom/code/android-ndk-r7-crystax-5.beta2'
-export XBMC_ANDROID_SDK='/home/gom/code/android-sdk-linux'
-export XBMC_ANDROID_TARBALLS='/home/gom/code'
+export vid='/media/nasGom/video/'
+export mov='/media/nasGom/video/movies/'
+export tv='/media/twoTB1/video/tv/'
+export music='/media/nasGom/music/'
+export log='~/log/spiderbro/'
 hostname | figlet

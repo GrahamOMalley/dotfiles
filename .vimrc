@@ -11,28 +11,32 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'davidhalter/jedi-vim'
-Bundle 'ervandew/supertab'
-Bundle 'godlygeek/tabular'
-Bundle 'GrahamOMalley/gom-pyclewn-view'
-Bundle 'guns/xterm-color-table.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'Rip-Rip/clang_complete'
 "Bundle 'scrooloose/nerdcommenter'
+"Bundle 'benmills/vimux'
+"Bundle 'jabapyth/vim-debug'
+"Bundle 'godlygeek/tabular'
+"Bundle 'guns/xterm-color-table.vim'
+"Bundle 'msanders/snipmate.vim'
+"Bundle 'tpope/vim-surround' 
+Bundle 'GrahamOMalley/gom-pyclewn-view'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround' 
 Bundle 'majutsushi/tagbar'
-Bundle 'benmills/vimux'
-"Bundle 'jabapyth/vim-debug'
+Bundle 'Valloric/YouCompleteMe'
 
 " vim-scripts repos
-Bundle 'bufexplorer.zip'
+"Bundle 'bufexplorer.zip'
 Bundle 'taglist.vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
+
+" Deprecated as YCM seems to offer all their functionality. Keeping as comment
+" in case I get sick of YCM
+"Bundle 'davidhalter/jedi-vim'
+"Bundle 'ervandew/supertab'
+"Bundle 'Rip-Rip/clang_complete'
 
 filetype plugin indent on
 
@@ -56,7 +60,7 @@ set  pumheight=15                          "  smaller completion window
 set  shiftwidth=4
 set  shortmess=a
 set  shortmess=atI
-set  showcmd                               "  Show us the command we're typing in bottom right of screen
+"set  showcmd                               "  Show us the command we're typing in bottom right of screen
 set  showfulltag                           "  Show full tags when doing search completion
 set  showmatch                             "  Highlight matching parens
 set  smartcase
@@ -100,10 +104,10 @@ let g:tagbar_left = 1
 let g:tagbar_width = 50
 
 " Supertab should try to use User completion
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "context"
 
 " show clang errors in quickfix window
-let g:clang_complete_copen = 1
+"let g:clang_complete_copen = 1
 
 " Let Syntastic open an error window automatically 
 let g:syntastic_auto_loc_list = 1
@@ -111,6 +115,7 @@ let g:syntastic_check_on_open = 1
 " TODO: there must be some nice way to generate an options file based on the .clang_complete file
 "let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+let g:ycm_allow_changing_updatetime = 0
 
 
 "*************************************************** GLOBAL KEYMAPS *********************************************
