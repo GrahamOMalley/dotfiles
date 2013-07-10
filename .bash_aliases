@@ -8,6 +8,7 @@ fi
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack --color-filename=white --color-match=cyan'
 alias ccat='pygmentize'
 alias cgrep='grep --colour=always'
+alias c11c='clang++ -std=c++11 -stdlib=libc++ -Wall -g'
 alias dfh='df -h -T --total -t ext4 | grep -h "[a-zA-Z0-9]\{1,3\}\%"'
 alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
 alias f='find . -name'

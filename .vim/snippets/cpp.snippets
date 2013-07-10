@@ -1,13 +1,12 @@
 # Input/Output
 
-# std::cout
 snippet cout
-	std::cout << $cout{1} << std::endl;${2}
+	std::cout << ${1} << std::endl;${2}
 
-# std::cin
 snippet cin
 	std::cin >> ${1};${2}
 
+#
 # Read File Into Vector
 snippet readfile
 	std::vector<char> v;
@@ -19,8 +18,8 @@ snippet readfile
 	fclose($2);
 	}${3}
 
+#
 # STL Collections
-
 snippet arr
 	std::array<${1:T}, ${2:N}>array ${3};${4}
 
@@ -69,6 +68,7 @@ snippet que
 snippet pque
 	std::priority_queue<${1:priority_queueT}> ${2};${3}
 
+#
 # Namespace
 snippet ns
 	namespace ${1:`Filename('', 'my')`} 
@@ -76,7 +76,8 @@ snippet ns
 	${2}
 	} /* $1 */
 
-# Class
+#
+# Classes
 snippet cl
 	class ${1:`Filename('$1_t', 'name')`} 
 	{
@@ -88,37 +89,83 @@ snippet cl
 		${3:/* data */}
 	};
 
-# member
+snippet st
+	struct ${1:`Filename('$1_t', 'name')`} 
+	{
+		${2:/* data */}
+	}${3: /* optional variable list */};${4}
+
 snippet mfun
 	${4:void} ${1:`Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) 
 	{
 	${5:return};
 	}
 
-#fori
+snippet fun
+	${1:void} ${2:function_name}(${3})
+	{
+		${4:/* code */}
+	}
+
+
+#
+# Looping/Iterating
+snippet do
+	do 
+	{
+		${2:/* code */}
+	} 
+	while (${1:/* condition */});
+
+snippet wh
+	while (${1:/* condition */}) 
+	{
+		${2:/* code */}
+	}
+
+snippet for
+	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+	{
+		${4:/* code */}
+	}
+
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
 	{
 	${4:/* code */}
 	}
 
-# auto iterator
 snippet ait
 	for (auto ${1:it} = $1.begin(); $1 != $1.end(); ++$1) 
 	{
 	${2:std::cout << *$1 << std::endl;}
 	}
 
-# const iterator
 snippet cit
 	for (${1:std::vector}<${2:type}>::${3:const_iterator} ${4:cit} = ${5:container}.begin(); $4 != $5.end(); ++$4) 
 	{
 	${6}
 	}
 
-# iterator
 snippet it
 	for (${1:std::vector}<${2:type}>::${3:iterator} ${4:it} = ${5:container}.begin(); $4 != $5.end(); ++$4) 
 	{
 	${6}
 	}
+
+#
+# Conditionals
+snippet if
+	if (${1:/* condition */}) 
+	{
+		${2:/* code */}
+	}
+
+snippet el
+	else 
+	{
+		${1}
+	}
+
+snippet t
+	${1:/* condition */} ? ${2:a} : ${3:b}

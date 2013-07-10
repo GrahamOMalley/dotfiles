@@ -8,33 +8,93 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<wget\>
+~MSle0~/syntas
 
 # Last Substitute Search Pattern:
-~MSle0&\<prow\>
+~MSle0&\<PyclewnBreakPointToggle\>
 
 # Last Substitute String:
-$parseRow
+$
 
 # Command Line History (newest to oldest):
-:q
-:wq
-:w
 :qa
+:BundleInstall
+:w
+:BundleClean
+:q
+:q!
+:wq
+:echo g:SyntasticModeMap
+:echo g:syntastic_mode_map
+:SyntasticToggleMode
+:tab h syntastic
+:tab h 
+:B
+:verbose imap <tab>
+:help ultisnips
+:echo g:UltiSnipsExpandTrigger
+:echo g:UltiSnips
+:UltiSnipsEdit
+:w!
+:tabnew ~/.vim/snippets/cpp.snippets
+:UltiSnipsDebugSnippets
+:tab h youcompleteme
+:Cfile feature_test/a.out
+:tabnew ~/.vim/plugin/snipShow.vim
+:set syntax=alsaconf
+:echo $VIMRUNTIME
+:set syntax=haskell
+:set syntax=java
+:set syntax=vim
+:set syntax=ruby
+:set syntax=lisp
+:set syntax=c
+:ShowSnips
+:qa!
+:rightbelow 20vsplit new
+:read redir_messages.vim
+:topleft new
+:right new
+:rightbelow new
+:lljjkkk
+:echo expand($HOME/)
+:echo expand($HOME)
+:echo expand($HOME/.vim/snippets/&ft.snippet)
+:echo $HOME
+:echo $TERM
+:echo &ft
+:tabnew ~/code/cpp/terraria_world_reader/binUtils.h
+:filereadable()
+:%s/\<PyclewnBreakPointToggle\>/ShowSnips/g
+:Cfile a.out
+:!clang++
+:YcmCompleter GoToDefinitionElseDeclaration
+:YcmCompleter GoToDefinition
+:YcmShowDetailedDiagnostic
+:YcmDiags
+:help YouCompleteMe
+:map
+:tabnew ~/.tmux.conf
+:g/leader
+:set completeopt?
+:%s/\<switc\>/toggle/g
+:tab h YouCompleteMe
+:highlight
+:higlight
+:help coloring
+:wqa
+:tabnew gomXBMCTools.py
+:Unite outline
+:Unite buffer
+:unite
+:help unite-outline
 :tabnew ~/code/python/spider_bro/gomXBMCTools.py
 :tab h YCM
 :!./a.out
 :!clang++ -std=c++11 %
-:YcmDiags
-:SyntasticToggleMode
 :SyntasticInfo
 :SyntasticCheck
 :lopen
-:BundleInstall
-:BundleClean
-:qa!
-:wqa
-:help YouCompleteMe
 :tabnew 
 :setglobal
 :list
@@ -57,7 +117,6 @@ $parseRow
 :pyfile %
 :setlocal display=hex
 :lh
-:q!
 :w bintest.py
 :%s/AppName/\rAppName/g
 :%!xxd
@@ -101,7 +160,6 @@ $parseRow
 :tabnew ~/bin/torrent_test.py
 :;
 :python %
-:map
 :CommandT
 :commandT
 :tab h command-t
@@ -135,7 +193,6 @@ $parseRow
 :Bu
 :set omnifunc?
 :python from django import db
-:tab h 
 :tab h jedi
 :python sys.path
 :python import sys
@@ -418,7 +475,6 @@ $parseRow
 :!chmod +x %
 :s/;/;\r/g
 :s/;/\r/g
-:g/leader
 :set number!
 :!cat /etc/fstab
 :r!duf
@@ -437,10 +493,8 @@ $parseRow
 :Cfile ex_move
 :!g++ -g -Wall -std=c++0x -o ex_move %
 :tabnew ~/.vim/bundle/syntastic/syntax_checkers/cpp.vim
-:echo g:syntastic_mode_map
 :Errors
 :SyntasticErrors
-:tab h syntastic
 :Cdbg p1
 :!
 :tabnew .proj
@@ -560,7 +614,6 @@ $parseRow
 :tabnew ~/.vim/bundle/vim-debug/
 :tabnew TileEngine/TileMap.cs
 :tabnew ~/.vim/snippets/vim.snippets
-:tabnew ~/.vim/snippets/cpp.snippets
 :set g:snippets_dir?
 :tab h snipmate
 :Cprintf \"%s\", list
@@ -658,11 +711,9 @@ $parseRow
 :Cprint wd
 :set synax=cpp
 :set t_Co?
-:echo $TERM
 :%s/\<FF6600\>/00CCCC/g
 :tabnew .vim/colors/morhedel.vim
 :XtermColorTable
-:highlight
 :%s/\<0000FF\>/000000/g
 :%s/\<FFFFFF\>/0000FF/g
 :%s/\<FFFFFF\>/000000/g
@@ -852,7 +903,6 @@ $parseRow
 :j
 :'<,'>s/^/hi /g
 :%s/\<xxx\>//g
-:w!
 :tabnew code/c++/util/castCharToLong.cpp
 :BundleDocs
 :14,23sort
@@ -926,7 +976,6 @@ $parseRow
 :g/__FUNC
 :VimuxPromptCommand
 :VimuxRunLastCommand
-:Cfile a.out
 :!g++ -g -Wall -std=c++0x features.cpp
 :tab h surround
 :help surround
@@ -958,10 +1007,29 @@ $parseRow
 :tabnew shortcuts.vdf
 
 # Search String History (newest to oldest):
+?/syntas
+?/syntastic_mode
+? \Vfori\%#
+? \Vcout\%#
+?/snip
+? \Vwh\%#
+? \<UltiSnips-for-snipmate-users\>
+?/search
+?/file
+?/key_list_select
+? \<PyclewnBreakPointToggle\>
+?/__asm
+?/main
+?/preview_window_
+? leader
+?/ycm
+? \<switc\>
+?/Options
+?/Cyan
+?/try
 ? \<wget\>
 ?/definition
 ?/getEpis
-?/Options
 ?/FAQ
 ?/clang
 ? \<prow\>
@@ -1123,7 +1191,6 @@ $parseRow
 ?/url2name
 ?/todo
 ?/onfig
-?/search
 ?/linkr
 ?/alidating
 ?/base_
@@ -1226,7 +1293,6 @@ $parseRow
 ?/maveri
 ? \Vf\%#
 ? ;
-? leader
 ?/match
 ?//Example 1
 ? \<p1\>
@@ -1238,7 +1304,6 @@ $parseRow
 ? ange
 ?/ms
 ? /"//g
-? \Vfori\%#
 ? \<tileHeight\>
 ?/imp
 ?/locals
@@ -1334,7 +1399,6 @@ $parseRow
 ?/color0
 ?/color
 ? \<FF6600\>
-?/Cyan
 ? \<0000FF\>
 ? \<FFFFFF\>
 ?/FFFF
@@ -1425,7 +1489,6 @@ $parseRow
 ? \Vit\%#
 ?/tileMap
 ? snippets_dir
-?/snip
 ?/GDTog
 ?/function
 ?/loaded_taglist
@@ -1484,74 +1547,25 @@ $parseRow
 
 # Registers:
 "0	LINE	0
-	    #wget -r -l0 -nd -A jpg -R .txt --ignore-tags=a $1$PAGE
-""1	LINE	0
-	"Bundle 'davidhalter/jedi-vim'
-	"Bundle 'ervandew/supertab'
-	"Bundle 'Rip-Rip/clang_complete'
-	
+	Bundle 'msanders/snipmate.vim'
+"1	LINE	0
+	let g:ycm_register_as_syntastic_checker = 0
 "2	LINE	0
-	"Bundle 'davidhalter/jedi-vim'
-	"Bundle 'ervandew/supertab'
-	"Bundle 'Rip-Rip/clang_complete'
-	
-	" original repos on github
-	"Bundle 'scrooloose/nerdcommenter'
-	"Bundle 'benmills/vimux'
-	"Bundle 'jabapyth/vim-debug'
-	"Bundle 'godlygeek/tabular'
-	"Bundle 'guns/xterm-color-table.vim'
-	"Bundle 'msanders/snipmate.vim'
-	"Bundle 'tpope/vim-surround' 
-	Bundle 'GrahamOMalley/gom-pyclewn-view'
-	Bundle 'scrooloose/syntastic'
-	Bundle 'sjl/gundo.vim'
-	Bundle 'tpope/vim-fugitive'
-	Bundle 'majutsushi/tagbar'
-	Bundle 'Valloric/YouCompleteMe'
-	
-	" vim-scripts repos
-	"Bundle 'bufexplorer.zip'
-	Bundle 'taglist.vim'
-	
-	" non github repos
-	Bundle 'git://git.wincent.com/command-t.git'
-	
-	filetype plugin indent on
-	
-	"*************************************************** Generic Settings ***************************************************
-	
-	set  ai
-	set  backspace=indent,eol,start
-	set  expandtab
-	set  hidden                                "  do not unload buffers
-	set  history=5000                          "  remember more commands and search history
-	set  hlsearch
-	set  ignorecase
-	set  incsearch
-	set  linebreak                                                                                
-	set  nobackup
-	set  nofoldenable
-	set  noswapfile
-	set  number
-	set  popt+=syntax:y                        "  Syntax when printing
-	set  pumheight=15                          "  smaller completion window
+	let g:ycm_register_as_syntastic_checker = 0
 "3	LINE	0
-	" original repos on github
+	let g:ycm_register_as_syntastic_checker = 0
 "4	LINE	0
-	"Bundle 'tpope/vim-surround' 
+	   i 
 "5	LINE	0
-	Bundle 'GrahamOMalley/gom-pyclewn-view'
+	"Bundle 'tomtom/tlib_vim'
 "6	LINE	0
-	    private:
-	        int numFins;
-	        static bool switch;
+	"Bundle 'MarcWeber/ultisnips'
 "7	LINE	0
-	    school.push_back
+	"Bundle 'msanders/snipmate.vim'
 "8	LINE	0
-	    gom
+	
 "9	LINE	0
-	    gom->blah();
+	    F
 "b	LINE	0
 	-                    --....................--....................-
 "c	LINE	0
@@ -1561,7 +1575,7 @@ $parseRow
 <jjjjjj;mapjjjjjjjjjjjjjjjjjjk€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;jjjjj€k9€k5€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;€k;,bejjkkjj,beq
 "w	CHAR	0
 	wwwwwwwwwwwwx;wkjji	if(g:py0wwxi Aie€kb€kbex€kb€kb:exe "Cinfo locals!"€kb€kb"j€kb€kbendif;wkjjddkkkkkA;E€kb€kb;€kb:exe "Cnext";wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyGkkkkkpjjjjjjjkkkkjdddddddddd;w,gd
-"-	CHAR	0
+""-	CHAR	0
 	"
 
 # File marks:
@@ -1591,234 +1605,1192 @@ $parseRow
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  24  0  ~/.vimrc
-'1  13  0  ~/code/python/spider_bro/file_renamer.py
-'2  1  3  ~/.computer
-'3  11  65  ~/bin/hentdl.sh
-'4  8  0  fugitive:///home/gom/bin/.git//0/hentdl.sh
-'5  1  0  ~/bin/hentdl.sh
-'6  6  20  ~/bin/hentdl.sh
-'7  133  33  ~/code/python/spider_bro/file_renamer.py
-'8  141  0  ~/code/python/spider_bro/file_renamer.py
-'9  55  24  ~/code/cpp/c++11/feature_test/features.cpp
+'0  16  0  ~/[Vundle] Installer
+'1  3  0  ~/[Vundle] clean
+'2  3  0  ~/gom.py
+'3  276  58  ~/.vim/bundle/syntastic/doc/syntastic.txt
+'4  22  0  ~/gom.cpp
+'5  31  0  ~/[Vundle] Installer
+'6  10  0  ~/.vim/bundle/vim-snipmate/gom.cpp
+'7  15  0  ~/.vim/bundle/vim-snipmate/[Vundle] Installer
+'8  43  0  ~/[Vundle] Installer
+'9  36  0  ~/gom.cpp
 
 # Jumplist (newest first):
--'  24  0  ~/.vimrc
+-'  16  0  ~/[Vundle] Installer
+-'  29  0  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  13  0  ~/code/python/spider_bro/file_renamer.py
--'  39  4  ~/code/python/spider_bro/__Tagbar__
--'  53  0  ~/code/python/spider_bro/__Tagbar__
--'  1  0  ~/code/python/spider_bro/file_renamer.py
--'  1  3  ~/.computer
--'  11  65  ~/bin/hentdl.sh
--'  1  0  ~/bin/hentdl.sh
--'  8  0  fugitive:///home/gom/bin/.git//0/hentdl.sh
--'  1  0  fugitive:///home/gom/bin/.git//0/hentdl.sh
--'  10  19  ~/bin/hentdl.sh
--'  5  18  ~/bin/hentdl.sh
--'  6  20  ~/bin/hentdl.sh
--'  14  4  ~/bin/hentdl.sh
--'  133  33  ~/code/python/spider_bro/file_renamer.py
--'  185  8  ~/code/python/spider_bro/file_renamer.py
--'  141  0  ~/code/python/spider_bro/file_renamer.py
--'  71  4  ~/code/python/spider_bro/__Tagbar__
--'  89  0  ~/code/python/spider_bro/__Tagbar__
--'  55  24  ~/code/cpp/c++11/feature_test/features.cpp
--'  15  35  ~/code/cpp/c++11/feature_test/features.cpp
--'  1  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  41  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  15  4  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  116  0  ~/code/python/steamSEdit/config/bintest.py
--'  1  0  ~/code/python/steamSEdit/config/bintest.py
--'  24  4  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  25  0  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  11  0  ~/code/cpp/c++11/feature_test/[Vundle] Installer
--'  111  0  ~/.vimrc
--'  62  3  ~/code/cpp/c++11/feature_test/features.cpp
+-'  9  0  ~/gom.cpp
+-'  1  0  ~/gom.cpp
 -'  3  0  ~/[Vundle] clean
--'  57  1  ~/code/cpp/c++11/feature_test/features.cpp
--'  114  0  ~/.vimrc
--'  27  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  33  3  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  38  0  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  8  0  ~/code/cpp/c++11/feature_test/[Vundle] clean
--'  36  0  ~/.vimrc
--'  26  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  61  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  52  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  80  4  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  81  0  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  85  4  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  86  0  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  90  0  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  27  0  ~/code/cpp/c++11/feature_test/[Vundle] Installer
--'  29  29  ~/.vimrc
--'  13  0  ~/code/cpp/c++11/feature_test/[Vundle] clean
--'  15  0  ~/code/cpp/c++11/feature_test/[Vundle] clean
--'  30  0  ~/.vimrc
--'  1  0  ~/code/cpp/c++11/async/async_example.cpp
--'  2  45  ~/.todo
+-'  3  0  ~/gom.py
+-'  12  0  ~/__Tagbar__
+-'  1  0  ~/gom.py
+-'  276  58  ~/.vim/bundle/syntastic/doc/syntastic.txt
+-'  149  42  ~/.vim/bundle/syntastic/doc/syntastic.txt
+-'  142  57  ~/.vim/bundle/syntastic/doc/syntastic.txt
+-'  91  0  ~/.vim/bundle/syntastic/doc/syntastic.txt
+-'  1  0  ~/.vim/bundle/syntastic/doc/syntastic.txt
+-'  8  8  ~/gom.cpp
+-'  22  0  ~/gom.cpp
+-'  16  0  ~/__Tagbar__
+-'  17  0  ~/gom.cpp
+-'  31  0  ~/[Vundle] Installer
+-'  13  17  ~/.vimrc
+-'  10  0  ~/.vim/bundle/vim-snipmate/gom.cpp
+-'  1  0  ~/.vim/bundle/vim-snipmate/__Tagbar__
+-'  11  0  ~/.vim/bundle/vim-snipmate/gom.cpp
+-'  15  0  ~/.vim/bundle/vim-snipmate/[Vundle] Installer
+-'  20  23  ~/.vimrc
+-'  43  0  ~/[Vundle] Installer
+-'  21  14  ~/.vimrc
+-'  98  0  ~/.vimrc
+-'  36  0  ~/gom.cpp
+-'  26  0  ~/__Tagbar__
+-'  37  0  ~/gom.cpp
+-'  7  0  ~/[Vundle] clean
+-'  60  0  ~/gom.cpp
+-'  53  0  ~/gom.cpp
+-'  70  0  ~/gom.cpp
+-'  63  0  ~/gom.cpp
+-'  1  0  ~/code/python/spider_bro/spiderBro.py
+-'  31  0  ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+-'  1  0  ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+-'  64  0  ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+-'  15  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  24  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  14  0  ~/workspace/cpp/cpp11_features_and_testing/[Vundle] Installer
+-'  66  0  ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+-'  36  4  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  37  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  42  4  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  43  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  133  38  ~/.vimrc
+-'  130  76  ~/.vimrc
+-'  1368  50  ~/.vim/bundle/ultisnips/doc/UltiSnips.txt
+-'  313  37  ~/.vim/bundle/ultisnips/doc/UltiSnips.txt
+-'  20  3  ~/.vim/bundle/ultisnips/doc/UltiSnips.txt
+-'  130  3  ~/.vim/bundle/ultisnips/doc/UltiSnips.txt
+-'  1  0  ~/.vim/bundle/ultisnips/doc/UltiSnips.txt
+-'  75  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  76  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  187  42  ~/.vim/bundle/ultisnips/doc/UltiSnips.txt
+-'  990  0  ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
+-'  47  59  ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
+-'  31  0  ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
+-'  1  0  ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
+-'  93  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  126  0  ~/.vimrc
+-'  102  4  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  103  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  27  0  ~/workspace/cpp/cpp11_features_and_testing/[Vundle] Installer
+-'  40  0  ~/workspace/cpp/cpp11_features_and_testing/[Vundle] Installer
+-'  53  0  ~/workspace/cpp/cpp11_features_and_testing/[Vundle] Installer
+-'  1  0  /tmp/vNQc089/3
+-'  66  0  ~/workspace/cpp/cpp11_features_and_testing/[Vundle] Installer
+-'  28  0  ~/.vimrc
+-'  21  0  ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+-'  110  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  111  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  54  0  ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+-'  117  0  ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+-'  29  0  ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+-'  17  21  ~/.vim/plugin/snipShow.vim
+-'  1  0  ~/.vim/plugin/snipShow.vim
+-'  88  0  ~/.vimrc
+-'  16  49  ~/.todo
 -'  1  0  ~/.todo
--'  1  0  ~/.ssh/config
--'  18  16  ~/.ssh/config
--'  3  0  ~/.ssh/known_hosts
--'  1  0  ~/.ssh/known_hosts
--'  21  134  ~/.bash_aliases
--'  1  0  ~/.bash_aliases
--'  35  18  ~/code/python/steamSEdit/config/bintest.py
--'  61  0  ~/code/python/steamSEdit/config/bintest.py
--'  39  0  ~/code/python/steamSEdit/config/bintest.py
--'  41  8  ~/code/python/steamSEdit/config/bintest.py
--'  34  27  ~/code/python/steamSEdit/config/bintest.py
--'  15  0  ~/code/python/steamSEdit/config/bintest.py
--'  54  0  ~/code/python/steamSEdit/config/bintest.py
--'  32  4  ~/code/python/steamSEdit/config/__Tagbar__
--'  40  0  ~/code/python/steamSEdit/config/__Tagbar__
--'  1  0  /etc/fstab
--'  13  0  ~/code/python/spider_bro/file_renamer.py
--'  39  4  ~/code/python/spider_bro/__Tagbar__
--'  53  0  ~/code/python/spider_bro/__Tagbar__
--'  1  0  ~/code/python/spider_bro/file_renamer.py
--'  1  3  ~/.computer
--'  11  65  ~/bin/hentdl.sh
--'  1  0  ~/bin/hentdl.sh
--'  8  0  fugitive:///home/gom/bin/.git//0/hentdl.sh
--'  1  0  fugitive:///home/gom/bin/.git//0/hentdl.sh
--'  10  19  ~/bin/hentdl.sh
--'  5  18  ~/bin/hentdl.sh
--'  6  20  ~/bin/hentdl.sh
--'  14  4  ~/bin/hentdl.sh
--'  133  33  ~/code/python/spider_bro/file_renamer.py
--'  185  8  ~/code/python/spider_bro/file_renamer.py
--'  141  0  ~/code/python/spider_bro/file_renamer.py
--'  71  4  ~/code/python/spider_bro/__Tagbar__
--'  89  0  ~/code/python/spider_bro/__Tagbar__
--'  55  24  ~/code/cpp/c++11/feature_test/features.cpp
--'  15  35  ~/code/cpp/c++11/feature_test/features.cpp
--'  1  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  41  0  ~/code/cpp/c++11/feature_test/features.cpp
--'  15  4  ~/code/cpp/c++11/feature_test/__Tagbar__
--'  116  0  ~/code/python/steamSEdit/config/bintest.py
--'  1  0  ~/code/python/steamSEdit/config/bintest.py
+-'  15  48  ~/.todo
+-'  11  29  ~/.todo
+-'  124  1  ~/.vim/snippets/cpp.snippets
+-'  1  0  ~/.vim/snippets/cpp.snippets
+-'  1  0  ~/code/cpp/DecAndJoeDayKKSolver/kksolver.h
+-'  9  21  ~/.vim/plugin/snipShow.vim
+-'  5  18  ~/.vim/plugin/snipShow.vim
+-'  2  0  ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+-'  16  0  ~/code/cpp/c++11/regex_test/regex_test.cpp
+-'  4  4  ~/code/cpp/c++11/regex_test/__Tagbar__
 
 # History of marks within files (newest to oldest):
 
-> ~/.vimrc
-	"	24	0
-	^	36	27
-	.	36	26
-	+	221	41
-	+	222	0
-	+	230	0
-	+	225	0
-	+	226	14
-	+	227	13
-	+	228	13
-	+	229	13
-	+	2	0
-	+	91	35
-	+	262	20
-	+	262	2
-	+	262	0
-	+	262	0
-	+	262	0
-	+	262	0
-	+	262	0
-	+	262	0
-	+	262	0
-	+	262	54
-	+	262	70
-	+	262	69
-	+	262	4
-	+	262	4
-	+	262	4
-	+	262	4
-	+	262	4
-	+	60	0
-	+	262	0
-	+	262	4
-	+	261	0
-	+	251	0
-	+	254	0
-	+	261	0
-	+	251	0
-	+	261	0
-	+	262	0
-	+	261	0
-	+	261	0
-	+	250	0
-	+	252	0
-	+	262	0
-	+	60	0
-	+	161	13
-	+	162	17
-	+	60	25
-	+	286	0
-	+	263	0
-	+	113	0
-	+	112	50
-	+	129	48
-	+	135	13
-	+	140	12
-	+	138	12
-	+	140	75
-	+	140	75
-	+	140	82
-	+	205	33
-	+	60	0
-	+	93	36
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	29
-	+	60	1
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	107	0
-	+	110	0
-	+	117	53
-	+	118	5
-	+	118	38
-	+	116	0
-	+	116	0
-	+	117	0
+> ~/gom.cpp
+	"	9	0
+	.	15	0
 	+	63	0
-	+	60	0
-	+	113	0
-	+	114	0
-	+	113	0
-	+	114	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	60	0
-	+	13	0
+	+	53	0
 	+	37	0
-	+	36	26
-	g	303	7
+	+	44	16
+	+	44	4
+	+	44	0
+	+	44	18
+	+	45	0
+	+	47	0
+	+	46	0
+	+	27	0
+	+	17	0
+	+	1	0
+	+	8	0
+	+	9	0
+	+	8	25
+	+	15	0
+	+	15	0
+
+> ~/__Tagbar__
+	"	3	0
+	.	12	0
+	+	35	0
+	+	35	0
+	+	26	0
+	+	26	0
+	+	17	0
+	+	17	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+
+> ~/.vimrc
+	"	29	0
+	^	121	37
+	.	29	0
+	+	39	26
+	+	30	15
+	+	27	0
+	+	30	23
+	+	128	78
+	+	129	28
+	+	227	0
+	+	30	0
+	+	132	9
+	+	132	48
+	+	133	32
+	+	134	35
+	+	135	0
+	+	136	0
+	+	135	54
+	+	136	53
+	+	134	62
+	+	21	1
+	+	41	27
+	+	28	27
+	+	41	0
+	+	28	0
+	+	28	11
+	+	119	54
+	+	121	47
+	+	123	69
+	+	124	70
+	+	123	68
+	+	123	0
+	+	124	0
+	+	124	0
+	+	124	0
+	+	124	0
+	+	125	51
+	+	123	51
+	+	123	58
+	+	124	60
+	+	125	47
+	+	126	33
+	+	28	23
+	+	126	0
+	+	127	24
+	+	127	53
+	+	127	50
+	+	127	109
+	+	127	160
+	+	127	162
+	+	127	12
+	+	127	57
+	+	127	61
+	+	127	110
+	+	127	141
+	+	127	0
+	+	127	16
+	+	127	55
+	+	127	100
+	+	127	16
+	+	127	0
+	+	127	38
+	+	127	79
+	+	127	79
+	+	127	79
+	+	127	79
+	+	127	131
+	+	127	0
+	+	127	39
+	+	127	0
+	+	126	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	8
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	21	0
+	+	126	0
+	+	127	0
+	+	28	0
+	+	24	0
+	+	29	0
+	+	22	0
+	+	21	14
+	+	19	37
+	+	20	23
+	+	13	0
+	+	22	0
+	+	28	0
+	+	29	0
+	+	113	38
+	+	29	0
+	+	110	0
+	+	120	0
+	+	121	17
+	+	120	0
+	+	126	0
+	+	122	0
+	+	121	36
+	+	29	0
+	g	320	7
+
+> ~/[Vundle] Installer
+	"	16	0
+	.	1	0
+	+	67	0
+	+	55	0
+	+	43	0
+	+	31	0
+	+	16	0
+	+	1	0
+
+> ~/[Vundle] clean
+	"	3	0
+	.	1	0
+	+	7	0
+	+	5	0
+	+	3	0
+	+	1	0
+
+> ~/gom.py
+	"	3	0
+	^	3	0
+	.	5	0
+	+	1	0
+	+	4	1
+	+	4	1
+	+	5	0
+
+> /usr/share/vim/vim73/doc/help.txt
+	"	1	0
+
+> ~/.vim/bundle/syntastic/doc/syntastic.txt
+	"	276	58
+
+> ~/.vim/bundle/vim-snipmate/gom.cpp
+	"	10	0
+	^	20	18
+	.	1	0
+	+	11	0
+	+	18	0
+	+	19	0
+	+	18	0
+	+	20	0
+	+	20	18
+	+	1	0
+
+> ~/.vim/bundle/vim-snipmate/__Tagbar__
+	"	1	0
+
+> ~/.vim/bundle/vim-snipmate/[Vundle] Installer
+	"	15	0
+	.	1	0
+	+	1	0
+
+> ~/code/python/spider_bro/spiderBro.py
+	"	1	0
+
+> ~/code/python/spider_bro/__Tagbar__
+	"	1	0
+	.	19	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	985	0
+	+	970	0
+	+	970	0
+	+	970	0
+	+	885	0
+	+	885	0
+	+	885	0
+	+	885	0
+	+	801	0
+	+	801	0
+	+	801	0
+	+	801	0
+	+	801	0
+	+	715	0
+	+	715	0
+	+	715	0
+	+	665	0
+	+	615	0
+	+	567	0
+	+	567	0
+	+	567	0
+	+	516	0
+	+	484	0
+	+	397	0
+	+	397	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	361	0
+	+	310	0
+	+	259	0
+	+	209	0
+	+	209	0
+	+	156	0
+	+	156	0
+	+	156	0
+	+	156	0
+	+	156	0
+	+	156	0
+	+	156	0
+	+	156	0
+	+	156	0
+	+	147	0
+	+	147	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	121	0
+	+	70	0
+	+	70	0
+	+	19	0
+
+> ~/workspace/cpp/cpp11_features_and_testing/feature_test/features.cpp
+	"	31	0
+	.	31	0
+	+	51	37
+	+	8	0
+	+	66	4
+	+	66	6
+	+	66	0
+	+	66	0
+	+	66	0
+	+	66	0
+	+	62	4
+	+	66	0
+	+	66	0
+	+	66	0
+	+	63	0
+	+	64	0
+	+	63	29
+	+	64	20
+	+	31	0
+	+	31	2
+	+	31	0
+	+	31	0
+	+	31	10
+	+	31	0
+	+	31	0
+	+	31	25
+	+	31	0
+	+	31	0
+	+	31	0
+
+> ~/workspace/cpp/cpp11_features_and_testing/__Tagbar__
+	"	11	4
+	.	15	0
+	+	135	0
+	+	121	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	117	0
+	+	111	0
+	+	111	0
+	+	111	0
+	+	103	0
+	+	103	0
+	+	103	0
+	+	103	0
+	+	103	0
+	+	93	0
+	+	93	0
+	+	93	0
+	+	93	0
+	+	83	0
+	+	76	0
+	+	76	0
+	+	76	0
+	+	76	0
+	+	76	0
+	+	76	0
+	+	69	0
+	+	69	0
+	+	69	0
+	+	69	0
+	+	69	0
+	+	69	0
+	+	57	0
+	+	57	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	48	0
+	+	43	0
+	+	43	0
+	+	43	0
+	+	43	0
+	+	43	0
+	+	37	0
+	+	37	0
+	+	37	0
+	+	37	0
+	+	37	0
+	+	37	0
+	+	37	0
+	+	24	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+
+> ~/workspace/cpp/cpp11_features_and_testing/[Vundle] clean
+	"	5	0
+	.	1	0
+	+	5	0
+	+	1	0
+
+> ~/workspace/cpp/cpp11_features_and_testing/[Vundle] Installer
+	"	14	0
+	.	1	0
+	+	67	0
+	+	54	0
+	+	41	0
+	+	28	0
+	+	14	0
+	+	1	0
+
+> ~/workspace/cpp/cpp11_features_and_testing/__InputList__
+	"	1	2
+	.	1	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	2
+	+	52	0
+	+	52	0
+	+	52	0
+	+	1	2
+	+	1	2
+
+> ~/.vim/bundle/vundle/UltiSnips/cpp.snippets
+	"	2	0
+	.	2	0
+	+	173	0
+	+	2	0
+
+> ~/.vim/snippets/cpp.snippets
+	"	86	2
+	.	21	0
+	+	3	0
+	+	6	0
+	+	21	0
+
+> ~/.vim/bundle/vundle/UltiSnips/all.snippets
+	"	1	0
+
+> ~/.vim/bundle/ultisnips/doc/UltiSnips.txt
+	"	1368	50
+
+> ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
+	"	990	0
+
+> /tmp/vNQc089/3
+	"	1	0
+
+> ~/workspace/cpp/cpp11_features_and_testing/.proj
+	"	1	0
+
+> ~/.vim/plugin/snipShow.vim
+	"	17	89
+	^	17	90
+	.	17	89
+	+	4	0
+	+	5	21
+	+	7	0
+	+	7	26
+	+	21	0
+	+	22	0
+	+	7	4
+	+	21	0
+	+	7	26
+	+	7	23
+	+	7	21
+	+	7	8
+	+	7	55
+	+	11	18
+	+	10	0
+	+	12	36
+	+	19	36
+	+	21	0
+	+	8	73
+	+	8	87
+	+	9	13
+	+	8	60
+	+	11	24
+	+	8	32
+	+	8	52
+	+	8	64
+	+	8	28
+	+	8	28
+	+	8	60
+	+	8	49
+	+	8	0
+	+	14	8
+	+	13	59
+	+	17	89
+
+> ~/.todo
+	"	16	49
+	^	16	50
+	.	16	49
+	+	1	13
+	+	1	3
+	+	1	5
+	+	1	5
+	+	1	12
+	+	7	19
+	+	1	0
+	+	1	0
+	+	8	28
+	+	1	6
+	+	7	8
+	+	1	7
+	+	7	7
+	+	8	7
+	+	1	4
+	+	1	41
+	+	1	44
+	+	7	0
+	+	12	36
+	+	17	43
+	+	1	12
+	+	1	0
+	+	8	24
+	+	1	5
+	+	1	9
+	+	1	0
+	+	2	0
+	+	3	0
+	+	1	40
+	+	1	32
+	+	1	28
+	+	1	33
+	+	2	26
+	+	8	0
+	+	17	0
+	+	13	10
+	+	1	45
+	+	17	0
+	+	15	0
+	+	7	4
+	+	4	14
+	+	7	3
+	+	8	7
+	+	5	46
+	+	1	0
+	+	3	0
+	+	5	96
+	+	14	72
+	+	6	53
+	+	7	3
+	+	8	28
+	+	10	26
+	+	9	18
+	+	11	29
+	+	15	49
+	+	16	49
+
+> ~/code/cpp/DecAndJoeDayKKSolver/kksolver.h
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/code/cpp/DecAndJoeDayKKSolver/__Tagbar__
+	"	1	0
+	.	14	0
+	+	38	0
+	+	38	0
+	+	26	0
+	+	14	0
+
+> ~/.vim/plugin/GoToFile
+	"	1	0
+	.	3	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	3	0
+
+> ~/code/cpp/terraria_world_reader/binUtils.h
+	"	1	0
+
+> ~/.vim/plugin/__Tagbar__
+	"	1	0
+	.	6	0
+	+	6	0
+	+	6	0
+	+	6	0
+
+> ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
+	"	88	0
+
+> ~/.vim/plugin/new
+	"	2	0
+	.	2	0
+	+	2	0
+
+> ~/code/cpp/c++11/regex_test/regex_test.cpp
+	"	16	0
+	^	19	8
+	.	19	0
+	+	1	58
+	+	1	58
+	+	29	0
+	+	13	0
+	+	19	0
+
+> ~/code/cpp/c++11/regex_test/__Tagbar__
+	"	4	4
+	.	5	0
+	+	14	0
+	+	12	0
+	+	12	0
+	+	9	0
+	+	6	0
+	+	5	0
+	+	5	0
+
+> ~/.bash_aliases
+	"	11	54
+	^	11	55
+	.	11	54
+	+	18	57
+	+	12	37
+	+	28	133
+	+	10	0
+	+	12	42
+	+	10	0
+	+	10	43
+	+	12	18
+	+	10	13
+	+	47	22
+	+	16	29
+	+	47	0
+	+	17	32
+	+	28	63
+	+	28	16
+	+	28	116
+	+	28	38
+	+	29	0
+	+	29	134
+	+	28	0
+	+	28	0
+	+	28	0
+	+	29	12
+	+	26	39
+	+	13	22
+	+	26	35
+	+	26	0
+	+	19	7
+	+	47	55
+	+	47	96
+	+	47	0
+	+	10	0
+	+	47	0
+	+	20	0
+	+	8	0
+	+	26	0
+	+	47	0
+	+	30	0
+	+	8	0
+	+	47	0
+	+	25	15
+	+	26	19
+	+	31	33
+	+	31	149
+	+	31	22
+	+	31	99
+	+	31	97
+	+	31	98
+	+	32	0
+	+	31	170
+	+	24	64
+	+	22	12
+	+	22	134
+	+	11	54
+
+> ~/code/cpp/c++11/regex_test/(clewn)_console
+	"	21	5
+	.	19	0
+	+	19	0
+
+> ~/code/cpp/c++11/regex_test/(clewn)_dbgvar
+	"	1	0
+
+> ~/code/cpp/c++11/feature_test/features.cpp
+	"	42	0
+	.	42	4
+	+	1	0
+	+	61	0
+	+	6	16
+	+	62	0
+	+	62	0
+	+	58	8
+	+	62	4
+	+	62	0
+	+	34	0
+	+	32	10
+	+	33	0
+	+	62	0
+	+	62	0
+	+	62	0
+	+	62	0
+	+	50	0
+	+	58	4
+	+	42	5
+	+	41	21
+	+	27	26
+	+	15	50
+	+	16	55
+	+	27	0
+	+	10	0
+	+	13	0
+	+	12	24
+	+	15	40
+	+	16	41
+	+	15	36
+	+	16	41
+	+	30	32
+	+	20	27
+	+	21	20
+	+	22	68
+	+	24	68
+	+	54	27
+	+	39	4
+	+	12	0
+	+	62	0
+	+	42	4
+
+> ~/code/cpp/c++11/feature_test/__Tagbar__
+	"	14	4
+	.	15	0
+	+	149	0
+	+	149	0
+	+	149	0
+	+	149	0
+	+	144	0
+	+	144	0
+	+	144	0
+	+	144	0
+	+	144	0
+	+	135	0
+	+	135	0
+	+	135	0
+	+	126	0
+	+	126	0
+	+	126	0
+	+	115	0
+	+	108	0
+	+	108	0
+	+	108	0
+	+	108	0
+	+	101	0
+	+	101	0
+	+	101	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	96	0
+	+	88	0
+	+	88	0
+	+	88	0
+	+	88	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	78	0
+	+	68	0
+	+	68	0
+	+	68	0
+	+	68	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	36	0
+	+	27	0
+	+	27	0
+	+	27	0
+	+	27	0
+	+	27	0
+	+	15	0
+	+	15	0
+
+> ~/.bashrc
+	"	103	0
+	^	103	0
+	.	102	36
+	+	105	0
+	+	108	0
+	+	105	0
+	+	60	0
+	+	59	22
+	+	110	0
+	+	109	27
+	+	101	54
+	+	102	36
+
+> ~/oldvimrc
+	"	14	0
+	^	14	3
+	.	14	0
+	+	151	0
+	+	153	0
+	+	152	0
+	+	14	0
+
+> ~/.vim/bundle/snipmate.vim/after/plugin/snipMate.vim
+	"	17	16
+	^	17	17
+	.	17	16
+	+	13	16
+	+	17	16
+
+> ~/code/cpp/misc_usefull_tricks/native_threading_cppx11_hw.cpp
+	"	2	12
+
+> ~/code/cpp/misc_usefull_tricks/__Tagbar__
+	"	7	4
+	.	8	0
+	+	8	0
+
+> ~/.tmux.conf
+	"	38	0
+	^	34	25
+	.	38	0
+	+	53	0
+	+	52	0
+	+	51	0
+	+	50	0
+	+	37	1
+	+	38	1
+	+	30	8
+	+	31	27
+	+	32	9
+	+	33	9
+	+	34	9
+	+	33	24
+	+	34	24
+	+	38	0
+
+> ~/.vim/bundle/YouCompleteMe/cpp/ycm/PythonSupport.cpp
+	"	69	2
+
+> ~/.vim/bundle/YouCompleteMe/cpp/ycm/__Tagbar__
+	"	1	0
+	.	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+
+> ~/.vim/bundle/YouCompleteMe/python/clang_includes/emmintrin.h
+	"	1420	2
+
+> ~/.vim/bundle/YouCompleteMe/python/clang_includes/__Tagbar__
+	"	145	4
+	.	227	0
+	+	230	0
+	+	227	0
+
+> ~/.vim/bundle/YouCompleteMe/python/clang_includes/cpuid.h
+	"	31	0
+
+> ~/GoToFile
+	"	1	0
+	.	78	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	78	0
+
+> ~/code/cpp/terraria_world_reader/binUtils.cpp
+	"	39	0
+	.	39	0
+	+	39	0
+
+> ~/code/cpp/terraria_world_reader/__Tagbar__
+	"	6	4
+	.	7	0
+	+	7	0
+
+> ~/code/cpp/gdb_test/main.cc
+	"	1	0
+	.	148	0
+	+	137	10
+	+	148	0
+
+> ~/code/cpp/gdb_test/__Tagbar__
+	"	1	0
+	.	33	0
+	+	95	0
+	+	95	0
+	+	64	0
+	+	33	0
+
+> ~/code/cpp/gdb_test/(clewn)_console
+	"	1	0
+
+> ~/code/cpp/gdb_test/(clewn)_dbgvar
+	"	1	0
+
+> ~/code/cpp/c++11/async/async_example.cpp
+	"	8	0
+	.	14	0
+	+	14	0
+
+> ~/code/cpp/c++11/async/__Tagbar__
+	"	4	4
+	.	6	0
+	+	13	0
+	+	10	0
+	+	10	0
+	+	6	0
+
+> ~/.vim/colors/morhedel.vim
+	"	14	0
+	^	67	37
+	.	67	36
+	+	67	36
+
+> /usr/share/vim/vim73/doc/syntax.txt
+	"	4743	0
 
 > ~/code/python/spider_bro/file_renamer.py
-	"	13	0
-	^	141	67
-	.	141	66
-	+	35	0
-	+	35	0
-	+	35	0
-	+	35	0
-	+	35	0
-	+	35	0
+	"	144	0
+	^	144	17
+	.	144	16
 	+	35	5
 	+	35	6
 	+	18	0
@@ -1846,12 +2818,12 @@ $parseRow
 	+	138	0
 	+	139	0
 	+	128	19
-	+	142	28
-	+	145	8
-	+	143	16
-	+	145	0
-	+	143	9
-	+	145	8
+	+	144	28
+	+	147	8
+	+	145	16
+	+	147	0
+	+	145	9
+	+	147	8
 	+	87	44
 	+	80	41
 	+	82	28
@@ -1872,9 +2844,9 @@ $parseRow
 	+	85	0
 	+	88	0
 	+	86	0
-	+	143	8
 	+	145	8
-	+	144	61
+	+	147	8
+	+	146	61
 	+	13	32
 	+	19	8
 	+	18	0
@@ -1893,16 +2865,16 @@ $parseRow
 	+	11	0
 	+	35	0
 	+	21	0
-	+	145	12
+	+	147	12
 	+	14	22
 	+	16	0
 	+	15	14
 	+	36	0
 	+	35	43
-	+	145	31
-	+	146	0
-	+	147	0
-	+	173	26
+	+	147	31
+	+	148	0
+	+	149	0
+	+	175	26
 	+	138	81
 	+	138	15
 	+	138	19
@@ -1913,114 +2885,284 @@ $parseRow
 	+	134	0
 	+	132	29
 	+	141	66
-	m	195	0
+	+	133	21
+	+	141	57
+	+	133	0
+	+	142	72
+	+	143	0
+	+	144	16
+	m	197	0
 
-> ~/code/python/spider_bro/__Tagbar__
-	"	39	4
-	.	53	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	947	0
-	+	915	0
-	+	881	0
-	+	881	0
-	+	881	0
-	+	850	0
-	+	850	0
-	+	850	0
-	+	850	0
-	+	850	0
-	+	843	0
-	+	843	0
-	+	843	0
-	+	843	0
-	+	828	0
-	+	828	0
-	+	828	0
-	+	818	0
-	+	732	0
-	+	732	0
-	+	732	0
-	+	695	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	677	0
-	+	662	0
-	+	662	0
-	+	662	0
-	+	577	0
-	+	577	0
-	+	577	0
-	+	577	0
-	+	493	0
-	+	493	0
-	+	493	0
-	+	493	0
-	+	493	0
-	+	407	0
-	+	407	0
-	+	407	0
-	+	357	0
-	+	307	0
-	+	259	0
-	+	259	0
-	+	259	0
-	+	208	0
-	+	176	0
-	+	89	0
-	+	89	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
+> ~/code/python/spider_bro/gomXBMCTools.py
+	"	43	3
+	^	42	12
+	.	42	11
+	+	26	38
+	+	26	0
+	+	28	0
+	+	28	0
+	+	30	14
+	+	28	7
+	+	29	37
+	+	38	7
+	+	39	7
+	+	40	33
+	+	43	4
+	+	42	11
 
-> /usr/share/vim/vim73/doc/help.txt
+> ~/code/python/spider_bro/GoToFile
 	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	32	0
+	+	1	0
+	+	1	0
+	+	28	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	27	0
+	+	16	0
+	+	1	0
+	+	1	0
+	+	7	0
+	+	6	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/code/python/spider_bro/sb_utils.py
+	"	93	12
+	^	148	52
+	.	151	112
+	+	647	0
+	+	695	12
+	+	345	0
+	+	387	0
+	+	369	82
+	+	386	13
+	+	348	29
+	+	614	48
+	+	631	52
+	+	631	0
+	+	631	0
+	+	631	0
+	+	631	42
+	+	631	31
+	+	630	68
+	+	631	0
+	+	630	16
+	+	631	0
+	+	630	57
+	+	630	28
+	+	630	0
+	+	630	43
+	+	630	60
+	+	631	0
+	+	630	0
+	+	629	120
+	+	402	0
+	+	684	0
+	+	695	0
+	+	389	0
+	+	389	0
+	+	402	0
+	+	389	2
+	+	399	76
+	+	399	116
+	+	402	0
+	+	399	0
+	+	399	71
+	+	400	10
+	+	402	4
+	+	423	0
+	+	566	0
+	+	577	0
+	+	580	0
+	+	638	0
+	+	652	0
+	+	661	0
+	+	688	0
+	+	69	0
+	+	342	0
+	+	343	7
+	+	389	0
+	+	402	0
+	+	695	0
+	+	2	0
+	+	402	0
+	+	402	0
+	+	390	0
+	+	391	5
+	+	394	9
+	+	396	10
+	+	399	9
+	+	401	9
+	+	402	0
+	+	386	0
+	+	643	25
+	+	643	26
+	+	643	4
+	+	644	4
+	+	645	4
+	+	646	8
+	+	647	4
+	+	642	16
+	+	643	14
+	+	646	33
+	+	545	0
+	+	530	3
+	+	542	83
+	+	530	0
+	+	668	19
+	+	668	0
+	+	546	0
+	+	545	12
+	+	471	50
+	+	492	109
+	+	471	0
+	+	467	4
+	+	468	4
+	+	518	0
+	+	1	0
+	+	148	105
+	+	148	99
+	+	124	51
+	+	22	0
+	+	11	18
+	+	124	92
+	+	148	73
+	+	148	0
+	+	148	52
+	+	151	112
+
+> ~/code/python/spider_bro/*unite* - default
+	"	1	5
+	^	1	6
+	.	1	5
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	3	0
+	+	1	5
+
+> ~/code/python/spider_bro/*unite* - action - 1
+	"	3	0
+	^	3	0
+	.	2	0
+	+	2	0
+
+> ~/code/python/spider_bro/testdriver.py
+	"	1	0
+
+> ~/code/python/spider_bro/[Vundle] clean
+	"	4	0
+	.	1	0
+	+	6	0
+	+	4	0
+	+	1	0
+
+> ~/code/python/spider_bro/[Vundle] Installer
+	"	14	0
+	.	1	0
+	+	14	0
+	+	1	0
+
+> ~/.vim/bundle/unite-outline/doc/unite-outline.txt
+	"	48	1
+
+> ~/.git/COMMIT_EDITMSG
+	"	1	38
+	^	1	39
+	.	1	38
+	+	1	38
 
 > ~/.computer
 	"	1	3
@@ -2077,151 +3219,6 @@ $parseRow
 	+	53	0
 	+	53	0
 	+	53	0
-
-> ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
-	"	642	33
-
-> ~/code/python/spider_bro/gomXBMCTools.py
-	"	1	0
-	^	29	37
-	.	29	37
-	+	26	38
-	+	26	0
-	+	28	0
-	+	28	0
-	+	30	14
-	+	28	7
-	+	29	37
-
-> ~/code/cpp/c++11/feature_test/features.cpp
-	"	55	24
-	^	54	28
-	.	54	27
-	+	1	0
-	+	61	0
-	+	6	16
-	+	63	0
-	+	63	0
-	+	58	8
-	+	62	4
-	+	62	0
-	+	34	0
-	+	32	10
-	+	33	0
-	+	62	0
-	+	62	0
-	+	62	0
-	+	62	0
-	+	50	0
-	+	58	4
-	+	42	5
-	+	41	21
-	+	27	26
-	+	15	50
-	+	16	55
-	+	27	0
-	+	10	0
-	+	13	0
-	+	12	24
-	+	15	40
-	+	16	41
-	+	15	36
-	+	16	41
-	+	30	32
-	+	20	27
-	+	21	20
-	+	22	68
-	+	24	68
-	+	54	27
-
-> ~/code/cpp/c++11/feature_test/__Tagbar__
-	"	14	4
-	.	15	0
-	+	112	0
-	+	101	0
-	+	90	0
-	+	86	0
-	+	86	0
-	+	86	0
-	+	86	0
-	+	86	0
-	+	86	0
-	+	86	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	72	0
-	+	72	0
-	+	72	0
-	+	63	0
-	+	63	0
-	+	63	0
-	+	52	0
-	+	45	0
-	+	45	0
-	+	45	0
-	+	45	0
-	+	38	0
-	+	38	0
-	+	38	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	33	0
-	+	25	0
-	+	25	0
-	+	25	0
-	+	25	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
 
 > ~/code/python/steamSEdit/config/bintest.py
 	"	116	0
@@ -2419,11 +3416,6 @@ $parseRow
 	+	11	0
 	+	1	0
 
-> ~/[Vundle] clean
-	"	3	0
-	.	1	0
-	+	1	0
-
 > ~/code/cpp/c++11/feature_test/[Vundle] clean
 	"	8	0
 	.	1	0
@@ -2453,56 +3445,6 @@ $parseRow
 	+	153	0
 	+	41	0
 
-> ~/code/cpp/c++11/async/async_example.cpp
-	"	1	0
-
-> ~/code/cpp/c++11/async/__Tagbar__
-	"	1	0
-	.	6	0
-	+	6	0
-
-> ~/.todo
-	"	2	45
-	^	2	46
-	.	2	45
-	+	1	13
-	+	1	3
-	+	1	5
-	+	1	5
-	+	1	12
-	+	7	19
-	+	1	0
-	+	1	0
-	+	8	28
-	+	1	6
-	+	7	8
-	+	1	7
-	+	7	7
-	+	8	7
-	+	1	4
-	+	1	41
-	+	1	44
-	+	7	0
-	+	9	36
-	+	11	43
-	+	1	12
-	+	1	0
-	+	8	24
-	+	1	5
-	+	3	9
-	+	4	0
-	+	5	0
-	+	6	0
-	+	3	40
-	+	4	32
-	+	3	28
-	+	4	33
-	+	5	26
-	+	8	0
-	+	11	0
-	+	10	10
-	+	2	45
-
 > ~/.ssh/config
 	"	1	0
 	^	18	17
@@ -2517,64 +3459,6 @@ $parseRow
 	.	3	0
 	+	4	0
 	+	3	0
-
-> ~/.bash_aliases
-	"	21	134
-	^	21	135
-	.	21	134
-	+	17	57
-	+	11	37
-	+	27	133
-	+	10	0
-	+	11	42
-	+	10	0
-	+	10	43
-	+	11	18
-	+	10	13
-	+	46	22
-	+	15	29
-	+	46	0
-	+	16	32
-	+	27	63
-	+	27	16
-	+	27	116
-	+	27	38
-	+	28	0
-	+	28	134
-	+	27	0
-	+	27	0
-	+	27	0
-	+	28	12
-	+	25	39
-	+	12	22
-	+	25	35
-	+	25	0
-	+	18	7
-	+	46	55
-	+	46	96
-	+	46	0
-	+	10	0
-	+	46	0
-	+	19	0
-	+	8	0
-	+	25	0
-	+	46	0
-	+	29	0
-	+	8	0
-	+	46	0
-	+	24	15
-	+	25	19
-	+	30	33
-	+	30	149
-	+	30	22
-	+	30	99
-	+	30	97
-	+	30	98
-	+	31	0
-	+	30	170
-	+	23	64
-	+	21	12
-	+	21	134
 
 > /etc/fstab
 	"	1	0
@@ -2706,111 +3590,6 @@ $parseRow
 	+	19	31
 	+	22	0
 
-> ~/code/python/spider_bro/sb_utils.py
-	"	434	0
-	^	148	52
-	.	151	112
-	+	647	0
-	+	695	12
-	+	345	0
-	+	387	0
-	+	369	82
-	+	386	13
-	+	348	29
-	+	614	48
-	+	631	52
-	+	631	0
-	+	631	0
-	+	631	0
-	+	631	42
-	+	631	31
-	+	630	68
-	+	631	0
-	+	630	16
-	+	631	0
-	+	630	57
-	+	630	28
-	+	630	0
-	+	630	43
-	+	630	60
-	+	631	0
-	+	630	0
-	+	629	120
-	+	402	0
-	+	684	0
-	+	695	0
-	+	389	0
-	+	389	0
-	+	402	0
-	+	389	2
-	+	399	76
-	+	399	116
-	+	402	0
-	+	399	0
-	+	399	71
-	+	400	10
-	+	402	4
-	+	423	0
-	+	566	0
-	+	577	0
-	+	580	0
-	+	638	0
-	+	652	0
-	+	661	0
-	+	688	0
-	+	69	0
-	+	342	0
-	+	343	7
-	+	389	0
-	+	402	0
-	+	695	0
-	+	2	0
-	+	402	0
-	+	402	0
-	+	390	0
-	+	391	5
-	+	394	9
-	+	396	10
-	+	399	9
-	+	401	9
-	+	402	0
-	+	386	0
-	+	643	25
-	+	643	26
-	+	643	4
-	+	644	4
-	+	645	4
-	+	646	8
-	+	647	4
-	+	642	16
-	+	643	14
-	+	646	33
-	+	545	0
-	+	530	3
-	+	542	83
-	+	530	0
-	+	668	19
-	+	668	0
-	+	546	0
-	+	545	12
-	+	471	50
-	+	492	109
-	+	471	0
-	+	467	4
-	+	468	4
-	+	518	0
-	+	1	0
-	+	148	105
-	+	148	99
-	+	124	51
-	+	22	0
-	+	11	18
-	+	124	92
-	+	148	73
-	+	148	0
-	+	148	52
-	+	151	112
-
 > ~/code/python/spider_bro/db_manager.py
 	"	178	0
 
@@ -2883,1111 +3662,3 @@ $parseRow
 	+	1	68
 	+	17	24
 	+	5	6
-
-> ~/scratch
-	"	3	0
-	^	3	44
-	.	1	0
-	+	3	44
-	+	1	0
-
-> /media/nasGom/downloads/games.ps2
-	"	10	12
-	^	10	13
-	.	10	12
-	+	4	0
-	+	7	0
-	+	10	12
-
-> ~/.bashrc
-	"	106	27
-	^	106	28
-	.	106	27
-	+	102	0
-	+	105	0
-	+	102	0
-	+	60	0
-	+	59	22
-	+	107	0
-	+	106	27
-
-> ~/bin/autopch
-	"	90	0
-
-> /media/nasGom/downloads/smb.conf
-	"	340	0
-
-> /etc/samba/smb.conf
-	"	343	0
-
-> /media/nasGom/downloads/BBC - Monty Python's Flying Circus - (All 45 Episodes)/season_02/temp.sh
-	"	9	21
-	^	9	22
-	.	9	21
-	+	3	8
-	+	9	21
-
-> /media/nasGom/downloads/BBC - Monty Python's Flying Circus - (All 45 Episodes)/season_gom/temp.sh
-	"	8	46
-	^	8	47
-	.	8	46
-	+	1	0
-	+	9	4
-	+	3	11
-	+	7	0
-	+	8	16
-	+	3	8
-	+	7	0
-	+	8	46
-
-> /tmp/crontab.klSPI1/crontab
-	"	1	0
-
-> ~/bin/torrent_complete_xbmc.sh
-	"	14	4
-	^	14	66
-	.	14	0
-	+	14	66
-	+	14	0
-
-> /tmp/crontab.4OFlrq/crontab
-	"	23	58
-	^	23	59
-	.	23	3
-	+	23	3
-
-> ~/code/python/spider_bro/config.ini
-	"	14	0
-	^	7	21
-	.	14	0
-	+	7	20
-	+	14	0
-
-> ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
-	"	58	0
-	.	58	0
-	+	58	0
-	+	59	0
-	+	60	0
-	+	61	0
-	+	62	0
-	+	63	0
-	+	64	0
-	+	65	0
-	+	66	0
-	+	67	0
-	+	68	0
-	+	69	0
-	+	70	0
-	+	71	0
-	+	72	0
-	+	61	72
-	+	4	0
-	+	11	0
-	+	14	0
-	+	57	0
-	+	58	0
-
-> ~/code/python/XBMC-Utility-scripts/__Tagbar__
-	"	10	4
-	.	21	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	137	0
-	+	117	0
-	+	117	0
-	+	98	0
-	+	79	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	64	0
-	+	64	0
-	+	49	0
-	+	49	0
-	+	33	0
-	+	33	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-
-> ~/code/python/XBMC-Utility-scripts/xbmc_recently_added.py
-	"	20	0
-	^	50	13
-	.	50	12
-	+	37	25
-	+	17	0
-	+	50	12
-
-> ~/code/python/XBMC-Utility-scripts/gomXBMCTools.py
-	"	47	0
-	.	47	0
-	+	47	0
-
-> ~/code/python/nasxbmc/files_not_in_xbmc_lib.py
-	"	1	0
-
-> ~/code/python/XBMC-Utility-scripts/xbmc_recently_watched.py
-	"	14	0
-	^	27	66
-	.	14	0
-	+	4	0
-	+	3	3
-	+	6	0
-	+	12	26
-	+	6	0
-	+	6	0
-	+	6	0
-	+	7	96
-	+	6	0
-	+	8	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	6	0
-	+	6	0
-	+	7	0
-	+	7	0
-	+	12	0
-	+	9	0
-	+	10	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	14	0
-	+	14	0
-	+	2	0
-	+	14	0
-	+	14	0
-	+	14	0
-	+	9	0
-	+	6	46
-	+	4	0
-	+	11	0
-	+	10	0
-	+	10	0
-	+	11	83
-	+	10	0
-	+	14	0
-	+	20	0
-	+	18	3
-	+	30	34
-	+	32	4
-	+	31	22
-	+	35	12
-	+	42	24
-	+	41	0
-	+	44	30
-	+	38	29
-	+	40	0
-	+	41	23
-	+	27	0
-	+	24	27
-	+	4	18
-	+	27	37
-	+	4	0
-	+	5	0
-	+	4	37
-	+	27	59
-	+	26	0
-	+	27	65
-	+	14	0
-
-> ~/bin/xbmc_recently_added
-	"	32	0
-
-> ~/bin/xbmc_recently_watched
-	"	33	0
-	.	33	0
-	+	33	0
-
-> ~/xbmc_recently_added
-	"	1	0
-
-> ~/nas/tv/young_justice/tvshow.nfo
-	"	83	0
-
-> /media/oneTB/downloads/temp.txt
-	"	1	52
-	^	41	42
-	.	41	41
-	+	52	0
-	+	23	0
-	+	51	0
-	+	23	0
-	+	35	35
-	+	37	38
-	+	35	26
-	+	37	39
-	+	39	35
-	+	41	43
-	+	39	39
-	+	41	41
-
-> /media/oneTB/downloads/ireland_ascii.txt
-	"	1	52
-
-> ~/code/python/spider_bro/GoToFile
-	"	1	0
-	.	13	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	39	0
-	+	1	0
-	+	1	0
-	+	35	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	34	0
-	+	23	0
-	+	1	0
-	+	1	0
-	+	14	0
-	+	13	0
-
-> /tmp/crontab.bPCnDg/crontab
-	"	1	0
-
-> /tmp/crontab.MDph5j/crontab
-	"	1	0
-
-> /var/log/auth.log
-	"	12343	0
-
-> ~/code/python/spider_bro/test.py
-	"	6	7
-
-> ~/log/spiderbro/test.py
-	"	8	0
-	^	7	43
-	.	7	0
-	+	1	0
-	+	5	293
-	+	6	0
-	+	2	8
-	+	6	41
-	+	8	14
-	+	7	29
-	+	8	15
-	+	6	11
-	+	7	0
-
-> ~/bin/show_torrents
-	"	1	0
-
-> ~/bin/torrent_test2.py
-	"	1	0
-	^	34	29
-	.	34	28
-	+	1	26
-	+	1	0
-	+	1	100
-	+	1	0
-	+	1	4
-	+	1	4
-	+	1	0
-	+	1	0
-	+	1	26
-	+	39	0
-	+	25	31
-	+	35	107
-	+	27	0
-	+	32	0
-	+	2	0
-	+	35	0
-	+	35	0
-	+	6	0
-	+	8	0
-	+	9	0
-	+	29	0
-	+	12	0
-	+	13	16
-	+	27	55
-	+	31	25
-	+	35	0
-	+	35	0
-	+	35	0
-	+	35	0
-	+	37	0
-	+	14	0
-	+	17	0
-	+	16	61
-	+	24	0
-	+	25	0
-	+	3	0
-	+	2	0
-	+	1	0
-	+	3	0
-	+	37	0
-	+	38	0
-	+	38	0
-	+	39	0
-	+	38	0
-	+	21	0
-	+	24	0
-	+	36	0
-	+	38	0
-	+	34	28
-
-> ~/bin/GoToFile
-	"	1	0
-	.	6	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	26	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	8	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	6	0
-
-> ~/bin/torrent_test.py
-	"	31	4
-	^	94	13
-	.	41	0
-	+	1	26
-	+	1	26
-	+	97	13
-	+	1	0
-	+	1	0
-	+	1	31
-	+	1	107
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	30
-	+	1	90
-	+	1	4
-	+	1	8
-	+	1	17
-	+	1	463
-	+	1	17
-	+	94	0
-	+	26	0
-	+	27	0
-	+	26	0
-	+	41	0
-
-> ~/code/python/spider_bro/.git/COMMIT_EDITMSG
-	"	2	14
-	^	2	15
-	.	2	14
-	+	5	70
-	+	4	45
-	+	1	71
-	+	2	14
-
-> ~/.tmux.conf
-	"	43	0
-	^	46	28
-	.	43	0
-	+	46	0
-	+	45	0
-	+	44	0
-	+	43	0
-
-> ~/log/spiderbro/spiderBro_2013-02-18.log
-	"	113	0
-
-> ~/code/python/spider_bro/spiderBro.py
-	"	1	0
-	^	1	1
-	.	33	0
-	+	14	21
-	+	9	14
-	+	22	0
-	+	23	0
-	+	23	16
-	+	23	99
-	+	23	98
-	+	23	104
-	+	22	0
-	+	12	0
-	+	10	0
-	+	12	0
-	+	13	0
-	+	19	0
-	+	23	0
-	+	22	21
-	+	9	0
-	+	23	9
-	+	23	0
-	+	23	0
-	+	30	0
-	+	22	4
-	+	34	50
-	+	34	41
-	+	34	0
-	+	34	52
-	+	34	3
-	+	42	12
-	+	57	17
-	+	58	21
-	+	57	0
-	+	23	0
-	+	55	9
-	+	44	11
-	+	21	0
-	+	22	0
-	+	24	0
-	+	25	0
-	+	27	0
-	+	28	0
-	+	34	0
-	+	34	0
-	+	35	0
-	+	34	0
-	+	12	0
-	+	2	0
-	+	21	2
-	+	1	0
-	+	34	0
-	+	31	0
-	+	33	0
-
-> ~/.vim/bundle/command-t/doc/command-t.txt
-	"	85	0
-
-> ~/code/python/spider_bro/[Vundle] clean
-	"	3	0
-	.	1	0
-	+	3	0
-	+	1	0
-
-> ~/bin/launch_minecraft_with_controller.sh
-	"	17	3
-	^	17	4
-	.	17	4
-	+	4	23
-	+	17	0
-	+	16	0
-	+	17	4
-
-> ~/.git/COMMIT_EDITMSG
-	"	1	29
-	^	1	30
-	.	1	29
-	+	1	29
-
-> ~/code/python/deluge_ui_web/web/json_api.py
-	"	143	0
-
-> ~/code/python/deluge_ui_web/web/__Tagbar__
-	"	27	5
-	.	113	0
-	+	125	0
-	+	113	0
-
-> ~/code/python/deluge_ui_web/web/web.py
-	"	91	0
-
-> ~/code/python/deluge_ui_web/web/gettext.js
-	"	658	0
-
-> ~/code/python/pickin_on_django/polls/views.py
-	"	24	18
-	^	24	8
-	.	24	0
-	+	32	66
-	+	32	0
-	+	32	29
-	+	36	0
-	+	32	36
-	+	32	0
-	+	4	47
-	+	28	89
-	+	32	0
-	+	2	0
-	+	4	0
-	+	4	31
-	+	32	63
-	+	32	0
-	+	28	66
-	+	30	63
-	+	28	0
-	+	4	0
-	+	4	0
-	+	25	0
-	+	26	89
-	+	32	0
-	+	4	0
-	+	30	59
-	+	30	59
-	+	32	0
-	+	30	101
-	+	30	0
-	+	4	0
-	+	25	166
-	+	4	66
-	+	24	0
-	+	7	0
-	+	24	81
-	+	25	0
-	+	2	0
-	+	4	0
-	+	4	0
-	+	7	0
-	+	25	0
-	+	25	0
-	+	3	44
-	+	25	0
-	+	24	0
-
-> ~/code/python/pickin_on_django/__Tagbar__
-	"	11	0
-	.	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-
-> ~/code/python/django_templates/polls/results.html
-	"	6	8
-	^	10	51
-	.	6	0
-	+	1	30
-	+	1	0
-	+	11	0
-	+	10	50
-	+	6	0
-
-> ~/code/python/pickin_on_django/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	39	0
-	+	35	0
-	+	1	0
-	+	1	0
-	+	28	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	27	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	26	0
-	+	1	0
-	+	1	0
-	+	21	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	18	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	12	0
-	+	1	0
-	+	1	0
-	+	6	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/python/pickin_on_django/polls/urls.py
-	"	1	39
-	^	21	23
-	.	1	39
-	+	1	51
-	+	1	16
-	+	1	0
-	+	1	37
-	+	1	4
-	+	1	0
-	+	1	50
-	+	1	16
-	+	1	22
-	+	1	43
-	+	1	16
-	+	1	7
-	+	1	51
-	+	21	0
-	+	6	0
-	+	1	39
-
-> ~/code/python/pickin_on_django/debugtest.py
-	"	6	13
-	^	6	14
-	.	6	13
-	+	1	10
-	+	1	10
-	+	10	0
-	+	3	0
-	+	6	13
-
-> ~/code/python/pickin_on_django/polls/models.py
-	"	1	0
-	^	16	72
-	.	16	0
-	+	5	56
-	+	5	26
-	+	6	0
-	+	22	0
-	+	6	0
-	+	6	0
-	+	10	27
-	+	9	25
-	+	23	0
-	+	24	30
-	+	17	3
-	+	14	4
-	+	13	82
-	+	13	0
-	+	11	0
-	+	3	32
-	+	1	14
-	+	24	26
-	+	16	71
-	+	14	0
-	+	16	0
-
-> ~/code/python/pickin_on_django/pickin_on_django/wsgi.py
-	"	1	0
-
-> ~/code/python/utils/singleton.py
-	"	1	0
-	^	33	0
-	.	33	0
-	+	33	0
-
-> ~/code/python/utils/__Tagbar__
-	"	3	0
-	.	15	0
-	+	69	0
-	+	69	0
-	+	63	0
-	+	63	0
-	+	63	0
-	+	63	0
-	+	63	0
-	+	63	0
-	+	51	0
-	+	39	0
-	+	27	0
-	+	15	0
-
-> ~/code/python/utils/[Vundle] list
-	"	18	0
-	.	1	0
-	+	1	0
-
-> ~/code/python/utils/[Vundle] clean
-	"	3	0
-	.	1	0
-	+	3	0
-	+	1	0
-
-> ~/code/python/utils/[Vundle] Installer
-	"	22	0
-	.	1	0
-	+	22	0
-	+	1	0
-
-> ~/code/python/pickin_on_django/polls/admin.py
-	"	1	0
-	^	18	21
-	.	18	21
-	+	5	0
-	+	22	0
-	+	4	11
-	+	22	0
-	+	4	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	21	0
-	+	5	37
-	+	15	69
-	+	16	30
-	+	17	32
-	+	18	21

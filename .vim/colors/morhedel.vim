@@ -64,7 +64,7 @@ hi   Visual        guifg=White       guibg=DarkGray        gui=underline      te
 hi   WarningMsg    ctermfg=Red       ctermbg=NONE
 hi   WarningMsg    guifg=Red         guibg=Black
 hi   Pmenu         ctermbg=14        ctermfg=DarkGrey      guibg=Magenta
-hi   PmenuSel      ctermbg=242       guibg=DarkGrey
+hi   PmenuSel      ctermfg=Cyan      ctermbg=242       guibg=DarkGrey
 hi   PmenuSbar     ctermbg=248       guibg=Grey
 hi   PmenuThumb    cterm=reverse     gui=reverse
 hi   DiffAdd       term=bold         ctermbg=Cyan           ctermfg=Black

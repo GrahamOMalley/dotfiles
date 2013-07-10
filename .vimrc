@@ -16,14 +16,17 @@ Bundle 'gmarik/vundle'
 "Bundle 'jabapyth/vim-debug'
 "Bundle 'godlygeek/tabular'
 "Bundle 'guns/xterm-color-table.vim'
-"Bundle 'msanders/snipmate.vim'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle 'garbas/vim-snipmate'
 "Bundle 'tpope/vim-surround' 
 Bundle 'GrahamOMalley/gom-pyclewn-view'
-Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'majutsushi/tagbar'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'ervandew/supertab' 
+Bundle 'scrooloose/syntastic'
 
 " vim-scripts repos
 "Bundle 'bufexplorer.zip'
@@ -35,7 +38,6 @@ Bundle 'git://git.wincent.com/command-t.git'
 " Deprecated as YCM seems to offer all their functionality. Keeping as comment
 " in case I get sick of YCM
 "Bundle 'davidhalter/jedi-vim'
-"Bundle 'ervandew/supertab'
 "Bundle 'Rip-Rip/clang_complete'
 
 filetype plugin indent on
@@ -60,7 +62,7 @@ set  pumheight=15                          "  smaller completion window
 set  shiftwidth=4
 set  shortmess=a
 set  shortmess=atI
-"set  showcmd                               "  Show us the command we're typing in bottom right of screen
+set  showcmd                               "  Show us the command we're typing in bottom right of screen
 set  showfulltag                           "  Show full tags when doing search completion
 set  showmatch                             "  Highlight matching parens
 set  smartcase
@@ -87,9 +89,6 @@ endif
 
 "********************************************** PLUGIN VARS
 
-" stop NERDCommenter from creating a squillion leader mappings
-let g:NERDCreateDefaultMappings = 0
-
 " force command-t to open new files in a new tab
 let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
@@ -103,22 +102,31 @@ set tags=tags;/
 let g:tagbar_left = 1
 let g:tagbar_width = 50
 
-" Supertab should try to use User completion
-"let g:SuperTabDefaultCompletionType = "context"
-
-" show clang errors in quickfix window
-"let g:clang_complete_copen = 1
-
 " Let Syntastic open an error window automatically 
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-" TODO: there must be some nice way to generate an options file based on the .clang_complete file
-"let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+
+" was having some issues with YCM being very slow on cpp files in terminal vim
+" over ssh, think this helps?
 let g:ycm_allow_changing_updatetime = 0
+" general YCM settings
+let g:ycm_key_detailed_diagnostics = '<leader>y'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '/home/gom/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"Make YCM/Snipmate/Supertab/Syntastic play nice together
+let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
 
 "*************************************************** GLOBAL KEYMAPS *********************************************
+" ************ REMAPS FOR STANDARD THINGS ************
 
 " set difficulty level: Hardcore ;)
 nnoremap <up> <nop>
@@ -132,34 +140,8 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-" enable space as custom shortcut map key
-let mapleader = " "
-
-"set <space>r to do a global search/replace on word under cursor
-nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
-"set <space>f to do a global search on word under cursor (output in its own window)
-nnoremap <Leader>f :g/<C-r><C-w><CR>
 " TAGLIST
 nnoremap <F12> <Esc>:TagbarToggle<CR>
-
-" CTAGS
-"call exuberant ctags externally to build tag list for all files in current dir
-nnoremap <Leader><F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" FREQUENTLY EDITED FILES
-nnoremap <Leader>v :tabnew ~/.vimrc<CR>
-nnoremap <Leader>vc :tabnew .clang_complete<CR>
-nnoremap <Leader>vg :tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim<CR>
-nnoremap <Leader>vp :tabnew .proj<CR>
-nnoremap <Leader>vs :source ~/.vimrc<CR>
-nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
-
-" toggle wrap
-nnoremap <leader>w :set wrap!<CR>
-" toggle numbers
-nnoremap <leader>n :set number!<CR>
-" toggle paste
-nnoremap <leader>p :set paste!<CR>
 
 " go to home and end using capitalized directions
 nnoremap H ^
@@ -168,9 +150,6 @@ nnoremap L $
 "improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
-
-"clear search highlight
-noremap <silent><Leader>/ :nohls<CR>
 
 " make arrow keys useful again
 nnoremap <left>     <esc>:tabp<CR>
@@ -182,8 +161,42 @@ cnoremap <expr> ht getcmdtype() == ':' && empty(getcmdline()) ? 'tab h '     :'h
 " :tn opens new tab
 cnoremap <expr> tn getcmdtype() == ':' && empty(getcmdline()) ? 'tabnew '     :'tn'
 
+" ************ TAKE ME TO YOUR ************
+
+" enable space as custom shortcut map key
+let mapleader = " "
+
+"clear search highlight
+noremap <silent><Leader>/ :nohls<CR>
+
+" toggles
+nnoremap <leader>w :set wrap!<CR>
+nnoremap <leader>n :set number!<CR>
+nnoremap <leader>p :set paste!<CR>
+" toggle crosshair
+nnoremap <leader>cr <esc>:set cursorline! <Bar> set cursorcolumn!<CR>
+
+"set <space>f and <space>r to find and replace
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+nnoremap <Leader>f :g/<C-r><C-w><CR>
+
 " fix indenting, don't move cursor
 nnoremap <leader>i mzgg=G`zzz
+
+"call exuberant ctags externally to build tag list for all files in current dir
+nnoremap <Leader><F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" show available snippets (if exists)
+nnoremap <Leader>sp <Esc>:ToggleShowSnips<CR>
+nnoremap <Leader>sc <Esc>:SyntasticCheck<CR>
+
+" frequently edited files 
+nnoremap <Leader>v :tabnew ~/.vimrc<CR>
+nnoremap <Leader>vc :tabnew .clang_complete<CR>
+nnoremap <Leader>vg :tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim<CR>
+nnoremap <Leader>vp :tabnew .proj<CR>
+nnoremap <Leader>vs :source ~/.vimrc<CR>
+nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
 
 " fuGitive keymaps
 nnoremap <leader>g <esc>:Git <CR>
@@ -192,8 +205,6 @@ nnoremap <leader>gp <esc>:Git push<CR>
 nnoremap <leader>gs :Gstatus<CR><C-W>25+
 nnoremap <leader>gd <esc>:Gdiff<CR>
 
-" toggle crosshair
-nnoremap <leader>cr <esc>:set cursorline! <Bar> set cursorcolumn!<CR>
 
 "*************************************************** FUNCTIONS ***************************************************
 "function to look for a template file of the appropriate type
