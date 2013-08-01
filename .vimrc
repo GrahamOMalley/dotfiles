@@ -11,22 +11,23 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-"Bundle 'scrooloose/nerdcommenter'
 "Bundle 'benmills/vimux'
 "Bundle 'jabapyth/vim-debug'
 "Bundle 'godlygeek/tabular'
-"Bundle 'guns/xterm-color-table.vim'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'garbas/vim-snipmate'
 "Bundle 'tpope/vim-surround' 
+"Bundle 'guns/xterm-color-table.vim'
 Bundle 'GrahamOMalley/gom-pyclewn-view'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'majutsushi/tagbar'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab' 
+Bundle 'garbas/vim-snipmate'
+Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'dbakker/vim-lint'
+
 
 " vim-scripts repos
 "Bundle 'bufexplorer.zip'
@@ -34,11 +35,6 @@ Bundle 'taglist.vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
-
-" Deprecated as YCM seems to offer all their functionality. Keeping as comment
-" in case I get sick of YCM
-"Bundle 'davidhalter/jedi-vim'
-"Bundle 'Rip-Rip/clang_complete'
 
 filetype plugin indent on
 
@@ -68,6 +64,7 @@ set  showmatch                             "  Highlight matching parens
 set  smartcase
 set  softtabstop=4
 set  tabstop=4
+"set  ttimeoutlen=50
 set  undolevels=5000                       "  use many muchos levels of undo
 set  wildignore=*.swp,*.bak,*.pyc,*.class
 set  wildmenu
@@ -112,7 +109,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 " over ssh, think this helps?
 let g:ycm_allow_changing_updatetime = 0
 " general YCM settings
-let g:ycm_key_detailed_diagnostics = '<leader>y'
+let g:ycm_key_detailed_diagnostics = '<Leader>y'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '/home/gom/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -137,8 +134,10 @@ nnoremap <right> <nop>
 "if you remap : to ; you save a lot of keystrokes
 nnoremap ; :
 nnoremap : ;
-vnoremap ; :
-vnoremap : ;
+"vnoremap ; :
+"vnoremap : ;
+xnoremap ; :
+xnoremap : ;
 
 " TAGLIST
 nnoremap <F12> <Esc>:TagbarToggle<CR>
@@ -170,18 +169,19 @@ let mapleader = " "
 noremap <silent><Leader>/ :nohls<CR>
 
 " toggles
-nnoremap <leader>w :set wrap!<CR>
-nnoremap <leader>n :set number!<CR>
-nnoremap <leader>p :set paste!<CR>
+nnoremap <Leader>w :set wrap!<CR>
+nnoremap <Leader>n :set number!<CR>
+nnoremap <Leader>p :set paste!<CR>
+nnoremap <Leader>u :GundoToggle<CR>
 " toggle crosshair
-nnoremap <leader>cr <esc>:set cursorline! <Bar> set cursorcolumn!<CR>
+nnoremap <Leader>cr <esc>:set cursorline! <Bar> set cursorcolumn!<CR>
 
 "set <space>f and <space>r to find and replace
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 nnoremap <Leader>f :g/<C-r><C-w><CR>
 
 " fix indenting, don't move cursor
-nnoremap <leader>i mzgg=G`zzz
+nnoremap <Leader>i mzgg=G`zzz
 
 "call exuberant ctags externally to build tag list for all files in current dir
 nnoremap <Leader><F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -192,18 +192,19 @@ nnoremap <Leader>sc <Esc>:SyntasticCheck<CR>
 
 " frequently edited files 
 nnoremap <Leader>v :tabnew ~/.vimrc<CR>
-nnoremap <Leader>vc :tabnew .clang_complete<CR>
 nnoremap <Leader>vg :tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim<CR>
 nnoremap <Leader>vp :tabnew .proj<CR>
 nnoremap <Leader>vs :source ~/.vimrc<CR>
-nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
 
 " fuGitive keymaps
-nnoremap <leader>g <esc>:Git <CR>
-nnoremap <leader>gc <esc>:Git commit -a<CR>
-nnoremap <leader>gp <esc>:Git push<CR>
-nnoremap <leader>gs :Gstatus<CR><C-W>25+
-nnoremap <leader>gd <esc>:Gdiff<CR>
+nnoremap <Leader>g <esc>:Git <CR>
+nnoremap <Leader>gc <esc>:Git commit -a<CR>
+nnoremap <Leader>gp <esc>:Git push<CR>
+nnoremap <Leader>gs :Gstatus<CR><C-W>25+
+nnoremap <Leader>gd <esc>:Gdiff<CR>
+
+" something is overwriting my CommandT...
+nnoremap <Leader>t <esc>:CommandT<CR>
 
 
 "*************************************************** FUNCTIONS ***************************************************
@@ -227,18 +228,18 @@ function! WinMove(key)
     endif
 endfunction
 
-nnoremap <leader>h :call WinMove('h')<CR>
-nnoremap <leader>k :call WinMove('k')<CR>
-nnoremap <leader>l :call WinMove('l')<CR>
-nnoremap <leader>j :call WinMove('j')<CR>
+nnoremap <Leader>h :call WinMove('h')<CR>
+nnoremap <Leader>k :call WinMove('k')<CR>
+nnoremap <Leader>l :call WinMove('l')<CR>
+nnoremap <Leader>j :call WinMove('j')<CR>
 
-map <leader>wc :wincmd q<cr>
-map <leader>wr <C-W>r
+map <Leader>wc :wincmd q<cr>
+map <Leader>wr <C-W>r
 
-map <leader>H :wincmd H<cr>
-map <leader>K :wincmd K<cr>
-map <leader>L :wincmd L<cr>
-map <leader>J :wincmd J<cr>
+map <Leader>H :wincmd H<cr>
+map <Leader>K :wincmd K<cr>
+map <Leader>L :wincmd L<cr>
+map <Leader>J :wincmd J<cr>
 
 
 
@@ -263,55 +264,55 @@ augroup filetype_python
     autocmd BufRead *.py set omnifunc=jedi#complete
     autocmd BufRead *.py let g:jedi#auto_initialization = 1
     autocmd BufRead *.py let g:jedi#popup_on_dot = 0
-    autocmd BufRead *.py let g:jedi#goto_command = "<leader>jg"
-    autocmd BufRead *.py let g:jedi#get_definition_command = "<leader>jd"
+    autocmd BufRead *.py let g:jedi#goto_command = "<Leader>jg"
+    autocmd BufRead *.py let g:jedi#get_definition_command = "<Leader>jd"
     autocmd BufRead *.py let g:jedi#pydoc = "K"
     autocmd BufRead *.py let g:jedi#use_tabs_not_buffers = 1
-    autocmd BufRead *.py let g:jedi#rename_command = "<leader>R"
-    autocmd BufRead *.py let g:jedi#related_names_command = "<leader>n"
+    autocmd BufRead *.py let g:jedi#rename_command = "<Leader>R"
+    autocmd BufRead *.py let g:jedi#related_names_command = "<Leader>n"
     autocmd BufRead *.py let g:jedi#auto_vim_configuration = 0
     "Debugging
-"    autocmd BufRead,BufNewFile *py let g:pyclewn_debug_view_type="python"
-"    autocmd BufRead,BufNewFile *py let g:pyclewn_locals_on=1
-"    autocmd BufRead,BufNewFile *py nnoremap <F2>              :exe "PyclewnDebugToggle"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <F4>              :exe "!make"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <F5>              :exe "Crun"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <F6>              :exe "PyclewnContinue"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <F10>             :exe "PyclewnNext"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <F11>             :exe "PyclewnStep"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <leader>ds        :exe "C bt"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <leader>df        :exe "Cframe"<CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <leader>dv        :exe "C pp" . expand("<cword>") <CR>
-"    autocmd BufRead,BufNewFile *py nnoremap <leader>dp        :exe "C p " . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *py let g:pyclewn_debug_view_type="python"
+    autocmd BufRead,BufNewFile *py let g:pyclewn_locals_on=1
+    autocmd BufRead,BufNewFile *py nnoremap <F2>              :exe "PyclewnDebugToggle"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F4>              :exe "!make"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F5>              :exe "Crun"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F6>              :exe "PyclewnContinue"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F10>             :exe "PyclewnNext"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F11>             :exe "PyclewnStep"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>ds        :exe "C bt"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>df        :exe "Cframe"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>dv        :exe "C pp" . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *py nnoremap <leader>dp        :exe "C p " . expand("<cword>") <CR>
 augroup END
 
 "********************************************** CPP
 augroup filetype_cpp
     autocmd!
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>f         :exe "%!astyle --mode=c --style=ansi"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <Leader>as         :exe "%!astyle --mode=c --style=ansi"<CR>
     " PyClewn
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_args="--gdb=async"
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_debug_view_type="cpp"
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc let g:pyclewn_locals_on=1
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F2>              :exe "PyclewnDebugToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4>              :exe "!make"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F4>              :exe "CMake"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F5>              :exe "Crun"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F6>              :exe "PyclewnContinue"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F7>              :exe "Cprint " . expand("<cword>") <CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F10>             :exe "PyclewnNext"<CR>
     autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <F11>             :exe "PyclewnStep"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>ds        :exe "Cbt"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>df        :exe "Cframe"<CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dd        :Cdbg 
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc vnoremap <leader>dv        y:Cdbg <C-R>"
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dw        :exe "Cdbg " . expand("<cword>") <CR>
-    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <leader>dp        :exe "Cprint " . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <Leader>dl        :exe "PyclewnLocalsToggle"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <Leader>ds        :exe "Cbt"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <Leader>df        :exe "Cframe"<CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <Leader>dd        :Cdbg 
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc vnoremap <Leader>dv        y:Cdbg <C-R>"
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <Leader>dw        :exe "Cdbg " . expand("<cword>") <CR>
+    autocmd BufRead,BufNewFile *.cpp,*.c,*.h,*.cc nnoremap <Leader>dp        :exe "Cprint " . expand("<cword>") <CR>
     " TODO Cdbg visual selection
 augroup END

@@ -100,7 +100,9 @@ export LESS=-R
 export GREP_COLORS="mc=01;36:ms=01;36:mt=01;36:fn=01;37:se=01;36"
 # set path for Clang when using latest (not from repos)
 export PATH=/usr/clang_3_3/bin:$PATH
-
+# set clang as default compiler
+export CC=clang 
+export CXX=clang++ 
 # set some variables for specific paths on goms main linux box
 export vid='/media/nasGom/video/'
 export mov='/media/nasGom/video/movies/'

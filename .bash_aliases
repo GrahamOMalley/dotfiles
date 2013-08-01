@@ -6,6 +6,7 @@ if [ "$TERM" != "dumb" ]; then
 fi
 
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack --color-filename=white --color-match=cyan'
+alias bck='cd /media/nasGom/video/back/studio_dl'
 alias ccat='pygmentize'
 alias cgrep='grep --colour=always'
 alias c11c='clang++ -std=c++11 -stdlib=libc++ -Wall -g'
