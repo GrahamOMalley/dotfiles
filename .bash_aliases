@@ -6,15 +6,17 @@ if [ "$TERM" != "dumb" ]; then
 fi
 
 alias ack='ACK_PAGER_COLOR="less -x4SRFX" /usr/bin/ack --color-filename=white --color-match=cyan'
-alias bck='cd /media/nasGom/video/back/studio_dl'
+alias bck='cd /media/nasGom/video/back'
 alias ccat='pygmentize'
 alias cgrep='grep --colour=always'
 alias c11c='clang++ -std=c++11 -stdlib=libc++ -Wall -g'
 alias dfh='df -h -T --total -t ext4 | grep -h "[a-zA-Z0-9]\{1,3\}\%"'
 alias duf='du -sk * | sort -n | perl -ne '\''($s,$f)=split(m{\t});for (qw(K M G T)) {if($s<1024) {printf("%.1f",$s);print "$_\t$f"; last};$s=$s/1024}'\'
+alias dc='deluge-console'
 alias f='find . -name'
 alias grep='grep --colour=auto'
 alias h="history | grep"
+alias k9="killall -9"
 alias ll='ls -lhF'
 alias lll='ls --color=always -lasth | less -R'
 alias p='ps -ef | grep'
@@ -23,6 +25,7 @@ alias sbrecent='grep -h "\-\-\->" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//
 alias sbadded='grep -h "\-\-\->" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g" | grep -e "Added Torrent" | grep -h -e "\-\-\->" -e "Added Torrent" -e " to "'
 alias sbtoday='grep -h "\-\-\->" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g" | grep `date +%Y-%m-%d` | grep -h -e "\-\-\->" -e "Copying File" -e "Added Torrent" -e " to "'
 alias sbtodaylog='less ~/log/spiderbro/spiderBro_`date +%Y-%m-%d`.log'
+alias ta='tmux attach'
 alias t='tree -h'
 alias tl='tree -C -h | less -R'
 alias tmux='tmux -2'

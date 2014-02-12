@@ -8,1591 +8,141 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/dbgvar
+~MSle0~/Vimux
 
 # Last Substitute Search Pattern:
-~MSle0&__nbsock
+~MSle0&map
 
 # Last Substitute String:
-$"
+$
 
 # Command Line History (newest to oldest):
 :wq
-:qa
-:Pyclewn pdb
-:Pyclewn
-:Pyclewn pdb %
-:arg
-:argdo update
-:tabnew .proj
 :q
-:wqa
-: v
-:Cnext
-:Cargs
-:Pyclewn pdb % -s "Count Arthur Strong"
-:Cdbg v
-:C
-:Cwatch v
-:Coutput
-:Cprint v
-:Cprint arr
-:Cfile a.out
 :w
-:CommandT
-:map
+:tab h vimux
+:VimuxPromptCommand
+:VimuxCloseRunner
+:VimuxClearRunnerHistory
+:call VimuxRunCommand("ls -la")
+:VimuxRunCommand ls
+:help vimux
 :q!
-:'<,'>sort
-:Cwhere
-:Cthreadstack
-:Cinferiortty
-:Ccommands
-:Cbt
-:Dbg quit
-:Dbg exit
-:highlight DbgCurrent
-:highlight DbgBreakPt NONE
-:highlight DbgBreakPt CLEAR
-:highlight DbgBreakPt
-:hljjjjjjjjjjjjjjjjjj
-:highlight
-:set wrap!
+:qa
+:wqa
+:BundleInstall
+:BundleClean
+:pyfile %
+:exe "!pudb % -s Spoils" 
+:exe "!pudb % Spoils" 
+:exe "!pudb % -s Brooklye" 
+:exe "!pudb % -s Brooklyn" 
+:exe "!pudb % -s Brooklyn 99" 
+:exe "!pudb % " 
+:exe "!pudb % -s Brooklyn"
+:TogglePudbBreakPoint
+:!pudb %
+:%s/dark green/light gray/g
+:g/green
+:s/dark green/light gray/g
+:s
+:i
+:%s/default/black/g
+:%s/dark blue/light cyan/g
+:s/dark red/light cyan/g
+:g/dark blue
+:g/yellow
+:%s/dark magenta/light cyan/g
+:%s/dark magenta/cyan/g
+:PDBNext
+:PDBDown
+:!python %
+:python %
+:Dbg run
 :Dbg break
 :Dbg .
-:Dbg
-:Dbg run
-:'<,'>s/^/"/g
-:Cdumprepr
-:Cpp shares
-:scriptnames
-:source
-:Cfile primitives
-:Ccwindow
-:Cdbg 
-:Cfile main
-:'<,'>
-:BundleInstall
-:s/cpp/h/g
-:s/main/lib
-:W
-: 
-:Cfile regex2
-:ball
-:YcmCompleter GoToDefinitionElseDeclaration
-:YcmDiags
-:tab h youcompleteme
-:tabnew ~/.vim/plugin/cmake.vim
-:make
-:CMake
-:cd ../build/
-:tab h system
-:;
-:g/Leader
-:%s/\<leader\>/Leader/g
-:g/leader
-:%s/\<go\>/gom/g
-:BundleClean
-:echo g:SyntasticModeMap
-:echo g:syntastic_mode_map
-:SyntasticToggleMode
-:tab h syntastic
-:tab h 
-:B
-:verbose imap <tab>
-:help ultisnips
-:echo g:UltiSnipsExpandTrigger
-:echo g:UltiSnips
-:UltiSnipsEdit
-:w!
-:tabnew ~/.vim/snippets/cpp.snippets
-:UltiSnipsDebugSnippets
-:Cfile feature_test/a.out
-:tabnew ~/.vim/plugin/snipShow.vim
-:set syntax=alsaconf
-:echo $VIMRUNTIME
-:set syntax=haskell
-:set syntax=java
-:set syntax=vim
-:set syntax=ruby
-:set syntax=lisp
-:set syntax=c
-:ShowSnips
-:qa!
-:rightbelow 20vsplit new
-:read redir_messages.vim
-:topleft new
-:right new
-:rightbelow new
-:lljjkkk
-:echo expand($HOME/)
-:echo expand($HOME)
-:echo expand($HOME/.vim/snippets/&ft.snippet)
-:echo $HOME
-:echo $TERM
-:echo &ft
-:tabnew ~/code/cpp/terraria_world_reader/binUtils.h
-:filereadable()
-:%s/\<PyclewnBreakPointToggle\>/ShowSnips/g
-:!clang++
-:YcmCompleter GoToDefinition
-:YcmShowDetailedDiagnostic
-:help YouCompleteMe
-:tabnew ~/.tmux.conf
-:set completeopt?
-:%s/\<switc\>/toggle/g
-:tab h YouCompleteMe
-:higlight
-:help coloring
-:tabnew gomXBMCTools.py
-:Unite outline
-:Unite buffer
-:unite
-:help unite-outline
-:tabnew ~/code/python/spider_bro/gomXBMCTools.py
-:tab h YCM
-:!./a.out
-:!clang++ -std=c++11 %
-:SyntasticInfo
-:SyntasticCheck
-:lopen
-:tabnew 
-:setglobal
-:list
-:Bundles
-:BundleList
-:set updatetime=4000
-:set updatetime?
-:h 'updatetime'
-:YcmDebugInfo
-:tabnew .ycm_extra_conf.py
-:set paste!
-:mes
-:ht YouCompleteMe
-:echo has('python')
-:echo has('patch584')
-:set ff=unix
-:%s/\<prow\>/parseRow/g
-:setlocal display=uhex
-:set displaylocal=uhex
-:pyfile %
-:setlocal display=hex
-:lh
-:w bintest.py
-:%s/AppName/\rAppName/g
-:%!xxd
-:%!xxd -r
-:%s/\<shortcuts\>//g
-:%s/AppName/\r/AppName/g
-:%/AppName/\r/AppName/g
-:u;q
-:set uhex
-:'<,'>qa
-:%s/\<MGS3\>/Tenchu Fatal Shadows/g
-:%s/\<SSX Tricky\>/MGS3/g
-:w scratch
-:%s/Okami/SSX\ Tricky/g
-:%s/\<videos\>/video/g
-:%s/\<oneTB\>/nasGom/g
-:!./temp.sh
-:runtime macros/life/life.vim
-:%s/\<xbmc_video60\>/MyVideos75/g
-:set omnifunc=jedi#complete
-:tabnew xbmc_list_episodes.py
-:tabnew xbmc_recently_added.py
-:tabnew ../nasxbmc/files_not_in_xbmc_lib.py
-:tabnew xbmc_recently_watched.py
-:tabnew xbmc_recently_watched
-:;;;;;;;;;;;
-:%s/R/\//g
-:%s/I/\//g
-:%s/S/\//g
-:%s/H/\//g
-:%s/RRRRRRR/\//g
-:%s/RRRRRRR///g
-:g/delimiter
-:%s/\<second\>/torrent/g
-:%s/\<first\>/torrent/g
-:set syntax=sh
-:tabnew ~/.bash_aliases
-:tabnew ~/code/python/spider_bro/file_renamer.py
-:tabnew ~/code/python/spider_bro/sb_utils.py
-:tabnew ~/bin/torrent_test2.py
-:tabnew ~/bin/torrent_test.py
-:python %
-:commandT
-:tab h command-t
-:tab 
-:tab h G
-:echo g:jedi#goto_command
-:echo g:jedi
-:!python %
-:tabnew debugtest.py
-:tabnew ../django_templates/polls/results.html
-:'<,'>sort u
-:tabnew ../django_templates/polls/detail.html
-:tabnew polls/urls.py
-:tabnew polls/detail.html
-:2,6sort u
-:tabnew ../django_templates/polls/index.html
-:tabnew polls/index.html
-:registers
-:TabMessage g/collection_image
-:tabnew ~/source.html
-:set paste?
-:tabnew ../django_templates/admin/base_site.html
-:wa
-:imap
-:tab h vim-jedi
-:set omnifunc=jedi#completea
-:g/jedi
-:TabMessage map
-:Bu
-:set omnifunc?
-:python from django import db
-:tab h jedi
-:python sys.path
-:python import sys
-:w polls/admin.py
-:tabnew urls.py
-:tabnew settings.py
-:tabnew manage.py
-:sort
-:g/NERD/d
-:BufMessage map
-:tab h 'NERDCreateDefaultMappings'
-:tab h NERDcommenter
-:TabMessage g/NERD
-:TabMessage g/Space
-:Tabmessage g/Space
-:g/Space
-:%s/\.vim /\.vim\r/g
-:1,85Tabularize Last
-:Tabularize /:
-:%s/\.vim$/\.vim\r/g
-:%s/\.vim/\.vim\r/g
-:BufMessage verbose map
-:w redir_messages.vim
-:redir END
-:verbose map
-:redir @a
-:tabnew maps.txt
-:redir > maps.txt
-:redir verbose map > maps.txt
-:help redir
-:g/noremap
-:s/map/nnoremap
-:g/map
-:%s/\<cr\>/CR/g
-:vsplit
-:;;;
-:vs
-:%s/\<PRINT_FILE_PATH\>/args.file_path/g
-:8,27sort
-:8,22sort
-:set cmdwinheight?
-:lll
-:;;;;;;
-:kk
-:%s/\<watched\>/added/g
-:;A =
-:%s/\<PADDING\>/args.padding/g
-:;;;;;;;;;
-:%s/\<RESULT_NUMBER\>/args.num/g
-:%s/\<MOV\>/args.movies/g
-:%s/\<EP\>/args.episode/g
-:!python % -s "Doctor Who" -p
-:!python % -s "Doctor Who"
-:!python % -s "Doctor Who (2005)" -p
-:!python % -s "Doctor Who (2005)"
-:%s/\<PRINT_FILE_PATH\>/args.path/g
-:;;l
-:%s/Copying/---> Copying/g
-:%s/\<Copying\>/Copying File :/g
-:%s/\t//g
-:%s/Added/---> Added/g
-:%s/torrent url to deluge/Torrent/g
-:%s/\<Copying\>/ Copying File:/g
-:%s/\<Copying\>/Copying File:/g
-:%s/\<Copying\>/Copying\t\t:/g
-:%s/\<Copying\>/Copying\t:/g
-:%s/\<Copying\>//g
-:tab h gundo
-:tabnew ~/bin/backup_tv.py
-:g/logging
-:%s/logging\.info/logger\.info/g
-:s/logging/logger
-:107,112s/file_to_copy/f/g
-:%s/\<TestFunctions\>/testFunctions/g
-:!ls
-:s/opts/args/g
-:690,703d
-:690,Gd
-:690Gd
-:g/if
-:!python spiderBro.py
-:l
-:g/opts
-:g/in opts
-:532,627d
-:%s/opts\[\"xbmc_sqlite_db\"\]/opts.xbmc_sqlite_db/g
-:%s/opts\[\"host\"\]/opts.host/g
-:%s/opts\[\"user\"\]/opts.user/g
-:%s/opts\[\"passw\"\]/opts.pwd/g
-:%s/opts\[\"schema\"\]/opts./g
-:%s/opts\[\"schema\"\]/opts.schema/g
-:426,497d
-:%s/opts\[\'xbmc_sqlite_db\'\]/opts.xbmc_sqlite_db/g
-:%s/opts\[\'schema\'\]/opts.schema/g
-:%s/opts\[\'passw\'\]/opts.pwd/g
-:%s/opts\[\'user\'\]/opts.user/g
-:%s/opts\[\'use_mysql\'\]/opts.mysql/g
-:%s/opts\[\'use_msql\'\]/opts.mysql/g
-:%s/opts\[\'use_debug_logging\'\]/opts.debug_logging/g
-:g/debug_l
-:%s/opts\[\'log_dir\'\]/opts./g
-:%s/opts\[\'log_dir\'\]/opts.log_dir/g
-:%s/opts\[\'shows_file\'\]/opts.shows_file/g
-:%s/opts\[\'host\'\]/opts.host/g
-:%s/opts\[\'tv_dir\'\]/opts.tv_dir/g
-:%s/opts\[\'use_filerenamer\'\]/opts.use_filerenamer/g
-:%s/opts\[\'polite_value\'\]/opts.polite_value/g
-:%s/opts\[\'polite\'\]/opts.polite/g
-:%s/opts\[\'force_id\'\]/opts.force_id/g
-:%s/opts\[\'force_learn\'\]/opts.force_learn/g
-:%s/opts\[\'show\'\]/opts.show/g
-:%s/opts\[\'all\'\]/opts.all/g
-:%s/opts\[\'low_quality\'\]/opts.low_quality/g
-:%s/opts\[\'high_quality\'\]/opts.high_quality/g
-:%s/opts\[\'clear_cache\'\]/opts.clear_cache/g
-:%s/use_whole_lib/all/g
-:%s/force_show/show/g
-:g/force_show
-:s/high/low/g
-:%s/opts\[\'sb_db_file\'\]/opts.db_file/g
-:%s/opts\[\'force_show\'\]//g
-:%s/opts[\'force_show\']//g
-:%s/opts['force_show']//g
-:!sbtoday
-:pyfile spiderBro.py
-:2,8sort
-:k
-:;;
-:g/Config
-:vsplit sb_utils.py
-:g/url2name
-:g/download
-:2,10d
-:2,19sort
-:g/use_whole_lib
-:tabnew cfgtester.py
-:g/^ll/d
-:g/^lsl/d
-:g/^ls/d
-:g/^mkdir/d
-:g/^spider/d
-:g/^xbmc/d
-:g/^file/d
-:g/^cd/d
-:g/^mv/d
-:g/^touch/d
-:g/^tree/d
-:g/^vim/d
-:g/^cat/d
-:g/^scp/d
-:g/^rm/d
-:g/^rm \*/d
-:g/^rm \*/
-:g/^rm */
-:g/^rm
-:sort u
-:g/^$/d
-:g/gcut/d
-:%s/\n/ /g
-:%s/\r/ /g
-:%s/^.*install //g
-:%s/^.*install//g
-:%s/\<\apt-get\>//g
-:%s/\<\ apt-get \>//g
-:%s/\<\.: apt-get \>//g
-:%s/\<\.\: apt-get \>//g
-:%s/\ <apt-get \>//g
-:%s/\<apt-get\>//g
-:%s/\<sudo\>//g
-:%s/\<bash_historyback\>//g
-:tabnew /home/gom/log/spiderbro/spiderBro_2013-01-21_14\:49\:40.log
-:'
-:17,110s/\<target\>/args.target/g
-:17,300s/\<target\>/args.target/g
-:%s/\<target\>/args.target/g
-:;llll
-:oldfiles
-:w ~/backuptvdb.py
-:;;;;;;;;;;
-:tabnew /home/gom/code/python/spider_bro/sb_utils.py
-:%s/\<copy_show\>/copyShow/g
-:%s/\<get_show\>/getShow/g
-:%s/\<temp_path\>/file_name/g
-:echo g:tagbar_foldlevel
-:help tagbar
-:%s/\<season_dir\>//g
-:!git add gomXBMCTools.py
-:%s/$/,/g
-:%s/$/:""/g
-:%s/$/:/g
-:tabnew shows.txt
-:setpaste!
-:set
-:vsplit gomXBMCTools.py
-:windo diffoff
-:tab h fugitive
-:g/TODO
-:tab h Tagbar
-:%s/Tlist/Tagbar/g
-:let g:tagbar_left =1
-:TagbarToggle
-:TagbarOpen
-:%norm df:x
-:exe 'v/\v^\s+"(ti|ur)/d'
-:%!python -mjson.tool
-:silent read http://www.reddit.com/r/vim.json
-:s/$/)
-:s/logging\.info/logging\.info(/
-:s/ /(
-:s/print/logging.info/g
-:%s/print/logging.info/g
-:s/print/log.info
-:s/1/3/g
-:s/1/2/g
-:tabnew ~/bin/torrent_added.py
-:tabnew ~/log/torrents_added.log
-:g/dir
-:g/if(opts
-:729,735s/series_name/dir_id/g
-:729,735s/series_name/dir_id
-:g/tv_dir
-:92,119s/cur/c/g
-:63,119>
-:%s/'showname'/0/g
-:%s/'episode'/2/g
-:%s/'season'/1/g
-:%s/f\[/cur\[/g
-:%s/f[/cur[/g
-:%s/\<f[\>/cur[/g
-:%s/\<file_to_copy\>/file_path/g
-:%s/KTorrent.log/print/g
-:%s/Ktorrent.log/print/g
-:%s/\<file_to_copy\>/filePath/g
-:tabnew ~/bin/gg
-:tabnew .git/config
-:Git add backup_tv.py
-:Git add %
-:Git add
-:tabnew /home/gom/code/python/spider_bro/spiderBro.py
-:s/season/episode/g
-:tabnew /home/gom/code/python/spider_bro/db_manager.py
-:C pp locals()
-:C p locals() local
-:C pp locals() local
-:C p locals()
-:kkjj
-:tabnew /home/gom/code/python/XBMC-Utility-scripts/xbmc_recently_added.py
-:Cclear 2
-:Cclear 1
-:Cclear 26
-:Cclear 29
-:Cclear .
-:tabnew /home/gom/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
-:C pp physical
-:C p extensions
-:C bt
-:messages
-:C pp extensions
-:C p name
-:C p
-:Cpp
-:Cdbg extensions
-:echo g:pyclewn_debug_view_type
-:Pyclewn pdb %:p
-:Cquit
-:e xbmc_missing
-:Cstep
-:Pyclewn --pdb
-:tabnew .bash_aliases
-:cd
-:r!alias
-:.,.+2s/$/<CR>/g
-:.,.+4s/$/<CR>/g
-:.,.+4s/$/<CR>//g
-:Git commit -a
-:!chmod +x %
-:s/;/;\r/g
-:s/;/\r/g
-:set number!
-:!cat /etc/fstab
-:r!duf
-:cd /media/
-:cd /media/tv2/
-:cd /media/twoTB1/videos/
-:cd /media/oneTB/videos/
-:cd /media/twoTB1/
-:cd /media/oneTB/
-:!dfh
-:!df -h
-:!g++ -g -Wall -std=c++0x -o regex1 %
-:Cdbg vf
-:!g++ -g -Wall -std=c++0x -o ptr_u %
-:Cproject .proj
-:Cfile ex_move
-:!g++ -g -Wall -std=c++0x -o ex_move %
-:tabnew ~/.vim/bundle/syntastic/syntax_checkers/cpp.vim
-:Errors
-:SyntasticErrors
-:Cdbg p1
-:!
-:Cfile ptr_u
-:!g++ -Wall -std=c++0x -o ptr_u %
-:!g++ -Wall -std=c++0x -o ptr_u
-:Git push
-:%s/\<hodxsduzfxoyltqa\>/noneOyobizniss/g
-:g/ange
-:as
-:201,210s/^/"/g
-:'<,'>s^/"//g
-:Git i
-:Gbrowse
-:130,135Tabularize / 
-:131,135!sort
-:tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-:tab
-:call <SNR>65_GundoClose()
-:GundoShow
-:C<F2>
-:Ckill
-:tabnew tileEngine.h
-:Cfinish
-:Cdbg *nit
-:Cdbg nit
-:Cprint filledTiles.size()
-:Cx
-:Cfile /home/gom/code/irrlicht-1.7.3/bin/Linux/00.Gom2
-:set syntax=cpp
-:Ccall plist carcassone_board.filledTiles
-:Cprint carcassone_board.filledTiles.size()
-:Cset print array on;qa
-:Cdbgvar carcassone_board.rows[0]
-:Cinfo locals
-:Cdbgvar carcassone_board.rows
-:Cset print array on
-:tab h autocmd-events
-:echo g:gom_debug_view_on
-:echo g:gom_debug_on
-:tab h tabnew
-:tab h  tab
-:help tab
-:vsplit tileEngine.h
-:q1a
-:help Tlist
-:TlistOpen
-:TlistClose
-:echo w:gom
-:let w:gom="I'm the left window"
-:let w:gom="I'm the right window"
-:let w:gom="gomisfuckingawesome"
-:tab h buffers
-:Gdiff
-:cd ~/.vim/bundle/
-:tab h Tlist
-:cd .vim/
-:cd ~
-:Gblame
-:Cprint carcassone_board
-:'<,'>!sort
-:Scriptnames
-:Cprint *nit
-:Cprint this->rows[i][j].data
-:wkk
-:%s/\<MapCell\>/tileMapCell/g
-:s/tileCoords/std::pair<int, int>/e | s/FilledTiles/filledTiles/e
-:s/Count/size()/g
-:s/).tileID/].tileID/g
-:s/rows\.at(/rows[/g
-:s/)\.at(/][/g
-:s/).data/].data/g
-:s/)\.at(/[]/g
-:s/)\.at\(/\[\]/g
-:s/\)\.at\(/\[\]/g
-:s/\(\.at\(/\[\]/g
-:s/\[/\(/g
-:s/\]/\)/g
-:%s/\<MapWidth\>/MAP_WIDTH/g
-:%s/\<MapHeight\>/MAP_HEIGHT/g
-:;;;;ll
-:%s/rows\.at\.at/rows\.at/g
-:%s/this\.rows/this->rows/g
-:%s/Columns/at/g
-:%s/f.y/f.second/g
-:%s/f.x/f.first/g
-:%s/f.x/p.first/g
-:%s/rows/rows.at/g
-:%s/tileid/tileID/g
-:%s/\<tileCoords\>/std::pair<int, int>/g
-:139,205y
-:%s/new tileCoords/std::make_pair/g
-:s/tileid/tileID/g
-:s/rows/rows.at/g
-:s/columns/at/g
-:s/tileis/tileID/g
-:s/[/(/g
-:%s/\<Rows\>/rows/g
-:%s/\<Add\>/push_back/g
-:%s/f.y/p.second/g
-:105,133y
-:Cprint carcassone_board.filledTiles
-:Cprint this->rows[i]
-:Cprint this->rows[i][j]
-:set columns=80
-:tab h dbgvar
-:PowerlineClearCache
-:14,26!sort
-:tab h Gdiff
-:s/Step/ToggleTlist/g
-:Tlist
-:e ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim
-:%s/\<using\>//g
-:%s/\<j
-:tabnew debugger.py
-:tabnew ~/.vim/bundle/vim-debug/
-:tabnew TileEngine/TileMap.cs
-:tabnew ~/.vim/snippets/vim.snippets
-:set g:snippets_dir?
-:tab h snipmate
-:Cprintf \"%s\", list
-:Cprintf \"%d\", list
-:tab h Pyclewn
-:Cprintf \"%d\", carcassone_board
-:Cprintf \"%s\", carcassone_board
-:Cprintf \"%s\" carcassone_board
-:Cprintf %s carcassone_board
-:Cprintf "%s" carcassone_board
-:Cprintf "%s", carcassone_board
-:Cprintf("%s") carcassone_board
-:Cprintf carcassone_board
-:Cbacktrace full
-:Ccommands backtrace -full
-:Cprint carcassone_board.rows[0][0].data._M_dataplus
-:Cprint carcassone_board.rows[0][0].data
-:Cprint carcassone_board.rows[0][0]
-:Cprint carcassone_board.rows[0]
-:Cprint carcassone_board.rows
-:syntax 
-:100@q
-:s/Next/Step/g
-:%s/_next//g
-:s/gom_debug_view_on/pyclewn_next_locals_on/g
-:call PyclewnBreakPointToggle()
-:%s/GomDebug/PyclewnDebug/g
-:%s/\<GomDebug\>/PyclewnDebug/g
-:%s/GomPyclewnView#//g
-:171,281d
-:170,281d
-:tabnew ~/gom-pyclewn-view.vim
-:tabnew ~/gom-pyclewn-view
-:Cfile 
-:Cnext | Cinfo locals
-:%s/\<PyclewnDebuggerToggle\>/PyclewnBreakPointToggle/g
-:call BreakpointToggle()
-:line
-:help mark
-:tab h readfile
-:tab h split
-:s/w:python_debug_view/g:breakpoint/g
-:s/w:python/g
-:TlistToggle
-:Cfoldvar 12
-:Cfoldvar var9
-:Crwatch pc
-:Cdbgvar sizeof(pc)
-:set fillchars=vert:â”‚
-:call exists(w:gom_debug_on)
-:exists(w:gom_debug_on)
-:execute "Dbg quit"
-:tab h Dbg
-:294,310Tabularize /:exe
-:294,310Tabularize /:
-:Tabularize :
-:'<,'>Tab/:
-:tabnew ~/bin/git_create_new_repo.sh
-:Ggrep added
-:Glog -10
-:cnext
-:Glog
-:tab h Gstatus
-:tab h fugitive:Gstatus
-:help fugitive-:Gstatus
-:buffer
-:call PyDebugToggle()
-:s/gom/python
-:189,193/gom/python/g
-:s/gom/python/g
-:Dbg watch shares
-:279,288!sort
-:Dbg over
-:Dbg step
+:Dbg into
+:Dbg 
+:Dbg here
 :Dbg next
-:279,287!sort
-:282,287@q
-:s/,/autocmd BufRead,BufNewFile *.py nnoremap <leader>
-:gg=G
-:Dbg -
-:dbg
-:help debug-vim
-:TabMessage(:map)
-:TabMessage(map)
-:Cprint wd.title
-:Cprint wd
-:set synax=cpp
-:set t_Co?
-:%s/\<FF6600\>/00CCCC/g
-:tabnew .vim/colors/morhedel.vim
-:XtermColorTable
-:%s/\<0000FF\>/000000/g
-:%s/\<FFFFFF\>/0000FF/g
-:%s/\<FFFFFF\>/000000/g
-:Ccontinue
-:Cp aired_list
-:Cp
-:278,296s/\*.cpp,\*.c,\*.h,\*.cc/*.py/g
-:278,296s/"\*.cpp,\*.c,\*.h,\*.cc"/*.py/g
-:278,296s/"*.cpp,*.c,*.h,*.cc"/*.py/g
-:278,296s/*.cpp,*.c,*.h,*.cc/*.py/g
-:278,296s/*.cpp,*.c,*.h*,.cc/*.py/g
-:278,296s/*.cpp,*.c,*.h*.cc/*.pyg
-:Cup
-:Cup;
-:Crun
-:Cbreak 45
-:tab h pyclewn
-:Cclear
-:Cdbgvar
-:Chelp
-:e /usr/local/lib/python2.7/dist-packages/clewn/__init__.py
-:tabnew
-:e /etc/vim/autoload/pyclewn.vim
-:/car
-:tab h internal-variables
-:;;;;;;;;;;;;;;;
-:%s/\<GOMtest1\>/Gom2/g
-:%s/\<Gomtest1\>/Gom2/g
-:winsize 100
-:Ctrace
-:Cdbg list
-:<F2>
-:exe "Cbreak "<F2>
-:GundoToggle
-:Gundo
-:exe "Cbreak "
-:call GomDebugStop()
-:call GomDebugStart()
-:;;;;;;;;;;;;;;;;;;;k
-:tab h command
-:nb
-:tab h bwipeout
-:vsplit $MYVIMRC
-:call GomDebugToggle()
-:s/check_words/gom_debug_view_on/g
-:s/w:/g:/g
-:;;k
-:tab h vim-script-intro
-:@"
-:!xbmc_recently_watched -e
-:tabnew /etc/
-:c
-:w fuck
-:wq!
-:r!grep -h "Added torrent" $HOME/log/spiderbro/*.log | sed -e "s/&tr.*$//g" | sed -e "s/magnet.*dn=//g"
-:!cat ~/.bash_aliases
-:!sbrecent
-:r!sbrecent
-:TabMessage(!sbrecent)
-:call StartPCDebugger()
-:232,287d
-:232,Gd
-:232Gd
-:Cinfo frame
-:Cframe
-:set columns=800
-:set columns=22
-:tab h winsize
-:winsize
-:Cinfo frame locals
-:set syntax
-:Cecho "\n"
-:Cecho " "
-:Ccommands 1
-:Cdisplay
-:Cawatch
-:Cadvance
-:Cactions
-:Ccd
-:Cinfo scope
-:Chelp info
-:Cstep 
-:echo g:pyclewn_args
-:Pyclewn -g=async
-:Chelp checkpoint
-:Cnexti
-:Cstepi
-:tab h Cdown
-:Cdown
-:Cnexti device
-:Cnexti locals
-:Cfoldvar
-:rightbelow vnew
-:botright vsplit (clewn)_dbgvar
-:botright split (clewn)_console
-:rightbelow vsplit
-:vsplit (clewn)_dbgvar
-:bottomright split (clewn)_console
-:bottom split (clewn)_console
-:split (clewn)_console
-:Csource .proj
-:150vsplit
-:100vsplit
-:300vsplit
-:30vsplit
-:left vsplit
-:botleft vsplit
-:botright vsplit
-:only
-:Cinfo
-:Cdbgvar device
-:;;;;;;;;;;;;;;
-:split (clewn)_dbgvar
-:botright vsplit (clewn)_console
-:;q
-:topleft vsplit (clewn)_console
-:topleft vsplit
-:help split
-:vsplitright (clewn)_dbgvar
-:Cd
-:split
-:tab h vsplit
-:h close
-:wwa
-:nbclose
-:wincmd k
-:buffer (clewn)_dbgvar
-:buffer (clewn)_console
-:h buffer
-:kkkkkkkkkkkkkkk
-:Pyclewn pdb --version
-:Pyclewn --version
-:Pyclewn -g -w bottom
-:Pyclewn -w bottom
-:Chelp dumprepr
-:Cshow
-:Cmonitor
-:Cmem
-:Cdbgvar carcassone_board
-:syntax on
-:reg q
-:be,
-:Nsb
-:Cfoldvar 4
-:Cfoldvar 3
-:Cfoldvar 2
-:Cfoldvar 1
-:Clist
-:Cawatch driver
-:Cawatch device
-:Cfile ../../bin/Linux/00.GOMtest1
-:Csource
-:Cproject
-:project
-:nclose
+:Dbg quit
+:Dbg
+:PDBWord
+:PDBEval
+:PDBEval show
+:PDBStep
+:PDBEval x
+:PDBArgs
+:echo v:servername
+:version
+:g/3
+:g/keybinding
+:g/dl_these
+:Ccommands print physical
+:Ccommands
+:Cstep
+:Cnext
+:Cbt
+:Cargs
 :Cmapkeys
-:tabn
-:tabnew /home/gom/code/csharp/carcassoneGenerator/TileEngine/TileEngine/TileMap.cs
-:TlistSync
-:TListSync
-:shell
-:call <SNR>50_GundoClose()
-:changes
-:Gstatus
-:!git update-server-info
-:%s/\<green\>/cyan/g
-:echo g:clang_user_options
-:let g:clang_user_options
-:tabnew .clang_complete
-:%s/ /\r/g
-:%s/\<I\>/\r/g
-:h clang_complete
-:tab h clang_complete
-:Git 
-:colorscheme morhedel
-:colorscheme relaxedgreen
-:diff
-:diffget
-:diffthis
-:14,74!column -t
-:j
-:'<,'>s/^/hi /g
-:%s/\<xxx\>//g
-:tabnew code/c++/util/castCharToLong.cpp
-:BundleDocs
-:14,23sort
-:!sudo pip install pylint/pyflakes/flake8
-:44,55!column -t
-:48,55s/  //g
-:48,55s/    /\t/g
-:s/    /\t/g
-:s/ /\t/g
-:44,55!column -t -s " "
-:h XtermColorTable
-:e ~/.vim/colors/morhedel.vim
-:!g++ -std=c++0x %
-:!clang++ -std=c++0x %
-:!clang++ %
-:colorscheme stingray
-:gom
-:Git push -u origin master --force
-:31,56sort
-:31,56!sort
-:31,56!column -t
-:31,56!column -s
-:tab h vundle
-:2
-:%s/\<_STL\>/std/g
-:help highlight-groups
-:synstack
-:!pyclewn -c terraria_worldreader.cpp
-:Cfile twb
-:qk
-:Cprint list
-:message
-:'<,'>q
-:137,144s/Next/Continue/g
-:Cshell clear
-:Cset print pretty off
-:set print pretty off
-:Cdbg p
-:Cprint *this
-:Cprint this
-:Cdbg m
-:Cdbg i
-:Cdbg carcassone_board.rows
-:exe "Cdbg "
-:exe "Cdbg "i
-:Cdbgvar i
-:Cset print array off
-:Cset print pretty on
-:4,7Tabularize / /l1
-:s/\t/ /g
-:s/  / /g
-:set list
-:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-:tab h Tabularize
-:4,7Tabularize
-:4,7Tabularize / 
-:r!cat /etc/fstab
-:Git push -f origin HEAD^:master
-:exe "%!astyle --mode=c --style=ansi"
-:%s/\<fullpath\>/file_to_copy/g
-:C pp cur
-:;lll
-:;;;klk
-:q!a
-:.,.+1!formats=(zip rar)
-:.,.+10!formats=(zip rar)
-:71,76=
-:g/print/d
-:g/print
-:g/auto
-:g/__FUNC
-:VimuxPromptCommand
-:VimuxRunLastCommand
-:!g++ -g -Wall -std=c++0x features.cpp
-:tab h surround
-:help surround
-:;;;;l
-:!python % -h
-:pyfile % -h
-:aaaa
-:%s/\<EP_FILTER\>/SHOWNAME/g
-:%s/\<mc\>//g
-:%s/Copying File / Copying File/g
-:w srs.txt
-:%s/\n/\+/g
-:%s/SRS/\rSRS/g
-:%s/SRS/\nSRS/g
-:%s/ //g
-:%s/\r/\+/g
-:%s/\<GoldRedditSaysSciFiAndFantasy\>//g
-:%s/\<djangobro\>/spiderbro/g
-:s/root/djangobro
-:set omnifunc=pythoncomplete#Complete
-:set omnifunc
-:w source.html
-:python Dbg
-:tab h vim-debug
-:tabnew ~/code/python/XBMC-Utility-scripts/xbmc_list_episodes.py
-:s/AppName/StartDir/g
-:s/AppName/Exe/g
-:tabnew shortcuts.vdf
+:Pyclewn pdb files_not_in_xbmc_lib.py
+:python ex
+:Pyclewn pdb
+:Pyclewn;qa
+:Pyclewn
 
 # Search String History (newest to oldest):
-?/dbgvar
-?/command
-? __nbsock
-? ^
-?/leader
-?/LEADER
-?/_dbgvar
-?/add_p
-? cpp
-? main
-? \Vcout\%#
-? \Vfe\%#
-? \Vvec\%#
-?/make_iterat
-?/GoToDeclaration
-? \Vdo\%#
-? \Vfun\%#
-? \Vmfun\%#
-? \Vst\%#
-?/if
-? \Vif\%#
-? \Vwh\%#
-? \Vdeq\%#
-? \Varr\%#
-? \Vreadfile\%#
-? for
-? {
-? Leader
-? \<leader\>
-? leader
-? \<go\>
-? \Vcl\%#
-? \Vfori\%#
-?/syntas
-?/syntastic_mode
-?/snip
-? \<UltiSnips-for-snipmate-users\>
-?/search
-?/file
-?/key_list_select
-? \<PyclewnBreakPointToggle\>
-?/__asm
-?/main
-?/preview_window_
-?/ycm
-? \<switc\>
-?/Options
-?/Cyan
-?/try
-? \<wget\>
-?/definition
-?/getEpis
-?/FAQ
-?/clang
-? \<prow\>
-? AppName
-?/00
-? \<MGS3\>
-?/MGS
-? \<SSX Tricky\>
-?/SSX
-? Okami
-? \<videos\>
-? \<oneTB\>
-?/getE
-? \<xbmc_video60\>
-? R
-? I
-? S
-? H
-? RRRRRRR
-?/FIX
-? delimiter
-?/delimiter
-?/FAILED
-? \<second\>
-? \<first\>
-?/successm
-?/id
-?/is_interactive
-?/remov
-?/add_tor
-?/twisted
-?/on_get_t
-?/remove
-?/component
-?/wkkkjkkkkkkkkkkkj
-?/paste
-? collection_image
-?/collection_image
-?/TEMPL
-? \V\.\%#
-?/jedi
-? jedi
-?/APP
-? NERD
-?/let
-? Space
-? \.vim 
-?/Tabularize
-? \.vim$
-? \.vim
-?/FUNC
-? noremap
-?/remap
+?/Vimux
 ? map
-?/cr
-? \<cr\>
-?/:
-?/hunt
-?/df
-?/set
-?/\Vfor\%#gi
-?/window
-?/^"
-?/"
-? \<watched\>
-?/watched
-?/args.show
-? \Vfor\%#
-? \<PADDING\>
-? \<RESULT_NUMBER\>
-? \<PRINT_FILE_PATH\>
-? \<MOV\>
-? \<EP\>
-?/PADDING
-?/could not
-?/arg
-?/e = 
-? \%(^parent\)\@<! 
-? \<save\>
-? \<Torrent\>
-? \<str\>
-?/Latest
-?/Copying
-? Copying
-? \<Copying\>
-? \t
-? Added
-? torrent url to deluge
-?/\t
-?/shows file
-?/re\.
-?/regex
-?/re.
-?/info
-?/get_sb
-? logging
-?/basic
-?/logging
-?/setupLogger
-? logging\.info
-?/log
-?/name
-?/page_re
-? file_to_copy
-?/file_to
-? \<TestFunctions\>
-? opts
-? if
-?/use_file
-?/db_
-?/opts
-? in opts
-? opts\[\"xbmc_sqlite_db\"\]
-? opts\[\"host\"\]
-? opts\[\"user\"\]
-? opts\[\"passw\"\]
-? opts\[\"schema\"\]
-? opts\[\'xbmc_sqlite_db\'\]
-? opts\[\'schema\'\]
-? opts\[\'passw\'\]
-? opts\[\'user\'\]
-? opts\[\'use_mysql\'\]
-? opts\[\'use_msql\'\]
-? opts\[\'use_debug_logging\'\]
-? debug_l
-? opts\[\'log_dir\'\]
-? opts\[\'shows_file\'\]
-? opts\[\'host\'\]
-? opts\[\'tv_dir\'\]
-?/TODO
-? opts\[\'use_filerenamer\'\]
-? opts\[\'polite_value\'\]
-? opts\[\'polite\'\]
-? opts\[\'force_id\'\]
-? opts\[\'force_learn\'\]
-? opts\[\'show\'\]
-? opts\[\'all\'\]
-? opts\[\'low_quality\'\]
-? opts\[\'high_quality\'\]
-? opts\[\'clear_cache\'\]
-? use_whole_lib
-? force_show
-?/force_show
-? high
-? opts\[\'sb_db_file\'\]
-? opts\[\'force_show\'\]
-? opts[\'force_show\']
-? opts['force_show']
-?/configure
-?/config
-? Config
-?/shlex
-? url2name
-? download
-?/download
-?/url2name
-?/todo
-?/onfig
-?/linkr
-?/alidating
-?/base_
-? ^ll
-? ^lsl
-? ^ls
-? ^mkdir
-? ^spider
-? ^xbmc
-? ^file
-? ^cd
-? ^mv
-? ^touch
-? ^tree
-? ^vim
-? ^cat
-? ^scp
-? ^rm
-? ^rm \*
-? ^rm *
-? ^$
-? gcut
-?/export
-? \n
-? \r
-? ^.*install 
-? ^.*install
-? \<\apt-get\>
-? \<\ apt-get \>
-? \<\.: apt-get \>
-? \<\.\: apt-get \>
-? \ <apt-get \>
-? \<apt-get\>
-? \<sudo\>
-? \<bash_historyback\>
-?/unit
-?/unicode
-?/ascii
-?/720p
-?/720
-?/720P
-?/sNeN
-?/re.s
-? \<target\>
-?/target
-?/Make
-? \<copy_show\>
-? \<get_show\>
-? \<temp_path\>
-?/tagbar
-?/season_dir
-?/print
-?/berry
-? $
-?/sname
-?/tree
-? TODO
-?/Tagbar
-? Tlist
-?/Tlist
-?/TagLis
-?/TLis
-?/date
-? \v^\s+"(ti|ur)
-?/proto
-?/path
-?/logging\.info
-?  
-? print
-? 1
-?/c[
-?/save_dir
-?/save
-?/savepath
-?/urls
-?/dir
-? dir
-? if(opts
-? series_name
-?/tv_dir
-? tv_dir
-? cur
-? 'showname'
-? 'episode'
-? 'season'
-?/'season'
-?/season
-? f\[
-? f[/cur[/g
-? \<f[\>/cur[/g
-?/file_path
-? \<file_to_copy\>
-?/lower
-? KTorrent.log
-? Ktorrent.log
-?/ftarget
-? season
-?/select
-?/natty
-?/maveri
-? \Vf\%#
-? ;
-?/match
-?//Example 1
-? \<p1\>
-?/synt
-?/PLUG
-?/gdb
-? \<hodxsduzfxoyltqa\>
-? ange
-?/ms
-? /"//g
-? \<tileHeight\>
-?/imp
-?/locals
-?/Tab
-? ^\s*\d\+:\s*
-? ^\s*$
-? \<MapCell\>
-? FilledTiles
-? Count
-? ).tileID
-? rows\.at(
-? )\.at(
-? ).data
-? )\.at\(
-? \)\.at\(
-? \(\.at\(
-? \[
-? \]
-? \<MapWidth\>
-? \<MapHeight\>
-? rows\.at\.at
-? this\.rows
-? Columns
-? f.y
-? f.x
-? rows
-? tileid
-? \<tileCoords\>
-?/m\.
-?/m.
-? new tileCoords
-?/make
-? columns
-? tileis
-? [/(/g
-? \<Rows\>
-? \<Add\>
-?/Add
-?/filled
-?/in
-? \Vlist\%#
-?/PLUGIN
-?/FUNCTION
-?/w:
-?/tab
-?/command-t-options
-? Step
-?/s/Step/ToggleTlist/g
-?/using
-?/dbg
-?/Dbg
-?/++
-?/i++
-?/load
-?/lll
-?/Cfold
-??tileID
-?/tileID
-?/data
-? Next
-? _next
-? gom_debug_view_on
-?/gom_debug_view_on
-? \Vheader\%#
-?/GDT
-? GomDebug
-?/<
-? \<GomDebug\>
-? GomPyclewnView#
-?/function!
-? \<PyclewnDebuggerToggle\>
-? breakpoint_on = 1
-?/Cbreak
-?/Break
-?/split
-?/:ht
-?/ht
-? w:python_debug_view
-? w:python
-?/Cpro
-?/GomDe
-?/PyDebug
-? gom
-??kkkkk
-?/F2
-? ,
-?/Pyclew
-?/Bundle
-?/tmux
-?/tag
-?/color0
-?/color
-? \<FF6600\>
-? \<0000FF\>
-? \<FFFFFF\>
-?/FFFF
-?/default
-?/usr
+?/CloseRunner
+?/leader
+?/save_b
+? dark green
+? green
 ?/green
-? \*.cpp,\*.c,\*.h,\*.cc
-? "\*.cpp,\*.c,\*.h,\*.cc"
-? "*.cpp,*.c,*.h,*.cc"
-? *.cpp,*.c,*.h,*.cc
-? *.cpp,*.c,*.h*,.cc
-? *.cpp,*.c,*.h*.cc
-?/Watc
-?/syntax
-?/buf_id
-?/VARIABLES_B
-?/netbeans
-? \<tile_engine\>
-? car
-? \<GOMtest1\>
-?/GOM
-?/Gom
-? \<Gomtest1\>
-?/F9
-?/Toggle
-?/buf
-? check_words
-? w:
-?/GomDebug
-?/gom
-?/<+.\{-1,}+>
-?/+>/e
-?/g:
-?/pyclewn_args
-?/global
-?/StartClewn
-?/must be
-??70
-?/vspli
-?/sleep
-?/lua
-?/bottom
-?/Pyclewn
-?/pyclewn
-?/ja2
-?/Cfile
-? \<jump\>
-?/->
-?/fugitive
-?/exec
-?/up
-? \<BufNewFile\>
-? \<BufRead\>
-? \<green\>
-?/term
-?/std
-? \<I\>
-?/\.clang
-?/.clang
-?/Super
-?/superTab
-?/.
-?/quickfix
-?/F12
-?/tileFits
-?/getNeigh
-? \<xxx\>
-?/noc
-?/,/,/,/
-?/u.....
-?/=/+,/=/-d;q
-?/=/+,/=/-d
-?/=/+,/=/-
-?   
-?/ 
-?     
-?/Title
-?/19ggA
-?/&tr
-? \<_STL\>
-?/10
-?/1,3
-?/TERM
-? share
-? ^"
-?/myvimtips
-? \Vit\%#
-?/tileMap
-? snippets_dir
-?/GDTog
-?/function
-?/loaded_taglist
-?/PyclewnBreakPointToggle
-?/pge
-?/pgea
-?/list
-?/array
-?/dd
-?/blah
-? \<fullpath\>
-?/echo
-?/sqlite
-?/commands
-?/bin/bash
-? auto
-?/auto
-? __FUNC
-?/FUNCTION__
-?/idEpisode
-?/trigger
-?/idepisode
-?/avi
-? \<EP_FILTER\>
-?/setup
-?/Added
-?/start_time
-? Copying File 
-? SRS
-?/series_id
-?/series_
-? \<djangobro\>
-? root
-?/dj
-?/jab
-?/init_sb_db
-? init_sb_db
-?/resize
-?/re
-?/tags
-?/01
-?/show
+? default
+? dark blue
+?/blue
+?/gray
+?/dark blue
+? dark red
+?/red
+?/magenta
+?/yellow
+?/comment
+? yellow
+? dark magenta
+?/black
+?/embark
+? 3
+?/3
+? keybinding
+?/POP
+? dl_these
+? \<dl_these\>
+? ^$
+? CREATURE:
+? Creature:
+?/[CREATURE:
+?/CREATURE:
+?/SPIDER
+?/RAPTOR
+?/GRAZER
+? GRAZER
+? Grazer
+?/EGG
+?/cavernkeet
+? pirateproxy
 
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
-@;qa
+@ps -ef
+@show
+@x
 @y
+@;q
+@;qa
 @<F2>
 @<F2><F2><F2><F2><F2><F2><F2><F2><F2><F2>;qa
 @;
@@ -1602,32 +152,26 @@ $"
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	#include <map>
-""1	LINE	0
-	    * project managing settings for vim CMAKE
-"2	LINE	0
-	    * write some cmake build script generator
-"3	LINE	0
-	    * Ultisnips + YCM + Supertab for great victory
-"4	LINE	0
-	nnoremap <Leader>vt :tabnew ~/.vim/.myvimtips<CR>
-"5	LINE	0
-	nnoremap <Leader>vc :tabnew .clang_complete<CR>
-"6	LINE	0
+""0	LINE	0
+	 map <Leader>vi :VimuxInspectRunner<CR>
+"1	LINE	0
 	
+"2	LINE	0
+	    
+"3	LINE	0
+	    a = b
+"4	LINE	0
+	    b = 2000
+"5	LINE	0
+	    a = 1000
+"6	LINE	0
+	if __name__ == "__main__":
 "7	LINE	0
-	cd /home/gom/code/c++/misc_usefull_tricks/
-	file /home/gom/code/c++/misc_usefull_tricks/primitives
-	break /home/gom/code/c++/misc_usefull_tricks/gom_primitive_sizes.cpp:9
-	break /home/gom/code/c++/misc_usefull_tricks/gom_primitive_sizes.cpp:20
-	break /home/gom/code/c++/misc_usefull_tricks/gom_primitive_sizes.cpp:24
-	break /home/gom/code/c++/misc_usefull_tricks/gom_primitive_sizes.cpp:27
-	break /home/gom/code/c++/misc_usefull_tricks/gom_primitive_sizes.cpp:29
+	
 "8	LINE	0
-	break /home/gom/code/c++/gdb_test/main.cc:143
+	globInt = 30
 "9	LINE	0
-	break /home/gom/code/c++/gdb_test/main.cc:123
+	
 "b	LINE	0
 	-                    --....................--....................-
 "c	LINE	0
@@ -1638,7 +182,7 @@ $"
 "w	CHAR	0
 	wwwwwwwwwwwwx;wkjji	if(g:py0wwxi Aie€kb€kbex€kb€kb:exe "Cinfo locals!"€kb€kb"j€kb€kbendif;wkjjddkkkkkA;E€kb€kb;€kb:exe "Cnext";wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyGkkkkkpjjjjjjjkkkkjdddddddddd;w,gd
 "-	CHAR	0
-	"
+	:tabnew ~/.vimrc<CR>
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -1667,294 +211,342 @@ $"
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  14  53  ~/.todo
-'1  1  11  ~/code/cpp/boost_c11/options/user-config.jam
-'2  9  47  ~/.bash_aliases
-'3  482  0  ~/code/python/spider_bro/sb_utils.py
-'4  1  0  ~/code/python/spider_bro/(clewn)_console
-'5  1  0  ~/code/python/spider_bro/spiderBro.py
-'6  281  34  ~/.vimrc
-'7  32  0  ~/code/python/spider_bro/spiderBro.py
-'8  11  0  ~/code/python/spider_bro/spiderBro.py
-'9  34  0  ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/range_based.cpp
+'0  1  0  ~/code/python/scoping/scoping.py
+'1  32  8  ~/code/python/scoping/scoping.py
+'2  28  0  ~/code/python/spider_bro/spiderBro.py
+'3  17  32  ~/code/python/vim-pudb/plugin/pudb.vim
+'4  6  0  ~/code/python/wtf.py
+'5  1  0  ~/code/python/cmakeSkeleton/cmakeskeleton.py
+'6  2  6  ~/code/python/cmakeSkeleton/.git/COMMIT_EDITMSG
+'7  81  3  ~/code/python/build_system_testing/build_creator.py
+'8  7  0  ~/code/python/tesdbg.py
+'9  20  0  ~/code/python/vim-pudb/plugin/[Vundle] Installer
 
 # Jumplist (newest first):
--'  14  53  ~/.todo
--'  1  0  ~/.todo
--'  1  11  ~/code/cpp/boost_c11/options/user-config.jam
--'  9  47  ~/.bash_aliases
--'  1  0  ~/.bash_aliases
--'  482  0  ~/code/python/spider_bro/sb_utils.py
--'  1  35  ~/code/python/spider_bro/(clewn)_console
--'  1  0  ~/code/python/spider_bro/spiderBro.py
--'  36  0  ~/code/python/spider_bro/__Tagbar__
--'  53  0  ~/code/python/spider_bro/__Tagbar__
--'  281  34  ~/.vimrc
--'  1  0  ~/.vimrc
--'  28  0  ~/code/python/spider_bro/spiderBro.py
--'  32  0  ~/code/python/spider_bro/spiderBro.py
--'  11  0  ~/code/python/spider_bro/spiderBro.py
--'  34  0  ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/range_based.cpp
--'  19  12  ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/range_based.cpp
--'  1  0  ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/range_based.cpp
--'  701  0  ~/.gdbinit
--'  1  0  ~/.gdbinit
--'  438  0  /usr/include/c++/v1/vector
--'  3150  0  /usr/include/c++/v1/type_traits
--'  827  0  /usr/include/c++/v1/vector
--'  826  0  /usr/include/c++/v1/vector
--'  4  0  ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/range_based.cpp
--'  5  0  ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/__Tagbar__
--'  7  0  ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/__Tagbar__
--'  593  15  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  319  35  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  285  23  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  284  6  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  275  20  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  237  20  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  97  61  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  1081  0  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  388  8  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  538  17  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  1  0  /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
--'  1  0  /usr/share/vim/vimfiles/plugin/pyclewn.vim
--'  1  0  /usr/share/vim/__Tagbar__
--'  7  0  /usr/share/vim/__Tagbar__
--'  17  0  /usr/share/vim/vimfiles/plugin/pyclewn.vim
--'  37  0  ~/.vim/plugin/debugger.vim
--'  34  49  ~/.vim/plugin/debugger.vim
--'  35  14  ~/.vim/plugin/debugger.vim
--'  1  0  ~/.vim/plugin/debugger.vim
--'  25  0  ~/.vimrc
--'  1  0  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  17  0  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  21  4  ~/code/python/XBMC-Utility-scripts/__Tagbar__
--'  31  0  ~/code/python/XBMC-Utility-scripts/__Tagbar__
--'  1  55  ~/code/python/XBMC-Utility-scripts/(clewn)_console
--'  41  4  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  3  0  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  47  8  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  63  0  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  26  0  ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
--'  186  4  /usr/share/vim/vimfiles/autoload/pyclewn.vim
--'  113  24  /usr/share/vim/vimfiles/autoload/pyclewn.vim
--'  112  25  /usr/share/vim/vimfiles/autoload/pyclewn.vim
--'  98  8  /usr/share/vim/vimfiles/autoload/pyclewn.vim
--'  8  0  ~/gom.cpp
--'  4  4  ~/__Tagbar__
--'  5  0  ~/__Tagbar__
--'  1  0  ~/gom.cpp
--'  24  0  ~/code/cpp/misc_usefull_tricks/gom_primitive_sizes.cpp
--'  1  0  ~/code/cpp/misc_usefull_tricks/gom_primitive_sizes.cpp
--'  149  0  ~/code/cpp/gdb_test/main.cc
--'  1  0  ~/code/cpp/gdb_test/(clewn)_dbgvar
--'  1  55  ~/code/cpp/gdb_test/(clewn)_console
--'  1  0  ~/code/cpp/gdb_test/main.cc
--'  91  0  ~/code/cpp/gdb_test/main.cc
--'  29  0  ~/code/cpp/gdb_test/main.cc
--'  41  0  ~/code/cpp/gdb_test/main.cc
--'  5  0  ~/bin/backup_tv.py
--'  1  0  ~/bin/backup_tv.py
--'  29  0  ~/.vimrc
--'  20  0  ~/.vimrc
--'  140  0  ~/.vimrc
--'  14  0  ~/__Tagbar__
--'  15  0  ~/__Tagbar__
--'  17  0  ~/[Vundle] Installer
--'  105  18  ~/.bashrc
--'  1  0  ~/.bashrc
--'  63  32  ~/code/python/build_system_testing/build_creator.py
--'  1  0  ~/code/python/build_system_testing/build_creator.py
--'  123  72  ~/code/python/build_system_testing/build_creator.py
--'  56  38  ~/code/python/build_system_testing/build_creator.py
--'  117  24  ~/code/python/build_system_testing/build_creator.py
--'  116  7  ~/code/python/build_system_testing/build_creator.py
--'  121  17  ~/code/python/build_system_testing/build_creator.py
--'  120  8  ~/code/python/build_system_testing/build_creator.py
--'  112  0  ~/code/python/build_system_testing/build_creator.py
--'  21  0  ~/gom.cpp
--'  11  0  ~/gom.cpp
--'  141  0  ~/.vim/snippets/cpp.snippets
--'  1  0  ~/.vim/snippets/__Tagbar__
--'  1  0  ~/.vim/snippets/cpp.snippets
--'  19  0  ~/code/python/spider_bro/__Tagbar__
+-'  1  0  ~/code/python/scoping/scoping.py
+-'  1  0  ~/code/python/scoping/__Tagbar__
+-'  8  0  ~/code/python/scoping/__Tagbar__
+-'  31  22  ~/code/python/scoping/scoping.py
+-'  29  9  ~/code/python/scoping/scoping.py
+-'  32  22  ~/code/python/scoping/scoping.py
 
 # History of marks within files (newest to oldest):
 
-> ~/.todo
-	"	14	53
-	^	14	54
-	.	14	53
-	+	1	13
-	+	1	3
-	+	1	5
-	+	1	5
-	+	1	12
-	+	7	19
+> ~/code/python/scoping/scoping.py
+	"	1	0
+	.	31	0
 	+	1	0
-	+	1	0
-	+	8	28
-	+	1	6
-	+	7	8
-	+	1	7
-	+	7	7
-	+	8	7
-	+	1	4
-	+	1	41
-	+	1	44
-	+	7	0
-	+	12	36
-	+	15	43
-	+	1	12
-	+	1	0
-	+	8	24
-	+	1	5
-	+	1	9
-	+	1	0
+	+	32	16
+	+	32	0
+	+	32	4
 	+	2	0
-	+	3	0
-	+	1	40
-	+	1	32
-	+	1	28
-	+	1	33
-	+	2	26
+	+	32	11
+	+	32	3
+	+	32	0
+	+	32	4
+	+	32	12
+	+	32	8
+	+	32	0
+	+	2	39
+	+	2	75
+	+	2	84
+	+	2	84
+	+	2	29
+	+	2	50
+	+	2	46
+	+	2	69
+	+	2	66
+	+	2	54
+	+	2	77
+	+	2	78
+	+	2	76
+	+	2	86
+	+	2	77
+	+	2	72
+	+	2	103
+	+	2	121
+	+	2	0
+	+	2	3
+	+	2	45
+	+	2	0
+	+	2	14
+	+	2	9
+	+	2	25
+	+	2	11
+	+	2	10
+	+	2	23
+	+	32	0
+	+	32	0
+	+	32	0
+	+	31	0
+
+> ~/code/python/scoping/__Tagbar__
+	"	1	0
+	.	8	0
 	+	8	0
-	+	15	0
-	+	12	10
-	+	1	45
-	+	15	0
-	+	13	0
-	+	7	4
-	+	4	14
-	+	7	3
-	+	8	7
-	+	5	46
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+
+> ~/.vim/bundle/vimux/doc/vimux.txt
+	"	201	0
+
+> ~/.vimrc
+	"	206	1
+	^	206	2
+	.	206	1
+	+	297	89
+	+	297	47
+	+	297	0
+	+	20	13
+	+	295	0
+	+	293	0
+	+	295	46
+	+	295	0
+	+	297	0
+	+	293	79
+	+	293	74
+	+	294	119
+	+	293	35
+	+	294	71
+	+	294	0
+	+	294	74
+	+	295	0
+	+	294	46
+	+	293	46
+	+	295	74
+	+	292	25
+	+	296	0
+	+	296	89
+	+	20	20
+	+	199	17
+	+	202	17
+	+	201	17
+	+	200	17
+	+	201	0
+	+	202	40
+	+	203	0
+	+	205	0
+	+	204	14
+	+	205	17
+	+	209	0
+	+	205	18
+	+	207	0
+	+	208	0
+	+	207	0
+	+	208	0
+	+	205	0
+	+	205	75
+	+	206	63
+	+	205	1
+	+	206	1
+
+> ~/code/python/scoping/__Gundo_Preview__
+	"	1	0
+	.	1	0
 	+	1	0
+
+> ~/code/python/scoping/__Gundo__
+	"	12	1
+	.	1	0
+	+	1	0
+
+> ~/code/python/scoping/.proj
+	"	1	0
+
+> ~/code/sources/dfhack/GoToFile
+	"	1	0
+	.	75	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	126	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	75	0
+
+> ~/code/sources/dfhack/scripts/putontable.lua
+	"	1	0
+
+> ~/code/sources/dfhack/plugins/showmood.cpp
+	"	1	2
+	.	3	0
 	+	3	0
-	+	5	96
-	+	12	72
-	+	6	53
-	+	7	3
-	+	8	28
-	+	10	26
-	+	9	18
-	+	11	29
-	+	13	49
-	+	15	0
-	+	12	0
-	+	14	53
 
-> ~/code/cpp/boost_c11/options/user-config.jam
-	"	1	11
-	^	1	12
-	.	1	11
-	+	1	11
+> ~/code/sources/dfhack/__Tagbar__
+	"	4	4
+	.	7	0
+	+	7	0
 
-> ~/.bash_aliases
-	"	9	47
-	^	9	48
-	.	9	47
-	+	9	47
+> ~/python_notes.txt
+	"	18	22
+	^	18	23
+	.	18	22
+	+	2	85
+	+	3	185
+	+	4	252
+	+	5	134
+	+	6	276
+	+	7	406
+	+	3	0
+	+	2	0
+	+	4	4
+	+	6	151
+	+	4	0
+	+	7	483
+	+	9	13
+	+	11	13
+	+	13	21
+	+	15	74
+	+	16	65
+	+	17	67
+	+	18	22
 
 > ~/code/python/spider_bro/spiderBro.py
-	"	17	0
+	"	28	0
+	.	41	0
+	+	41	23
+	+	41	24
+	+	41	18
+	+	41	33
+	+	41	0
+	+	41	0
 
 > ~/code/python/spider_bro/__Tagbar__
 	"	1	0
 	.	19	0
-	+	1072	0
-	+	1072	0
-	+	1072	0
-	+	1072	0
-	+	1072	0
-	+	1072	0
-	+	1057	0
-	+	1057	0
-	+	1057	0
-	+	972	0
-	+	972	0
-	+	972	0
-	+	972	0
-	+	888	0
-	+	888	0
-	+	888	0
-	+	888	0
-	+	888	0
-	+	802	0
-	+	802	0
-	+	802	0
-	+	752	0
-	+	702	0
-	+	654	0
-	+	654	0
-	+	654	0
-	+	603	0
-	+	571	0
-	+	484	0
-	+	484	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	448	0
-	+	397	0
-	+	346	0
-	+	296	0
-	+	296	0
-	+	243	0
-	+	243	0
-	+	243	0
-	+	243	0
-	+	243	0
-	+	243	0
-	+	243	0
-	+	243	0
-	+	243	0
-	+	234	0
-	+	234	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	208	0
-	+	157	0
-	+	157	0
-	+	106	0
-	+	89	0
-	+	72	0
-	+	59	0
-	+	59	0
-	+	59	0
-	+	59	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1018	0
+	+	1005	0
+	+	1005	0
+	+	1005	0
+	+	1005	0
+	+	1005	0
+	+	988	0
+	+	900	0
+	+	885	0
+	+	885	0
+	+	885	0
+	+	805	0
+	+	805	0
+	+	805	0
+	+	805	0
+	+	805	0
+	+	805	0
+	+	805	0
+	+	805	0
+	+	805	0
+	+	731	0
+	+	643	0
+	+	555	0
+	+	467	0
+	+	379	0
+	+	293	0
+	+	293	0
+	+	293	0
+	+	277	0
+	+	277	0
+	+	261	0
+	+	261	0
+	+	245	0
+	+	245	0
+	+	228	0
+	+	211	0
+	+	194	0
+	+	177	0
+	+	160	0
+	+	145	0
+	+	145	0
+	+	145	0
+	+	135	0
+	+	135	0
+	+	135	0
+	+	135	0
+	+	135	0
+	+	135	0
+	+	135	0
+	+	126	0
+	+	126	0
+	+	111	0
+	+	111	0
+	+	95	0
+	+	95	0
+	+	82	0
+	+	82	0
+	+	82	0
+	+	82	0
+	+	82	0
+	+	65	0
 	+	53	0
 	+	53	0
 	+	53	0
@@ -1963,166 +555,335 @@ $"
 	+	36	0
 	+	19	0
 
-> ~/code/python/spider_bro/(clewn)_console
-	"	995	5
-	.	992	0
-	+	992	0
+> ~/code/python/steamShortcutWriter/.git/config
+	"	1	0
 
-> /usr/lib/python2.7/dist-packages/BeautifulSoup.py
-	"	567	0
+> ~/code/python/steamShortcutWriter/.git/COMMIT_EDITMSG
+	"	1	45
+	^	1	46
+	.	1	45
+	+	1	45
 
-> ~/code/python/spider_bro/sb_utils.py
-	"	482	0
+> ~/code/python/steamShortcutWriter/README.md
+	"	6	38
+	^	6	39
+	.	6	38
+	+	4	123
+	+	6	182
+	+	6	38
 
-> ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/range_based.cpp
-	"	1	1
-	^	1	2
+> ~/code/python/steamSEdit/config/bintest.py
+	"	1	0
+
+> ~/code/python/steamSEdit/config/__Tagbar__
+	"	1	0
+	.	22	0
+	+	62	0
+	+	42	0
+	+	22	0
+
+> ~/.vim/bundle/vim-pudb/plugin/pudb.vim
+	"	17	32
+	^	17	33
+	.	17	32
+	+	82	32
+	+	85	23
+	+	87	0
+	+	85	16
+	+	70	11
+	+	75	25
+	+	87	12
+	+	17	32
+
+> ~/code/python/vim-pudb/plugin/pudb.vim
+	"	17	32
+	^	17	33
+	.	17	32
+	+	2	0
+	+	17	32
+
+> ~/code/python/wtf.py
+	"	6	0
+
+> ~/code/python/__Tagbar__
+	"	1	0
+	.	7	0
+	+	86	0
+	+	78	0
+	+	70	0
+	+	62	0
+	+	55	0
+	+	55	0
+	+	48	0
+	+	48	0
+	+	42	0
+	+	25	0
+	+	19	0
+	+	13	0
+	+	7	0
+
+> ~/code/python/cmakeSkeleton/cmakeskeleton.py
+	"	1	0
+
+> ~/code/python/cmakeSkeleton/__Tagbar__
+	"	1	0
+	.	19	0
+	+	19	0
+
+> ~/code/python/cmakeSkeleton/.git/COMMIT_EDITMSG
+	"	2	6
+	^	2	7
+	.	2	6
+	+	2	6
+
+> ~/code/python/build_system_testing/build_creator.py
+	"	81	3
+	^	15	88
+	.	15	87
+	+	15	87
+
+> ~/code/python/build_system_testing/__Tagbar__
+	"	18	4
+	.	19	0
+	+	52	0
+	+	35	0
+	+	19	0
+	+	19	0
+
+> ~/code/python/tesdbg.py
+	"	7	0
+	^	8	4
+	.	5	0
+	+	1	0
+	+	4	12
+	+	6	12
+	+	7	12
+	+	8	7
+	+	4	12
+	+	5	0
+
+> ~/code/python/vim-pudb/plugin/[Vundle] clean
+	"	2	0
+	.	1	0
+	+	2	0
+	+	1	0
+
+> ~/code/python/vim-pudb/plugin/[Vundle] Installer
+	"	20	0
 	.	1	0
 	+	1	0
-	+	31	0
-	+	19	0
-	+	2	13
-	+	3	17
-	+	4	16
-	+	19	0
+
+> ~/code/python/vim-pudb/.git/COMMIT_EDITMSG
+	"	2	59
+	^	2	60
+	.	2	60
+	+	8	0
+	+	2	60
+
+> /usr/local/lib/python2.7/dist-packages/pudb-2013.5.1-py2.7.egg/pudb/settings.py
+	"	462	40
+
+> /usr/local/lib/python2.7/dist-packages/pudb-2013.5.1-py2.7.egg/pudb/__Tagbar__
+	"	41	1
+	.	55	0
+	+	55	0
+
+> ~/.vim/bundle/vim-pudb/test.py
+	"	2	0
+	^	6	17
+	.	6	16
 	+	1	0
+	+	2	60
+	+	3	0
+	+	4	0
+	+	8	0
+	+	4	28
+	+	6	16
 
-> ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/__Tagbar__
-	"	1	0
-	.	5	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	5	0
-	+	5	0
+> ~/.vim/bundle/vim-pudb/__Tagbar__
+	"	3	0
+	.	4	0
+	+	12	0
+	+	10	0
+	+	8	0
+	+	6	0
+	+	4	0
 
-> ~/code/cpp/cpp11_features_and_testing/range_based_for_loop/.proj
-	"	1	0
+> ~/.config/pudb/pudb.cfg
+	"	6	13
+	^	6	14
+	.	6	13
+	+	7	18
+	+	10	18
+	+	6	13
+
+> ~/code/python/XBMC-Utility-scripts/xbmc_list_episodes.py
+	"	27	0
+
+> ~/code/python/XBMC-Utility-scripts/__Tagbar__
+	"	9	4
+	.	15	0
+	+	68	0
+	+	68	0
+	+	68	0
+	+	54	0
+	+	54	0
+	+	54	0
+	+	54	0
+	+	54	0
+	+	41	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	25	0
+	+	25	0
+	+	25	0
+	+	25	0
+	+	15	0
+
+> ~/code/python/spider_bro/(clewn)_console
+	"	6	5
+	.	4	0
+	+	4	0
 
 > ~/code/python/spider_bro/(clewn)_dbgvar
 	"	1	0
 
-> ~/.vimrc
-	"	288	0
-	^	206	33
-	.	288	0
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	14
-	+	322	37
-	+	322	23
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	38
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	17
-	+	322	0
-	+	322	0
-	+	322	0
-	+	322	36
-	+	322	0
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	4
-	+	322	67
-	+	322	0
-	+	116	0
-	+	299	68
-	+	32	0
-	+	307	87
-	+	28	27
-	+	29	24
-	+	139	0
-	+	138	0
-	+	137	0
-	+	139	0
-	+	140	0
-	+	274	0
-	+	275	0
-	+	276	0
-	+	277	0
-	+	278	0
-	+	279	0
-	+	280	0
-	+	281	0
-	+	282	0
-	+	283	0
-	+	284	0
-	+	285	0
-	+	286	0
-	+	287	0
-	+	288	0
-	+	287	69
-	+	288	69
-	+	285	69
-	+	274	0
-	+	276	72
-	+	279	75
-	+	281	76
-	+	279	0
-	+	282	0
-	+	283	0
-	+	282	75
-	+	283	75
-	+	276	69
-	+	203	35
-	+	205	41
-	+	207	0
-	+	206	0
-	+	207	0
-	+	206	32
-	+	194	0
-	+	197	0
-	+	276	0
-	+	279	0
-	+	281	0
-	+	274	0
-	+	275	0
-	+	276	0
-	+	277	0
-	+	278	0
-	+	279	0
-	+	280	0
-	+	281	0
-	+	282	0
-	+	283	0
-	+	284	0
-	+	285	0
-	+	286	0
-	+	287	0
-	+	288	0
-	g	324	7
+> ~/code/python/spider_bro/[Vundle] Installer
+	"	20	0
+	.	1	0
+	+	1	0
 
-> fugitive:///home/gom/.git//0/.vimrc
-	"	281	34
+> ~/.config/pudb/themes/gomtheme.py
+	"	5	64
+	^	5	65
+	.	5	64
+	+	1	288
+	+	1	299
+	+	1	307
+	+	1	313
+	+	1	287
+	+	1	16
+	+	1	0
+	+	1	0
+	+	1	34
+	+	1	30
+	+	1	31
+	+	1	33
+	+	1	21
+	+	1	0
+	+	1	0
+	+	1	21
+	+	1	21
+	+	83	0
+	+	1	7
+	+	50	34
+	+	53	0
+	+	54	0
+	+	61	35
+	+	59	29
+	+	55	39
+	+	17	0
+	+	8	0
+	+	32	29
+	+	36	54
+	+	36	63
+	+	38	78
+	+	39	86
+	+	36	0
+	+	32	0
+	+	34	0
+	+	43	32
+	+	35	48
+	+	63	0
+	+	33	0
+	+	36	59
+	+	38	74
+	+	36	56
+	+	38	56
+	+	49	38
+	+	56	36
+	+	47	55
+	+	41	12
+	+	42	11
+	+	37	28
+	+	39	0
+	+	59	33
+	+	36	40
+	+	35	40
+	+	37	0
+	+	38	44
+	+	1	16
+	+	7	21
+	+	9	0
+	+	9	0
+	+	17	0
+	+	13	12
+	+	14	0
+	+	32	23
+	+	42	19
+	+	43	28
+	+	59	30
+	+	17	23
+	+	17	0
+	+	16	37
+	+	48	12
+	+	47	11
+	+	45	35
+	+	48	0
+	+	47	58
+	+	1	16
+	+	2	4
+	+	3	4
+	+	6	11
+	+	3	22
+	+	4	53
+	+	46	42
+	+	24	54
+	+	25	0
+	+	26	0
+	+	18	36
+	+	22	44
+	+	20	35
+	+	28	62
+	+	29	0
+	+	30	52
+	+	26	44
+	+	73	0
+	+	36	54
+	+	38	45
+	+	37	62
+	+	11	57
+	+	12	56
+	+	11	0
+	+	5	80
+	+	5	64
+
+> ~/.config/pudb/themes/__Tagbar__
+	"	1	0
+	.	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+
+> ~/code/python/XBMC-Utility-scripts/spiderBro.py
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/code/python/spider_bro/-vimpdb-
+	"	1	0
+	.	1	0
+	+	1	0
 
 > ~/code/python/spider_bro/STDOUT_STDERR
 	"	1	0
 	.	2	0
+	+	5	0
+	+	4	0
+	+	3	0
 	+	2	0
 
 > ~/code/python/spider_bro/SCOPE
@@ -2130,13 +891,47 @@ $"
 	.	2	0
 	+	1	0
 	+	1	0
+	+	5	0
+	+	1	0
+	+	1	0
+	+	4	0
+	+	1	0
+	+	1	0
+	+	3	0
 	+	1	0
 	+	1	0
 	+	2	0
 
 > ~/code/python/spider_bro/LOG
-	"	102	0
-	.	102	0
+	"	66	0
+	.	66	0
+	+	197	0
+	+	198	0
+	+	224	0
+	+	237	0
+	+	241	0
+	+	254	0
+	+	258	0
+	+	260	0
+	+	261	0
+	+	132	0
+	+	133	0
+	+	159	0
+	+	172	0
+	+	176	0
+	+	189	0
+	+	193	0
+	+	195	0
+	+	196	0
+	+	67	0
+	+	68	0
+	+	94	0
+	+	107	0
+	+	111	0
+	+	124	0
+	+	128	0
+	+	130	0
+	+	131	0
 	+	2	0
 	+	3	0
 	+	29	0
@@ -2144,15 +939,21 @@ $"
 	+	46	0
 	+	59	0
 	+	63	0
-	+	67	0
-	+	80	0
-	+	86	0
-	+	99	0
-	+	102	0
+	+	65	0
+	+	66	0
 
 > ~/code/python/spider_bro/STACK
 	"	5	0
 	.	2	0
+	+	1	0
+	+	1	0
+	+	14	0
+	+	1	0
+	+	1	0
+	+	10	0
+	+	1	0
+	+	1	0
+	+	6	0
 	+	1	0
 	+	1	0
 	+	2	0
@@ -2160,298 +961,36 @@ $"
 > ~/code/python/spider_bro/WATCH
 	"	1	0
 	.	2	0
+	+	5	0
+	+	4	0
+	+	3	0
 	+	2	0
 
 > ~/code/python/spider_bro/RESULTS
 	"	1	0
 	.	2	0
-	+	2	0
-
-> ~/.gdbinit
-	"	701	0
-	.	701	0
-	+	697	0
-	+	698	0
-	+	699	0
-	+	701	0
-
-> /usr/include/c++/v1/type_traits
-	"	3150	0
-
-> /usr/include/c++/v1/vector
-	"	438	0
-
-> /media/nasGom/downloads/pyclewn-1.10.py2/clewn/debugger.py
-	"	593	15
-
-> /media/nasGom/downloads/pyclewn-1.10.py2/__Tagbar__
-	"	45	3
-	.	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-	+	69	0
-
-> /media/nasGom/downloads/pyclewn-1.10.py2/GoToFile
-	"	1	0
-	.	83	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	205	0
-	+	165	0
-	+	83	0
-
-> /media/nasGom/downloads/pyclewn-1.10.py2/clewn/nt.py
-	"	84	8
-
-> /media/nasGom/downloads/pyclewn-1.10.py2/COPYING
-	"	1	20
-
-> ~/.vim/colors/morhedel.vim
-	"	1	15
-	.	14	0
-	+	14	0
-
-> /usr/share/vim/vimfiles/plugin/pyclewn.vim
-	"	1	0
-
-> /usr/share/vim/vimfiles/autoload/pyclewn.vim
-	"	85	8
-
-> /usr/share/vim/__Tagbar__
-	"	1	0
-	.	7	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	7	0
-	+	7	0
-
-> ~/.vim/plugin/debugger.vim
-	"	37	0
-	^	35	1
-	.	35	0
-	+	34	14
-	+	35	0
-	+	34	0
-	+	35	0
-
-> ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
-	"	44	0
-	^	47	10
-	.	28	4
-	+	47	0
-	+	3	0
-	+	41	0
-	+	23	4
-	+	28	4
-
-> ~/code/python/XBMC-Utility-scripts/__Tagbar__
-	"	1	0
-	.	20	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	193	0
-	+	175	0
-	+	169	0
-	+	169	0
-	+	169	0
-	+	169	0
-	+	169	0
-	+	169	0
-	+	169	0
-	+	169	0
-	+	150	0
-	+	150	0
-	+	150	0
-	+	140	0
-	+	122	0
-	+	104	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	95	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	81	0
-	+	66	0
-	+	66	0
-	+	66	0
-	+	56	0
-	+	38	0
-	+	20	0
-
-> ~/code/python/XBMC-Utility-scripts/STDOUT_STDERR
-	"	19	0
-	.	19	0
-	+	25	0
-	+	24	0
-	+	23	0
-	+	22	0
-	+	21	0
-	+	20	0
-	+	2	0
-	+	3	0
-	+	4	0
 	+	5	0
-	+	6	0
-	+	7	0
-	+	8	0
-	+	9	0
-	+	10	0
-	+	11	0
-	+	12	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	16	0
-	+	17	0
-	+	18	0
-	+	19	0
+	+	4	0
+	+	3	0
+	+	2	0
 
-> ~/code/python/XBMC-Utility-scripts/SCOPE
-	"	11	0
-	.	11	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	16	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	11	0
+> ~/code/python/STDOUT_STDERR
+	"	1	0
+	.	2	0
+	+	2	0
 
-> ~/code/python/XBMC-Utility-scripts/LOG
-	"	1748	0
-	.	1748	0
+> ~/code/python/SCOPE
+	"	3	0
+	.	3	0
 	+	1	0
 	+	1	0
-	+	1753	0
-	+	1810	0
+	+	1	0
+	+	1	0
+	+	3	0
+
+> ~/code/python/LOG
+	"	125	0
+	.	125	0
 	+	2	0
 	+	3	0
 	+	29	0
@@ -2459,868 +998,458 @@ $"
 	+	46	0
 	+	59	0
 	+	63	0
-	+	67	0
-	+	80	0
-	+	86	0
-	+	99	0
-	+	105	0
-	+	118	0
-	+	124	0
-	+	145	0
-	+	151	0
-	+	172	0
-	+	178	0
-	+	199	0
-	+	205	0
-	+	234	0
-	+	240	0
-	+	277	0
-	+	283	0
-	+	320	0
-	+	326	0
-	+	363	0
-	+	369	0
-	+	414	0
-	+	420	0
-	+	465	0
-	+	471	0
-	+	526	0
-	+	532	0
-	+	595	0
-	+	601	0
-	+	672	0
-	+	678	0
-	+	749	0
-	+	755	0
-	+	834	0
-	+	840	0
-	+	917	0
-	+	923	0
-	+	1000	0
-	+	1006	0
-	+	1083	0
-	+	1089	0
-	+	1166	0
-	+	1172	0
-	+	1249	0
-	+	1255	0
-	+	1332	0
-	+	1338	0
-	+	1415	0
-	+	1419	0
-	+	1421	0
-	+	1422	0
-	+	1423	0
-	+	1425	0
-	+	1426	0
-	+	1428	0
-	+	1429	0
-	+	1431	0
-	+	1432	0
-	+	1434	0
-	+	1435	0
-	+	1437	0
-	+	1438	0
-	+	1440	0
-	+	1441	0
-	+	1442	0
-	+	1443	0
-	+	1444	0
-	+	1445	0
-	+	1447	0
-	+	1448	0
-	+	1450	0
-	+	1451	0
-	+	1453	0
-	+	1454	0
-	+	1456	0
-	+	1457	0
-	+	1459	0
-	+	1460	0
-	+	1462	0
-	+	1463	0
-	+	1464	0
-	+	1467	0
-	+	1555	0
-	+	1559	0
-	+	1562	0
-	+	1650	0
-	+	1656	0
-	+	1744	0
-	+	1748	0
+	+	65	0
+	+	69	0
+	+	92	0
+	+	98	0
+	+	121	0
+	+	125	0
 
-> ~/code/python/XBMC-Utility-scripts/STACK
+> ~/code/python/STACK
 	"	5	0
 	.	2	0
 	+	1	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	6	0
-	+	1	0
-	+	1	0
-	+	1	0
 	+	2	0
 
-> ~/code/python/XBMC-Utility-scripts/WATCH
+> ~/code/python/WATCH
 	"	1	0
 	.	2	0
-	+	8	0
-	+	7	0
-	+	6	0
-	+	5	0
-	+	4	0
-	+	3	0
 	+	2	0
 
-> ~/code/python/XBMC-Utility-scripts/RESULTS
+> ~/code/python/RESULTS
 	"	1	0
 	.	2	0
-	+	8	0
-	+	7	0
-	+	6	0
-	+	5	0
-	+	4	0
-	+	3	0
 	+	2	0
 
-> ~/code/python/XBMC-Utility-scripts/(clewn)_console
-	"	52	5
-	.	50	0
-	+	50	0
-
-> /usr/lib/python2.7/posixpath.py
-	"	81	4
-
-> ~/code/python/XBMC-Utility-scripts/.proj
+> ~/code/python/-vimpdb-
 	"	1	0
-
-> ~/code/python/XBMC-Utility-scripts/(clewn)_dbgvar
-	"	1	0
-
-> /usr/share/vim/vimfiles/GoToFile
-	"	1	0
-	.	5	0
-	+	7	0
+	.	1	0
 	+	1	0
 	+	1	0
+
+> ~/.vimpdbrc
+	"	4	13
+	^	4	14
+	.	4	14
+	+	1	23
+	+	2	24
+	+	3	18
+	+	4	10
+	+	3	20
+	+	4	14
+
+> ~/tesdbg.py
+	"	1	0
+	.	1	0
 	+	5	0
-
-> /usr/share/vim/vimfiles/__Tagbar__
-	"	6	4
-	.	12	0
-	+	12	0
-	+	12	0
-
-> /usr/share/vim/vimfiles/syntax/dbgvar.vim
-	"	1	0
-
-> ~/code/python/build_system_testing/build_creator.py
-	"	23	0
-	^	63	33
-	.	63	32
-	+	126	4
-	+	126	0
-	+	113	32
-	+	126	0
-	+	114	18
-	+	118	16
-	+	126	14
-	+	120	0
-	+	126	0
-	+	120	0
-	+	121	0
-	+	120	77
-	+	124	87
-	+	123	15
-	+	125	24
-	+	113	56
-	+	122	0
-	+	115	0
-	+	118	8
-	+	115	8
-	+	116	0
-	+	117	0
-	+	117	0
-	+	115	15
-	+	115	17
-	+	115	16
-	+	115	42
-	+	115	17
-	+	115	30
-	+	115	0
-	+	115	43
-	+	115	42
-	+	115	49
-	+	116	0
-	+	115	79
-	+	116	0
-	+	119	17
-	+	119	77
-	+	119	67
-	+	119	17
-	+	119	67
-	+	119	36
-	+	119	74
-	+	120	0
-	+	120	0
-	+	119	99
-	+	123	17
-	+	123	54
-	+	123	17
-	+	123	44
-	+	124	0
-	+	123	72
-	+	63	32
-
-> ~/code/python/build_system_testing/__Tagbar__
-	"	15	4
-	.	19	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	36	0
-	+	19	0
-
-> ~/code/python/build_system_testing/(clewn)_console
-	"	19	5
-	.	14	0
-	+	14	0
-
-> ~/gom.cpp
-	"	8	0
-	^	8	15
-	.	8	14
-	+	156	0
-	+	146	0
-	+	130	0
-	+	137	16
-	+	137	4
-	+	137	0
-	+	137	18
-	+	138	0
-	+	140	0
-	+	139	0
-	+	120	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	25
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	25
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	10
-	+	111	7
-	+	111	7
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	111	0
-	+	55	0
-	+	61	0
-	+	28	0
-	+	77	0
-	+	68	0
-	+	69	0
-	+	74	0
-	+	74	0
-	+	75	5
-	+	78	0
-	+	78	0
-	+	78	16
-	+	78	23
-	+	80	0
-	+	87	0
-	+	80	22
-	+	82	0
-	+	29	17
-	+	30	15
-	+	78	22
-	+	82	0
-	+	83	0
-	+	82	14
-	+	84	18
-	+	87	0
-	+	88	0
-	+	87	20
-	+	28	0
-	+	88	0
-	+	87	11
-	+	92	0
-	+	93	0
-	+	92	12
-	+	108	0
-	+	97	0
-	+	97	0
-	+	41	0
-	+	42	0
-	+	41	9
-	+	28	0
-	+	97	0
-	+	98	0
-	+	97	12
-	+	99	18
-	+	102	0
-	+	103	0
-	+	106	15
-	+	108	0
-	+	28	0
-	+	11	0
-	+	18	0
-	+	19	0
-	+	18	23
-	+	12	16
-	+	19	0
-	+	20	0
-	+	19	23
-	+	21	0
-	+	21	24
 	+	1	0
-	+	8	14
 
 > ~/__Tagbar__
-	"	4	4
-	.	5	0
-	+	54	0
-	+	54	0
-	+	45	0
-	+	45	0
-	+	36	0
-	+	36	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	31	0
-	+	27	0
-	+	27	0
-	+	27	0
-	+	27	0
-	+	27	0
-	+	27	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	5	0
+	"	1	0
 
-> ~/code/cpp/misc_usefull_tricks/gom_primitive_sizes.cpp
-	"	24	0
-
-> ~/code/cpp/misc_usefull_tricks/__Tagbar__
-	"	4	4
-	.	5	0
-	+	7	0
-	+	5	0
-	+	5	0
-	+	5	0
-
-> ~/code/cpp/misc_usefull_tricks/.proj
+> ~/wtf.py
 	"	1	0
 	.	1	0
-	+	1	0
-
-> ~/code/cpp/gdb_test/main.cc
-	"	149	0
-	.	33	0
-	+	137	10
-	+	148	0
-	+	78	0
-	+	33	0
-
-> ~/code/cpp/gdb_test/__Tagbar__
-	"	9	0
-	.	12	0
-	+	166	0
-	+	166	0
-	+	135	0
-	+	104	0
-	+	73	0
-	+	49	0
-	+	49	0
-	+	49	0
-	+	49	0
-	+	49	0
-	+	49	0
-	+	49	0
-	+	37	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-
-> ~/code/cpp/gdb_test/(clewn)_console
-	"	34	5
-	.	32	0
-	+	32	0
-
-> ~/code/cpp/gdb_test/(clewn)_dbgvar
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/code/cpp/gdb_test/.proj
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/bin/backup_tv.py
-	"	5	0
-
-> ~/bin/__Tagbar__
-	"	5	1
-	.	24	0
-	+	24	0
-
-> ~/[Vundle] Installer
-	"	17	0
-	.	1	0
-	+	98	0
-	+	86	0
-	+	74	0
-	+	62	0
-	+	47	0
-	+	32	0
-	+	17	0
 	+	1	0
 
 > ~/.bashrc
-	"	105	18
-	^	105	19
-	.	106	0
-	+	107	0
-	+	110	0
-	+	107	0
-	+	60	0
-	+	59	22
-	+	112	0
-	+	111	27
-	+	101	54
-	+	102	36
-	+	103	0
-	+	105	19
-	+	103	31
-	+	104	16
-	+	105	18
-	+	106	0
+	"	96	0
+	.	96	0
+	+	96	0
 
-> ~/code/python/build_system_testing/GoToFile
-	"	1	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	12	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/python/build_system_testing/projectskeleton/lib1/lib1.h
-	"	1	0
-
-> ~/code/python/build_system_testing/projectskeleton/lib1/lib1.cpp
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/code/python/build_system_testing/projectskeleton/lib1/CMakeLists.txt
-	"	3	0
-
-> ~/.vim/snippets/cpp.snippets
-	"	141	0
-	^	141	1
-	.	131	0
+> /media/nasGom/downloads/dwarf_fortress_MW.txt
+	"	39	113
+	^	39	114
+	.	39	113
+	+	37	14
+	+	38	0
+	+	41	16
+	+	43	13
+	+	44	13
+	+	53	21
+	+	54	20
+	+	90	28
+	+	43	18
+	+	44	16
+	+	90	0
+	+	42	0
+	+	44	21
+	+	45	17
+	+	44	0
+	+	46	17
+	+	47	22
+	+	48	5
+	+	47	25
+	+	48	32
+	+	49	31
+	+	48	49
+	+	50	39
+	+	51	14
+	+	52	24
+	+	30	2
+	+	31	2
+	+	24	0
 	+	3	0
+	+	5	0
 	+	6	0
-	+	21	0
-	+	126	10
-	+	127	33
-	+	128	2
-	+	130	1
-	+	129	5
-	+	125	0
-	+	131	0
-
-> ~/.vim/snippets/__Tagbar__
-	"	1	0
-
-> ~/MONEY.txt
-	"	3	30
-	^	3	31
-	.	3	30
-	+	1	11
-	+	3	30
-
-> ~/code/cpp/boost_c11/regex1/regex2.cpp
-	"	8	18
-	^	17	1
-	.	17	0
-	+	1	26
-	+	17	0
-
-> ~/code/cpp/boost_c11/regex1/__Tagbar__
-	"	4	4
-	.	5	0
-	+	6	0
-	+	5	0
-	+	5	0
-
-> ~/code/cpp/boost_c11/lambda_hw/foreach.cpp
-	"	11	0
-	^	15	1
-	.	15	0
-	+	1	17
-	+	15	0
-
-> ~/code/cpp/boost_c11/lambda_hw/__Tagbar__
-	"	1	0
-	.	5	0
-	+	14	0
-	+	11	0
-	+	8	0
-	+	5	0
-
-> ~/code/cpp/boost_c11/lambda_hw/(clewn)_console
-	"	235	5
-	.	233	0
-	+	233	0
-
-> ~/code/cpp/boost_c11/lambda_hw/(clewn)_dbgvar
-	"	1	0
-
-> ~/code/cpp/boost_c11/lambda_hw/lambdahw.cpp
-	"	1	0
-	^	13	1
-	.	13	0
-	+	1	34
-	+	13	0
-
-> ~/code/cpp/boost_c11/options/options.cpp
-	"	1	0
-	^	65	10
-	.	1	0
-	+	1	1
-	+	65	0
-	+	1	0
-
-> ~/code/cpp/boost_c11/options/__Tagbar__
-	"	10	4
-	.	11	0
-	+	11	0
-	+	11	0
-	+	11	0
-
-> ~/code/cpp/boost_c11/mp3/mp3_pp.cpp
-	"	1	0
-
-> ~/code/cpp/boost_c11/mp3/__Tagbar__
-	"	1	0
-	.	19	0
-	+	110	0
-	+	110	0
-	+	110	0
-	+	19	0
-	+	19	0
-	+	19	0
-	+	19	0
-
-> ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
-	"	660	6
-
-> /usr/include/boost/range/iterator_range_core.hpp
-	"	125	0
-
-> ~/workspace/cpp/build_system_testing/projectskeleton/notes.txt
-	"	1	0
-
-> ~/workspace/cpp/build_system_testing/cmake/w01-cpp/geometry.cpp
-	"	1	0
-
-> ~/workspace/cpp/build_system_testing/cmake/w01-cpp/__Tagbar__
-	"	1	0
-	.	8	0
-	+	26	0
-	+	26	0
-	+	26	0
-	+	26	0
-	+	26	0
-	+	14	0
-	+	14	0
-	+	14	0
-	+	14	0
-	+	14	0
-	+	8	0
-
-> ~/.vim/plugin/cmake.vim
-	"	39	5
-	^	39	6
-	.	39	5
-	+	39	1
-	+	38	2
-	+	40	0
-	+	37	1
-	+	39	5
-
-> ~/workspace/cpp/build_system_testing/cmake/w01-cpp/geometry.h
-	"	4	17
-
-> ~/workspace/cpp/build_system_testing/cmake/build/__Tagbar__
-	"	9	0
-	.	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-
-> ~/temp/vim/bundle/vim-cmake/plugin/cmake.vim
-	"	3	30
-	^	3	31
-	.	3	30
-	+	1	63
-	+	36	30
-	+	42	11
-	+	43	0
-	+	46	23
-	+	45	43
-	+	2	0
-	+	3	30
-
-> /usr/share/vim/vim73/doc/eval.txt
-	"	5869	30
-
-> ~/temp/vimrc
-	"	1	0
-
-> ~/.git/COMMIT_EDITMSG
-	"	2	2
-	^	2	3
-	.	2	2
-	+	1	70
-	+	2	2
-
-> ~/[Vundle] clean
-	"	3	0
-	.	1	0
 	+	7	0
-	+	5	0
-	+	3	0
-	+	1	0
+	+	8	0
+	+	9	0
+	+	10	0
+	+	11	0
+	+	20	152
+	+	54	20
+	+	56	16
+	+	57	89
+	+	58	78
+	+	60	16
+	+	87	7
+	+	62	5
+	+	66	11
+	+	67	10
+	+	68	17
+	+	69	20
+	+	69	0
+	+	61	50
+	+	62	0
+	+	63	50
+	+	65	7
+	+	65	12
+	+	69	0
+	+	70	12
+	+	72	47
+	+	73	34
+	+	70	12
+	+	71	40
+	+	73	35
+	+	75	4
+	+	77	35
+	+	83	0
+	+	82	87
+	+	75	4
+	+	76	21
+	+	77	35
+	+	79	8
+	+	80	39
+	+	82	3
+	+	87	8
+	+	88	8
+	+	80	0
+	+	82	0
+	+	81	119
+	+	81	0
+	+	80	4
+	+	81	170
+	+	84	6
+	+	85	134
+	+	85	19
+	+	21	138
+	+	88	54
+	+	89	44
+	+	39	113
 
-> ~/gom.py
-	"	3	0
-	^	3	0
-	.	5	0
-	+	1	0
-	+	4	1
-	+	4	1
-	+	5	0
+> ~/df/df_linux/data/init/world_gen.txt
+	"	1170	23
+	^	1170	24
+	.	1170	23
+	+	1070	96
+	+	1071	96
+	+	1072	96
+	+	1073	96
+	+	1074	96
+	+	1075	96
+	+	1076	96
+	+	1077	96
+	+	1078	96
+	+	1079	96
+	+	1080	96
+	+	1081	96
+	+	1082	96
+	+	1084	11
+	+	1085	16
+	+	1086	19
+	+	1087	11
+	+	1088	20
+	+	1089	13
+	+	1090	21
+	+	1091	22
+	+	1092	27
+	+	1093	27
+	+	1094	25
+	+	1095	27
+	+	1096	24
+	+	1097	27
+	+	1098	27
+	+	1099	33
+	+	1100	28
+	+	1101	32
+	+	1102	35
+	+	1103	32
+	+	1104	43
+	+	1105	22
+	+	1106	18
+	+	1107	23
+	+	1108	18
+	+	1109	29
+	+	1110	17
+	+	1111	23
+	+	1112	20
+	+	1113	19
+	+	1114	21
+	+	1115	18
+	+	1116	32
+	+	1117	35
+	+	1118	22
+	+	1119	21
+	+	1120	30
+	+	1121	27
+	+	1122	19
+	+	1123	26
+	+	1124	27
+	+	1125	17
+	+	1126	27
+	+	1127	28
+	+	1128	28
+	+	1129	31
+	+	1130	27
+	+	1131	29
+	+	1132	28
+	+	1133	31
+	+	1134	27
+	+	1135	25
+	+	1136	20
+	+	1137	31
+	+	1138	28
+	+	1139	20
+	+	1140	22
+	+	1141	31
+	+	1142	31
+	+	1143	36
+	+	1144	36
+	+	1145	27
+	+	1146	27
+	+	1147	23
+	+	1148	23
+	+	1149	24
+	+	1150	25
+	+	1151	24
+	+	1152	24
+	+	1153	24
+	+	1154	24
+	+	1155	20
+	+	1156	17
+	+	1157	19
+	+	1158	23
+	+	1159	26
+	+	1160	21
+	+	1161	22
+	+	1162	21
+	+	1163	28
+	+	1164	15
+	+	1165	34
+	+	1166	24
+	+	1167	19
+	+	1168	23
+	+	1169	23
+	+	1170	23
 
-> /usr/share/vim/vim73/doc/help.txt
+> ~/df/df_linux/data/init/d_init.txt
+	"	42	20
+	^	42	21
+	.	42	20
+	+	42	20
+
+> ~/df/df_linux/data/init/init.txt
+	"	126	0
+
+> /media/nasGom/downloads/df_linux/data/init/world_gen.txt
+	"	831	1
+
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/hack/scripts/fix/cloth-stockpile.lua
+	"	86	0
+
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/dfhack.init
+	"	569	0
+	^	519	21
+	.	519	0
+	+	427	0
+	+	519	0
+
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/gamelog.txt
+	"	1156060	0
+
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/data/init/embark_profiles.txt
+	"	857	1
+
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/data/init/init.txt
 	"	1	0
 
-> ~/.vim/bundle/syntastic/doc/syntastic.txt
-	"	276	58
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/data/init/d_init.txt
+	"	1	0
 
-> ~/.vim/bundle/vim-snipmate/gom.cpp
-	"	10	0
-	^	20	18
-	.	1	0
-	+	11	0
-	+	18	0
-	+	19	0
-	+	18	0
-	+	20	0
-	+	20	18
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/__Tagbar__
+	"	1	0
+
+> ~/code/python/spider_bro/sb_utils.py
+	"	485	4
+	^	224	85
+	.	97	0
+	+	216	37
+	+	224	84
+	+	97	0
+
+> ~/code/python/spider_bro/README
+	"	7	49
+	^	3	50
+	.	3	50
+	+	3	50
+
+> ~/dwarf_fortress_MW.txt
+	"	1	0
+	^	42	145
+	.	42	135
+	+	1	16
+	+	19	30
+	+	21	1
+	+	24	0
+	+	27	0
+	+	27	0
+	+	29	0
+	+	32	0
+	+	34	0
+	+	35	0
+	+	36	0
+	+	36	80
+	+	23	79
+	+	38	198
+	+	11	77
+	+	39	169
+	+	40	162
+	+	42	135
+
+> ~/df_quickfort_prints.txt
+	"	18	29
+	^	18	30
+	.	18	29
+	+	1	28
+	+	4	9
+	+	1	8
+	+	4	57
+	+	6	16
+	+	8	10
+	+	10	5
+	+	12	24
+	+	13	0
 	+	1	0
+	+	2	0
+	+	1	65
+	+	6	16
+	+	12	0
+	+	12	0
+	+	19	0
+	+	14	15
+	+	16	41
+	+	18	29
+
+> ~/df_notes.txt
+	"	22	0
+	^	23	115
+	.	23	114
+	+	1	24
+	+	8	23
+	+	12	61
+	+	12	72
+	+	13	44
+	+	14	39
+	+	13	49
+	+	2	0
+	+	5	46
+	+	6	13
+	+	6	31
+	+	6	22
+	+	6	30
+	+	8	159
+	+	8	24
+	+	9	5
+	+	9	159
+	+	10	73
+	+	11	33
+	+	2	0
+	+	3	104
+	+	14	40
+	+	16	42
+	+	17	23
+	+	18	103
+	+	19	78
+	+	20	60
+	+	21	56
+	+	22	27
+	+	23	114
+
+> ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
+	"	46	0
+	.	51	0
+	+	50	0
+	+	51	0
+
+> ~/code/python/XBMC-Utility-scripts/(clewn)_console
+	"	170	5
+	.	167	0
+	+	167	0
+
+> ~/code/cpp/gdb_test/main.cc
+	"	79	12
+
+> ~/code/cpp/gdb_test/__Tagbar__
+	"	1	0
+	.	33	0
+	+	33	0
+
+> ~/code/cpp/gdb_test/(clewn)_console
+	"	156	5
+	.	154	0
+	+	154	0
+
+> ~/code/cpp/gdb_test/(clewn)_dbgvar
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/b_detail_plan_bj.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/b_detail_plan_default.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/b_detail_plan_masterwork.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/body_default.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/body_masterwork.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_custom.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_furnaces_masterwork.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_kobold.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_masterwork.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_orcfort_taigaorc.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/creature_a_pet_drowfort.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/entity_drow_evil.txt
+	"	1	0
+
+> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/entity_drowfort.txt
+	"	1	0

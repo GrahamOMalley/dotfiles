@@ -11,11 +11,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-"Bundle 'benmills/vimux'
+Bundle 'benmills/vimux'
 "Bundle 'jabapyth/vim-debug'
 "Bundle 'godlygeek/tabular'
 "Bundle 'tpope/vim-surround' 
+"Bundle 'maciakl/vim-neatstatus'
 "Bundle 'guns/xterm-color-table.vim'
+Bundle 'GrahamOMalley/vim-pudb'
 Bundle 'GrahamOMalley/gom-pyclewn-view'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Valloric/YouCompleteMe'
@@ -27,6 +29,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'dbakker/vim-lint'
+Bundle 'Valloric/MatchTagAlways'
+"Bundle 'jalcine/cmake.vim'
 
 
 " vim-scripts repos
@@ -98,9 +102,10 @@ set tags+=~/.vim/tags/cpp.ctags
 set tags=tags;/
 let g:tagbar_left = 1
 let g:tagbar_width = 50
+let g:tagbar_show_visibility = 1
 
 " Let Syntastic open an error window automatically 
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
@@ -116,9 +121,10 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "Make YCM/Snipmate/Supertab/Syntastic play nice together
-let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_register_as_syntastic_checker = 1
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
 
@@ -173,7 +179,6 @@ nnoremap <Leader>w :set wrap!<CR>
 nnoremap <Leader>n :set number!<CR>
 nnoremap <Leader>p :set paste!<CR>
 nnoremap <Leader>u :GundoToggle<CR>
-" toggle crosshair
 nnoremap <Leader>cr <esc>:set cursorline! <Bar> set cursorcolumn!<CR>
 
 "set <space>f and <space>r to find and replace
@@ -191,10 +196,17 @@ nnoremap <Leader>sp <Esc>:ToggleShowSnips<CR>
 nnoremap <Leader>sc <Esc>:SyntasticCheck<CR>
 
 " frequently edited files 
-nnoremap <Leader>v :tabnew ~/.vimrc<CR>
-nnoremap <Leader>vg :tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim<CR>
-nnoremap <Leader>vp :tabnew .proj<CR>
-nnoremap <Leader>vs :source ~/.vimrc<CR>
+nnoremap <Leader>s :tabnew ~/.vimrc<CR>
+nnoremap <Leader>sg :tabnew ~/.vim/bundle/gom-pyclewn-view/plugin/gom-pyclewn-view.vim<CR>
+"nnoremap <Leader>sp :tabnew .proj<CR>
+nnoremap <Leader>ss :source ~/.vimrc<CR>
+
+" Vimux keymaps
+" nnoremap <Leader>v (not sure what to do with this, probably best to set up
+" vimux autocmds for unit testing depending on programming language?
+nnoremap <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>vq :VimuxCloseRunner<CR>
 
 " fuGitive keymaps
 nnoremap <Leader>g <esc>:Git <CR>
@@ -256,6 +268,12 @@ autocmd VimEnter,TabEnter *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTag
 " for editing proto files
 autocmd BufRead,BufNewFile *.proto setfiletype proto
 
+augroup Tmux "{{{2
+    au!
+    autocmd VimEnter,BufNewFile,BufReadPost * call system('tmux rename-window "vim - ' . split(substitute(getcwd(), $HOME, '~', ''), '/')[-1] . '"')
+    autocmd VimLeave * call system('tmux rename-window ' . split(substitute(getcwd(), $HOME, '~', ''), '/')[-1])
+augroup END
+
 "********************************************** PYTHON
 augroup filetype_python
     autocmd!
@@ -271,22 +289,11 @@ augroup filetype_python
     autocmd BufRead *.py let g:jedi#rename_command = "<Leader>R"
     autocmd BufRead *.py let g:jedi#related_names_command = "<Leader>n"
     autocmd BufRead *.py let g:jedi#auto_vim_configuration = 0
-    "Debugging
-    autocmd BufRead,BufNewFile *py let g:pyclewn_debug_view_type="python"
-    autocmd BufRead,BufNewFile *py let g:pyclewn_locals_on=1
-    autocmd BufRead,BufNewFile *py nnoremap <F2>              :exe "PyclewnDebugToggle"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <F3>              :exe "Cfoldvar " . line(".")<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <F4>              :exe "!make"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <F5>              :exe "Crun"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <F6>              :exe "PyclewnContinue"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <F9>              :exe "PyclewnBreakPointToggle"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <F10>             :exe "PyclewnNext"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <F11>             :exe "PyclewnStep"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <leader>dl        :exe "PyclewnLocalsToggle"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <leader>ds        :exe "C bt"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <leader>df        :exe "Cframe"<CR>
-    autocmd BufRead,BufNewFile *py nnoremap <leader>dv        :exe "C pp" . expand("<cword>") <CR>
-    autocmd BufRead,BufNewFile *py nnoremap <leader>dp        :exe "C p " . expand("<cword>") <CR>
+    "Debugging (with pudb)
+    autocmd BufRead,BufNewFile *py nnoremap <F9> :TogglePudbBreakPoint<CR>
+    autocmd BufRead,BufNewFile *py inoremap <F9> <ESC>:TogglePudbBreakPoint<CR>a
+    autocmd BufRead,BufNewFile *py nnoremap <F2>              :exe "!pudb %"<CR>
+    autocmd BufRead,BufNewFile *py nnoremap <F3>              :exe "!pudb % " <left><left>
 augroup END
 
 "********************************************** CPP
