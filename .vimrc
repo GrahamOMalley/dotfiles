@@ -11,26 +11,29 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'benmills/vimux'
-"Bundle 'jabapyth/vim-debug'
-"Bundle 'godlygeek/tabular'
-"Bundle 'tpope/vim-surround' 
-"Bundle 'maciakl/vim-neatstatus'
-"Bundle 'guns/xterm-color-table.vim'
-Bundle 'GrahamOMalley/vim-pudb'
 Bundle 'GrahamOMalley/gom-pyclewn-view'
+Bundle 'GrahamOMalley/vim-pudb'
 Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'benmills/vimux'
+Bundle 'dbakker/vim-lint'
 Bundle 'ervandew/supertab' 
 Bundle 'garbas/vim-snipmate'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'tmhedberg/SimpylFold'
 Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'dbakker/vim-lint'
-Bundle 'Valloric/MatchTagAlways'
+Bundle 'pitluga/vimux-nose-test'
+"Bundle 'vim-scripts/pydoc.vim'
 "Bundle 'jalcine/cmake.vim'
+"Bundle 'jabapyth/vim-debug'
+"Bundle 'godlygeek/tabular'
+"Bundle 'tpope/vim-surround' 
+"Bundle 'maciakl/vim-neatstatus'
+"Bundle 'guns/xterm-color-table.vim'
 
 
 " vim-scripts repos
@@ -74,6 +77,7 @@ set  wildignore=*.swp,*.bak,*.pyc,*.class
 set  wildmenu
 set  wildmode=list:longest
 "set shellcmdflag=-ic                       " give me my bash alias's! (currently this messes up several things like GDiff and seems to ctrl-z vim
+set scrolloff=5
 
 "syntax highlighting and colourscheme
 syntax on
@@ -106,7 +110,8 @@ let g:tagbar_show_visibility = 1
 
 " Let Syntastic open an error window automatically 
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 
@@ -263,7 +268,7 @@ autocmd BufNewFile,BufRead *conkyrc set filetype=conkyrc
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 
 " Start Taglist window on file open if any of these types (ignore if debugger view mode on)
-autocmd VimEnter,TabEnter *.c,*.cc,*.cpp,*.h,*.py,*.cs execute "PyclewnToggleTagbar"
+autocmd VimEnter,TabEnter *.c,*.cc,*.cpp,*.h,*.cs execute "PyclewnToggleTagbar"
 
 " for editing proto files
 autocmd BufRead,BufNewFile *.proto setfiletype proto
@@ -278,6 +283,8 @@ augroup END
 augroup filetype_python
     autocmd!
     autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
+    " use pydoc instead of man pages, TODO look into plugins for this
+    autocmd BufNewFile,BufRead *.py set keywordprg=pydoc
     "jedi autocomplete
     autocmd BufRead *.py set omnifunc=jedi#complete
     autocmd BufRead *.py let g:jedi#auto_initialization = 1

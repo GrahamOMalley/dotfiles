@@ -8,18 +8,155 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/Vimux
+~MSle0~/root
 
 # Last Substitute Search Pattern:
-~MSle0&map
+~MSle0&CREATE DATABASE
 
 # Last Substitute String:
-$
+$package_list.txt
 
 # Command Line History (newest to oldest):
 :wq
+:tabnew desktop_install.sh
 :q
+:call <SNR>66_GundoClose()
 :w
+:%s/\n/ /g
+:%s/\r/ /g
+:79;54m
+:79;54M
+:qa
+:g/CREATE DATABASE
+:160;44M;q
+:wqa
+:;wqa
+:tabnew sshcopykey.sh
+:map
+:BundleInstall
+:BundleClean
+:Bundle
+:q!
+:;;;;;;
+:;;w
+:;;;;;;;;;;;;;;;
+:;;;;;;l
+:;;;;;l
+:%s/\<packages.list\>/package_list.txt/g
+:tabnew spiderBro.py
+:pyfile %
+:exe "!pudb % " 
+:tabnew sb_utils.py
+:tabnew  filedir_renamer
+:%s/\<WORKDIR\>/HOST/g
+:tabnew server_install.sh
+:%s/\s\+install//g
+:help :pydoc
+:tab h Pydoc
+:Pydoc argparse.add_argument
+:tabnew temptest.py
+:%s/\<refTest\>/refStringTest/g
+:'<,'>s/$/,/g
+:'<,'>s/^/,/g
+:2F
+:%s/\<thepiratebay.si\>/pirateproxy.net/g
+:;;;;;;;;;;;
+:s/reader/writer/g
+:%s/\<lru_cache\>/simpleLRU/g
+:%s/\<mapping\>/cache/g
+:RunCurrentNoseTests
+:'<,'>s/Players/Cards/g
+:RunAllNoseTests
+:Run
+:s/self/db/g
+:tabnew ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
+:tabnew ~/code/python/spider_bro/db_manager.py
+:%s/\<selectRecord\>/selectRecords/g
+:s/unit/dedsert_test/g
+:s/unit/dedert_test/g
+:'<,'>s/,/,\r\r/g
+:'<,'>s/, /", "/g
+:d
+:s/drawDate/dt/g
+:'<,'>s/wed/sun/g
+:'<,'>s/wed/satpost/g
+:'<,'>s/wed/satpre/g
+:'<,'>s/wed/fri/g
+:'<,'>s/wed/thu/g
+:'<,'>s/wedpre/wed/g
+:'<,'>s/tue/wedpre/g
+:'<,'>s/mon/tue/g
+:%s/\<r\>/drawDate/g
+:%s/\<xbmc\>/dedsert/g
+:tabnew ~/code/python/XBMC-Utility-scripts/xbmc_recently_added.py
+:RunFocusedNoseTests
+:%s/\<failUnlessEqual\>/assertEqual/g
+:g/shutil
+:s/season/episode/g
+:tabnew ~/code/python/spider_bro/file_renamer.py
+:vsplit twisted_client.py
+:%s/proxybay.pw/thepiratebay.si/g
+:%s/pirateproxy.net/proxybay.pw/g
+:%s/pirateproxy.net/proxybay.eu/g
+:tabnew test.csv
+:tn test.csv
+:%s/proxybay.eu/pirateproxy.net/g
+:%s/pirateproxy.net/proxybay.eu
+:Cfile 2048_dbg
+:YcmCompleter GoToDefinitionElseDeclaration
+:tabnew ~/.ycm_extra_conf.py
+:tabnew .ycm_extra_conf.py
+:vsplit ~/creature_monster_masterwork.txt
+:YcmDiags
+:SyntasticInfo
+:YcmCompleter GoToDefinition
+:SyntasticToggleMode
+:'<,'>sort
+:tab h youcompleteme
+:%s/\[TRAINABLE_WAR//g
+:%s/\]//g
+:%s/\[CREATURE://g
+:%s/\[//g
+:%s/[CREATURE://g
+:g/COLOSSEUM/d
+:%s/YESFF//g
+:g/^$/d
+:%s//^$//g
+:%s/\r/\r/g
+:set fileformat=unix
+:%s/.*\.txt://g
+:g/CREATURE:
+:g/CRETURE:
+:vsplit creature_masterwork.txt
+:vsplit creature_pet_masterwork.txt
+:vsplit
+:g/NIGHT
+:set foldmethod?
+:echo g:syntastic_python_checkers
+:echo g:syntastic_*
+:tab h Syntastic
+:SyntasticCheck
+:set foldmethod=indent
+:set foldenable=true
+:set foldenable true
+:set foldenable yes
+:set foldenable
+:tab h foldtext
+:r !xxd profile.pstats
+:!python %
+:2C"
+:GundoToggle
+:s/x/y/g
+:buffer 2
+:buffer
+:buffers
+:Pyimport vim
+:jek
+:tabnew ~/lol_katz.txt
+:Cfile a.out
+:tabnew .proj
+:Vimux
+:!
 :tab h vimux
 :VimuxPromptCommand
 :VimuxCloseRunner
@@ -27,18 +164,11 @@ $
 :call VimuxRunCommand("ls -la")
 :VimuxRunCommand ls
 :help vimux
-:q!
-:qa
-:wqa
-:BundleInstall
-:BundleClean
-:pyfile %
 :exe "!pudb % -s Spoils" 
 :exe "!pudb % Spoils" 
 :exe "!pudb % -s Brooklye" 
 :exe "!pudb % -s Brooklyn" 
 :exe "!pudb % -s Brooklyn 99" 
-:exe "!pudb % " 
 :exe "!pudb % -s Brooklyn"
 :TogglePudbBreakPoint
 :!pudb %
@@ -56,7 +186,6 @@ $
 :%s/dark magenta/cyan/g
 :PDBNext
 :PDBDown
-:!python %
 :python %
 :Dbg run
 :Dbg break
@@ -92,7 +221,101 @@ $
 :Pyclewn
 
 # Search String History (newest to oldest):
+? \n
+? \r
+?/root
+? CREATE DATABASE
+? \<packages.list\>
+?/url
+? \<WORKDIR\>
+? \s\+install
+?/dos
+?/add
+? \<refTest\>
+? $
+? ^
+? \<thepiratebay.si\>
+?/piratebay
+?/Searching
+? reader
+? \<lru_cache\>
+? \<mapping\>
+? Players
+? self
+?/select
+?/commit
+? \<selectRecord\>
+? unit
+?/class
+?/sb_db_set
+?/insert
+? ,
+? , 
+? drawDate
+? wed
+? wedpre
+? tue
+? mon
+? \<r\>
+?/create
+? \<xbmc\>
+?/mysql
+? \V\.\%#
+? \Vfor\%#
+? \<failUnlessEqual\>
+? shutil
+? season
+? proxybay.pw
+?/proxy
+? pirateproxy.net
+?/pirate
+? proxybay.eu
+?/move
+?/attron
+?/TRAINABLE
+?/CHILD
+?/LAYS
+?/NIGHTWEAVER
+?/score
+? \[TRAINABLE_WAR
+? \]
+? \[CREATURE:
+? \[
+? [CREATURE://g
+?/[CREATURE:
+? COLOSSEUM
+?/COLOSSEUM
+?/CE:
+? YESFF
+?/[
+? ^$
+? .*\.txt:
+?/.*\.txt:
+?/.*\.txt
+?/*.txt
+?/LARGE_PREDATOR
+? CREATURE:
+? CRETURE:
+?/SCORP
+?/SPIDER
+?/DROW
+?/CAVERN
+?/TRAIN
+?/RAPTOR
+?/NIGHTWEA
+? NIGHT
+?/errors
+?/Tmux
+?/fold
+?/re\.
+?/re.
+?/re
+?/sort
+? x
+?/unit
+?/vimux
 ?/Vimux
+?/format
 ? map
 ?/CloseRunner
 ?/leader
@@ -120,13 +343,8 @@ $
 ?/POP
 ? dl_these
 ? \<dl_these\>
-? ^$
-? CREATURE:
 ? Creature:
-?/[CREATURE:
 ?/CREATURE:
-?/SPIDER
-?/RAPTOR
 ?/GRAZER
 ? GRAZER
 ? Grazer
@@ -135,43 +353,55 @@ $
 ? pirateproxy
 
 # Expression History (newest to oldest):
+=SuperTab('n')
 
 # Input Line History (newest to oldest):
+@y
+@python marktest.py
+@python 
+@pyghon ttest.py
+@python test.py
+@ls
+@ack gom
+@python %
+@sbadded
+@c11c %
+@ls -a ~/.git
+@ls -a .git
+@ls 
 @ps -ef
 @show
 @x
-@y
 @;q
 @;qa
 @<F2>
 @<F2><F2><F2><F2><F2><F2><F2><F2><F2><F2>;qa
 @;
 @end
-@ls
 
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-	 map <Leader>vi :VimuxInspectRunner<CR>
-"1	LINE	0
-	
+"0	LINE	0
+	scp $HOST:nasgom/backup/desktop_package_list.txt .
+""1	LINE	0
+	scp $HOST:package_list.txt .
 "2	LINE	0
-	    
+	scp -r $HOST:code/cpp code/
 "3	LINE	0
-	    a = b
+	
 "4	LINE	0
-	    b = 2000
+	
 "5	LINE	0
-	    a = 1000
+	
 "6	LINE	0
-	if __name__ == "__main__":
+	# run this on host:
 "7	LINE	0
-	
+	scp $HOST:alldb.sql .
 "8	LINE	0
-	globInt = 30
-"9	LINE	0
 	
+"9	LINE	0
+	scp -r $HOST:.vim/ .
 "b	LINE	0
 	-                    --....................--....................-
 "c	LINE	0
@@ -182,7 +412,7 @@ $
 "w	CHAR	0
 	wwwwwwwwwwwwx;wkjji	if(g:py0wwxi Aie€kb€kbex€kb€kb:exe "Cinfo locals!"€kb€kb"j€kb€kbendif;wkjjddkkkkkA;E€kb€kb;€kb:exe "Cnext";wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyGkkkkkpjjjjjjjkkkkjdddddddddd;w,gd
 "-	CHAR	0
-	:tabnew ~/.vimrc<CR>
+	python 
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -211,1245 +441,2150 @@ $
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  1  0  ~/code/python/scoping/scoping.py
-'1  32  8  ~/code/python/scoping/scoping.py
-'2  28  0  ~/code/python/spider_bro/spiderBro.py
-'3  17  32  ~/code/python/vim-pudb/plugin/pudb.vim
-'4  6  0  ~/code/python/wtf.py
-'5  1  0  ~/code/python/cmakeSkeleton/cmakeskeleton.py
-'6  2  6  ~/code/python/cmakeSkeleton/.git/COMMIT_EDITMSG
-'7  81  3  ~/code/python/build_system_testing/build_creator.py
-'8  7  0  ~/code/python/tesdbg.py
-'9  20  0  ~/code/python/vim-pudb/plugin/[Vundle] Installer
+'0  17  24  ~/bin/server_install.sh
+'1  69  0  ~/bin/server_install.sh
+'2  67  43  ~/bin/server_install.sh
+'3  123  2  ~/package_list.txt
+'4  30  18  ~/bin/server_install.sh
+'5  58  0  ~/bin/server_install.sh
+'6  1090  184558  ~/bin/alldb_backup.sql
+'7  160  0  /etc/samba/smb.conf
+'8  65  20  ~/bin/server_install.sh
+'9  1  3  ~/bin/.git/COMMIT_EDITMSG
 
 # Jumplist (newest first):
--'  1  0  ~/code/python/scoping/scoping.py
--'  1  0  ~/code/python/scoping/__Tagbar__
--'  8  0  ~/code/python/scoping/__Tagbar__
--'  31  22  ~/code/python/scoping/scoping.py
--'  29  9  ~/code/python/scoping/scoping.py
--'  32  22  ~/code/python/scoping/scoping.py
+-'  17  24  ~/bin/server_install.sh
+-'  1  0  ~/bin/server_install.sh
+-'  69  0  ~/bin/server_install.sh
+-'  51  14  ~/bin/server_install.sh
+-'  52  0  ~/bin/server_install.sh
+-'  55  0  ~/bin/server_install.sh
+-'  56  0  ~/bin/server_install.sh
 
 # History of marks within files (newest to oldest):
 
-> ~/code/python/scoping/scoping.py
-	"	1	0
-	.	31	0
-	+	1	0
-	+	32	16
-	+	32	0
-	+	32	4
+> ~/bin/server_install.sh
+	"	17	24
+	^	17	32
+	.	17	0
+	+	12	17
+	+	13	21
+	+	13	30
+	+	23	25
+	+	25	22
+	+	26	18
+	+	27	17
+	+	28	17
+	+	29	17
+	+	30	22
+	+	32	17
+	+	33	0
+	+	34	0
+	+	33	28
+	+	34	17
+	+	35	0
+	+	50	0
+	+	24	20
+	+	39	20
+	+	8	0
+	+	9	19
+	+	15	17
+	+	20	32
+	+	35	0
+	+	37	0
+	+	36	19
+	+	40	17
+	+	41	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	40	29
+	+	41	23
+	+	42	0
+	+	43	0
+	+	44	0
+	+	45	0
+	+	46	0
+	+	41	20
+	+	42	23
+	+	43	23
+	+	44	25
+	+	45	23
+	+	46	21
+	+	47	26
+	+	38	9
+	+	11	4
+	+	18	4
+	+	48	66
+	+	38	16
+	+	38	8
+	+	50	6
+	+	51	6
+	+	51	36
+	+	52	10
+	+	54	29
 	+	2	0
-	+	32	11
-	+	32	3
-	+	32	0
-	+	32	4
-	+	32	12
-	+	32	8
-	+	32	0
-	+	2	39
-	+	2	75
-	+	2	84
-	+	2	84
-	+	2	29
-	+	2	50
-	+	2	46
-	+	2	69
-	+	2	66
-	+	2	54
-	+	2	77
-	+	2	78
-	+	2	76
-	+	2	86
-	+	2	77
-	+	2	72
-	+	2	103
-	+	2	121
-	+	2	0
-	+	2	3
-	+	2	45
-	+	2	0
-	+	2	14
-	+	2	9
-	+	2	25
-	+	2	11
-	+	2	10
-	+	2	23
-	+	32	0
-	+	32	0
-	+	32	0
+	+	65	20
+	+	58	19
+	+	58	65
+	+	59	23
+	+	60	90
+	+	59	0
+	+	60	84
+	+	61	0
+	+	62	0
+	+	61	55
+	+	62	38
+	+	59	33
+	+	63	29
+	+	58	8
+	+	59	0
+	+	59	0
+	+	60	0
+	+	61	0
+	+	62	0
+	+	63	0
+	+	59	0
+	+	58	0
 	+	31	0
+	+	30	18
+	+	65	0
+	+	68	0
+	+	65	8
+	+	66	122
+	+	67	20
+	+	67	44
+	+	19	0
+	+	14	0
+	+	56	0
+	+	56	0
+	+	56	0
+	+	56	0
+	+	56	20
+	+	56	0
+	+	54	0
+	+	51	14
+	+	69	0
+	+	17	0
 
-> ~/code/python/scoping/__Tagbar__
+> ~/bin/desktop_install.sh
+	"	18	0
+	.	18	0
+	+	18	0
+
+> ~/bin/__Gundo_Preview__
 	"	1	0
-	.	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
-	+	8	0
+	.	1	0
+	+	1	0
 
-> ~/.vim/bundle/vimux/doc/vimux.txt
-	"	201	0
+> ~/bin/__Gundo__
+	"	6	1
+	.	1	0
+	+	1	0
+
+> ~/bin/__Tagbar__
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/package_list.txt
+	"	1	0
+	.	1	0
+	+	1	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	1	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	0
+	+	128	10
+	+	128	2
+	+	128	11
+	+	1	0
+
+> ~/bin/.git/COMMIT_EDITMSG
+	"	1	31
+	^	1	32
+	.	2	0
+	+	1	32
+	+	2	0
+
+> ~/bin/alldb_backup.sql
+	"	1090	184558
+
+> /etc/samba/smb.conf
+	"	160	0
+
+> ~/bin/sshcopykey.sh
+	"	10	0
+	^	3	0
+	.	10	0
+	+	1	0
+	+	2	0
+	+	10	0
+
+> fugitive:///home/gom/bin/.git//0/server_install.sh
+	"	56	0
 
 > ~/.vimrc
-	"	206	1
-	^	206	2
-	.	206	1
-	+	297	89
-	+	297	47
-	+	297	0
-	+	20	13
-	+	295	0
-	+	293	0
-	+	295	46
-	+	295	0
-	+	297	0
-	+	293	79
-	+	293	74
-	+	294	119
-	+	293	35
-	+	294	71
-	+	294	0
-	+	294	74
-	+	295	0
-	+	294	46
-	+	293	46
-	+	295	74
-	+	292	25
-	+	296	0
-	+	296	89
-	+	20	20
-	+	199	17
-	+	202	17
-	+	201	17
-	+	200	17
-	+	201	0
-	+	202	40
-	+	203	0
-	+	205	0
-	+	204	14
+	"	1	0
+	^	24	1
+	.	24	0
+	+	304	89
+	+	304	47
+	+	304	0
+	+	15	13
+	+	302	0
+	+	300	0
+	+	302	46
+	+	302	0
+	+	304	0
+	+	300	79
+	+	300	74
+	+	301	119
+	+	300	35
+	+	301	71
+	+	301	0
+	+	301	74
+	+	302	0
+	+	301	46
+	+	300	46
+	+	302	74
+	+	299	25
+	+	303	0
+	+	303	89
+	+	15	20
+	+	204	17
+	+	207	17
+	+	206	17
 	+	205	17
-	+	209	0
-	+	205	18
-	+	207	0
+	+	206	0
+	+	207	40
 	+	208	0
-	+	207	0
-	+	208	0
-	+	205	0
-	+	205	75
-	+	206	63
-	+	205	1
-	+	206	1
+	+	210	0
+	+	209	14
+	+	210	17
+	+	214	0
+	+	210	18
+	+	212	0
+	+	213	0
+	+	212	0
+	+	213	0
+	+	210	0
+	+	210	75
+	+	211	63
+	+	210	1
+	+	211	1
+	+	15	0
+	+	32	0
+	+	271	45
+	+	28	18
+	+	114	30
+	+	113	32
+	+	80	14
+	+	14	0
+	+	29	30
+	+	285	106
+	+	287	55
+	+	286	68
+	+	287	4
+	+	30	0
+	+	287	4
+	+	24	0
 
-> ~/code/python/scoping/__Gundo_Preview__
-	"	1	0
+> ~/[Vundle] Installer
+	"	22	0
 	.	1	0
+	+	22	0
 	+	1	0
 
-> ~/code/python/scoping/__Gundo__
-	"	12	1
+> ~/[Vundle] clean
+	"	3	0
 	.	1	0
-	+	1	0
-
-> ~/code/python/scoping/.proj
-	"	1	0
-
-> ~/code/sources/dfhack/GoToFile
-	"	1	0
-	.	75	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	126	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	75	0
-
-> ~/code/sources/dfhack/scripts/putontable.lua
-	"	1	0
-
-> ~/code/sources/dfhack/plugins/showmood.cpp
-	"	1	2
-	.	3	0
-	+	3	0
-
-> ~/code/sources/dfhack/__Tagbar__
-	"	4	4
-	.	7	0
-	+	7	0
-
-> ~/python_notes.txt
-	"	18	22
-	^	18	23
-	.	18	22
-	+	2	85
-	+	3	185
-	+	4	252
-	+	5	134
-	+	6	276
-	+	7	406
-	+	3	0
-	+	2	0
-	+	4	4
-	+	6	151
 	+	4	0
-	+	7	483
-	+	9	13
-	+	11	13
-	+	13	21
-	+	15	74
-	+	16	65
-	+	17	67
-	+	18	22
+	+	3	0
+	+	1	0
+
+> /tmp/vjjLnzn/4
+	"	1	0
+
+> ~/,vimr
+	"	1	0
+
+> ~/code/python/spider_bro/trakttest.py
+	"	4	0
+	^	22	14
+	.	4	0
+	+	1	0
+	+	2	0
+	+	2	0
+	+	3	0
+	+	4	0
+	+	8	36
+	+	9	7
+	+	11	6
+	+	9	7
+	+	10	66
+	+	11	7
+	+	13	18
+	+	18	19
+	+	13	18
+	+	13	4
+	+	15	0
+	+	13	33
+	+	14	31
+	+	13	47
+	+	15	34
+	+	15	13
+	+	21	44
+	+	13	15
+	+	4	0
+	+	5	10
+	+	5	0
+	+	5	10
+	+	5	10
+	+	6	0
+	+	13	95
+	+	13	81
+	+	15	0
+	+	2	0
+	+	3	11
+	+	4	24
+	+	15	30
+	+	16	17
+	+	16	18
+	+	16	23
+	+	16	0
+	+	16	42
+	+	18	18
+	+	16	4
+	+	16	4
+	+	13	0
+	+	16	0
+	+	18	0
+	+	16	42
+	+	17	0
+	+	8	38
+	+	21	51
+	+	13	60
+	+	22	13
+	+	4	0
+
+> ~/code/python/spider_bro/sb_utils.py
+	"	84	8
+	^	95	72
+	.	217	0
+	+	217	37
+	+	225	84
+	+	98	0
+	+	23	14
+	+	698	30
+	+	698	0
+	+	694	18
+	+	696	26
+	+	697	0
+	+	63	0
+	+	39	8
+	+	39	0
+	+	217	0
+	+	217	0
+	+	94	56
+	+	96	25
+	+	95	71
+	+	217	0
+
+> /usr/share/vim/vim73/doc/help.txt
+	"	1	0
 
 > ~/code/python/spider_bro/spiderBro.py
-	"	28	0
-	.	41	0
-	+	41	23
-	+	41	24
-	+	41	18
-	+	41	33
-	+	41	0
-	+	41	0
+	"	1	0
+	^	16	1
+	.	16	49
+	+	42	23
+	+	42	24
+	+	42	18
+	+	42	33
+	+	42	0
+	+	42	0
+	+	17	0
+	+	16	49
 
 > ~/code/python/spider_bro/__Tagbar__
-	"	1	0
-	.	19	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1018	0
-	+	1005	0
-	+	1005	0
-	+	1005	0
-	+	1005	0
-	+	1005	0
-	+	988	0
+	"	39	3
+	.	109	0
+	+	1640	0
+	+	1625	0
+	+	1625	0
+	+	1625	0
+	+	1545	0
+	+	1545	0
+	+	1545	0
+	+	1545	0
+	+	1545	0
+	+	1545	0
+	+	1545	0
+	+	1545	0
+	+	1545	0
+	+	1471	0
+	+	1383	0
+	+	1295	0
+	+	1207	0
+	+	1119	0
+	+	1033	0
+	+	1033	0
+	+	1033	0
+	+	1017	0
+	+	1017	0
+	+	1001	0
+	+	1001	0
+	+	985	0
+	+	985	0
+	+	968	0
+	+	951	0
+	+	934	0
+	+	917	0
 	+	900	0
 	+	885	0
 	+	885	0
 	+	885	0
+	+	875	0
+	+	875	0
+	+	875	0
+	+	875	0
+	+	875	0
+	+	875	0
+	+	875	0
+	+	866	0
+	+	866	0
+	+	851	0
+	+	851	0
+	+	835	0
+	+	835	0
+	+	822	0
+	+	822	0
+	+	822	0
+	+	822	0
+	+	822	0
 	+	805	0
-	+	805	0
-	+	805	0
-	+	805	0
-	+	805	0
-	+	805	0
-	+	805	0
-	+	805	0
-	+	805	0
-	+	731	0
-	+	643	0
-	+	555	0
-	+	467	0
-	+	379	0
-	+	293	0
-	+	293	0
-	+	293	0
-	+	277	0
-	+	277	0
-	+	261	0
-	+	261	0
-	+	245	0
-	+	245	0
-	+	228	0
-	+	211	0
-	+	194	0
-	+	177	0
-	+	160	0
-	+	145	0
-	+	145	0
-	+	145	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	126	0
-	+	126	0
-	+	111	0
-	+	111	0
-	+	95	0
-	+	95	0
-	+	82	0
-	+	82	0
-	+	82	0
-	+	82	0
-	+	82	0
-	+	65	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	53	0
-	+	36	0
-	+	19	0
+	+	793	0
+	+	793	0
+	+	793	0
+	+	793	0
+	+	793	0
+	+	776	0
+	+	759	0
+	+	746	0
+	+	746	0
+	+	746	0
+	+	746	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	649	0
+	+	567	0
+	+	567	0
+	+	567	0
+	+	567	0
+	+	567	0
+	+	567	0
+	+	480	0
+	+	480	0
+	+	472	0
+	+	472	0
+	+	472	0
+	+	465	0
+	+	465	0
+	+	465	0
+	+	465	0
+	+	382	0
+	+	382	0
+	+	382	0
+	+	382	0
+	+	382	0
+	+	382	0
+	+	334	0
+	+	247	0
+	+	247	0
+	+	196	0
+	+	109	0
 
-> ~/code/python/steamShortcutWriter/.git/config
+> ~/bin/pdftocbz.sh
+	"	74	0
+
+> ~/bin/filedir_renamer
+	"	1	0
+	.	9	0
+	+	12	0
+	+	9	0
+
+> ~/bin/backup_tv.py
+	"	1	0
+	^	21	25
+	.	21	0
+	+	21	0
+
+> ~/bin/epub_read.sh
+	"	80	0
+	^	30	3
+	.	30	2
+	+	1	0
+	+	348	0
+	+	25	2
+	+	30	2
+
+> ~/code/sources/lazyread-2.0/make_log
 	"	1	0
 
-> ~/code/python/steamShortcutWriter/.git/COMMIT_EDITMSG
-	"	1	45
-	^	1	46
-	.	1	45
-	+	1	45
-
-> ~/code/python/steamShortcutWriter/README.md
-	"	6	38
-	^	6	39
-	.	6	38
-	+	4	123
-	+	6	182
-	+	6	38
-
-> ~/code/python/steamSEdit/config/bintest.py
+> ~/code/sources/lazyread-2.0/Makefile
 	"	1	0
 
-> ~/code/python/steamSEdit/config/__Tagbar__
+> ~/code/sources/lazyread-2.0/hi.txt
 	"	1	0
-	.	22	0
-	+	62	0
-	+	42	0
-	+	22	0
 
-> ~/.vim/bundle/vim-pudb/plugin/pudb.vim
-	"	17	32
-	^	17	33
-	.	17	32
-	+	82	32
-	+	85	23
-	+	87	0
-	+	85	16
-	+	70	11
-	+	75	25
-	+	87	12
-	+	17	32
+> ~/code/sources/lazyread-2.0/mlog.txt
+	"	1	0
 
-> ~/code/python/vim-pudb/plugin/pudb.vim
-	"	17	32
-	^	17	33
-	.	17	32
-	+	2	0
-	+	17	32
+> /media/nasGom/downloads/Wonder Woman (2009) [1080p]/Wonder.Woman.2009.1080p.BrRip.x264.Deceit.YIFY.srt
+	"	1	0
 
-> ~/code/python/wtf.py
+> ~/code/python/CouchPotatoServer/libs/bs4/dammit.py
+	"	1	0
+
+> ~/code/python/CouchPotatoServer/libs/bs4/__Tagbar__
+	"	1	0
+	.	53	0
+	+	53	0
+
+> ~/bin/__doc__
+	"	527	5
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/bin/[Vundle] clean
+	"	3	0
+	.	1	0
+	+	1	0
+
+> ~/bin/[Vundle] Installer
+	"	23	0
+	.	1	0
+	+	1	0
+
+> ~/bin/temptest.py
 	"	6	0
-
-> ~/code/python/__Tagbar__
-	"	1	0
-	.	7	0
-	+	86	0
-	+	78	0
-	+	70	0
-	+	62	0
-	+	55	0
-	+	55	0
-	+	48	0
-	+	48	0
-	+	42	0
-	+	25	0
-	+	19	0
-	+	13	0
-	+	7	0
-
-> ~/code/python/cmakeSkeleton/cmakeskeleton.py
-	"	1	0
-
-> ~/code/python/cmakeSkeleton/__Tagbar__
-	"	1	0
-	.	19	0
-	+	19	0
-
-> ~/code/python/cmakeSkeleton/.git/COMMIT_EDITMSG
-	"	2	6
-	^	2	7
-	.	2	6
-	+	2	6
-
-> ~/code/python/build_system_testing/build_creator.py
-	"	81	3
-	^	15	88
-	.	15	87
-	+	15	87
-
-> ~/code/python/build_system_testing/__Tagbar__
-	"	18	4
-	.	19	0
-	+	52	0
-	+	35	0
-	+	19	0
-	+	19	0
-
-> ~/code/python/tesdbg.py
-	"	7	0
-	^	8	4
-	.	5	0
+	^	6	15
+	.	6	14
 	+	1	0
-	+	4	12
-	+	6	12
-	+	7	12
-	+	8	7
-	+	4	12
+	+	3	0
+	+	11	0
+	+	3	9
+	+	8	9
+	+	9	0
+	+	4	0
 	+	5	0
+	+	4	12
+	+	6	14
 
-> ~/code/python/vim-pudb/plugin/[Vundle] clean
-	"	2	0
-	.	1	0
+> ~/bin/cdl.sh
+	"	3	60
+	^	3	61
+	.	3	60
 	+	2	0
+	+	3	60
+
+> ~/code/python/dedsert_technical_questions/question1.py
+	"	1	0
+	^	39	36
+	.	38	0
 	+	1	0
-
-> ~/code/python/vim-pudb/plugin/[Vundle] Installer
-	"	20	0
-	.	1	0
-	+	1	0
-
-> ~/code/python/vim-pudb/.git/COMMIT_EDITMSG
-	"	2	59
-	^	2	60
-	.	2	60
-	+	8	0
-	+	2	60
-
-> /usr/local/lib/python2.7/dist-packages/pudb-2013.5.1-py2.7.egg/pudb/settings.py
-	"	462	40
-
-> /usr/local/lib/python2.7/dist-packages/pudb-2013.5.1-py2.7.egg/pudb/__Tagbar__
-	"	41	1
-	.	55	0
-	+	55	0
-
-> ~/.vim/bundle/vim-pudb/test.py
-	"	2	0
-	^	6	17
-	.	6	16
-	+	1	0
-	+	2	60
+	+	3	0
+	+	4	16
+	+	5	19
+	+	6	19
+	+	9	0
+	+	11	0
+	+	9	11
+	+	10	17
+	+	11	4
+	+	12	98
+	+	13	12
+	+	11	0
+	+	7	0
+	+	5	30
+	+	6	23
+	+	35	25
+	+	36	19
+	+	12	75
+	+	2	14
 	+	3	0
 	+	4	0
-	+	8	0
-	+	4	28
-	+	6	16
-
-> ~/.vim/bundle/vim-pudb/__Tagbar__
-	"	3	0
-	.	4	0
-	+	12	0
-	+	10	0
-	+	8	0
-	+	6	0
-	+	4	0
-
-> ~/.config/pudb/pudb.cfg
-	"	6	13
-	^	6	14
-	.	6	13
-	+	7	18
-	+	10	18
-	+	6	13
-
-> ~/code/python/XBMC-Utility-scripts/xbmc_list_episodes.py
-	"	27	0
-
-> ~/code/python/XBMC-Utility-scripts/__Tagbar__
-	"	9	4
-	.	15	0
-	+	68	0
-	+	68	0
-	+	68	0
-	+	54	0
-	+	54	0
-	+	54	0
-	+	54	0
-	+	54	0
-	+	41	0
-	+	32	0
-	+	32	0
-	+	32	0
-	+	32	0
-	+	25	0
-	+	25	0
-	+	25	0
-	+	25	0
-	+	15	0
-
-> ~/code/python/spider_bro/(clewn)_console
-	"	6	5
-	.	4	0
-	+	4	0
-
-> ~/code/python/spider_bro/(clewn)_dbgvar
-	"	1	0
-
-> ~/code/python/spider_bro/[Vundle] Installer
-	"	20	0
-	.	1	0
-	+	1	0
-
-> ~/.config/pudb/themes/gomtheme.py
-	"	5	64
-	^	5	65
-	.	5	64
-	+	1	288
-	+	1	299
-	+	1	307
-	+	1	313
-	+	1	287
-	+	1	16
-	+	1	0
-	+	1	0
-	+	1	34
-	+	1	30
-	+	1	31
-	+	1	33
-	+	1	21
-	+	1	0
-	+	1	0
-	+	1	21
-	+	1	21
-	+	83	0
-	+	1	7
-	+	50	34
-	+	53	0
-	+	54	0
-	+	61	35
-	+	59	29
-	+	55	39
-	+	17	0
-	+	8	0
-	+	32	29
-	+	36	54
-	+	36	63
-	+	38	78
-	+	39	86
-	+	36	0
-	+	32	0
-	+	34	0
-	+	43	32
-	+	35	48
-	+	63	0
-	+	33	0
-	+	36	59
-	+	38	74
-	+	36	56
-	+	38	56
-	+	49	38
-	+	56	36
-	+	47	55
-	+	41	12
-	+	42	11
-	+	37	28
-	+	39	0
-	+	59	33
-	+	36	40
-	+	35	40
-	+	37	0
-	+	38	44
-	+	1	16
-	+	7	21
-	+	9	0
-	+	9	0
-	+	17	0
-	+	13	12
 	+	14	0
-	+	32	23
-	+	42	19
-	+	43	28
-	+	59	30
-	+	17	23
-	+	17	0
-	+	16	37
-	+	48	12
-	+	47	11
-	+	45	35
-	+	48	0
-	+	47	58
-	+	1	16
-	+	2	4
-	+	3	4
-	+	6	11
-	+	3	22
-	+	4	53
-	+	46	42
-	+	24	54
-	+	25	0
+	+	15	34
+	+	28	0
+	+	15	38
+	+	16	23
+	+	18	48
+	+	40	4
+	+	41	18
+	+	7	11
+	+	35	4
+	+	36	4
+	+	29	11
+	+	30	18
+	+	41	0
+	+	40	9
+	+	15	18
+	+	16	90
+	+	20	0
+	+	23	0
 	+	26	0
-	+	18	36
-	+	22	44
-	+	20	35
+	+	20	15
+	+	21	46
+	+	24	50
+	+	27	43
+	+	23	19
+	+	26	16
+	+	21	38
+	+	24	39
+	+	21	39
+	+	27	39
+	+	7	11
+	+	33	113
+	+	34	96
+	+	35	4
+	+	36	4
+	+	20	0
+	+	19	0
+	+	22	0
+	+	25	0
+	+	12	15
+	+	18	0
+	+	36	28
+	+	36	16
+	+	36	41
+	+	36	42
+	+	36	40
+	+	36	42
+	+	40	0
+	+	36	0
+	+	40	0
+	+	16	38
+	+	38	75
+	+	39	35
+	+	2	0
+	+	38	0
+
+> ~/code/python/dedsert_technical_questions/question2.py
+	"	1	0
+	^	68	28
+	.	68	27
+	+	65	8
+	+	69	19
+	+	42	135
+	+	43	0
+	+	44	0
+	+	43	139
+	+	44	137
+	+	45	27
+	+	9	0
+	+	12	18
+	+	13	16
+	+	10	98
+	+	14	12
+	+	14	0
+	+	12	21
+	+	14	0
+	+	16	0
+	+	14	116
+	+	16	0
+	+	51	8
+	+	13	17
+	+	14	100
+	+	45	20
+	+	69	0
+	+	17	8
+	+	18	34
+	+	19	49
+	+	24	0
+	+	21	24
+	+	22	66
+	+	51	31
+	+	54	0
+	+	52	0
+	+	53	25
+	+	13	20
+	+	16	25
+	+	25	26
+	+	62	8
+	+	42	0
+	+	45	0
+	+	40	38
+	+	47	65
+	+	49	11
+	+	42	93
+	+	43	93
+	+	44	123
+	+	43	126
+	+	42	90
+	+	43	90
+	+	44	92
+	+	43	92
+	+	42	92
+	+	44	29
+	+	40	8
+	+	49	0
+	+	47	8
+	+	30	0
+	+	32	180
+	+	51	0
+	+	62	0
+	+	20	19
+	+	22	48
+	+	23	21
+	+	53	14
+	+	54	107
+	+	40	0
+	+	48	0
+	+	54	91
+	+	32	160
+	+	33	1
+	+	33	162
+	+	54	0
+	+	38	0
+	+	37	130
+	+	26	0
+	+	10	15
+	+	11	97
+	+	4	0
+	+	6	0
+	+	33	124
+	+	33	115
+	+	33	0
+	+	33	115
+	+	28	0
+	+	30	0
+	+	28	8
+	+	29	8
+	+	28	120
+	+	54	113
+	+	56	24
+	+	57	0
+	+	44	0
+	+	54	89
+	+	59	47
+	+	60	0
+	+	59	8
+	+	65	27
+	+	66	41
+	+	67	60
+	+	68	27
+	z	41	36
+
+> ~/code/python/dedsert_technical_questions/question3.py
+	"	1	0
+	^	102	21
+	.	102	20
+	+	82	0
+	+	88	0
+	+	48	18
+	+	52	27
+	+	57	0
+	+	62	0
+	+	57	28
+	+	62	19
+	+	67	17
+	+	72	26
+	+	77	0
+	+	82	0
+	+	82	17
+	+	88	0
+	+	77	23
+	+	44	12
+	+	52	0
+	+	57	0
+	+	62	0
+	+	67	0
+	+	72	0
+	+	77	0
+	+	82	0
+	+	44	41
+	+	45	43
+	+	46	27
+	+	45	33
+	+	49	0
+	+	52	0
+	+	49	33
+	+	5	34
+	+	54	36
+	+	59	0
+	+	57	0
+	+	62	0
+	+	59	0
+	+	60	10
+	+	61	27
+	+	60	33
+	+	59	40
+	+	64	0
+	+	69	0
+	+	74	0
+	+	79	0
+	+	84	0
+	+	64	0
+	+	69	0
+	+	74	0
+	+	79	0
+	+	84	0
+	+	64	41
+	+	69	41
+	+	74	44
+	+	84	41
+	+	80	10
+	+	81	27
+	+	85	10
+	+	67	0
+	+	72	0
+	+	77	0
+	+	82	0
+	+	86	27
+	+	69	33
+	+	74	36
+	+	79	37
+	+	84	33
+	+	80	33
+	+	85	33
+	+	30	23
+	+	34	23
+	+	14	28
+	+	26	11
+	+	14	19
+	+	30	0
+	+	34	0
+	+	30	0
+	+	22	53
+	+	22	15
+	+	22	0
+	+	23	57
+	+	24	16
+	+	25	54
+	+	23	58
+	+	29	5
+	+	23	55
+	+	16	59
+	+	29	16
+	+	33	16
+	+	7	62
+	+	100	30
+	+	96	0
+	+	91	63
+	+	99	111
+	+	36	34
+	+	35	0
+	+	7	130
+	+	18	26
+	+	21	58
+	+	42	81
+	+	102	20
+
+> ~/code/python/dedsert_technical_questions/question4.py
+	"	1	0
+	^	27	28
+	.	31	0
+	+	52	0
+	+	48	0
+	+	44	0
+	+	47	15
+	+	1	0
+	+	5	0
+	+	35	16
+	+	35	16
+	+	35	0
+	+	35	28
+	+	35	8
+	+	35	0
+	+	35	28
+	+	35	93
+	+	35	60
+	+	35	0
+	+	35	14
+	+	6	190
+	+	35	0
+	+	35	0
+	+	44	24
+	+	44	0
+	+	6	143
+	+	34	28
+	+	9	4
+	+	10	3
+	+	6	8
+	+	7	0
+	+	2	18
+	+	3	106
+	+	7	57
+	+	3	0
+	+	12	40
+	+	11	43
+	+	33	39
+	+	33	41
+	+	33	0
+	+	33	30
+	+	44	0
+	+	36	0
+	+	40	31
+	+	43	7
+	+	34	29
+	+	7	24
+	+	8	0
+	+	7	86
+	+	12	16
+	+	33	0
+	+	33	11
+	+	13	20
+	+	6	191
+	+	3	42
+	+	11	112
+	+	25	22
+	+	18	12
+	+	19	12
+	+	25	24
+	+	33	12
+	+	43	10
+	+	36	20
+	+	43	9
+	+	36	0
+	+	33	46
+	+	36	20
+	+	33	0
+	+	43	14
+	+	18	12
+	+	19	12
+	+	25	32
+	+	32	15
+	+	20	32
+	+	27	35
+	+	28	38
+	+	33	0
+	+	19	0
+	+	29	34
+	+	31	28
+	+	25	31
+	+	33	0
+	+	31	29
+	+	36	0
+	+	43	15
+	+	23	34
+	+	22	76
+	+	24	32
+	+	23	33
+	+	24	39
+	+	19	0
+	+	31	0
+	+	28	0
+	+	30	0
+	+	7	83
+	+	20	27
+	+	27	28
+	+	31	0
+
+> ~/code/python/dedsert_technical_questions/question5.py
+	"	1	0
+	^	43	56
+	.	43	55
+	+	28	115
+	+	4	138
+	+	5	71
+	+	29	4
+	+	26	4
+	+	33	28
+	+	34	26
+	+	5	133
+	+	8	16
+	+	13	39
+	+	15	64
+	+	10	37
+	+	13	0
+	+	11	0
+	+	13	0
+	+	11	0
+	+	11	56
+	+	14	65
+	+	15	0
+	+	36	0
+	+	44	0
+	+	37	73
+	+	10	31
+	+	13	36
+	+	11	30
+	+	14	30
+	+	9	68
+	+	12	0
+	+	15	0
+	+	17	18
+	+	23	0
+	+	15	0
+	+	16	16
+	+	20	4
+	+	21	18
+	+	18	56
+	+	19	28
+	+	21	4
+	+	22	4
+	+	21	18
+	+	18	51
+	+	28	43
+	+	46	140
+	+	46	16
+	+	46	167
+	+	30	0
+	+	32	0
+	+	30	37
+	+	31	113
+	+	31	0
+	+	31	44
+	+	50	0
+	+	46	0
+	+	46	33
+	+	46	55
+	+	46	34
+	+	46	74
+	+	46	92
+	+	46	111
+	+	46	135
+	+	46	35
+	+	46	46
+	+	46	55
+	+	46	66
+	+	46	75
+	+	46	86
+	+	46	93
+	+	46	104
+	+	46	112
+	+	46	123
+	+	46	138
+	+	46	149
+	+	46	150
+	+	46	160
+	+	46	161
+	+	46	171
+	+	46	172
+	+	46	182
+	+	46	183
+	+	46	193
+	+	46	194
+	+	46	204
+	+	46	205
+	+	46	215
+	+	46	216
+	+	50	0
+	+	46	216
+	+	47	28
+	+	47	44
+	+	48	49
+	+	49	14
+	+	39	0
+	+	42	0
+	+	41	0
+	+	38	0
+	+	36	29
+	+	39	29
+	+	42	31
+	+	37	55
+	+	43	55
+
+> ~/code/python/dedsert_technical_questions/question6.py
+	"	1	0
+	^	10	41
+	.	10	41
+	+	37	26
+	+	37	73
+	+	37	23
+	+	37	84
+	+	41	0
+	+	37	116
+	+	37	0
+	+	41	0
+	+	41	19
+	+	41	0
+	+	41	79
+	+	2	0
+	+	3	15
+	+	25	51
+	+	25	140
+	+	25	0
+	+	25	0
+	+	25	5
+	+	35	0
+	+	35	28
+	+	35	7
+	+	41	0
+	+	35	17
+	+	25	53
+	+	35	47
+	+	35	12
+	+	35	86
+	+	35	14
+	+	25	46
+	+	27	32
+	+	28	71
+	+	35	0
+	+	26	0
+	+	35	0
+	+	35	0
+	+	4	0
+	+	35	0
+	+	36	0
+	+	37	0
+	+	41	0
+	+	28	72
+	+	30	0
+	+	29	0
+	+	30	19
+	+	31	58
+	+	27	24
+	+	30	23
+	+	32	4
+	+	33	24
+	+	34	52
+	+	11	167
+	+	11	0
+	+	12	10
+	+	10	34
+	+	12	39
+	+	20	13
+	+	38	29
+	+	12	43
+	+	19	0
+	+	13	4
+	+	16	21
+	+	19	0
+	+	16	33
+	+	17	17
+	+	13	3
+	+	15	16
+	+	19	0
+	+	17	19
+	+	19	21
+	+	20	16
+	+	19	0
+	+	19	30
+	+	15	13
+	+	15	18
+	+	19	0
+	+	18	31
+	+	14	70
+	+	20	10
+	+	20	0
+	+	20	29
+	+	21	28
+	+	22	9
+	+	23	18
+	+	39	10
+	+	40	36
+	+	6	95
+	+	7	57
+	+	8	68
+	+	9	0
+	+	10	48
+	+	34	34
+	+	33	15
+	+	34	8
+	+	34	72
+	+	35	0
+	+	34	54
+	+	34	71
+	+	6	81
+	+	10	50
+	+	10	41
+
+> ~/code/python/dedsert_technical_questions/question7.py
+	"	1	0
+	^	89	9
+	.	91	0
+	+	9	0
+	+	5	0
+	+	1	0
+	+	70	46
+	+	77	51
+	+	71	32
+	+	71	8
+	+	72	36
+	+	73	11
+	+	74	79
+	+	75	22
+	+	76	0
+	+	78	0
+	+	79	0
+	+	81	73
+	+	82	19
+	+	86	0
+	+	92	0
+	+	90	32
+	+	91	27
+	+	62	56
+	+	63	52
+	+	91	35
+	+	27	37
 	+	28	62
 	+	29	0
-	+	30	52
-	+	26	44
-	+	73	0
-	+	36	54
-	+	38	45
-	+	37	62
-	+	11	57
-	+	12	56
-	+	11	0
-	+	5	80
-	+	5	64
+	+	85	7
+	+	86	50
+	+	87	24
+	+	88	70
+	+	87	21
+	+	89	8
+	+	90	0
+	+	91	0
 
-> ~/.config/pudb/themes/__Tagbar__
-	"	1	0
-	.	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-
-> ~/code/python/XBMC-Utility-scripts/spiderBro.py
-	"	1	0
-	.	1	0
+> ~/code/python/temp.py
+	"	17	11
+	^	17	12
+	.	17	11
 	+	1	0
-
-> ~/code/python/spider_bro/-vimpdb-
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/code/python/spider_bro/STDOUT_STDERR
-	"	1	0
-	.	2	0
-	+	5	0
+	+	2	0
+	+	4	15
+	+	5	12
+	+	11	19
+	+	12	14
+	+	13	10
 	+	4	0
-	+	3	0
-	+	2	0
-
-> ~/code/python/spider_bro/SCOPE
-	"	2	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	5	0
-	+	1	0
-	+	1	0
-	+	4	0
-	+	1	0
-	+	1	0
-	+	3	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/python/spider_bro/LOG
-	"	66	0
-	.	66	0
-	+	197	0
-	+	198	0
-	+	224	0
-	+	237	0
-	+	241	0
-	+	254	0
-	+	258	0
-	+	260	0
-	+	261	0
-	+	132	0
-	+	133	0
-	+	159	0
-	+	172	0
-	+	176	0
-	+	189	0
-	+	193	0
-	+	195	0
-	+	196	0
-	+	67	0
-	+	68	0
-	+	94	0
-	+	107	0
-	+	111	0
-	+	124	0
-	+	128	0
-	+	130	0
-	+	131	0
-	+	2	0
-	+	3	0
-	+	29	0
-	+	42	0
-	+	46	0
-	+	59	0
-	+	63	0
-	+	65	0
-	+	66	0
-
-> ~/code/python/spider_bro/STACK
-	"	5	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	14	0
-	+	1	0
-	+	1	0
-	+	10	0
-	+	1	0
-	+	1	0
+	+	3	60
 	+	6	0
+	+	7	16
+	+	8	22
+	+	13	11
+	+	15	23
+	+	16	16
+	+	17	11
+
+> ~/checklist.txt
+	"	25	41
+	^	24	140
+	.	25	40
+	+	1	6
+	+	18	7
+	+	21	22
+	+	28	15
+	+	31	6
+	+	1	6
+	+	2	25
+	+	3	25
+	+	4	25
+	+	5	12
+	+	4	15
+	+	18	7
+	+	19	13
+	+	21	22
+	+	22	37
+	+	23	33
+	+	28	15
+	+	29	9
+	+	31	12
+	+	32	47
+	+	6	0
+	+	7	3
+	+	8	45
+	+	9	68
+	+	10	11
+	+	9	19
+	+	10	67
+	+	16	0
+	+	10	83
+	+	11	4
+	+	12	12
+	+	13	43
+	+	14	115
+	+	15	151
+	+	23	34
+	+	24	114
+	+	25	64
+	+	26	127
+	+	24	139
+	+	25	40
+
+> ~/league/itemsets.txt
+	"	4	26
+	^	4	27
+	.	4	27
+	+	1	9
+	+	3	14
+	+	4	27
+
+> ~/league/katarina.txt
+	"	3	187
+	^	3	188
+	.	3	187
+	+	1	4
+	+	1	4
+	+	1	15
+	+	8	228
+	+	10	161
+	+	11	0
+	+	1	0
+	+	13	10
+	+	15	98
+	+	1	0
+	+	4	0
+	+	5	0
+	+	1	22
+	+	2	0
+	+	3	187
+
+> ~/league/katmap.txt
+	"	1	0
+
+> ~/league/leaguecraft.txt
+	"	40	90
+	^	40	91
+	.	40	90
+	+	11	131
+	+	12	163
+	+	12	2
+	+	13	160
+	+	13	75
+	+	17	7
+	+	18	56
+	+	19	152
+	+	13	90
+	+	15	31
+	+	13	32
+	+	14	94
+	+	15	73
+	+	14	96
+	+	15	134
+	+	16	198
+	+	24	0
+	+	25	0
+	+	42	0
+	+	25	29
+	+	26	108
+	+	26	6
+	+	27	130
+	+	27	84
+	+	26	140
+	+	28	170
+	+	29	92
+	+	31	23
+	+	32	134
+	+	33	102
+	+	34	114
+	+	35	68
+	+	41	0
+	+	35	14
+	+	36	62
+	+	37	24
+	+	35	23
+	+	38	0
+	+	36	60
+	+	39	23
+	+	40	111
+	+	40	90
+
+> ~/goals.txt
+	"	7	0
+	^	7	0
+	.	7	0
+	+	1	30
+	+	2	42
+	+	3	29
+	+	4	35
+	+	5	20
+	+	7	0
+
+> ~/leaguecraft.txt
+	"	89	4
+	^	35	83
+	.	42	0
+	+	18	215
+	+	18	223
+	+	18	232
+	+	18	240
+	+	20	8
+	+	21	5
+	+	22	7
+	+	23	5
+	+	24	6
+	+	25	5
+	+	26	5
+	+	27	4
+	+	28	10
+	+	29	7
+	+	31	6
+	+	34	5
+	+	35	7
+	+	36	6
+	+	37	2
+	+	37	6
+	+	37	5
+	+	38	5
+	+	39	7
+	+	44	7
+	+	45	5
+	+	46	5
+	+	47	6
+	+	48	8
+	+	49	5
+	+	50	7
+	+	51	4
+	+	52	6
+	+	54	3
+	+	55	4
+	+	56	4
+	+	57	8
+	+	58	5
+	+	59	0
+	+	60	7
+	+	61	7
+	+	62	5
+	+	63	5
+	+	64	4
+	+	65	5
+	+	20	0
+	+	31	0
+	+	44	0
+	+	54	0
+	+	60	0
+	+	16	6
+	+	18	6
+	+	18	15
+	+	18	22
+	+	18	29
+	+	18	35
+	+	18	44
+	+	18	53
+	+	18	62
+	+	18	70
+	+	18	77
+	+	18	85
+	+	18	92
+	+	18	102
+	+	18	109
+	+	18	116
+	+	18	126
+	+	18	137
+	+	18	146
+	+	18	153
+	+	18	159
+	+	18	167
+	+	18	173
+	+	18	180
+	+	18	187
+	+	18	194
+	+	18	204
+	+	18	216
+	+	18	224
+	+	18	233
+	+	19	0
+	+	31	6
+	+	32	10
+	+	34	0
+	+	35	0
+	+	36	0
+	+	37	0
+	+	38	0
+	+	39	0
+	+	37	0
+	+	40	0
+	+	41	0
+	+	39	6
+	+	40	88
+	+	41	92
+	+	32	11
+	+	33	14
+	+	34	39
+	+	35	82
+	+	39	0
+	+	42	0
+
+> ~/code/python/league/mpen.py
+	"	9	48
+	^	9	49
+	.	9	49
+	+	1	0
+	+	4	54
+	+	6	21
+	+	7	43
+	+	8	0
+	+	10	24
+	+	11	44
+	+	7	28
+	+	11	19
+	+	10	19
+	+	8	0
+	+	9	49
+
+> ~/code/python/csv/marktest.py
+	"	1	0
+	^	6	45
+	.	6	44
+	+	1	0
+	+	12	7
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	2	0
+	+	12	4
+	+	12	4
+	+	12	0
+	+	12	24
+	+	12	3
+	+	12	0
+	+	5	37
+	+	6	76
+	+	9	26
+	+	12	20
+	+	9	16
+	+	7	0
+	+	9	0
+	+	7	30
+	+	9	0
+	+	12	0
+	+	11	0
+	+	8	0
+	+	9	30
+	+	10	35
+	+	1	1
+	+	8	54
+	+	6	44
+
+> ~/code/python/stupid_behaviour/try.py
+	"	8	12
+	^	8	13
+	.	8	12
+	+	1	0
+	+	2	8
+	+	6	0
+	+	9	0
+	+	8	12
+
+> ~/katmap.txt
+	"	4	122
+	^	4	123
+	.	4	122
+	+	1	14
+	+	7	91
+	+	8	2
+	+	9	4
+	+	10	2
+	+	11	5
+	+	13	25
+	+	15	11
+	+	16	17
+	+	17	5
+	+	18	7
+	+	21	116
+	+	23	14
+	+	26	22
+	+	27	6
+	+	18	0
+	+	17	4
+	+	19	3
+	+	13	17
+	+	10	2
+	+	18	1
+	+	19	67
+	+	27	21
+	+	28	6
+	+	28	6
+	+	32	0
+	+	28	12
+	+	32	17
+	+	26	25
+	+	27	25
+	+	28	26
+	+	32	25
+	+	28	10
+	+	19	18
+	+	29	6
+	+	30	6
+	+	31	5
+	+	23	14
+	+	25	6
+	+	25	5
+	+	27	5
+	+	28	0
+	+	24	0
+	+	25	5
+	+	29	25
+	+	25	11
+	+	27	11
+	+	25	12
+	+	30	10
+	+	31	10
+	+	27	4
+	+	27	0
+	+	28	0
+	+	2	0
+	+	5	0
+	+	3	4
+	+	4	122
+
+> ~/code/python/dedsert_technical_questions/README
+	"	5	15
+	^	5	16
+	.	5	15
+	+	1	194
+	+	3	13
+	+	5	15
+
+> ~/code/python/repoze.lru-0.6/repoze/lru/__init__.py
+	"	55	12
+
+> ~/code/python/dedsert_technical_questions/question4,py
+	"	1	0
+
+> ~/code/python/spider_bro/db_manager.py
+	"	8	0
+
+> ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
+	"	45	14
+
+> ~/code/python/dedsert_technical_questions/GoToFile
+	"	1	0
+	.	1	0
 	+	1	0
 	+	1	0
-	+	2	0
-
-> ~/code/python/spider_bro/WATCH
-	"	1	0
-	.	2	0
-	+	5	0
-	+	4	0
+	+	1	0
 	+	3	0
-	+	2	0
+	+	1	0
 
-> ~/code/python/spider_bro/RESULTS
+> ~/code/python/dedsert_technical_questions/__Tagbar__
+	"	27	5
+	.	34	0
+	+	50	0
+	+	50	0
+	+	50	0
+	+	50	0
+	+	50	0
+	+	50	0
+	+	50	0
+	+	50	0
+	+	39	0
+	+	39	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+
+> ~/code/python/XBMC-Utility-scripts/xbmc_recently_added.py
+	"	17	0
+
+> ~/code/python/dedsert_technical_questions/[Vundle] Installer
+	"	22	0
+	.	1	0
+	+	1	0
+
+> ~/code/python/dedsert_technical_questions/question
 	"	1	0
-	.	2	0
-	+	5	0
-	+	4	0
+
+> ~/code/python/bleachnamer/bleachnamer.py
+	"	44	52
+	^	44	53
+	.	44	52
+	+	1	0
 	+	3	0
+	+	19	0
+	+	20	0
+	+	19	147
+	+	22	84
+	+	35	6
+	+	23	16
+	+	34	40
+	+	22	0
+	+	34	0
+	+	23	0
+	+	25	0
+	+	25	0
+	+	25	0
+	+	26	0
+	+	23	11
+	+	34	0
+	+	33	49
+	+	33	87
+	+	33	49
+	+	34	0
+	+	34	11
+	+	25	0
+	+	23	16
+	+	33	0
+	+	32	56
+	+	3	0
+	+	5	38
+	+	23	20
+	+	34	24
+	+	34	21
+	+	20	0
+	+	3	13
+	+	32	0
+	+	34	0
+	+	34	19
+	+	25	0
+	+	34	0
+	+	25	0
+	+	32	47
+	+	34	18
+	+	34	0
+	+	35	83
+	+	49	27
+	+	49	87
 	+	2	0
+	+	36	28
+	+	37	17
+	+	38	15
+	+	24	63
+	+	38	16
+	+	39	21
+	+	41	12
+	+	42	22
+	+	16	0
+	+	18	0
+	+	40	28
+	+	41	0
+	+	42	51
+	+	46	19
+	+	47	19
+	+	44	85
+	+	49	0
+	+	38	0
+	+	34	0
+	+	36	52
+	+	6	0
+	+	7	0
+	+	8	0
+	+	14	0
+	+	8	29
+	+	10	28
+	+	23	0
+	+	11	0
+	+	36	0
+	+	12	49
+	+	13	14
+	+	36	33
+	+	49	0
+	+	9	42
+	+	12	1
+	+	30	120
+	+	30	0
+	+	32	37
+	+	31	88
+	+	31	0
+	+	3	14
+	+	4	12
+	+	45	53
+	+	43	45
+	+	45	76
+	+	46	0
+	+	44	52
 
-> ~/code/python/STDOUT_STDERR
+> ~/code/python/spider_bro/file_renamer.py
+	"	147	0
+
+> ~/code/python/bleachnamer/__Tagbar__
+	"	35	4
+	.	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+
+> ~/code/python/twisted_fate/twisted_server.py
 	"	1	0
-	.	2	0
-	+	2	0
+	.	1	0
+	+	1	0
 
-> ~/code/python/SCOPE
-	"	3	0
+> ~/code/python/twisted_fate/twisted_client.py
+	"	18	12
+	^	18	13
+	.	18	0
+	+	1	0
+	+	1	22
+	+	2	36
+	+	2	36
+	+	18	0
+
+> ~/code/python/twisted_fate/ttest.py
+	"	1	0
+	.	1	0
+	+	1	22
+	+	1	35
+	+	1	32
+	+	1	25
+	+	1	20
+	+	1	40
+	+	1	16
+	+	1	16
+	+	1	12
+	+	1	28
+	+	1	22
+	+	1	0
+
+> ~/code/python/spider_bro/GoToFile
+	"	1	0
 	.	3	0
 	+	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/code/python/LOG
-	"	125	0
-	.	125	0
-	+	2	0
-	+	3	0
-	+	29	0
-	+	42	0
-	+	46	0
-	+	59	0
-	+	63	0
-	+	65	0
-	+	69	0
-	+	92	0
-	+	98	0
-	+	121	0
-	+	125	0
-
-> ~/code/python/STACK
-	"	5	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
-> ~/code/python/WATCH
-	"	1	0
-	.	2	0
-	+	2	0
-
-> ~/code/python/RESULTS
-	"	1	0
-	.	2	0
-	+	2	0
-
-> ~/code/python/-vimpdb-
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/.vimpdbrc
-	"	4	13
-	^	4	14
-	.	4	14
-	+	1	23
-	+	2	24
-	+	3	18
-	+	4	10
-	+	3	20
-	+	4	14
-
-> ~/tesdbg.py
-	"	1	0
-	.	1	0
-	+	5	0
-	+	1	0
-
-> ~/__Tagbar__
-	"	1	0
-
-> ~/wtf.py
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/.bashrc
-	"	96	0
-	.	96	0
-	+	96	0
-
-> /media/nasGom/downloads/dwarf_fortress_MW.txt
-	"	39	113
-	^	39	114
-	.	39	113
-	+	37	14
-	+	38	0
-	+	41	16
-	+	43	13
-	+	44	13
-	+	53	21
-	+	54	20
-	+	90	28
-	+	43	18
-	+	44	16
-	+	90	0
-	+	42	0
-	+	44	21
-	+	45	17
-	+	44	0
-	+	46	17
-	+	47	22
-	+	48	5
-	+	47	25
-	+	48	32
-	+	49	31
-	+	48	49
-	+	50	39
-	+	51	14
-	+	52	24
-	+	30	2
-	+	31	2
-	+	24	0
-	+	3	0
-	+	5	0
-	+	6	0
 	+	7	0
-	+	8	0
-	+	9	0
-	+	10	0
-	+	11	0
-	+	20	152
-	+	54	20
-	+	56	16
-	+	57	89
-	+	58	78
-	+	60	16
-	+	87	7
-	+	62	5
-	+	66	11
-	+	67	10
-	+	68	17
-	+	69	20
-	+	69	0
-	+	61	50
-	+	62	0
-	+	63	50
-	+	65	7
-	+	65	12
-	+	69	0
-	+	70	12
-	+	72	47
-	+	73	34
-	+	70	12
-	+	71	40
-	+	73	35
-	+	75	4
-	+	77	35
-	+	83	0
-	+	82	87
-	+	75	4
-	+	76	21
-	+	77	35
-	+	79	8
-	+	80	39
-	+	82	3
-	+	87	8
-	+	88	8
-	+	80	0
-	+	82	0
-	+	81	119
-	+	81	0
-	+	80	4
-	+	81	170
-	+	84	6
-	+	85	134
-	+	85	19
-	+	21	138
-	+	88	54
-	+	89	44
-	+	39	113
-
-> ~/df/df_linux/data/init/world_gen.txt
-	"	1170	23
-	^	1170	24
-	.	1170	23
-	+	1070	96
-	+	1071	96
-	+	1072	96
-	+	1073	96
-	+	1074	96
-	+	1075	96
-	+	1076	96
-	+	1077	96
-	+	1078	96
-	+	1079	96
-	+	1080	96
-	+	1081	96
-	+	1082	96
-	+	1084	11
-	+	1085	16
-	+	1086	19
-	+	1087	11
-	+	1088	20
-	+	1089	13
-	+	1090	21
-	+	1091	22
-	+	1092	27
-	+	1093	27
-	+	1094	25
-	+	1095	27
-	+	1096	24
-	+	1097	27
-	+	1098	27
-	+	1099	33
-	+	1100	28
-	+	1101	32
-	+	1102	35
-	+	1103	32
-	+	1104	43
-	+	1105	22
-	+	1106	18
-	+	1107	23
-	+	1108	18
-	+	1109	29
-	+	1110	17
-	+	1111	23
-	+	1112	20
-	+	1113	19
-	+	1114	21
-	+	1115	18
-	+	1116	32
-	+	1117	35
-	+	1118	22
-	+	1119	21
-	+	1120	30
-	+	1121	27
-	+	1122	19
-	+	1123	26
-	+	1124	27
-	+	1125	17
-	+	1126	27
-	+	1127	28
-	+	1128	28
-	+	1129	31
-	+	1130	27
-	+	1131	29
-	+	1132	28
-	+	1133	31
-	+	1134	27
-	+	1135	25
-	+	1136	20
-	+	1137	31
-	+	1138	28
-	+	1139	20
-	+	1140	22
-	+	1141	31
-	+	1142	31
-	+	1143	36
-	+	1144	36
-	+	1145	27
-	+	1146	27
-	+	1147	23
-	+	1148	23
-	+	1149	24
-	+	1150	25
-	+	1151	24
-	+	1152	24
-	+	1153	24
-	+	1154	24
-	+	1155	20
-	+	1156	17
-	+	1157	19
-	+	1158	23
-	+	1159	26
-	+	1160	21
-	+	1161	22
-	+	1162	21
-	+	1163	28
-	+	1164	15
-	+	1165	34
-	+	1166	24
-	+	1167	19
-	+	1168	23
-	+	1169	23
-	+	1170	23
-
-> ~/df/df_linux/data/init/d_init.txt
-	"	42	20
-	^	42	21
-	.	42	20
-	+	42	20
-
-> ~/df/df_linux/data/init/init.txt
-	"	126	0
-
-> /media/nasGom/downloads/df_linux/data/init/world_gen.txt
-	"	831	1
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/hack/scripts/fix/cloth-stockpile.lua
-	"	86	0
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/dfhack.init
-	"	569	0
-	^	519	21
-	.	519	0
-	+	427	0
-	+	519	0
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/gamelog.txt
-	"	1156060	0
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/data/init/embark_profiles.txt
-	"	857	1
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/data/init/init.txt
-	"	1	0
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/data/init/d_init.txt
-	"	1	0
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/__Tagbar__
-	"	1	0
-
-> ~/code/python/spider_bro/sb_utils.py
-	"	485	4
-	^	224	85
-	.	97	0
-	+	216	37
-	+	224	84
-	+	97	0
-
-> ~/code/python/spider_bro/README
-	"	7	49
-	^	3	50
-	.	3	50
-	+	3	50
-
-> ~/dwarf_fortress_MW.txt
-	"	1	0
-	^	42	145
-	.	42	135
-	+	1	16
-	+	19	30
-	+	21	1
-	+	24	0
-	+	27	0
-	+	27	0
-	+	29	0
-	+	32	0
-	+	34	0
-	+	35	0
-	+	36	0
-	+	36	80
-	+	23	79
-	+	38	198
-	+	11	77
-	+	39	169
-	+	40	162
-	+	42	135
-
-> ~/df_quickfort_prints.txt
-	"	18	29
-	^	18	30
-	.	18	29
-	+	1	28
-	+	4	9
-	+	1	8
-	+	4	57
-	+	6	16
-	+	8	10
-	+	10	5
-	+	12	24
-	+	13	0
 	+	1	0
-	+	2	0
-	+	1	65
-	+	6	16
+	+	1	0
+	+	1	0
+	+	1	0
+	+	3	0
+
+> ~/code/cpp/suzyG.cpp
+	"	20	20
+	^	20	21
+	.	20	20
+	+	1	0
+	+	5	24
+	+	8	0
+	+	7	14
+	+	11	0
+	+	14	0
+	+	13	14
+	+	14	1
+	+	27	3
+	+	5	0
+	+	1	16
+	+	4	4
+	+	10	10
+	+	16	5
+	+	27	38
+	+	27	3
+	+	27	3
+	+	26	0
+	+	26	0
+	+	21	0
+	+	23	19
+	+	24	0
+	+	25	17
+	+	24	27
+	+	1	9
+	+	27	17
+	+	48	4
+	+	37	17
+	+	38	55
+	+	40	18
+	+	41	16
+	+	42	44
+	+	11	7
+	+	27	42
+	+	22	35
+	+	24	36
+	+	44	18
+	+	46	51
+	+	47	17
+	+	37	13
+	+	41	15
+	+	37	14
+	+	41	14
+	+	27	0
+	+	28	0
+	+	27	18
+	+	28	27
+	+	31	0
+	+	49	0
+	+	35	0
+	+	28	0
+	+	32	0
+	+	39	26
+	+	43	0
+	+	30	0
+	+	46	35
+	+	20	20
+
+> ~/code/cpp/__Tagbar__
+	"	1	0
+	.	7	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	24	0
+	+	24	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	17	0
+	+	17	0
 	+	12	0
-	+	12	0
-	+	19	0
-	+	14	15
-	+	16	41
-	+	18	29
+	+	7	0
 
-> ~/df_notes.txt
-	"	22	0
-	^	23	115
-	.	23	114
-	+	1	24
-	+	8	23
-	+	12	61
-	+	12	72
-	+	13	44
-	+	14	39
-	+	13	49
-	+	2	0
-	+	5	46
-	+	6	13
-	+	6	31
-	+	6	22
-	+	6	30
-	+	8	159
-	+	8	24
-	+	9	5
-	+	9	159
-	+	10	73
-	+	11	33
-	+	2	0
-	+	3	104
-	+	14	40
-	+	16	42
-	+	17	23
-	+	18	103
-	+	19	78
-	+	20	60
-	+	21	56
-	+	22	27
-	+	23	114
+> ~/code/python/ice/build.py
+	"	18	0
 
-> ~/code/python/XBMC-Utility-scripts/files_not_in_xbmc_lib.py
-	"	46	0
-	.	51	0
-	+	50	0
-	+	51	0
+> ~/code/python/ice/__Tagbar__
+	"	29	3
+	.	42	0
+	+	42	0
+	+	42	0
 
-> ~/code/python/XBMC-Utility-scripts/(clewn)_console
-	"	170	5
-	.	167	0
+> ~/code/python/ice/GoToFile
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/code/python/ice/ice/steam_shortcut_manager.py
+	"	169	12
+
+> ~/code/python/spider_bro/.git/COMMIT_EDITMSG
+	"	2	49
+	^	2	50
+	.	2	49
+	+	2	49
+
+> ~/code/python/csv/test.csv
+	"	4	16
+	^	4	17
+	.	4	16
+	+	4	16
+
+> /tmp/crontab.UT8Cn2/crontab
+	"	24	2
+	^	24	3
+	.	24	2
+	+	25	0
+	+	23	59
+	+	24	2
+
+> ~/code/python/csv
+	"	1	0
+
+> ~/code/python/shim/src/shim.py
+	"	1	0
+
+> /media/nasGom/downloads/SphContractForDifference.h
+	"	902	4
+
+> /media/nasGom/downloads/__Tagbar__
+	"	17	7
+	.	283	0
+	+	283	0
+	+	283	0
+
+> ~/code/python/XBMC-Utility-scripts/.git/COMMIT_EDITMSG
+	"	1	46
+	^	1	47
+	.	1	46
+	+	1	4
+	+	3	2
+	+	1	46
+
+> ~/code/sources/2048/2048_game.c
+	"	163	0
+	.	1	0
+	+	1	0
+
+> ~/code/sources/2048/__Tagbar__
+	"	23	4
+	.	29	0
 	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	167	0
+	+	140	0
+	+	113	0
+	+	90	0
+	+	90	0
+	+	90	0
+	+	90	0
+	+	90	0
+	+	80	0
+	+	80	0
+	+	80	0
+	+	80	0
+	+	80	0
+	+	55	0
+	+	55	0
+	+	29	0
+	+	29	0
 
-> ~/code/cpp/gdb_test/main.cc
-	"	79	12
+> ~/code/sources/2048/Makefile
+	"	9	37
+	^	9	38
+	.	9	37
+	+	8	4
+	+	9	37
 
-> ~/code/cpp/gdb_test/__Tagbar__
+> /usr/include/curses.h
+	"	706	27
+
+> ~/code/sources/2048/.ycm_extra_conf.py
+	"	52	15
+	^	52	16
+	.	52	15
+	+	44	8
+	+	50	2
+	+	38	0
+	+	38	0
+	+	52	0
+	+	54	0
+	+	52	0
+	+	51	9
+	+	52	15
+
+> ~/.ycm_extra_conf.py
+	"	69	0
+
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/raw/objects/creature_pet_masterwork.txt
+	"	1649	2
+
+> ~/creature_monster_masterwork.txt
+	"	9561	1
+	^	9524	31
+	.	9529	0
+	+	9595	0
+	+	9595	0
+	+	9599	15
+	+	9600	18
+	+	9524	30
+	+	9529	0
+
+> ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
+	"	498	0
+
+> ~/code/cpp/roguelike_tutorial/rogmain.cpp
+	"	80	4
+
+> ~/code/cpp/roguelike_tutorial/__Tagbar__
 	"	1	0
-	.	33	0
-	+	33	0
+	.	8	0
+	+	8	0
 
-> ~/code/cpp/gdb_test/(clewn)_console
-	"	156	5
-	.	154	0
-	+	154	0
+> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/raw/objects/creature_monster_masterwork.txt
+	"	1641	3
 
-> ~/code/cpp/gdb_test/(clewn)_dbgvar
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/b_detail_plan_bj.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/b_detail_plan_default.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/b_detail_plan_masterwork.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/body_default.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/body_masterwork.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_custom.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_furnaces_masterwork.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_kobold.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_masterwork.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/building_orcfort_taigaorc.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/creature_a_pet_drowfort.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/entity_drow_evil.txt
-	"	1	0
-
-> ~/code/sources/mw_dwarf_fortress/masterwork-dwarf-fortress/Dwarf Fortress/raw/objects/entity_drowfort.txt
-	"	1	0
+> ~/creaturelist.txt
+	"	919	0
+	.	38	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1386	0
+	+	1	0
+	+	1386	0
+	+	31	0
+	+	1	0
+	+	29	1
+	+	30	1
+	+	106	0
+	+	116	0
+	+	1352	0
+	+	1	0
+	+	1	0
+	+	38	0
