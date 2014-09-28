@@ -8,42 +8,46 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/root
+~MSle0~/db_manager
 
 # Last Substitute Search Pattern:
-~MSle0&CREATE DATABASE
+~MSle0&\<db_showlist\>
 
 # Last Substitute String:
-$package_list.txt
+$
 
 # Command Line History (newest to oldest):
+:q
+:w
+:qa
+:tabnew spiderBro.py
+:tabnew spiderbro.db
+:q!
+:;
+:s/\<db_showlist\>//g
+:hh
+:map
 :wq
 :tabnew desktop_install.sh
-:q
 :call <SNR>66_GundoClose()
-:w
 :%s/\n/ /g
 :%s/\r/ /g
 :79;54m
 :79;54M
-:qa
 :g/CREATE DATABASE
 :160;44M;q
 :wqa
 :;wqa
 :tabnew sshcopykey.sh
-:map
 :BundleInstall
 :BundleClean
 :Bundle
-:q!
 :;;;;;;
 :;;w
 :;;;;;;;;;;;;;;;
 :;;;;;;l
 :;;;;;l
 :%s/\<packages.list\>/package_list.txt/g
-:tabnew spiderBro.py
 :pyfile %
 :exe "!pudb % " 
 :tabnew sb_utils.py
@@ -221,6 +225,11 @@ $package_list.txt
 :Pyclewn
 
 # Search String History (newest to oldest):
+?/db_manager
+?/opts
+? \<db_showlist\>
+?/normalize
+?/trakt
 ? \n
 ? \r
 ?/root
@@ -356,6 +365,7 @@ $package_list.txt
 =SuperTab('n')
 
 # Input Line History (newest to oldest):
+@python %
 @y
 @python marktest.py
 @python 
@@ -363,7 +373,6 @@ $package_list.txt
 @python test.py
 @ls
 @ack gom
-@python %
 @sbadded
 @c11c %
 @ls -a ~/.git
@@ -382,26 +391,29 @@ $package_list.txt
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	scp $HOST:nasgom/backup/desktop_package_list.txt .
-""1	LINE	0
-	scp $HOST:package_list.txt .
+""0	LINE	0
+	        if(show[0].decode('latin-1', 'replace') not in ignore_list): full_showlist.append(show[0])
+"1	LINE	0
+	apiKey = "b837e9f111dcae8e279711ce929e9ef1"
 "2	LINE	0
-	scp -r $HOST:code/cpp code/
+	    traktWatchlistScraper(
 "3	LINE	0
-	
+	    #
 "4	LINE	0
-	
+	    #
 "5	LINE	0
-	
+	    #
 "6	LINE	0
-	# run this on host:
+	    #
 "7	LINE	0
-	scp $HOST:alldb.sql .
+	   #
 "8	LINE	0
-	
+	    elif(shows_list):
+	        log.info("Using list of shows from file...")
+	        for show in shows_list:
+	            hunt_eps(show, opts, search_list, s_masks, e_masks, ignore_taglist)
 "9	LINE	0
-	scp -r $HOST:.vim/ .
+	    #
 "b	LINE	0
 	-                    --....................--....................-
 "c	LINE	0
@@ -412,7 +424,7 @@ $package_list.txt
 "w	CHAR	0
 	wwwwwwwwwwwwx;wkjji	if(g:py0wwxi Aie€kb€kbex€kb€kb:exe "Cinfo locals!"€kb€kb"j€kb€kbendif;wkjjddkkkkkA;E€kb€kb;€kb:exe "Cnext";wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkyyGkkkkkpjjjjjjjkkkkjdddddddddd;w,gd
 "-	CHAR	0
-	python 
+	full_showlist
 
 # File marks:
 'A  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
@@ -441,27 +453,263 @@ $package_list.txt
 'X  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Y  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
 'Z  1  0  ~/.vim/bundle/snipmate.vim/snippets/cpp.snippets
-'0  17  24  ~/bin/server_install.sh
-'1  69  0  ~/bin/server_install.sh
-'2  67  43  ~/bin/server_install.sh
-'3  123  2  ~/package_list.txt
-'4  30  18  ~/bin/server_install.sh
-'5  58  0  ~/bin/server_install.sh
-'6  1090  184558  ~/bin/alldb_backup.sql
-'7  160  0  /etc/samba/smb.conf
-'8  65  20  ~/bin/server_install.sh
-'9  1  3  ~/bin/.git/COMMIT_EDITMSG
+'0  1  53  /media/nasGom/code/python/spider_bro/.git/COMMIT_EDITMSG
+'1  22  5  /media/nasGom/code/python/spider_bro/sb_utils.py
+'2  1  21  /media/nasGom/code/python/spider_bro/trakttest.py
+'3  582  75  /media/nasGom/code/python/spider_bro/sb_utils.py
+'4  1  0  /media/nasGom/backup/powershell/Microsoft.PowerShell_profile.ps1
+'5  77  8  /media/nasGom/backup/powershell/Microsoft.PowerShell_profile.ps1
+'6  17  24  ~/bin/server_install.sh
+'7  69  0  ~/bin/server_install.sh
+'8  67  43  ~/bin/server_install.sh
+'9  123  2  ~/package_list.txt
 
 # Jumplist (newest first):
--'  17  24  ~/bin/server_install.sh
--'  1  0  ~/bin/server_install.sh
--'  69  0  ~/bin/server_install.sh
--'  51  14  ~/bin/server_install.sh
--'  52  0  ~/bin/server_install.sh
--'  55  0  ~/bin/server_install.sh
--'  56  0  ~/bin/server_install.sh
+-'  1  53  /media/nasGom/code/python/spider_bro/.git/COMMIT_EDITMSG
+-'  22  5  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  683  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  584  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  466  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  428  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  393  9  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  391  10  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  76  4  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  419  39  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  418  66  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  417  25  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  415  23  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  414  57  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  413  28  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  411  23  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  410  58  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  409  29  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  407  23  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  406  51  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  405  28  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  403  28  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  401  59  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  400  7  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  396  22  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  395  7  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  647  14  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  646  5  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  645  5  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  632  61  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  631  97  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  616  35  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  609  51  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  591  67  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  586  10  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  582  26  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  22  5  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  683  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  584  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  466  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  428  8  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  393  9  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  391  10  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  76  4  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  419  39  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  418  66  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  417  25  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  415  23  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  414  57  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  413  28  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  411  23  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  410  58  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  409  29  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  407  23  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  406  51  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  405  28  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  403  28  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  401  59  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  400  7  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  396  22  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  395  7  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  647  14  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  646  5  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  645  5  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  632  61  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  631  97  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  616  35  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  609  51  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  591  67  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  586  10  /media/nasGom/code/python/spider_bro/sb_utils.py
+-'  582  26  /media/nasGom/code/python/spider_bro/sb_utils.py
 
 # History of marks within files (newest to oldest):
+
+> /media/nasGom/code/python/spider_bro/.git/COMMIT_EDITMSG
+	"	1	53
+	^	1	54
+	.	1	53
+	+	1	53
+
+> /media/nasGom/code/python/spider_bro/sb_utils.py
+	"	22	5
+	^	667	32
+	.	667	31
+	+	650	0
+	+	651	0
+	+	664	0
+	+	665	0
+	+	651	3
+	+	651	0
+	+	638	0
+	+	640	0
+	+	637	0
+	+	639	0
+	+	637	0
+	+	670	0
+	+	672	0
+	+	680	0
+	+	682	0
+	+	707	0
+	+	709	0
+	+	706	0
+	+	708	0
+	+	706	0
+	+	708	0
+	+	679	0
+	+	681	0
+	+	679	0
+	+	669	0
+	+	669	0
+	+	671	0
+	+	677	0
+	+	11	19
+	+	12	10
+	+	669	0
+	+	663	0
+	+	656	0
+	+	661	56
+	+	662	27
+	+	569	21
+	+	582	0
+	+	666	1
+	+	667	1
+	+	668	0
+	+	667	31
+
+> /media/nasGom/code/python/spider_bro/__Tagbar__
+	"	3	0
+	.	92	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	92	0
+	+	92	0
+	+	92	0
+
+> /media/nasGom/code/python/spider_bro/spiderbro.db
+	"	1	0
+
+> /media/nasGom/code/python/spider_bro/spiderBro.py
+	"	1	0
+	^	55	102
+	.	55	101
+	+	65	3
+	+	67	0
+	+	63	0
+	+	62	0
+	+	43	0
+	+	44	0
+	+	49	34
+	+	53	42
+	+	54	25
+	+	54	12
+	+	54	0
+	+	54	0
+	+	50	31
+	+	51	28
+	+	53	0
+	+	54	0
+	+	55	38
+	+	52	59
+	+	55	39
+	+	56	27
+	+	47	0
+	+	46	5
+	+	47	26
+	+	45	21
+	+	48	94
+	+	58	15
+	+	48	96
+	+	59	25
+	+	55	101
+
+> /media/nasGom/code/python/spider_bro/trakttest.py
+	"	1	21
+	^	1	22
+	.	2	0
+	+	2	0
+
+> /media/nasGom/code/python/spider_bro/GoToFile
+	"	1	0
+	.	9	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	39	0
+	+	1	0
+	+	1	0
+	+	35	0
+	+	27	0
+	+	1	0
+	+	1	0
+	+	9	0
+
+> /media/nasGom/code/python/spider_bro/db_manager.py
+	"	75	12
+
+> /media/nasGom/backup/powershell/GoToFile
+	"	1	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> /media/nasGom/backup/powershell/Microsoft.PowerShell_profile.ps1
+	"	1	0
+
+> /media/nasGom/backup/powershell/Modules/get-ChildItemColored/get-ChildItemColored.psm1
+	"	1	0
+
+> /media/nasGom/backup/powershell/Scripts/New-CommandWrapper.ps1
+	"	76	4
 
 > ~/bin/server_install.sh
 	"	17	24
@@ -2478,113 +2726,3 @@ $package_list.txt
 	"	163	0
 	.	1	0
 	+	1	0
-
-> ~/code/sources/2048/__Tagbar__
-	"	23	4
-	.	29	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	167	0
-	+	140	0
-	+	113	0
-	+	90	0
-	+	90	0
-	+	90	0
-	+	90	0
-	+	90	0
-	+	80	0
-	+	80	0
-	+	80	0
-	+	80	0
-	+	80	0
-	+	55	0
-	+	55	0
-	+	29	0
-	+	29	0
-
-> ~/code/sources/2048/Makefile
-	"	9	37
-	^	9	38
-	.	9	37
-	+	8	4
-	+	9	37
-
-> /usr/include/curses.h
-	"	706	27
-
-> ~/code/sources/2048/.ycm_extra_conf.py
-	"	52	15
-	^	52	16
-	.	52	15
-	+	44	8
-	+	50	2
-	+	38	0
-	+	38	0
-	+	52	0
-	+	54	0
-	+	52	0
-	+	51	9
-	+	52	15
-
-> ~/.ycm_extra_conf.py
-	"	69	0
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/raw/objects/creature_pet_masterwork.txt
-	"	1649	2
-
-> ~/creature_monster_masterwork.txt
-	"	9561	1
-	^	9524	31
-	.	9529	0
-	+	9595	0
-	+	9595	0
-	+	9599	15
-	+	9600	18
-	+	9524	30
-	+	9529	0
-
-> ~/.vim/bundle/YouCompleteMe/doc/youcompleteme.txt
-	"	498	0
-
-> ~/code/cpp/roguelike_tutorial/rogmain.cpp
-	"	80	4
-
-> ~/code/cpp/roguelike_tutorial/__Tagbar__
-	"	1	0
-	.	8	0
-	+	8	0
-
-> /media/nasGom/downloads/Dwarf Fortress/Dwarf Fortress/raw/objects/creature_monster_masterwork.txt
-	"	1641	3
-
-> ~/creaturelist.txt
-	"	919	0
-	.	38	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1386	0
-	+	1	0
-	+	1386	0
-	+	31	0
-	+	1	0
-	+	29	1
-	+	30	1
-	+	106	0
-	+	116	0
-	+	1352	0
-	+	1	0
-	+	1	0
-	+	38	0
