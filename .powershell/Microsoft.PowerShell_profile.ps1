@@ -1,99 +1,80 @@
-# VARIABLES
-$wpsd = "C:\Users\gom\Documents\WindowsPowerShell"
-$env:Path += ";$(Split-Path $profile)\Scripts"
-
-# VIM
-$vimdir = "E:\Program Files\Vim\vim74\"
-Set-Alias vim $vimdir\vim.exe
-Set-Alias gvim $vimdir\gvim.exe
-
 # TERMINAL APPEARANCE
 $console = $host.UI.RawUI
-$console.BackgroundColor = ìBlackî
-$console.ForegroundColor = ìWhiteî
-
-#$buffer = $console.BufferSize
-#$buffer.Width = 130
-#$buffer.Height = 2000
-#$console.BufferSize = $buffer
-#$size = $console.WindowSize
-#$size.Width = 130
-#$size.Height = 50
-#$console.WindowSize = $size
-
-function Prompt
-{
-    $promptString = "PS " + $(Get-Location) + ">"
- 
-    # Custom color for Windows console
-    if ( $Host.Name -eq "ConsoleHost" )
-    {
-        $loc = "\" + $(Get-Location) + ">"
-        Write-Host $env:username -NoNewline -ForegroundColor White
-        Write-Host "@" -NoNewline -ForegroundColor Cyan
-        Write-Host $env:computername -NoNewline -ForegroundColor White
-        Write-Host $loc -NoNewline -ForegroundColor Cyan
-    }
-    # Default color for the rest
-    else
-    {
-        Write-Host $promptString -NoNewline
-    }
- 
-    return " "
-}
-
-function Write-Color-LS
-    {
-        param ([string]$color = "white", $file)
-        Write-host ("{0,-7} {1,25} {2,10} {3}" -f $file.mode, ([String]::Format("{0,10}  {1,8}", $file.LastWriteTime.ToString("d"), $file.LastWriteTime.ToString("t"))), $file.length, $file.name) -foregroundcolor $color 
-    }
-
-New-CommandWrapper Out-Default -Process {
-    $regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
-
-
-    $compressed = New-Object System.Text.RegularExpressions.Regex(
-        '\.(zip|tar|gz|rar|jar|war)$', $regex_opts)
-    $executable = New-Object System.Text.RegularExpressions.Regex(
-        '\.(exe|bat|cmd|py|pl|ps1|psm1|vbs|rb|reg)$', $regex_opts)
-    $text_files = New-Object System.Text.RegularExpressions.Regex(
-        '\.(txt|cfg|conf|ini|csv|log|xml|java|c|cpp|cs)$', $regex_opts)
-
-    if(($_ -is [System.IO.DirectoryInfo]) -or ($_ -is [System.IO.FileInfo]))
-    {
-        if(-not ($notfirst)) 
-        {
-           $notfirst=$true
-        }
-
-        if ($_ -is [System.IO.DirectoryInfo]) 
-        {
-            Write-Color-LS "Cyan" $_                
-        }
-        elseif ($compressed.IsMatch($_.Name))
-        {
-            Write-Color-LS "Red" $_
-        }
-        elseif ($executable.IsMatch($_.Name))
-        {
-            Write-Color-LS "Green" $_
-        }
-        elseif ($text_files.IsMatch($_.Name))
-        {
-            Write-Color-LS "White" $_
-        }
-        else
-        {
-            Write-Color-LS "White" $_
-        }
-
-    $_ = $null
-    }
-} -end {
-    write-host ""
-}
-Set-Alias ll ls
-
-Set-Location C:\
+$console.BackgroundColor = ‚ÄúBlack‚Äù
+$console.ForegroundColor = ‚ÄúWhite‚Äù
 Clear-Host
+
+$buffer = $console.BufferSize
+$buffer.Width = 237
+# smaller monitor
+$buffer.Width = 190
+$buffer.Height = 3000
+$console.BufferSize = $buffer
+$size = $console.WindowSize
+$size.Width = 237
+# smaller monitor
+$size.Width = 190
+$size.Height = 52
+$console.WindowSize = $size
+
+# VARIABLES/FUNCTIONS/COMMON ALIASES
+# TODO: keep the modules you want as a zip file on the H:. If the folder doesn't exist on C:, unzip them there and import-module them
+$env:Path += ";$(Split-Path $profile)\Scripts"
+# NOTE: Pscx only seems to work correctly from C:
+Import-Module -name C:\PSModules\Pscx -DisableNameChecking
+Import-Module H:\WindowsPowerShell\Modules\gomMisc -DisableNameChecking
+Import-Module H:\WindowsPowerShell\Modules\gomSVN -DisableNameChecking
+
+$release = "\\dfs.uk.ml.com\Dublin\DublinSHARED\FinsysDev\FICC Technology (Dublin)\BERTI\Releases"
+$ftp="\\dfs.uk.ml.com\london\ftp\"
+$dl = "C:\Users\ZK7PJHN\Downloads"
+$dta = "C:\Users\ZK7PJHN\Documents\data"
+$rpo = "C:\repos"
+$pshell = "H:\WindowsPowerShell\"
+$archdir = "H:\Archive\"
+
+# win32 find.exe is shit. function here to at least give some functionality like unix 'find . -name'
+function myfind { Get-ChildItem -Recurse -Force \. -ErrorAction SilentlyContinue | Where-Object { ( $_.Name -like "$args[0]") } | Select-Object Name,Directory| Format-Table -AutoSize * }
+function ppath{$env:Path -split ';' | Sort}
+function openExplorerHere{ explorer.exe . }
+function whichCommand{get-command $args[0] | format-table -property commandtype, name, pssnapin, module -auto}
+
+Set-Alias c clear
+Set-Alias ex openExplorerHere
+Set-Alias f myfind
+Set-Alias ll dir
+Set-Alias path ppath
+Set-Alias svn "C:\Program Files\TortoiseSVN\bin\svn.exe"
+Set-Alias t Show-Tree
+Set-Alias which whichCommand
+
+# VIM
+$vimdir = "C:\Users\ZK7PJHN\Downloads\vim\"
+$Pscx:Preferences.TextEditor="$vimdir\vim74\vim.exe"
+Set-Alias vim $vimdir\vim74\vim.exe
+Set-Alias gvim $vimdir\vim74\gvim.exe
+function vimserver { gvim --remote-tab-silent $args }
+function backupVim {pkzipc.exe -add -recurse -directories "$($archdir)vback_$(get-date -f yyyy-MM-dd).zip" $vimdir\*}
+Set-Alias vs vimserver
+Set-Alias bv backupVim
+
+# SVN
+$repos=@("$rpo\mifid", "$rpo\qzreports", "$rpo\berti\BERTI", "$rpo\berti\BERTI_engineering", "$rpo\berti\BERTI_Web")
+function getMyCommits{Get-SvnLogCommitData | ? {$_.Author -eq "zk7pjhn"} | pprintSVNCommitLogEntry}
+function svnUpdateAllRepos{foreach ($repository in $repos){svn update $repository}}
+function svnStatusAllRepos{foreach ($repository in $repos){svn status $repository}}
+Set-Alias svme getMyCommits
+Set-Alias svf svnFind
+Set-Alias svua svnUpdateAllRepos
+Set-Alias svsa svnStatusAllRepos
+
+# web browser from powershell 
+# TODO: add some func that opens up all standard work stuff (jira:myissues, etc)
+Set-Alias goo Search-Google
+Set-Alias jsearch Search-Jira
+Set-Alias jira Open-Jira
+Set-Alias web Open-Page
+
+# TODO delete anything below this line, only for testing purposes
+function tempGo{ cd $rpo\mifid\common_scripts}
+Set-Alias rpo tempGo
