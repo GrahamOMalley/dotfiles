@@ -1,0 +1,331 @@
+#                          ,,
+#                         ';;
+#                          ''
+#            ____          ||
+#           ;    \         ||
+#            \,---'-,-,    ||
+#            /     (  o)   ||
+#          (o )__,--'-' \  ||
+#,,,,       ;'uuuuu''   ) ;;
+#\   \      \ )      ) /\//
+# '--'       \'nnnnn' /  \
+#   \\      //'------'    \
+#    \\    //  \           \
+#     \\  //    )           )
+#      \\//     |           |
+#       \\     /            |
+#
+# Colorize ALL THE THINGS
+$global:gcolors=@{ "dir"="Cyan";
+                   "machine"="White";
+                   "user"="White";
+                   "compressed"="Red";
+                   "executable"="Green";
+                   "image"="Magenta";
+                   "promptSVN"="Red";
+                   "promptSVNMod"="Cyan";
+                   "svnAdd"="Cyan";
+                   "svnMod"="Red";
+                   "svnUnv"="Green"
+                  }
+
+# function that prints all the colors in the rainbow... powershell environment
+function ShowAllColors
+{
+    $allColors = @( 'Black', 'Blue', 'Cyan', 'DarkBlue', 'DarkCyan', 'DarkGray', 'DarkGreen', 'DarkMagenta', 'DarkRed', 'DarkYellow', 'Gray', 'Green', 'Magenta', 'Red', 'White', 'Yellow')
+    foreach($color in $allColors){ Write-host $color -NoNewline; Write-host $color -fore $color -back $color }
+}
+
+# function that prints all the aliases defined in my profile
+function Print-MyAliases
+{
+    $objAliases = @()
+        foreach($alias in (cat $profile | sls Set-Alias | sort)) 
+        {
+            $objAlias = New-Object PSObject
+                $aliasName,$aliasCmd = $alias.ToString().Substring($alias.ToString().IndexOf(" ")+1) -split ' ',2 
+                $objAlias | Add-Member noteproperty "Alias Name" $aliasName
+                $objAlias | Add-Member noteproperty "Alias Command" $aliasCmd 
+                $objAliases += $objAlias 
+        }
+
+    $objAliases | ft
+} 
+
+# lol
+function Write-WaitScreen
+{
+      #Cosmetic function that displays a wait screen during long delays
+      $data = [System.Convert]::FromBase64String("H4sIAAAAAAAEAOy9B2AcSZYlJi9tynt/SvVK1+B0oQiAYBMk2JBAEOzBiM3mkuwdaUcjKasqgcplVmVdZhZAzO2dvPfee++999577733ujudTif33/8/XGZkAWz2zkrayZ4hgKrIHz9+fB8/ItLNz+//+//+2/LQb79xsqnl9i/9pcEHv/SXbm94g5qn6fG6rZrrJi2atCmrK/r4rnvp7u/3+/7+vz/9Y1+5S2+4v9xzF//8vvzW3Z9J0y9/5mfo/8GX9PXvHz76sb73M+nP0Gc/Q//oe+Zr28w2936VN8Ov9AX68e3sMk+zdFVM23WdD7y6pejcSe96eFXn9CK91Za5vuDh3+33rockuriaF/TadbVOr7Ki1SbeI4RyyPy+v9/v6/3ht5SnSwJpclcnyb3wMx4puuRWGL//9u+v39+9i7k1QByYn/kZZbZtcE+qrCcPNdreBg+kv/T3lbbEnQ4EfczNfuZnPqPnrvAi/x4+Bs2fuftL8fgcuvX7bzGuY8G3N/l4ft/fX3H9fccR5mYIjrl6j9Dlzu9/5/8JAAD//0SASw93AwAA")
+      $ms = New-Object System.IO.MemoryStream; $ms.Write($data, 0, $data.Length); $ms.Seek(0,0) | Out-Null
+      $cs = New-Object System.IO.Compression.GZipStream($ms, [System.IO.Compression.CompressionMode]::Decompress);$sr = New-Object System.IO.StreamReader($cs)
+      return $sr.ReadToEnd()
+}
+
+# nicked from internet, does what it says on the tin
+function Get-Function ([string]$Pattern, [string]$Path="$pwd") 
+{
+    $parser  = [System.Management.Automation.PSParser]
+
+    $(ForEach( $file in Get-ChildItem $Path -Recurse -Include *.ps1, *.psm1) {
+        $content = [IO.File]::ReadAllText($file.FullName)
+        $tokens  = $parser::Tokenize($content, [ref] $null)
+        $count   = $tokens.Count
+
+        for($idx=0; $idx -lt $count; $idx += 1) {
+            if($tokens[$idx].Content -eq 'function') {
+                $targetToken = $tokens[$idx+1]
+                New-Object PSObject -Property @{
+                    FileName     = $file.FullName
+                    FunctionName = $targetToken.Content
+                    Line         = $targetToken.StartLine
+                } | Select FunctionName, FileName, Line
+            }
+        }
+    }) | Where {$_.FunctionName -match $Pattern}
+}
+
+# wrappers to search or open web pages
+function Search-Google 
+{
+    param( [Parameter(ValueFromPipeline=$true)] [string]$query)
+    Process { Start "https://www.google.com/search?q=$query" }
+}
+
+function Search-Jira 
+{
+    param( [Parameter(ValueFromPipeline=$true)] [string]$query)
+    Process { Start "http://code.bankofamerica.com/issues/i#browse/$query" }
+}
+
+function Open-Jira
+{
+    param( [Parameter(ValueFromPipeline=$true)] [string]$jirano)
+    Process { Start "http://code.bankofamerica.com/issues/i#browse/REPORTING-$jirano" }
+}
+
+function Open-Page 
+{
+    param( [Parameter(ValueFromPipeline=$true)] [string]$page)
+    Process { Start "$page" }
+}
+
+# recursively search up through directories to see if a parent has a .svn (and therefore we are in an svn repo)
+function isSVN
+{
+    param ($p)
+    # stop/return false once we hit the drive letter
+    $q = $($(Split-Path -Qualifier $p).ToString()+"\")
+    if($q.ToString() -eq $p.ToString()){return $false}
+    # otherwise keep looking
+    if(Test-Path $p\.svn){ return $true }
+    else {return $(isSVN $(Split-Path -Parent $p))}
+}
+
+# write out a colorised ls line. 
+function Write-Color-LS
+    {
+        param ([string]$color = "white", $file)
+        Write-host ("{0,-7} {1,25} {2,10} {3}" -f $file.mode, ([String]::Format("{0,10}  {1,8}", $file.LastWriteTime.ToString("d"), $file.LastWriteTime.ToString("t"))), $file.length, $file.name) -foregroundcolor $color 
+    }
+
+# overwrite dir/ls with the colorised version
+New-CommandWrapper Out-Default -Process {
+    # TODO: add svn 
+    $regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+
+    $compressed = New-Object System.Text.RegularExpressions.Regex('\.(zip|tar|gz|rar|jar|war|iso|img|7z|bin|cab)$', $regex_opts)
+    $executable = New-Object System.Text.RegularExpressions.Regex('\.(exe|bat|cmd|py|pl|ps1|psm1|vbs|rb|reg)$', $regex_opts)
+    $images = New-Object System.Text.RegularExpressions.Regex('\.(png|jpg|gif|bmp)$', $regex_opts)
+
+    if(($_ -is [System.IO.DirectoryInfo]) -or ($_ -is [System.IO.FileInfo]))
+    {
+        if ($_ -is [System.IO.DirectoryInfo]) { Write-Color-LS $gcolors.dir $_ }
+        elseif ($compressed.IsMatch($_.Name)) { Write-Color-LS $gcolors.compressed $_ }
+        elseif ($executable.IsMatch($_.Name)) { Write-Color-LS $gcolors.executable $_ }
+        elseif ($images.IsMatch($_.Name))     { Write-Color-LS $gcolors.image $_ }
+        else { Write-Color-LS "White" $_ }
+
+    $_ = $null
+    }
+} -end {
+    write-host ""
+}
+
+# overwrite prompt with a sexy colorized version that changes when in an svn repo
+function prompt
+{
+    $promptString = "PS " + $(Get-Location) + ">"
+ 
+    # Custom color for Windows console
+    if ( $Host.Name -eq "ConsoleHost" )
+    {
+        $loc = "\" + $(Get-Location)
+        Write-Host $env:username -NoNewline -Fore $gcolors.user
+        Write-Host "@" -NoNewline -Fore $gcolors.dir
+        Write-Host $env:computername -NoNewline -Fore $gcolors.machine
+        Write-Host $loc -NoNewline -Fore $gcolors.dir
+        # add in SVN info
+        if(isSVN $pwd) 
+        {
+                Write-Host " " -NoNewline
+                Write-Host "SVN" -NoNewline -Fore $gcolors.promptSVN
+                $modified=0
+                $added=0
+                switch -regex (svn st) 
+                {
+                    "^\?" {$other+=1}
+                    "^A" {$added+=1}
+                    "^M" {$modified+=1}
+                    default {}
+                }
+                if($added -gt 0)
+                {
+                    Write-Host " " -NoNewline
+                    Write-Host A -NoNewline -Fore $gcolors.promptSVNMod
+                    Write-Host : -NoNewline -Fore Gray
+                    Write-Host $added -NoNewline -Fore White
+                }
+                if($modified -gt 0)
+                {
+                    Write-Host " " -NoNewline
+                    Write-Host M -NoNewline -Fore $gcolors.promptSVNMod
+                    Write-Host : -NoNewline -Fore Gray
+                    Write-Host $modified -NoNewline -Fore White
+                }
+                if($other -gt 0)
+                {
+                    Write-Host " " -NoNewline
+                    Write-Host O -NoNewline -Fore $gcolors.promptSVNMod
+                    Write-Host : -NoNewline -Fore Gray
+                    Write-Host $other -NoNewline -Fore White
+                }
+        }
+        Write-Host ">" -NoNewLine -Fore $gcolors.dir
+    }
+    # Default color for the rest
+    else
+    {
+        Write-Host $promptString -NoNewline
+    }
+ 
+    return " "
+}
+
+# building block function: returns a list of files containing string
+function Search-FilesContainingString([string]$searchText, [string]$path=".")
+{
+      $files = Get-ChildItem -Recurse -Path $path
+      return $files | Select-String $searchText | Group path | %{$_.name}
+}
+
+#Useful reading: http://technet.microsoft.com/en-us/magazine/hh413265.aspx
+function Open-WithVim
+{
+      [CmdletBinding()]
+      Param([Parameter(ValueFromPipeline=$True)] [string[]]$files)
+      BEGIN { $args = "--remote-tab-silent " }
+      PROCESS { $args += "`"$files`" " }
+      END { Start-Process gvim -ArgumentList $args }
+}
+
+function Open-WithVisualStudio
+{
+      [CmdletBinding()]
+      Param([Parameter(ValueFromPipeline=$True)] [string]$file)
+      Process{devenv /edit $file}
+}
+
+# functions to recursively find files containing some string, then open them
+function Find-OpenVim($p){ Search-FilesContainingString $p | Open-WithVim }
+function Find-OpenVS($p){ Search-FilesContainingString $p | Open-WithVisualStudio }
+function Find-OpenDefault($p){ gci -Recurse | sls $p | group path | select name | %  {iex $_.name} }
+
+function Get-ADObjFromSamAccName($samaccountname,$domain="emea",$property)
+{
+      $domain = $domain.toLower()
+      if(@("emea","corp","asia") -contains $domain)
+      {
+            $domain = "$domain.bankofamerica.com"
+      }
+      elseif(@("amrs","wmtp") -contains $domain)
+      {
+            $domain = "$domain.win.ml.com"
+      }
+      elseif($domain.equals("emeaw"))
+      {
+            $domain = "emea.win.ml.com"
+      }
+      $result = Get-ADObject -Domain $domain -Class user -filter "(&(samaccountname=$samaccountname))"
+      if($result)
+      {
+            if($property)
+            {
+                  return $result.$property
+            }
+            else
+            {
+                  return $result
+            }
+      }
+      else
+      {
+            return "$samaccountname not found in $domain"
+      }
+}
+
+function Disk-Space($drive="C:")
+{
+    $disk = get-wmiobject Win32_LogicalDisk -Filter "DeviceID = '$drive'"
+    $PercentFree = [Math]::round((($disk.freespace/$disk.size) * 100))
+    $size = [math]::truncate($disk.size / 1GB)
+    $free = [math]::truncate($disk.freespace / 1GB)
+    Write-Host "$drive" 
+    Write-Host "Size: $size GB"
+    Write-Host "$PercentFree% free ($free GB)"
+}
+
+function Folder-Size($startfolder=".")
+{
+    $objFSO = New-Object -com  Scripting.FileSystemObject
+    Write-Host $("{0:N2}" -f (($objFSO.GetFolder($startfolder).Size) / 1MB) + " MB")
+}
+
+function Export-CSVFromExcel($excelFileName, $csvLoc=$pwd)
+{
+    $E = New-Object -ComObject Excel.Application
+    $E.Visible = $false
+    $E.DisplayAlerts = $false
+    # net code is a little funky about pwd; it actually assumes pwd is the dir powershell.exe was started in
+    $excelFileName=$ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($excelFileName)
+    $wb = $E.Workbooks.Open($excelFileName)
+    foreach ($ws in $wb.Worksheets)
+    {
+        $n = $ws.Name
+        $csvout="$($csvLoc.ToString())\$n.csv"
+        $ws.SaveAs($csvout, 6)
+    }
+    $E.Quit()
+}
+
+function Get-OpenWindows
+{
+    Get-Process | Where-Object {$_.MainWindowTitle}
+}
+
+function Kill-OpenWindows
+{
+    Get-Process | Where-Object {$_.MainWindowTitle} | ? {$_.ProcessName -eq "$args"} | Stop-Process
+}
+
+function ShowTree-All($startfolder=".")
+{ 
+    Show-Tree -ShowLeaf $startfolder
+}
+
+################################### temp things, delete below this line when done with them
+
+
+
+
+Export-ModuleMember -function *
