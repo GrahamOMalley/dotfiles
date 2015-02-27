@@ -291,6 +291,19 @@ function Folder-Size($startfolder=".")
     Write-Host $("{0:N2}" -f (($objFSO.GetFolder($startfolder).Size) / 1MB) + " MB")
 }
 
+function Get-FolderSize
+{
+    BEGIN{$fso = New-Object -comobject Scripting.FileSystemObject}
+    PROCESS
+    {
+        $path = $input.fullname
+        $folder = $fso.GetFolder($path)
+        $size = $folder.size
+        [PSCustomObject]@{'Name' = $path;'Size' = ($size / 1gb) } 
+    } 
+}
+
+
 function Export-CSVFromExcel($excelFileName, $csvLoc=$pwd)
 {
     $E = New-Object -ComObject Excel.Application
@@ -323,7 +336,31 @@ function ShowTree-All($startfolder=".")
     Show-Tree -ShowLeaf $startfolder
 }
 
+function Format-XMLFiles
+{
+    ForEach( $file in Get-ChildItem *.xml) 
+    {
+        echo "Formatting $file"
+        $xml = Format-Xml $file
+        $xml > $file
+    }
+}
+
 ################################### temp things, delete below this line when done with them
+
+function Setup-ExtraXMLReport
+{
+    Write-Host "Copying files..." -fore Cyan
+    cp \\dfs.uk.ml.com\london\dataapp\Straw\PROD\batch\straw\input\*.xml \\dfs.uk.ml.com\london\dataapp\Straw\DEV\batch\straw\input\English\
+    Write-Host "Done" -fore green
+    
+    Write-Host "Clearing tables..." -fore Cyan
+    Sql-Query dev1 extra "use extra update tbl_trades set upload_status=0 where upload_status=1"
+    Sql-Query dev1 extra "use extra update tbl_reports_submitted set loaded=0 where loaded=1"
+    Write-Host "Done" -fore green
+    Write-Host "`nReady" -fore green
+}
+
 
 
 
