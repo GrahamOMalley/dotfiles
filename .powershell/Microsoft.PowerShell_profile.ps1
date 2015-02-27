@@ -5,6 +5,7 @@ function dbg($msg) { if($DEBUG_LOG) { Write-Host $msg -Fore Green } }
 $mymods = "C:\PSModules"
 $mypsfiles=@("$profile", "$mymods\gomMisc\gomMisc.psm1", "$mymods\gomSVN\gomSVN.psm1", "$mymods\kaizenSQL\kaizenSQL.psm1")
 $env:Path += ";$(Split-Path $profile)\Scripts"
+$env:Path += ";C:\Program Files (x86)\PuTTY"
 
 $archdir = "H:\Archive\"
 $dta = "C:\Users\ZK7PJHN\Documents\data" 
@@ -31,6 +32,7 @@ Set-Alias python "C:\Python27\python.exe"
 $console = $host.UI.RawUI
 $console.BackgroundColor = “Black”
 $console.ForegroundColor = “White”
+# NOTE: uncomment when not using conEmu
 #Clear-Host
 #$buffer = $console.BufferSize
 #$buffer.Width = 190
@@ -51,6 +53,8 @@ $historyPath = Join-Path (split-path $profile) history.clixml
 
 # Hook powershell's exiting event & hide the registration with -supportevent (from nivot.org)
 Register-EngineEvent -SourceIdentifier powershell.exiting -SupportEvent -Action {
+      # persist history across multiple sessions
+      Import-Clixml $historyPath | Add-History
       # don't save duplicate lines
       Get-History -count $MaximumHistoryCount | Group CommandLine | Foreach {$_.Group[0]} |  Export-Clixml $historyPath
 }.GetNewClosure()
