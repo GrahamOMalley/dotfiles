@@ -107,6 +107,8 @@ function Search-StringInFiles($arg){ls -Recurse | sls $arg }
 function Get-HistoryAll { Get-History -c  $MaximumHistoryCount }
 function Open-Autosys { Start  "http://autosys.worldnet.ml.com/emea-dev" }
 function Kill-All($arg) {Stop-Process -Force -Name $arg}
+function GFL-Commands {Open-WithVisualStudio C:\repos\scratch\SQLscratch\GFL_commands.sql}
+function Straw-Commands {Open-WithVisualStudio C:\repos\scratch\SQLscratch\straw_commands.sql}
 
 Set-Alias asys Open-Autosys
 Set-Alias bapps Backup-Apps
@@ -145,13 +147,15 @@ Set-Alias web Open-Page
 $marks = @{};
 $marksPath = Join-Path (split-path -parent $profile) .bookmarks
 
-function Bookmark-Save($number) { $marks["$number"] = (pwd).path; Write-Host "$number" -fore Green -NoNewline; Write-Host ":" -NoNewline; Write-Host "$($marks.$number)" -fore Cyan -NoNewline; Write-Host " added to bookmarks" -fore Green; }
+function Bookmark-Save($bookmark) { $marks["$bookmark"] = (pwd).path; Write-Host "$bookmark" -fore Green -NoNewline; Write-Host ":" -NoNewline; Write-Host "$($marks.$bookmark)" -fore Cyan -NoNewline; Write-Host " added to bookmarks" -fore Green; }
+function Bookmark-Delete($bookmark) { if($marks.Contains($bookmark)) { $marks.Remove($bookmark); Write-Host "$bookmark" -fore Green -NoNewline; Write-Host ":" -NoNewline; Write-Host "$($marks.$bookmark)" -fore Cyan -NoNewline; Write-Host " deleted from bookmarks" -fore Magenta; } else { Write-Host "No entry for $bookmark in bookmarks" } }
 function Bookmark-Go($number){ cd $marks["$number"] }
 function mdump{ $marks.getenumerator() | export-csv $marksPath -notype }
 function Bookmark-List{ Write-Host "BookMarks:" -fore Green; $marks.getenumerator() | sort name | % {write-host $_.Name -Fore White -NoNewLine; Write-Host "`t" -NoNewLine; Write-Host $_.Value.Replace("Microsoft.PowerShell.Core\FileSystem::", "") -fore Cyan}}
 Set-Alias m Bookmark-Save
 Set-Alias g Bookmark-Go
 Set-Alias lm Bookmark-List
+Set-Alias dm Bookmark-Delete
 # NOTE: optionally use powertab completion for the $marks hashtable!
 Register-TabExpansion "Bookmark-Go" -Type Command {
     param($Context, [ref]$TabExpansionHasOutput, [ref]$QuoteSpaces) 
