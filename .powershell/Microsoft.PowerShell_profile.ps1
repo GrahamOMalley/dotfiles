@@ -8,19 +8,8 @@ $env:Path += ";$(Split-Path $profile)\Scripts"
 $env:Path += ";C:\Program Files (x86)\PuTTY"
 
 $archdir = "H:\Archive\"
-$dta = "C:\Users\ZK7PJHN\Documents\data" 
-$proj = "C:\working\apps\Visual Studio 2013\Projects"
-$vs = "C:\working\apps\Visual Studio 2013"
-$ftp="\\dfs.uk.ml.com\london\ftp\"
-$pshell = "H:\WindowsPowerShell\"
-$berti_rel = "\\dfs.uk.ml.com\Dublin\DublinSHARED\FinsysDev\FICC Technology (Dublin)\BERTI\Releases"
-$rpo = "C:\repos"
 $apps = "C:\working\apps\"
-$nbks= @{
-    "zk7pjhn" = "Graham O' Malley";
-    "nbk1qqm" = "Mike Wynne";
-    "nbkddoz"= "Tim Clewes"
-}
+
 
 # kinda stupid how you can't store a program in a variable?
 Set-Alias devenv "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe"
@@ -177,61 +166,5 @@ function vimdiff { gvim --remote-tab-silent +"vert diffsplit $($args[0])" $args[
 function Open-PSWorkspace{ $mypsfiles | Open-WithVim }
 Set-Alias psvim Open-PSWorkspace
 Set-Alias vi Open-WithVim
-
-########### SVN
-
-$repos=@{
-    #"$rpo\mifid" = "https://svn.worldnet.ml.com/svnrepos/mifid/mifid/trunk";
-    "$rpo\mifid\ExTRA3.5" = "https://svn.worldnet.ml.com/svnrepos/mifid/mifid/trunk/ExTRA3.5";
-    "$rpo\mifid\common_scripts" = "https://svn.worldnet.ml.com/svnrepos/mifid/mifid/trunk/common_scripts";
-    "$rpo\mifid\GFL" = "https://svn.worldnet.ml.com/svnrepos/mifid/mifid/trunk/GFL";
-    "$rpo\mifid\InfoDebt" = "https://svn.worldnet.ml.com/svnrepos/mifid/mifid/trunk/InfoDebt";
-    "$rpo\mifid\straw" = "https://svn.worldnet.ml.com/svnrepos/mifid/mifid/trunk/straw";
-    "$rpo\qzreports" = "https://svn2.worldnet.ml.com/svnrepos/qzreports/qzreports/trunk";
-    "$rpo\berti\BERTI"= "https://svn.worldnet.ml.com/svnrepos/gmistemea_ficc/BERTI/trunk";
-    "$rpo\berti\BERTI_Web"= "https://svn.worldnet.ml.com/svnrepos/gmistemea_ficc/BERTI_Web/trunk";
-    "$rpo\berti\CMTA"= "https://svn.worldnet.ml.com/svnrepos/gmistemea_ficc/BERTI/branches/CMTA/BERTI_DB"
-}
-if(!(Test-Path -path $rpo)){
-    Write-Host "SVN working dir not found!" -ForegroundColor Red
-    $createrepos= Read-Host "Create SVN Repositories? (Y/N)"
-    switch($createrepos)
-    {
-        Y {
-            mkdir $rpo
-            $repos.keys | % { 
-            mkdir $_ | Out-Null
-            svn co $repos.$_ $_
-            } 
-        }
-        default {Write-Host "skipping"}
-    }
-}
-
-function Svn-UpdateAll{foreach ($repository in $repos.keys){svn update $repository}}
-function Svn-StatusAll{foreach ($repository in $repos.keys){ Write-Host "$($repository):" -fore Green ;Svn-PPrintStat $repository; Write-host ""}}
-function Svn-OpenModifiedVim { Svn-GetModifiedFiles | Open-WithVim }
-function Svn-OpenModifiedVS { Svn-GetModifiedFiles | Open-WithVisualStudio }
-Set-Alias svaa Svn-AddAll
-Set-Alias svf Svn-Find
-Set-Alias svl Svn-PPrintXmlLogEntries
-Set-Alias svme Svn-GetMyCommits
-Set-Alias svsa Svn-StatusAll
-Set-Alias svua Svn-UpdateAll
-Set-Alias svv Svn-OpenModifiedVim
-Set-Alias svvs Svn-OpenModifiedVS
-Set-Alias st Svn-PPrintStat
-Set-Alias sta Svn-StatusAll
-Set-Alias svd Svn-PPrintDiff
-
-########### JENKINS
-$jenkdir = $apps+"jenkins\"
-function jenkins {java -jar $jenkdir\jenkins-cli.jar -s http://wcamm03ue.emea.bankofamerica.com:8080/ $args }
-Set-Alias jk jenkins
-
-########## Finally
-
-# importing sql modules chucks you into the sql commandline, which doesn't work because of corporate permissions nonsense, so start in my scratch dir instead
-cd C:\repos\scratch
 
 
