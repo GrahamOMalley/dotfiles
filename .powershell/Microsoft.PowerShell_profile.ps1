@@ -17,12 +17,13 @@ $console.BackgroundColor = “Black”
 $console.ForegroundColor = “White”
 
 ########### HISTORY
+$consolehistory="histfile.txt"
 function History-Load
 {
 	$buffer = "#TYPE Microsoft.PowerShell.Commands.HistoryInfo`n"
 	$buffer+= "`"Id`",`"CommandLine`",`"ExecutionStatus`",`"StartExecutionTime`",`"EndExecutionTime`"`n"
 	$count = 1
-	foreach ($line in Get-Content C:\Users\ZK7PJHN\AppData\Roaming\PSReadline\ConsoleHost_history.txt)
+	foreach ($line in Get-Content $consolehistory)
 	{
 		$buffer+="`"$count`", `"$line`", `"Completed`", `"07/05/2015 10:29:10`", `"07/05/2015 10:29:10`"`n"
 		$count++
